@@ -1,0 +1,27 @@
+var NAVTREEINDEX0 =
+{
+".html":[0,0,0],
+".html":[0,0,0,0],
+"allocator_8h.html":[1,0,0,0,0,0,0,0],
+"allocator_8h_source.html":[1,0,0,0,0,0,0,0],
+"annotated.html":[0,0],
+"classes.html":[0,1],
+"classminerva_1_1foundation_1_1allocator.html":[0,0,0,0,0],
+"classminerva_1_1foundation_1_1allocator.html#a1818227b868a680283eb08fbaf2abec9":[0,0,0,0,0,1],
+"classminerva_1_1foundation_1_1allocator.html#a19f76fd74546cc86283694836b55570b":[0,0,0,0,0,4],
+"classminerva_1_1foundation_1_1allocator.html#a1d984a6c7360cac43c6182fc8c27f263":[0,0,0,0,0,0],
+"classminerva_1_1foundation_1_1allocator.html#ae33b6c28ecbd236c7e974ac9270601a8":[0,0,0,0,0,2],
+"classminerva_1_1foundation_1_1allocator.html#af693b0cd3bdec3bfdc4885b15f9d04c6":[0,0,0,0,0,3],
+"consts_8h_source.html":[1,0,0,0,0,0,0,1],
+"defines_8h_source.html":[1,0,0,0,0,0,0,2],
+"dir_458ff8abe8632f1aa7f7fdfdffdfe199.html":[1,0,0,0,0],
+"dir_96b74bbeac5fb958cc26e15f873c2c9b.html":[1,0,0,0,0,0,0],
+"dir_aa394cd1d9abb8ffe941d9aaafca8d03.html":[1,0,0],
+"dir_bf8c14a40b2bfca24d46ef0f025556c4.html":[1,0,0,0,0,0],
+"dir_dabd44f1c0e1449e59809a6568b7e99c.html":[1,0,0,0],
+"files.html":[1,0],
+"functions.html":[0,2,0],
+"functions_func.html":[0,2,1],
+"index.html":[],
+"pages.html":[]
+};

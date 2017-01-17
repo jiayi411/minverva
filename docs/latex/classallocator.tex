@@ -1,0 +1,102 @@
+\hypertarget{classallocator}{}\section{allocator Class Reference}
+\label{classallocator}\index{allocator@{allocator}}
+
+
+base class of all objects in minerva  
+
+
+
+
+{\ttfamily \#include $<$allocator.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classallocator_a1be74ca7d62eb4accf3bb5d35683f1c0}\label{classallocator_a1be74ca7d62eb4accf3bb5d35683f1c0}} 
+\hyperlink{classallocator_a1be74ca7d62eb4accf3bb5d35683f1c0}{allocator} ()
+\begin{DoxyCompactList}\small\item\em ctor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classallocator_a73b8c95bbff9a3b92762988363979442}\label{classallocator_a73b8c95bbff9a3b92762988363979442}} 
+\hyperlink{classallocator_a73b8c95bbff9a3b92762988363979442}{$\sim$allocator} ()
+\begin{DoxyCompactList}\small\item\em dtor \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{classallocator_abf5144276a9c22e8edf9845ee5c03b96}{operator new} (size\+\_\+t size, const char $\ast$file, int line, const char $\ast$function)
+\begin{DoxyCompactList}\small\item\em operator new with debug information \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{classallocator_a1ab3345c1d9370e06a3b6deef94b40a7}{operator new\mbox{[}$\,$\mbox{]}} (size\+\_\+t size, const char $\ast$file, int line, const char $\ast$function)
+\begin{DoxyCompactList}\small\item\em operator new\mbox{[}\mbox{]} with debug information \end{DoxyCompactList}\item 
+void \hyperlink{classallocator_ab4c71bd9e5a544dc78839865978a2cf8}{operator delete} (void $\ast$ptr)
+\begin{DoxyCompactList}\small\item\em operator delete \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+base class of all objects in minerva 
+
+Base class for override new \& delete function and added tracing method when in debug mode 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classallocator_ab4c71bd9e5a544dc78839865978a2cf8}\label{classallocator_ab4c71bd9e5a544dc78839865978a2cf8}} 
+\index{allocator@{allocator}!operator delete@{operator delete}}
+\index{operator delete@{operator delete}!allocator@{allocator}}
+\subsubsection{\texorpdfstring{operator delete()}{operator delete()}}
+{\footnotesize\ttfamily void allocator\+::operator delete (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+operator delete 
+
+free an object, with a switch for tracing purpose
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em object} & pointer of object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classallocator_abf5144276a9c22e8edf9845ee5c03b96}\label{classallocator_abf5144276a9c22e8edf9845ee5c03b96}} 
+\index{allocator@{allocator}!operator new@{operator new}}
+\index{operator new@{operator new}!allocator@{allocator}}
+\subsubsection{\texorpdfstring{operator new()}{operator new()}}
+{\footnotesize\ttfamily void$\ast$ allocator\+::operator new (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size,  }\item[{const char $\ast$}]{file,  }\item[{int}]{line,  }\item[{const char $\ast$}]{function }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+operator new with debug information 
+
+only activated on debug mode, with a switch for tracing purpose
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em size} & object\textquotesingle{}s size \\
+\hline
+\mbox{\tt in}  & {\em file} & which file the new operator occured \\
+\hline
+\mbox{\tt in}  & {\em line} & where the new located in the file \\
+\hline
+\mbox{\tt in}  & {\em function} & the function where the new called \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classallocator_a1ab3345c1d9370e06a3b6deef94b40a7}\label{classallocator_a1ab3345c1d9370e06a3b6deef94b40a7}} 
+\index{allocator@{allocator}!operator new\mbox{[}\mbox{]}@{operator new[]}}
+\index{operator new\mbox{[}\mbox{]}@{operator new[]}!allocator@{allocator}}
+\subsubsection{\texorpdfstring{operator new[]()}{operator new[]()}}
+{\footnotesize\ttfamily void$\ast$ allocator\+::operator new\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size,  }\item[{const char $\ast$}]{file,  }\item[{int}]{line,  }\item[{const char $\ast$}]{function }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+operator new\mbox{[}\mbox{]} with debug information 
+
+only activated on debug mode, with a switch for tracing purpose
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em size} & object\textquotesingle{}s size \\
+\hline
+\mbox{\tt in}  & {\em file} & which file the new operator occured \\
+\hline
+\mbox{\tt in}  & {\em line} & where the new located in the file \\
+\hline
+\mbox{\tt in}  & {\em function} & the function where the new called \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/apple/\+Work/git/github/minverva/fundation/classes/include/\hyperlink{allocator_8h}{allocator.\+h}\end{DoxyCompactItemize}

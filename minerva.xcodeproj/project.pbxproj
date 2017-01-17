@@ -1,0 +1,134 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		18D563A01E2AC95500680B1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18D5639B1E2AC95500680B1C /* foundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 188934D61E2A8A9700755A32;
+			remoteInfo = foundation;
+		};
+		18D563C41E2ACC9F00680B1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18D563C01E2ACC9E00680B1C /* test.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 18D563B61E2ACC9E00680B1C;
+			remoteInfo = test;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		18D5639B1E2AC95500680B1C /* foundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = foundation.xcodeproj; path = foundation/projs/mac/foundation.xcodeproj; sourceTree = "<group>"; };
+		18D563C01E2ACC9E00680B1C /* test.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = test.xcodeproj; path = test/test.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		18746FC91E2AC78200581E8C = {
+			isa = PBXGroup;
+			children = (
+				18D563C01E2ACC9E00680B1C /* test.xcodeproj */,
+				18D5639B1E2AC95500680B1C /* foundation.xcodeproj */,
+			);
+			sourceTree = "<group>";
+		};
+		18D5639C1E2AC95500680B1C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18D563A11E2AC95500680B1C /* libfoundation.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		18D563C11E2ACC9E00680B1C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18D563C51E2ACC9F00680B1C /* test */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		18746FCA1E2AC78200581E8C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+			};
+			buildConfigurationList = 18746FCD1E2AC78200581E8C /* Build configuration list for PBXProject "minerva" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 18746FC91E2AC78200581E8C;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 18D5639C1E2AC95500680B1C /* Products */;
+					ProjectRef = 18D5639B1E2AC95500680B1C /* foundation.xcodeproj */;
+				},
+				{
+					ProductGroup = 18D563C11E2ACC9E00680B1C /* Products */;
+					ProjectRef = 18D563C01E2ACC9E00680B1C /* test.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		18D563A11E2AC95500680B1C /* libfoundation.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libfoundation.a;
+			remoteRef = 18D563A01E2AC95500680B1C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		18D563C51E2ACC9F00680B1C /* test */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = test;
+			remoteRef = 18D563C41E2ACC9F00680B1C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin XCBuildConfiguration section */
+		18746FCE1E2AC78200581E8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		18746FCF1E2AC78200581E8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18746FCD1E2AC78200581E8C /* Build configuration list for PBXProject "minerva" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18746FCE1E2AC78200581E8C /* Debug */,
+				18746FCF1E2AC78200581E8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 18746FCA1E2AC78200581E8C /* Project object */;
+}
