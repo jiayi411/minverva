@@ -21,18 +21,38 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		18D563D91E2DD02900680B1C /* allocator.h in Headers */ = {isa = PBXBuildFile; fileRef = 18D563D51E2DD02900680B1C /* allocator.h */; };
-		18D563DA1E2DD02900680B1C /* consts.h in Headers */ = {isa = PBXBuildFile; fileRef = 18D563D61E2DD02900680B1C /* consts.h */; };
-		18D563DB1E2DD02900680B1C /* defines.h in Headers */ = {isa = PBXBuildFile; fileRef = 18D563D71E2DD02900680B1C /* defines.h */; };
-		18D563DC1E2DD02900680B1C /* foundation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D563D81E2DD02900680B1C /* foundation.cpp */; };
+		186078D01E3199CF00161801 /* consts.h in Headers */ = {isa = PBXBuildFile; fileRef = 186078C11E3199CF00161801 /* consts.h */; };
+		186078D11E3199CF00161801 /* defines.h in Headers */ = {isa = PBXBuildFile; fileRef = 186078C21E3199CF00161801 /* defines.h */; };
+		186078D21E3199CF00161801 /* foundation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 186078C31E3199CF00161801 /* foundation.cpp */; };
+		186078D31E3199CF00161801 /* allocator.h in Headers */ = {isa = PBXBuildFile; fileRef = 186078C51E3199CF00161801 /* allocator.h */; };
+		186078D41E3199CF00161801 /* memory_tracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 186078C61E3199CF00161801 /* memory_tracker.cpp */; };
+		186078D51E3199CF00161801 /* memory_tracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 186078C71E3199CF00161801 /* memory_tracker.h */; };
+		186078D61E3199CF00161801 /* singleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 186078C81E3199CF00161801 /* singleton.h */; };
+		186078D81E3199CF00161801 /* map.h in Headers */ = {isa = PBXBuildFile; fileRef = 186078CB1E3199CF00161801 /* map.h */; };
+		186078D91E3199CF00161801 /* multimap.h in Headers */ = {isa = PBXBuildFile; fileRef = 186078CC1E3199CF00161801 /* multimap.h */; };
+		186078DA1E3199CF00161801 /* unordered_map.h in Headers */ = {isa = PBXBuildFile; fileRef = 186078CD1E3199CF00161801 /* unordered_map.h */; };
+		186078DB1E3199CF00161801 /* unordered_multimap.h in Headers */ = {isa = PBXBuildFile; fileRef = 186078CE1E3199CF00161801 /* unordered_multimap.h */; };
+		186078DC1E3199CF00161801 /* vector.h in Headers */ = {isa = PBXBuildFile; fileRef = 186078CF1E3199CF00161801 /* vector.h */; };
+		1895553F1E31C7D000563E6C /* foundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 186078DD1E31B1D900161801 /* foundation.h */; };
+		189555551E31D12000563E6C /* list.h in Headers */ = {isa = PBXBuildFile; fileRef = 189555541E31D12000563E6C /* list.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		186078C11E3199CF00161801 /* consts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = consts.h; sourceTree = "<group>"; };
+		186078C21E3199CF00161801 /* defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = defines.h; sourceTree = "<group>"; };
+		186078C31E3199CF00161801 /* foundation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = foundation.cpp; sourceTree = "<group>"; };
+		186078C51E3199CF00161801 /* allocator.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = allocator.h; sourceTree = "<group>"; };
+		186078C61E3199CF00161801 /* memory_tracker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = memory_tracker.cpp; sourceTree = "<group>"; };
+		186078C71E3199CF00161801 /* memory_tracker.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = memory_tracker.h; sourceTree = "<group>"; };
+		186078C81E3199CF00161801 /* singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = singleton.h; sourceTree = "<group>"; };
+		186078CB1E3199CF00161801 /* map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = map.h; sourceTree = "<group>"; };
+		186078CC1E3199CF00161801 /* multimap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = multimap.h; sourceTree = "<group>"; };
+		186078CD1E3199CF00161801 /* unordered_map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unordered_map.h; sourceTree = "<group>"; };
+		186078CE1E3199CF00161801 /* unordered_multimap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unordered_multimap.h; sourceTree = "<group>"; };
+		186078CF1E3199CF00161801 /* vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vector.h; sourceTree = "<group>"; };
+		186078DD1E31B1D900161801 /* foundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = foundation.h; sourceTree = "<group>"; };
 		188934D61E2A8A9700755A32 /* libfoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libfoundation.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		18D563D51E2DD02900680B1C /* allocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = allocator.h; sourceTree = "<group>"; };
-		18D563D61E2DD02900680B1C /* consts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = consts.h; sourceTree = "<group>"; };
-		18D563D71E2DD02900680B1C /* defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = defines.h; sourceTree = "<group>"; };
-		18D563D81E2DD02900680B1C /* foundation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = foundation.cpp; sourceTree = "<group>"; };
+		189555541E31D12000563E6C /* list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = list.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,10 +66,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		186078C01E3199CF00161801 /* foundation */ = {
+			isa = PBXGroup;
+			children = (
+				186078C91E3199CF00161801 /* standard_libraries */,
+				186078C41E3199CF00161801 /* memory */,
+				186078C11E3199CF00161801 /* consts.h */,
+				186078C21E3199CF00161801 /* defines.h */,
+				186078C31E3199CF00161801 /* foundation.cpp */,
+				186078C81E3199CF00161801 /* singleton.h */,
+				186078DD1E31B1D900161801 /* foundation.h */,
+			);
+			name = foundation;
+			path = ../../foundation;
+			sourceTree = "<group>";
+		};
+		186078C41E3199CF00161801 /* memory */ = {
+			isa = PBXGroup;
+			children = (
+				186078C51E3199CF00161801 /* allocator.h */,
+				186078C61E3199CF00161801 /* memory_tracker.cpp */,
+				186078C71E3199CF00161801 /* memory_tracker.h */,
+			);
+			path = memory;
+			sourceTree = "<group>";
+		};
+		186078C91E3199CF00161801 /* standard_libraries */ = {
+			isa = PBXGroup;
+			children = (
+				189555541E31D12000563E6C /* list.h */,
+				186078CB1E3199CF00161801 /* map.h */,
+				186078CC1E3199CF00161801 /* multimap.h */,
+				186078CD1E3199CF00161801 /* unordered_map.h */,
+				186078CE1E3199CF00161801 /* unordered_multimap.h */,
+				186078CF1E3199CF00161801 /* vector.h */,
+			);
+			path = standard_libraries;
+			sourceTree = "<group>";
+		};
 		188934CD1E2A8A9600755A32 = {
 			isa = PBXGroup;
 			children = (
-				18D563D41E2DD02900680B1C /* fundation */,
+				186078C01E3199CF00161801 /* foundation */,
 				188934D71E2A8A9700755A32 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,18 +120,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		18D563D41E2DD02900680B1C /* fundation */ = {
-			isa = PBXGroup;
-			children = (
-				18D563D51E2DD02900680B1C /* allocator.h */,
-				18D563D61E2DD02900680B1C /* consts.h */,
-				18D563D71E2DD02900680B1C /* defines.h */,
-				18D563D81E2DD02900680B1C /* foundation.cpp */,
-			);
-			name = fundation;
-			path = ../../fundation;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -81,9 +127,18 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18D563DA1E2DD02900680B1C /* consts.h in Headers */,
-				18D563DB1E2DD02900680B1C /* defines.h in Headers */,
-				18D563D91E2DD02900680B1C /* allocator.h in Headers */,
+				186078D01E3199CF00161801 /* consts.h in Headers */,
+				1895553F1E31C7D000563E6C /* foundation.h in Headers */,
+				186078DA1E3199CF00161801 /* unordered_map.h in Headers */,
+				186078D91E3199CF00161801 /* multimap.h in Headers */,
+				189555551E31D12000563E6C /* list.h in Headers */,
+				186078DC1E3199CF00161801 /* vector.h in Headers */,
+				186078D31E3199CF00161801 /* allocator.h in Headers */,
+				186078D81E3199CF00161801 /* map.h in Headers */,
+				186078D51E3199CF00161801 /* memory_tracker.h in Headers */,
+				186078DB1E3199CF00161801 /* unordered_multimap.h in Headers */,
+				186078D61E3199CF00161801 /* singleton.h in Headers */,
+				186078D11E3199CF00161801 /* defines.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,7 +222,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18D563DC1E2DD02900680B1C /* foundation.cpp in Sources */,
+				186078D21E3199CF00161801 /* foundation.cpp in Sources */,
+				186078D41E3199CF00161801 /* memory_tracker.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +268,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/../../lib/mac/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -281,26 +338,32 @@
 		188934E21E2A8A9700755A32 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_OPTIMIZATION_PROFILE_FILE = "";
 				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/../../lib/mac/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				DEVELOPMENT_TEAM = 95BDJ9G9B4;
 				EXECUTABLE_PREFIX = lib;
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_ENABLE_CPP_RTTI = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../foundation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
 		188934E31E2A8A9700755A32 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_OPTIMIZATION_PROFILE_FILE = "";
 				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/../../lib/mac/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				DEVELOPMENT_TEAM = 95BDJ9G9B4;
 				EXECUTABLE_PREFIX = lib;
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_ENABLE_CPP_RTTI = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../foundation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};

@@ -7,9 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		189555531E31D10400563E6C /* libfoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1895554F1E31D0D700563E6C /* libfoundation.a */; };
 		18D563BA1E2ACC9E00680B1C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D563B91E2ACC9E00680B1C /* main.cpp */; };
-		18D563D31E2D4F7900680B1C /* libfoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D563D21E2D4F7900680B1C /* libfoundation.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1895554E1E31D0D700563E6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 189555491E31D0D700563E6C /* foundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 188934D61E2A8A9700755A32;
+			remoteInfo = foundation;
+		};
+		189555501E31D0E800563E6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 189555491E31D0D700563E6C /* foundation.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 188934D51E2A8A9600755A32;
+			remoteInfo = foundation;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		18D563B41E2ACC9E00680B1C /* CopyFiles */ = {
@@ -24,6 +41,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		189555491E31D0D700563E6C /* foundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = foundation.xcodeproj; path = ../foundation/projs/mac/foundation.xcodeproj; sourceTree = "<group>"; };
 		18D563B61E2ACC9E00680B1C /* test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = test; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D563B91E2ACC9E00680B1C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		18D563D21E2D4F7900680B1C /* libfoundation.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfoundation.a; path = ../foundation/lib/mac/Debug/libfoundation.a; sourceTree = "<group>"; };
@@ -34,16 +52,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18D563D31E2D4F7900680B1C /* libfoundation.a in Frameworks */,
+				189555531E31D10400563E6C /* libfoundation.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1895554A1E31D0D700563E6C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1895554F1E31D0D700563E6C /* libfoundation.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		18D563AD1E2ACC9E00680B1C = {
 			isa = PBXGroup;
 			children = (
+				189555491E31D0D700563E6C /* foundation.xcodeproj */,
 				18D563B81E2ACC9E00680B1C /* test */,
 				18D563B71E2ACC9E00680B1C /* Products */,
 				18D563C61E2ACCDD00680B1C /* Frameworks */,
@@ -88,6 +115,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				189555511E31D0E800563E6C /* PBXTargetDependency */,
 			);
 			name = test;
 			productName = test;
@@ -120,12 +148,28 @@
 			mainGroup = 18D563AD1E2ACC9E00680B1C;
 			productRefGroup = 18D563B71E2ACC9E00680B1C /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 1895554A1E31D0D700563E6C /* Products */;
+					ProjectRef = 189555491E31D0D700563E6C /* foundation.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				18D563B51E2ACC9E00680B1C /* test */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		1895554F1E31D0D700563E6C /* libfoundation.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libfoundation.a;
+			remoteRef = 1895554E1E31D0D700563E6C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		18D563B21E2ACC9E00680B1C /* Sources */ = {
@@ -137,6 +181,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		189555511E31D0E800563E6C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = foundation;
+			targetProxy = 189555501E31D0E800563E6C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		18D563BB1E2ACC9E00680B1C /* Debug */ = {
@@ -230,7 +282,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 95BDJ9G9B4;
-				HEADER_SEARCH_PATHS = ../foundation;
+				HEADER_SEARCH_PATHS = "../foundation/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -239,7 +291,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 95BDJ9G9B4;
-				HEADER_SEARCH_PATHS = ../foundation;
+				HEADER_SEARCH_PATHS = "../foundation/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -263,6 +315,7 @@
 				18D563BF1E2ACC9E00680B1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
