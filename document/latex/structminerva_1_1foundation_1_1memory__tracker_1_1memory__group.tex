@@ -1,0 +1,36 @@
+\hypertarget{structminerva_1_1foundation_1_1memory__tracker_1_1memory__group}{}\section{minerva\+:\+:foundation\+:\+:memory\+\_\+tracker\+:\+:memory\+\_\+group Struct Reference}
+\label{structminerva_1_1foundation_1_1memory__tracker_1_1memory__group}\index{minerva\+::foundation\+::memory\+\_\+tracker\+::memory\+\_\+group@{minerva\+::foundation\+::memory\+\_\+tracker\+::memory\+\_\+group}}
+
+
+group organized by line, function, size and count  
+
+
+
+
+{\ttfamily \#include $<$memory\+\_\+tracker.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structminerva_1_1foundation_1_1memory__tracker_1_1memory__group_a0b996e4b95bf6f86bcc6572b73ea5732}\label{structminerva_1_1foundation_1_1memory__tracker_1_1memory__group_a0b996e4b95bf6f86bcc6572b73ea5732}} 
+\hyperlink{structminerva_1_1foundation_1_1memory__tracker_1_1memory__group_a0b996e4b95bf6f86bcc6572b73ea5732}{memory\+\_\+group} (std\+::string \&\&funcn)
+\begin{DoxyCompactList}\small\item\em ctor for structure \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structminerva_1_1foundation_1_1memory__tracker_1_1memory__group_a13b93feaacbc98de0a5978420897ea29}\label{structminerva_1_1foundation_1_1memory__tracker_1_1memory__group_a13b93feaacbc98de0a5978420897ea29}} 
+std\+::string \hyperlink{structminerva_1_1foundation_1_1memory__tracker_1_1memory__group_a13b93feaacbc98de0a5978420897ea29}{function\+\_\+name}
+\begin{DoxyCompactList}\small\item\em function \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structminerva_1_1foundation_1_1memory__tracker_1_1memory__group_a3de304ca6ef752b29198b97fde2208f4}\label{structminerva_1_1foundation_1_1memory__tracker_1_1memory__group_a3de304ca6ef752b29198b97fde2208f4}} 
+mi\+\_\+vector$<$ \hyperlink{structminerva_1_1foundation_1_1memory__tracker_1_1memory__size__count__info}{memory\+\_\+size\+\_\+count\+\_\+info} $>$ \hyperlink{structminerva_1_1foundation_1_1memory__tracker_1_1memory__group_a3de304ca6ef752b29198b97fde2208f4}{size\+\_\+count\+\_\+array}
+\begin{DoxyCompactList}\small\item\em size\&count info for different line\&function \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+group organized by line, function, size and count 
+
+We organize the memory blocks by a key (function) and it\textquotesingle{}s values. Due to a memory allocation may be occured more than once in a single function, so we use a container to distinguish different allocations, besides, the size may vary even in a same line, for instance, array allocation with different size, so we need to handle this too 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+foundation/foundation/memory/\hyperlink{memory__tracker_8h}{memory\+\_\+tracker.\+h}\end{DoxyCompactItemize}

@@ -60,11 +60,6 @@ void memory_tracker::output_informations()
     for ( auto iter = _groups.begin(); iter != _groups.end(); ++iter )
     {
         memory_group& group = *iter;
-//        mi_unordered_map<int, int> sizes;
-//        for ( auto iter_group = group.size_count_array.begin(); iter_group != group.size_count_array.end(); ++iter_group )
-//        {
-//            sizes[iter_group->n_line] += iter_group->t_size * iter_group->ui_count;
-//        }
         // print infor of this group
         for( const auto s : group.size_count_array )
         {

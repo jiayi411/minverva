@@ -1,0 +1,127 @@
+\hypertarget{classminerva_1_1foundation_1_1allocator}{}\section{minerva\+:\+:foundation\+:\+:allocator Class Reference}
+\label{classminerva_1_1foundation_1_1allocator}\index{minerva\+::foundation\+::allocator@{minerva\+::foundation\+::allocator}}
+
+
+base class of all objects in minerva  
+
+
+
+
+{\ttfamily \#include $<$allocator.\+h$>$}
+
+Inheritance diagram for minerva\+:\+:foundation\+:\+:allocator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.886598cm]{classminerva_1_1foundation_1_1allocator}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classminerva_1_1foundation_1_1allocator_a1d984a6c7360cac43c6182fc8c27f263}\label{classminerva_1_1foundation_1_1allocator_a1d984a6c7360cac43c6182fc8c27f263}} 
+\hyperlink{classminerva_1_1foundation_1_1allocator_a1d984a6c7360cac43c6182fc8c27f263}{allocator} ()
+\begin{DoxyCompactList}\small\item\em ctor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classminerva_1_1foundation_1_1allocator_a1818227b868a680283eb08fbaf2abec9}\label{classminerva_1_1foundation_1_1allocator_a1818227b868a680283eb08fbaf2abec9}} 
+\hyperlink{classminerva_1_1foundation_1_1allocator_a1818227b868a680283eb08fbaf2abec9}{$\sim$allocator} ()
+\begin{DoxyCompactList}\small\item\em dtor \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{classminerva_1_1foundation_1_1allocator_af693b0cd3bdec3bfdc4885b15f9d04c6}{operator new} (size\+\_\+t size, const char $\ast$file, int line, const char $\ast$function)
+\begin{DoxyCompactList}\small\item\em operator new with debug information \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{classminerva_1_1foundation_1_1allocator_a19f76fd74546cc86283694836b55570b}{operator new\mbox{[}$\,$\mbox{]}} (size\+\_\+t size, const char $\ast$file, int line, const char $\ast$function)
+\begin{DoxyCompactList}\small\item\em operator new\mbox{[}\mbox{]} with debug information \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{classminerva_1_1foundation_1_1allocator_abcd9786a851f3e12030c6dc5dffd1005}{operator new} (size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em operator delete \end{DoxyCompactList}\item 
+void \hyperlink{classminerva_1_1foundation_1_1allocator_ae33b6c28ecbd236c7e974ac9270601a8}{operator delete} (void $\ast$ptr)
+\begin{DoxyCompactList}\small\item\em operator delete \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+base class of all objects in minerva 
+
+Base class for override new \& delete function and added tracing method when in debug mode 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classminerva_1_1foundation_1_1allocator_ae33b6c28ecbd236c7e974ac9270601a8}\label{classminerva_1_1foundation_1_1allocator_ae33b6c28ecbd236c7e974ac9270601a8}} 
+\index{minerva\+::foundation\+::allocator@{minerva\+::foundation\+::allocator}!operator delete@{operator delete}}
+\index{operator delete@{operator delete}!minerva\+::foundation\+::allocator@{minerva\+::foundation\+::allocator}}
+\subsubsection{\texorpdfstring{operator delete()}{operator delete()}}
+{\footnotesize\ttfamily void minerva\+::foundation\+::allocator\+::operator delete (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+operator delete 
+
+free an object, with a switch for tracing purpose
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ptr} & pointer of object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classminerva_1_1foundation_1_1allocator_af693b0cd3bdec3bfdc4885b15f9d04c6}\label{classminerva_1_1foundation_1_1allocator_af693b0cd3bdec3bfdc4885b15f9d04c6}} 
+\index{minerva\+::foundation\+::allocator@{minerva\+::foundation\+::allocator}!operator new@{operator new}}
+\index{operator new@{operator new}!minerva\+::foundation\+::allocator@{minerva\+::foundation\+::allocator}}
+\subsubsection{\texorpdfstring{operator new()}{operator new()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void$\ast$ minerva\+::foundation\+::allocator\+::operator new (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size,  }\item[{const char $\ast$}]{file,  }\item[{int}]{line,  }\item[{const char $\ast$}]{function }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+operator new with debug information 
+
+only activated on debug mode, with a switch for tracing purpose
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em size} & object\textquotesingle{}s size \\
+\hline
+\mbox{\tt in}  & {\em file} & which file the new operator occured \\
+\hline
+\mbox{\tt in}  & {\em line} & where the new located in the file \\
+\hline
+\mbox{\tt in}  & {\em function} & the function where the new called \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classminerva_1_1foundation_1_1allocator_abcd9786a851f3e12030c6dc5dffd1005}\label{classminerva_1_1foundation_1_1allocator_abcd9786a851f3e12030c6dc5dffd1005}} 
+\index{minerva\+::foundation\+::allocator@{minerva\+::foundation\+::allocator}!operator new@{operator new}}
+\index{operator new@{operator new}!minerva\+::foundation\+::allocator@{minerva\+::foundation\+::allocator}}
+\subsubsection{\texorpdfstring{operator new()}{operator new()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void$\ast$ minerva\+::foundation\+::allocator\+::operator new (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+operator delete 
+
+free an object, with a switch for tracing purpose
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em size} & object\textquotesingle{}s size \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classminerva_1_1foundation_1_1allocator_a19f76fd74546cc86283694836b55570b}\label{classminerva_1_1foundation_1_1allocator_a19f76fd74546cc86283694836b55570b}} 
+\index{minerva\+::foundation\+::allocator@{minerva\+::foundation\+::allocator}!operator new\mbox{[}\mbox{]}@{operator new[]}}
+\index{operator new\mbox{[}\mbox{]}@{operator new[]}!minerva\+::foundation\+::allocator@{minerva\+::foundation\+::allocator}}
+\subsubsection{\texorpdfstring{operator new[]()}{operator new[]()}}
+{\footnotesize\ttfamily void$\ast$ minerva\+::foundation\+::allocator\+::operator new\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size,  }\item[{const char $\ast$}]{file,  }\item[{int}]{line,  }\item[{const char $\ast$}]{function }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+operator new\mbox{[}\mbox{]} with debug information 
+
+only activated on debug mode, with a switch for tracing purpose
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em size} & object\textquotesingle{}s size \\
+\hline
+\mbox{\tt in}  & {\em file} & which file the new operator occured \\
+\hline
+\mbox{\tt in}  & {\em line} & where the new located in the file \\
+\hline
+\mbox{\tt in}  & {\em function} & the function where the new called \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+foundation/foundation/memory/\hyperlink{allocator_8h}{allocator.\+h}\end{DoxyCompactItemize}

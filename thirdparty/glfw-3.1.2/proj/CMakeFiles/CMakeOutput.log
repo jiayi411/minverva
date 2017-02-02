@@ -1,0 +1,348 @@
+The system is: Darwin - 16.3.0 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler:  
+Build flags: 
+Id flags: 
+
+The output was:
+0
+2017-01-30 15:07:10.781 xcodebuild[11540:1502085] [MT] PluginLoading: Required plug-in compatibility UUID E0A62D1F-3C18-4D74-BFE5-A4167D643966 for plug-in at path '~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin' not present in DVTPlugInCompatibilityUUIDs
+=== BUILD TARGET CompilerIdC OF PROJECT CompilerIdC WITH THE DEFAULT CONFIGURATION (Debug) ===
+
+Check dependencies
+
+Write auxiliary files
+write-file /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/3.7.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC-all-target-headers.hmap
+write-file /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/3.7.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+chmod 0755 /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/3.7.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+write-file /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/3.7.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC.hmap
+/bin/mkdir -p /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/3.7.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/x86_64
+write-file /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/3.7.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/x86_64/CompilerIdC.LinkFileList
+write-file /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/3.7.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC-project-headers.hmap
+write-file /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/3.7.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC-generated-files.hmap
+write-file /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/3.7.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC-all-non-framework-target-headers.hmap
+write-file /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/3.7.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC-own-target-headers.hmap
+
+CompileC CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/x86_64/CMakeCCompilerId.o CMakeCCompilerId.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/3.7.2/CompilerIdC
+    export LANG=en_US.US-ASCII
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -mmacosx-version-min=10.12 -g -fvisibility=hidden -Wno-sign-conversion -Wno-infinite-recursion -I/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/3.7.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC.hmap -I/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/3.7.2/CompilerIdC/include -I/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/3.7.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/DerivedSources/x86_64 -I/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/3.7.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/DerivedSources -F/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/3.7.2/CompilerIdC -MMD -MT dependencies -MF /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/3.7.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/x86_64/CMakeCCompilerId.d --serialize-diagnostics /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/3.7.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/x86_64/CMakeCCompilerId.dia -c /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/3.7.2/CompilerIdC/CMakeCCompilerId.c -o /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/3.7.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/x86_64/CMakeCCompilerId.o
+
+Ld CompilerIdC normal x86_64
+    cd /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/3.7.2/CompilerIdC
+    export MACOSX_DEPLOYMENT_TARGET=10.12
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -L/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/3.7.2/CompilerIdC -F/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/3.7.2/CompilerIdC -filelist /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/3.7.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/x86_64/CompilerIdC.LinkFileList -mmacosx-version-min=10.12 -Xlinker -object_path_lto -Xlinker /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/3.7.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/x86_64/CompilerIdC_lto.o -Xlinker -dependency_info -Xlinker /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/3.7.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/x86_64/CompilerIdC_dependency_info.dat -o /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/3.7.2/CompilerIdC/CompilerIdC
+
+PhaseScriptExecution Run\ Script CompilerIdC.build/Debug/CompilerIdC.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+    cd /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/3.7.2/CompilerIdC
+    /bin/sh -c /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/3.7.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+GCC_VERSION=com.apple.compilers.llvm.clang.1_0
+
+** BUILD SUCCEEDED **
+
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC"
+
+The C compiler identification is AppleClang, found in "/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/3.7.2/CompilerIdC/CompilerIdC"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/xcodebuild" "-project" "CMAKE_TRY_COMPILE.xcodeproj" "build" "-target" "cmTC_7453d" "-configuration" "Debug"
+2017-01-30 15:07:11.656 xcodebuild[11559:1502192] [MT] PluginLoading: Required plug-in compatibility UUID E0A62D1F-3C18-4D74-BFE5-A4167D643966 for plug-in at path '~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin' not present in DVTPlugInCompatibilityUUIDs
+=== BUILD TARGET cmTC_7453d OF PROJECT CMAKE_TRY_COMPILE WITH CONFIGURATION Debug ===
+
+Check dependencies
+
+Write auxiliary files
+/bin/mkdir -p /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_7453d.build/Objects-normal/x86_64
+write-file /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_7453d.build/Objects-normal/x86_64/cmTC_7453d.LinkFileList
+
+CompileC CMAKE_TRY_COMPILE.build/Debug/cmTC_7453d.build/Objects-normal/x86_64/testCCompiler.o testCCompiler.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp
+    export LANG=en_US.US-ASCII
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -DCMAKE_INTDIR=\"Debug\" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -mmacosx-version-min=10.12 -g -Wno-sign-conversion -Wno-infinite-recursion -I/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug/include -I/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_7453d.build/DerivedSources/x86_64 -I/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_7453d.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug -MMD -MT dependencies -MF /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_7453d.build/Objects-normal/x86_64/testCCompiler.d --serialize-diagnostics /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_7453d.build/Objects-normal/x86_64/testCCompiler.dia -c /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/testCCompiler.c -o /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_7453d.build/Objects-normal/x86_64/testCCompiler.o
+
+Ld Debug/cmTC_7453d normal x86_64
+    cd /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp
+    export MACOSX_DEPLOYMENT_TARGET=10.12
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -L/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug -F/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug -filelist /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_7453d.build/Objects-normal/x86_64/cmTC_7453d.LinkFileList -mmacosx-version-min=10.12 -Xlinker -object_path_lto -Xlinker /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_7453d.build/Objects-normal/x86_64/cmTC_7453d_lto.o -Xlinker -no_deduplicate -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Xlinker -dependency_info -Xlinker /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_7453d.build/Objects-normal/x86_64/cmTC_7453d_dependency_info.dat -o /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug/cmTC_7453d
+
+** BUILD SUCCEEDED **
+
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/xcodebuild" "-project" "CMAKE_TRY_COMPILE.xcodeproj" "build" "-target" "cmTC_2dd44" "-configuration" "Debug"
+2017-01-30 15:07:12.487 xcodebuild[11576:1502276] [MT] PluginLoading: Required plug-in compatibility UUID E0A62D1F-3C18-4D74-BFE5-A4167D643966 for plug-in at path '~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin' not present in DVTPlugInCompatibilityUUIDs
+=== BUILD TARGET cmTC_2dd44 OF PROJECT CMAKE_TRY_COMPILE WITH CONFIGURATION Debug ===
+
+Check dependencies
+
+Write auxiliary files
+/bin/mkdir -p /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/Objects-normal/x86_64
+write-file /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/Objects-normal/x86_64/cmTC_2dd44.LinkFileList
+
+CompileC CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/Objects-normal/x86_64/CMakeCCompilerABI.o /Applications/CMake.app/Contents/share/cmake-3.7/Modules/CMakeCCompilerABI.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp
+    export LANG=en_US.US-ASCII
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -DCMAKE_INTDIR=\"Debug\" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -mmacosx-version-min=10.12 -g -Wno-sign-conversion -Wno-infinite-recursion -I/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug/include -I/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/DerivedSources/x86_64 -I/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug -MMD -MT dependencies -MF /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/Objects-normal/x86_64/CMakeCCompilerABI.d --serialize-diagnostics /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/Objects-normal/x86_64/CMakeCCompilerABI.dia -c /Applications/CMake.app/Contents/share/cmake-3.7/Modules/CMakeCCompilerABI.c -o /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/Objects-normal/x86_64/CMakeCCompilerABI.o
+
+Ld Debug/cmTC_2dd44 normal x86_64
+    cd /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp
+    export MACOSX_DEPLOYMENT_TARGET=10.12
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -L/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug -F/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug -filelist /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/Objects-normal/x86_64/cmTC_2dd44.LinkFileList -mmacosx-version-min=10.12 -Xlinker -object_path_lto -Xlinker /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/Objects-normal/x86_64/cmTC_2dd44_lto.o -Xlinker -no_deduplicate -v -Wl,-v -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Xlinker -dependency_info -Xlinker /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/Objects-normal/x86_64/cmTC_2dd44_dependency_info.dat -o /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug/cmTC_2dd44
+Apple LLVM version 8.0.0 (clang-800.0.42.1)
+Target: x86_64-apple-darwin16.3.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.12.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -o /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug/cmTC_2dd44 -L/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug -filelist /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/Objects-normal/x86_64/cmTC_2dd44.LinkFileList -object_path_lto /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/Objects-normal/x86_64/cmTC_2dd44_lto.o -no_deduplicate -v -search_paths_first -headerpad_max_install_names -dependency_info /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/Objects-normal/x86_64/cmTC_2dd44_dependency_info.dat -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/lib/darwin/libclang_rt.osx.a -F/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug
+@(#)PROGRAM:ld  PROJECT:ld64-274.2
+configured to support archs: armv6 armv7 armv7s arm64 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em (tvOS)
+Library search paths:
+	/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug
+	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/lib
+Framework search paths:
+	/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug
+	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/
+
+** BUILD SUCCEEDED **
+
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/xcodebuild" "-project" "CMAKE_TRY_COMPILE.xcodeproj" "build" "-target" "cmTC_2dd44" "-configuration" "Debug"]
+  ignore line: [2017-01-30 15:07:12.487 xcodebuild[11576:1502276] [MT] PluginLoading: Required plug-in compatibility UUID E0A62D1F-3C18-4D74-BFE5-A4167D643966 for plug-in at path '~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin' not present in DVTPlugInCompatibilityUUIDs]
+  ignore line: [=== BUILD TARGET cmTC_2dd44 OF PROJECT CMAKE_TRY_COMPILE WITH CONFIGURATION Debug ===]
+  ignore line: []
+  ignore line: [Check dependencies]
+  ignore line: []
+  ignore line: [Write auxiliary files]
+  ignore line: [/bin/mkdir -p /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/Objects-normal/x86_64]
+  ignore line: [write-file /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/Objects-normal/x86_64/cmTC_2dd44.LinkFileList]
+  ignore line: []
+  ignore line: [CompileC CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/Objects-normal/x86_64/CMakeCCompilerABI.o /Applications/CMake.app/Contents/share/cmake-3.7/Modules/CMakeCCompilerABI.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler]
+  ignore line: [    cd /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp]
+  ignore line: [    export LANG=en_US.US-ASCII]
+  ignore line: [    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -DCMAKE_INTDIR=\"Debug\" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -mmacosx-version-min=10.12 -g -Wno-sign-conversion -Wno-infinite-recursion -I/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug/include -I/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/DerivedSources/x86_64 -I/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug -MMD -MT dependencies -MF /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/Objects-normal/x86_64/CMakeCCompilerABI.d --serialize-diagnostics /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/Objects-normal/x86_64/CMakeCCompilerABI.dia -c /Applications/CMake.app/Contents/share/cmake-3.7/Modules/CMakeCCompilerABI.c -o /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/Objects-normal/x86_64/CMakeCCompilerABI.o]
+  ignore line: []
+  ignore line: [Ld Debug/cmTC_2dd44 normal x86_64]
+  ignore line: [    cd /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp]
+  ignore line: [    export MACOSX_DEPLOYMENT_TARGET=10.12]
+  ignore line: [    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -L/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug -F/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug -filelist /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/Objects-normal/x86_64/cmTC_2dd44.LinkFileList -mmacosx-version-min=10.12 -Xlinker -object_path_lto -Xlinker /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/Objects-normal/x86_64/cmTC_2dd44_lto.o -Xlinker -no_deduplicate -v -Wl,-v -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Xlinker -dependency_info -Xlinker /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/Objects-normal/x86_64/cmTC_2dd44_dependency_info.dat -o /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug/cmTC_2dd44]
+  ignore line: [Apple LLVM version 8.0.0 (clang-800.0.42.1)]
+  ignore line: [Target: x86_64-apple-darwin16.3.0]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin]
+  reduced line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.12.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -o /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug/cmTC_2dd44 -L/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug -filelist /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/Objects-normal/x86_64/cmTC_2dd44.LinkFileList -object_path_lto /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/Objects-normal/x86_64/cmTC_2dd44_lto.o -no_deduplicate -v -search_paths_first -headerpad_max_install_names -dependency_info /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/Objects-normal/x86_64/cmTC_2dd44_dependency_info.dat -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/lib/darwin/libclang_rt.osx.a -F/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug]
+            to: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.12.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -o /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug/cmTC_2dd44 -filelist /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/Objects-normal/x86_64/cmTC_2dd44.LinkFileList -object_path_lto /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/Objects-normal/x86_64/cmTC_2dd44_lto.o -no_deduplicate -v -search_paths_first -headerpad_max_install_names -dependency_info /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/Objects-normal/x86_64/cmTC_2dd44_dependency_info.dat -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/lib/darwin/libclang_rt.osx.a ]
+  link line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.12.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -o /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug/cmTC_2dd44 -filelist /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/Objects-normal/x86_64/cmTC_2dd44.LinkFileList -object_path_lto /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/Objects-normal/x86_64/cmTC_2dd44_lto.o -no_deduplicate -v -search_paths_first -headerpad_max_install_names -dependency_info /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/Objects-normal/x86_64/cmTC_2dd44_dependency_info.dat -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/lib/darwin/libclang_rt.osx.a ]
+    arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld] ==> ignore
+    arg [-demangle] ==> ignore
+    arg [-dynamic] ==> ignore
+    arg [-arch] ==> ignore
+    arg [x86_64] ==> ignore
+    arg [-macosx_version_min] ==> ignore
+    arg [10.12.0] ==> ignore
+    arg [-syslibroot] ==> ignore
+    arg [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk] ==> ignore
+    arg [-o] ==> ignore
+    arg [/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug/cmTC_2dd44] ==> ignore
+    arg [-filelist] ==> ignore
+    arg [/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/Objects-normal/x86_64/cmTC_2dd44.LinkFileList] ==> ignore
+    arg [-object_path_lto] ==> ignore
+    arg [/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/Objects-normal/x86_64/cmTC_2dd44_lto.o] ==> ignore
+    arg [-no_deduplicate] ==> ignore
+    arg [-v] ==> ignore
+    arg [-search_paths_first] ==> ignore
+    arg [-headerpad_max_install_names] ==> ignore
+    arg [-dependency_info] ==> ignore
+    arg [/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_2dd44.build/Objects-normal/x86_64/cmTC_2dd44_dependency_info.dat] ==> ignore
+    arg [-lSystem] ==> lib [System]
+    arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/lib/darwin/libclang_rt.osx.a] ==> lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/lib/darwin/libclang_rt.osx.a]
+  Library search paths: [;/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/lib]
+  Framework search paths: [;/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/]
+  remove lib [System]
+  remove lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/lib/darwin/libclang_rt.osx.a]
+  collapse library dir [/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug] ==> [/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug], skipping non-system directory
+  collapse library dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/lib] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/lib]
+  collapse framework dir [/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug] ==> [/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug], skipping non-system directory
+  collapse framework dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks]
+  implicit libs: []
+  implicit dirs: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/lib]
+  implicit fwks: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks]
+
+
+
+
+Detecting C [-std=c11] compiler features compiled with the following output:
+Change Dir: /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/xcodebuild" "-project" "CMAKE_TRY_COMPILE.xcodeproj" "build" "-target" "cmTC_bdfec" "-configuration" "Debug"
+2017-01-30 15:07:13.314 xcodebuild[11593:1502599] [MT] PluginLoading: Required plug-in compatibility UUID E0A62D1F-3C18-4D74-BFE5-A4167D643966 for plug-in at path '~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin' not present in DVTPlugInCompatibilityUUIDs
+=== BUILD TARGET cmTC_bdfec OF PROJECT CMAKE_TRY_COMPILE WITH CONFIGURATION Debug ===
+
+Check dependencies
+
+Write auxiliary files
+/bin/mkdir -p /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_bdfec.build/Objects-normal/x86_64
+write-file /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_bdfec.build/Objects-normal/x86_64/cmTC_bdfec.LinkFileList
+
+CompileC CMAKE_TRY_COMPILE.build/Debug/cmTC_bdfec.build/Objects-normal/x86_64/feature_tests.o /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/feature_tests.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp
+    export LANG=en_US.US-ASCII
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -DCMAKE_INTDIR=\"Debug\" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -mmacosx-version-min=10.12 -g -Wno-sign-conversion -Wno-infinite-recursion -I/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug/include -I/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_bdfec.build/DerivedSources/x86_64 -I/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_bdfec.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug -std=c11 -MMD -MT dependencies -MF /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_bdfec.build/Objects-normal/x86_64/feature_tests.d --serialize-diagnostics /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_bdfec.build/Objects-normal/x86_64/feature_tests.dia -c /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/feature_tests.c -o /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_bdfec.build/Objects-normal/x86_64/feature_tests.o
+
+Ld Debug/cmTC_bdfec normal x86_64
+    cd /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp
+    export MACOSX_DEPLOYMENT_TARGET=10.12
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -L/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug -F/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug -filelist /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_bdfec.build/Objects-normal/x86_64/cmTC_bdfec.LinkFileList -mmacosx-version-min=10.12 -Xlinker -object_path_lto -Xlinker /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_bdfec.build/Objects-normal/x86_64/cmTC_bdfec_lto.o -Xlinker -no_deduplicate -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Xlinker -dependency_info -Xlinker /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_bdfec.build/Objects-normal/x86_64/cmTC_bdfec_dependency_info.dat -o /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug/cmTC_bdfec
+
+** BUILD SUCCEEDED **
+
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:1c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c99] compiler features compiled with the following output:
+Change Dir: /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/xcodebuild" "-project" "CMAKE_TRY_COMPILE.xcodeproj" "build" "-target" "cmTC_b72f1" "-configuration" "Debug"
+2017-01-30 15:07:14.126 xcodebuild[11610:1502658] [MT] PluginLoading: Required plug-in compatibility UUID E0A62D1F-3C18-4D74-BFE5-A4167D643966 for plug-in at path '~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin' not present in DVTPlugInCompatibilityUUIDs
+=== BUILD TARGET cmTC_b72f1 OF PROJECT CMAKE_TRY_COMPILE WITH CONFIGURATION Debug ===
+
+Check dependencies
+
+Write auxiliary files
+/bin/mkdir -p /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_b72f1.build/Objects-normal/x86_64
+write-file /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_b72f1.build/Objects-normal/x86_64/cmTC_b72f1.LinkFileList
+
+CompileC CMAKE_TRY_COMPILE.build/Debug/cmTC_b72f1.build/Objects-normal/x86_64/feature_tests.o /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/feature_tests.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp
+    export LANG=en_US.US-ASCII
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -DCMAKE_INTDIR=\"Debug\" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -mmacosx-version-min=10.12 -g -Wno-sign-conversion -Wno-infinite-recursion -I/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug/include -I/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_b72f1.build/DerivedSources/x86_64 -I/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_b72f1.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug -std=c99 -MMD -MT dependencies -MF /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_b72f1.build/Objects-normal/x86_64/feature_tests.d --serialize-diagnostics /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_b72f1.build/Objects-normal/x86_64/feature_tests.dia -c /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/feature_tests.c -o /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_b72f1.build/Objects-normal/x86_64/feature_tests.o
+
+Ld Debug/cmTC_b72f1 normal x86_64
+    cd /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp
+    export MACOSX_DEPLOYMENT_TARGET=10.12
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -L/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug -F/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug -filelist /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_b72f1.build/Objects-normal/x86_64/cmTC_b72f1.LinkFileList -mmacosx-version-min=10.12 -Xlinker -object_path_lto -Xlinker /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_b72f1.build/Objects-normal/x86_64/cmTC_b72f1_lto.o -Xlinker -no_deduplicate -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Xlinker -dependency_info -Xlinker /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_b72f1.build/Objects-normal/x86_64/cmTC_b72f1_dependency_info.dat -o /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug/cmTC_b72f1
+
+** BUILD SUCCEEDED **
+
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c90] compiler features compiled with the following output:
+Change Dir: /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/xcodebuild" "-project" "CMAKE_TRY_COMPILE.xcodeproj" "build" "-target" "cmTC_6843c" "-configuration" "Debug"
+2017-01-30 15:07:14.941 xcodebuild[11627:1502717] [MT] PluginLoading: Required plug-in compatibility UUID E0A62D1F-3C18-4D74-BFE5-A4167D643966 for plug-in at path '~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin' not present in DVTPlugInCompatibilityUUIDs
+=== BUILD TARGET cmTC_6843c OF PROJECT CMAKE_TRY_COMPILE WITH CONFIGURATION Debug ===
+
+Check dependencies
+
+Write auxiliary files
+/bin/mkdir -p /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_6843c.build/Objects-normal/x86_64
+write-file /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_6843c.build/Objects-normal/x86_64/cmTC_6843c.LinkFileList
+
+CompileC CMAKE_TRY_COMPILE.build/Debug/cmTC_6843c.build/Objects-normal/x86_64/feature_tests.o /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/feature_tests.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp
+    export LANG=en_US.US-ASCII
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -DCMAKE_INTDIR=\"Debug\" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -mmacosx-version-min=10.12 -g -Wno-sign-conversion -Wno-infinite-recursion -I/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug/include -I/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_6843c.build/DerivedSources/x86_64 -I/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_6843c.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug -std=c90 -MMD -MT dependencies -MF /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_6843c.build/Objects-normal/x86_64/feature_tests.d --serialize-diagnostics /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_6843c.build/Objects-normal/x86_64/feature_tests.dia -c /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/feature_tests.c -o /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_6843c.build/Objects-normal/x86_64/feature_tests.o
+
+Ld Debug/cmTC_6843c normal x86_64
+    cd /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp
+    export MACOSX_DEPLOYMENT_TARGET=10.12
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -L/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug -F/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug -filelist /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_6843c.build/Objects-normal/x86_64/cmTC_6843c.LinkFileList -mmacosx-version-min=10.12 -Xlinker -object_path_lto -Xlinker /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_6843c.build/Objects-normal/x86_64/cmTC_6843c_lto.o -Xlinker -no_deduplicate -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Xlinker -dependency_info -Xlinker /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_6843c.build/Objects-normal/x86_64/cmTC_6843c_dependency_info.dat -o /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug/cmTC_6843c
+
+** BUILD SUCCEEDED **
+
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:0c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:0c_variadic_macros
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/xcodebuild" "-project" "CMAKE_TRY_COMPILE.xcodeproj" "build" "-target" "cmTC_3cad7" "-configuration" "Debug"
+2017-01-30 15:07:15.784 xcodebuild[11644:1502779] [MT] PluginLoading: Required plug-in compatibility UUID E0A62D1F-3C18-4D74-BFE5-A4167D643966 for plug-in at path '~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin' not present in DVTPlugInCompatibilityUUIDs
+=== BUILD TARGET cmTC_3cad7 OF PROJECT CMAKE_TRY_COMPILE WITH CONFIGURATION Debug ===
+
+Check dependencies
+
+Write auxiliary files
+/bin/mkdir -p /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_3cad7.build/Objects-normal/x86_64
+write-file /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_3cad7.build/Objects-normal/x86_64/cmTC_3cad7.LinkFileList
+
+CompileC CMAKE_TRY_COMPILE.build/Debug/cmTC_3cad7.build/Objects-normal/x86_64/CheckIncludeFile.o CheckIncludeFile.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp
+    export LANG=en_US.US-ASCII
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -DCMAKE_INTDIR=\"Debug\" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -mmacosx-version-min=10.12 -g -Wno-sign-conversion -Wno-infinite-recursion -I/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug/include -I/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_3cad7.build/DerivedSources/x86_64 -I/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_3cad7.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug -MMD -MT dependencies -MF /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_3cad7.build/Objects-normal/x86_64/CheckIncludeFile.d --serialize-diagnostics /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_3cad7.build/Objects-normal/x86_64/CheckIncludeFile.dia -c /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CheckIncludeFile.c -o /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_3cad7.build/Objects-normal/x86_64/CheckIncludeFile.o
+
+Ld Debug/cmTC_3cad7 normal x86_64
+    cd /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp
+    export MACOSX_DEPLOYMENT_TARGET=10.12
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -L/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug -F/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug -filelist /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_3cad7.build/Objects-normal/x86_64/cmTC_3cad7.LinkFileList -mmacosx-version-min=10.12 -Xlinker -object_path_lto -Xlinker /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_3cad7.build/Objects-normal/x86_64/cmTC_3cad7_lto.o -Xlinker -no_deduplicate -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Xlinker -dependency_info -Xlinker /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_3cad7.build/Objects-normal/x86_64/cmTC_3cad7_dependency_info.dat -o /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug/cmTC_3cad7
+
+** BUILD SUCCEEDED **
+
+
+
+Determining if the pthread_create exist passed with the following output:
+Change Dir: /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/xcodebuild" "-project" "CMAKE_TRY_COMPILE.xcodeproj" "build" "-target" "cmTC_c6d78" "-configuration" "Debug"
+2017-01-30 15:07:16.616 xcodebuild[11661:1502839] [MT] PluginLoading: Required plug-in compatibility UUID E0A62D1F-3C18-4D74-BFE5-A4167D643966 for plug-in at path '~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin' not present in DVTPlugInCompatibilityUUIDs
+=== BUILD TARGET cmTC_c6d78 OF PROJECT CMAKE_TRY_COMPILE WITH CONFIGURATION Debug ===
+
+Check dependencies
+
+Write auxiliary files
+/bin/mkdir -p /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_c6d78.build/Objects-normal/x86_64
+write-file /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_c6d78.build/Objects-normal/x86_64/cmTC_c6d78.LinkFileList
+
+CompileC CMAKE_TRY_COMPILE.build/Debug/cmTC_c6d78.build/Objects-normal/x86_64/CheckSymbolExists.o CheckSymbolExists.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp
+    export LANG=en_US.US-ASCII
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -DCMAKE_INTDIR=\"Debug\" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -mmacosx-version-min=10.12 -g -Wno-sign-conversion -Wno-infinite-recursion -I/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug/include -I/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_c6d78.build/DerivedSources/x86_64 -I/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_c6d78.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug -MMD -MT dependencies -MF /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_c6d78.build/Objects-normal/x86_64/CheckSymbolExists.d --serialize-diagnostics /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_c6d78.build/Objects-normal/x86_64/CheckSymbolExists.dia -c /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CheckSymbolExists.c -o /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_c6d78.build/Objects-normal/x86_64/CheckSymbolExists.o
+
+Ld Debug/cmTC_c6d78 normal x86_64
+    cd /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp
+    export MACOSX_DEPLOYMENT_TARGET=10.12
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -L/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug -F/Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug -filelist /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_c6d78.build/Objects-normal/x86_64/cmTC_c6d78.LinkFileList -mmacosx-version-min=10.12 -Xlinker -object_path_lto -Xlinker /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_c6d78.build/Objects-normal/x86_64/cmTC_c6d78_lto.o -Xlinker -no_deduplicate -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Xlinker -dependency_info -Xlinker /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_c6d78.build/Objects-normal/x86_64/cmTC_c6d78_dependency_info.dat -o /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/Debug/cmTC_c6d78
+
+** BUILD SUCCEEDED **
+
+
+File /Users/apple/Work/git/github/minverva/thirdparty/glfw-3.1.2/proj/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+

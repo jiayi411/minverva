@@ -6,20 +6,6 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		18746FC21E2AC19200581E8C /* doc */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 18746FC31E2AC19200581E8C /* Build configuration list for PBXAggregateTarget "doc" */;
-			buildPhases = (
-				18746FC61E2AC1A300581E8C /* ShellScript */,
-			);
-			dependencies = (
-			);
-			name = doc;
-			productName = doc;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		186078D01E3199CF00161801 /* consts.h in Headers */ = {isa = PBXBuildFile; fileRef = 186078C11E3199CF00161801 /* consts.h */; };
 		186078D11E3199CF00161801 /* defines.h in Headers */ = {isa = PBXBuildFile; fileRef = 186078C21E3199CF00161801 /* defines.h */; };
@@ -35,6 +21,8 @@
 		186078DC1E3199CF00161801 /* vector.h in Headers */ = {isa = PBXBuildFile; fileRef = 186078CF1E3199CF00161801 /* vector.h */; };
 		1895553F1E31C7D000563E6C /* foundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 186078DD1E31B1D900161801 /* foundation.h */; };
 		189555551E31D12000563E6C /* list.h in Headers */ = {isa = PBXBuildFile; fileRef = 189555541E31D12000563E6C /* list.h */; };
+		18A4029E1E42CFF500BB70CB /* texture_loader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18A4029C1E42CFF500BB70CB /* texture_loader.cpp */; };
+		18A4029F1E42CFF500BB70CB /* texture_loader.h in Headers */ = {isa = PBXBuildFile; fileRef = 18A4029D1E42CFF500BB70CB /* texture_loader.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +41,9 @@
 		186078DD1E31B1D900161801 /* foundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = foundation.h; sourceTree = "<group>"; };
 		188934D61E2A8A9700755A32 /* libfoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libfoundation.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		189555541E31D12000563E6C /* list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = list.h; sourceTree = "<group>"; };
+		18A4029C1E42CFF500BB70CB /* texture_loader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = texture_loader.cpp; path = texture/texture_loader.cpp; sourceTree = "<group>"; };
+		18A4029D1E42CFF500BB70CB /* texture_loader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = texture_loader.h; path = texture/texture_loader.h; sourceTree = "<group>"; };
+		18A402A01E42D6B700BB70CB /* texture_common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = texture_common.h; path = texture/texture_common.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +60,7 @@
 		186078C01E3199CF00161801 /* foundation */ = {
 			isa = PBXGroup;
 			children = (
+				18A402931E42CE3100BB70CB /* texture */,
 				186078C91E3199CF00161801 /* standard_libraries */,
 				186078C41E3199CF00161801 /* memory */,
 				186078C11E3199CF00161801 /* consts.h */,
@@ -120,6 +112,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		18A402931E42CE3100BB70CB /* texture */ = {
+			isa = PBXGroup;
+			children = (
+				18A4029C1E42CFF500BB70CB /* texture_loader.cpp */,
+				18A4029D1E42CFF500BB70CB /* texture_loader.h */,
+				18A402A01E42D6B700BB70CB /* texture_common.h */,
+			);
+			name = texture;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -137,6 +139,7 @@
 				186078D81E3199CF00161801 /* map.h in Headers */,
 				186078D51E3199CF00161801 /* memory_tracker.h in Headers */,
 				186078DB1E3199CF00161801 /* unordered_multimap.h in Headers */,
+				18A4029F1E42CFF500BB70CB /* texture_loader.h in Headers */,
 				186078D61E3199CF00161801 /* singleton.h in Headers */,
 				186078D11E3199CF00161801 /* defines.h in Headers */,
 			);
@@ -171,11 +174,6 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = jiayi;
 				TargetAttributes = {
-					18746FC21E2AC19200581E8C = {
-						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 95BDJ9G9B4;
-						ProvisioningStyle = Automatic;
-					};
 					188934D51E2A8A9600755A32 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 95BDJ9G9B4;
@@ -196,26 +194,9 @@
 			projectRoot = "";
 			targets = (
 				188934D51E2A8A9600755A32 /* foundation */,
-				18746FC21E2AC19200581E8C /* doc */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		18746FC61E2AC1A300581E8C /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# shell script goes here\n\nmkdir -p headerDoc\n\nheaderdoc2html -o headerDoc ../classes/include\n\ngatherheaderdoc headerDoc\n\nexit 0";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		188934D21E2A8A9600755A32 /* Sources */ = {
@@ -223,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				186078D21E3199CF00161801 /* foundation.cpp in Sources */,
+				18A4029E1E42CFF500BB70CB /* texture_loader.cpp in Sources */,
 				186078D41E3199CF00161801 /* memory_tracker.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,22 +212,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		18746FC41E2AC19200581E8C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEVELOPMENT_TEAM = 95BDJ9G9B4;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		18746FC51E2AC19200581E8C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEVELOPMENT_TEAM = 95BDJ9G9B4;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		188934DF1E2A8A9700755A32 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -370,15 +336,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		18746FC31E2AC19200581E8C /* Build configuration list for PBXAggregateTarget "doc" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				18746FC41E2AC19200581E8C /* Debug */,
-				18746FC51E2AC19200581E8C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		188934D11E2A8A9600755A32 /* Build configuration list for PBXProject "foundation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

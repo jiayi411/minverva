@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		18A402A11E42E2D300BB70CB /* document */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 18A402A61E42E2D300BB70CB /* Build configuration list for PBXAggregateTarget "document" */;
+			buildPhases = (
+				18A402A71E42E2E100BB70CB /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = document;
+			productName = document;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXContainerItemProxy section */
 		18D563A01E2AC95500680B1C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -60,6 +74,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0820;
+				TargetAttributes = {
+					18A402A11E42E2D300BB70CB = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 95BDJ9G9B4;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = 18746FCD1E2AC78200581E8C /* Build configuration list for PBXProject "minerva" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -82,6 +103,7 @@
 			);
 			projectRoot = "";
 			targets = (
+				18A402A11E42E2D300BB70CB /* document */,
 			);
 		};
 /* End PBXProject section */
@@ -103,6 +125,22 @@
 		};
 /* End PBXReferenceProxy section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		18A402A71E42E2E100BB70CB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/Applications/Doxygen.app/Contents/Resources/doxygen doxy";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin XCBuildConfiguration section */
 		18746FCE1E2AC78200581E8C /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -113,6 +151,22 @@
 		18746FCF1E2AC78200581E8C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+			};
+			name = Release;
+		};
+		18A402A21E42E2D300BB70CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 95BDJ9G9B4;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		18A402A31E42E2D300BB70CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 95BDJ9G9B4;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -127,6 +181,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		18A402A61E42E2D300BB70CB /* Build configuration list for PBXAggregateTarget "document" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18A402A21E42E2D300BB70CB /* Debug */,
+				18A402A31E42E2D300BB70CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

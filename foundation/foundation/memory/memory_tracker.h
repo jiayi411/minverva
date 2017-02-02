@@ -29,6 +29,7 @@ namespace minerva
         class memory_tracker
         {
         public:
+            /// Instance method
             static memory_tracker* get(){
                 static memory_tracker s_this;
                 return &s_this;
@@ -41,10 +42,11 @@ namespace minerva
             ///
             struct memory_size_count_info
             {
+                /// ctor for structure
                 memory_size_count_info( uint line, size_t size, uint count ) :
                 n_line(line), t_size(size), ui_count(count){}
                 
-                uint n_line;                 ///< line of file
+                uint n_line;                ///< line of file
                 size_t t_size;              ///< size of each allocation in the same line
                 uint ui_count;              ///< how many times does it do allocate
             };
@@ -59,6 +61,7 @@ namespace minerva
             /// we need to handle this too
             struct memory_group
             {
+                /// ctor for structure
                 memory_group( std::string&& funcn ):
                 function_name( std::move( funcn ) ){};
                 
@@ -111,6 +114,7 @@ namespace minerva
     }
 }
 
+/// for short
 #define the_memory_tracker memory_tracker::get()
 
 #endif /* memory_tracker_h */

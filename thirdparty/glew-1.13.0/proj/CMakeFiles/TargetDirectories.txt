@@ -1,0 +1,9 @@
+/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/CMakeFiles/install.dir
+/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/CMakeFiles/visualinfo.dir
+/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/CMakeFiles/glewmx_s.dir
+/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/CMakeFiles/glewinfo.dir
+/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/CMakeFiles/glewmx.dir
+/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/CMakeFiles/glew_s.dir
+/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/CMakeFiles/glew.dir
+/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/CMakeFiles/ALL_BUILD.dir
+/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/CMakeFiles/ZERO_CHECK.dir

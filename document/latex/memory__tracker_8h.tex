@@ -1,0 +1,39 @@
+\hypertarget{memory__tracker_8h}{}\section{foundation/foundation/memory/memory\+\_\+tracker.h File Reference}
+\label{memory__tracker_8h}\index{foundation/foundation/memory/memory\+\_\+tracker.\+h@{foundation/foundation/memory/memory\+\_\+tracker.\+h}}
+
+
+tracking memory allocation and deallocation  
+
+
+{\ttfamily \#include \char`\"{}defines.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}standard\+\_\+libraries/unordered\+\_\+multimap.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}standard\+\_\+libraries/unordered\+\_\+map.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}standard\+\_\+libraries/vector.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classminerva_1_1foundation_1_1memory__tracker}{minerva\+::foundation\+::memory\+\_\+tracker}
+\begin{DoxyCompactList}\small\item\em Tracking memory allocations. \end{DoxyCompactList}\item 
+struct \hyperlink{structminerva_1_1foundation_1_1memory__tracker_1_1memory__size__count__info}{minerva\+::foundation\+::memory\+\_\+tracker\+::memory\+\_\+size\+\_\+count\+\_\+info}
+\begin{DoxyCompactList}\small\item\em size and count structure \end{DoxyCompactList}\item 
+struct \hyperlink{structminerva_1_1foundation_1_1memory__tracker_1_1memory__group}{minerva\+::foundation\+::memory\+\_\+tracker\+::memory\+\_\+group}
+\begin{DoxyCompactList}\small\item\em group organized by line, function, size and count \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{memory__tracker_8h_a568e64c79afcb807a332ce365fd93ebb}\label{memory__tracker_8h_a568e64c79afcb807a332ce365fd93ebb}} 
+\#define \hyperlink{memory__tracker_8h_a568e64c79afcb807a332ce365fd93ebb}{the\+\_\+memory\+\_\+tracker}~memory\+\_\+tracker\+::get()
+\begin{DoxyCompactList}\small\item\em for short \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+tracking memory allocation and deallocation 
+
+\begin{DoxyAuthor}{Author}
+jiayi 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+17/01/2017 
+\end{DoxyDate}

@@ -1,0 +1,98 @@
+\hypertarget{classminerva_1_1foundation_1_1memory__tracker}{}\section{minerva\+:\+:foundation\+:\+:memory\+\_\+tracker Class Reference}
+\label{classminerva_1_1foundation_1_1memory__tracker}\index{minerva\+::foundation\+::memory\+\_\+tracker@{minerva\+::foundation\+::memory\+\_\+tracker}}
+
+
+Tracking memory allocations.  
+
+
+
+
+{\ttfamily \#include $<$memory\+\_\+tracker.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structminerva_1_1foundation_1_1memory__tracker_1_1memory__group}{memory\+\_\+group}
+\begin{DoxyCompactList}\small\item\em group organized by line, function, size and count \end{DoxyCompactList}\item 
+struct \hyperlink{structminerva_1_1foundation_1_1memory__tracker_1_1memory__size__count__info}{memory\+\_\+size\+\_\+count\+\_\+info}
+\begin{DoxyCompactList}\small\item\em size and count structure \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classminerva_1_1foundation_1_1memory__tracker_a40d5d21ff24b82be3a10809780c503ac}\label{classminerva_1_1foundation_1_1memory__tracker_a40d5d21ff24b82be3a10809780c503ac}} 
+void \hyperlink{classminerva_1_1foundation_1_1memory__tracker_a40d5d21ff24b82be3a10809780c503ac}{add} (void $\ast$ptr, size\+\_\+t size, const char $\ast$function, uint line)
+\begin{DoxyCompactList}\small\item\em add a record \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classminerva_1_1foundation_1_1memory__tracker_ae0e9730e34188b867d82d69bcbaf5277}\label{classminerva_1_1foundation_1_1memory__tracker_ae0e9730e34188b867d82d69bcbaf5277}} 
+void \hyperlink{classminerva_1_1foundation_1_1memory__tracker_ae0e9730e34188b867d82d69bcbaf5277}{remove} (void $\ast$ptr)
+\begin{DoxyCompactList}\small\item\em remove a record \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classminerva_1_1foundation_1_1memory__tracker_afd1c76896804a25e446d7b80787b727d}\label{classminerva_1_1foundation_1_1memory__tracker_afd1c76896804a25e446d7b80787b727d}} 
+void \hyperlink{classminerva_1_1foundation_1_1memory__tracker_afd1c76896804a25e446d7b80787b727d}{output\+\_\+informations} ()
+\begin{DoxyCompactList}\small\item\em print allocated memory infomation \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classminerva_1_1foundation_1_1memory__tracker_ab369ca8783692f7f349d4a023cf25fb3}\label{classminerva_1_1foundation_1_1memory__tracker_ab369ca8783692f7f349d4a023cf25fb3}} 
+static \hyperlink{classminerva_1_1foundation_1_1memory__tracker}{memory\+\_\+tracker} $\ast$ \hyperlink{classminerva_1_1foundation_1_1memory__tracker_ab369ca8783692f7f349d4a023cf25fb3}{get} ()
+\begin{DoxyCompactList}\small\item\em Instance method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classminerva_1_1foundation_1_1memory__tracker_a5be7a3215edb1bc52e0cbd54b20c51f0}\label{classminerva_1_1foundation_1_1memory__tracker_a5be7a3215edb1bc52e0cbd54b20c51f0}} 
+typedef mi\+\_\+vector$<$ \hyperlink{structminerva_1_1foundation_1_1memory__tracker_1_1memory__group}{memory\+\_\+group} $>$ \hyperlink{classminerva_1_1foundation_1_1memory__tracker_a5be7a3215edb1bc52e0cbd54b20c51f0}{memory\+\_\+groups}
+\begin{DoxyCompactList}\small\item\em container of memory group \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classminerva_1_1foundation_1_1memory__tracker_a1540e795038843a4a2d7e965b69aee17}\label{classminerva_1_1foundation_1_1memory__tracker_a1540e795038843a4a2d7e965b69aee17}} 
+typedef mi\+\_\+unordered\+\_\+multimap$<$ std\+::string, size\+\_\+t $>$ \hyperlink{classminerva_1_1foundation_1_1memory__tracker_a1540e795038843a4a2d7e965b69aee17}{memory\+\_\+search}
+\begin{DoxyCompactList}\small\item\em for memory search \end{DoxyCompactList}\item 
+typedef mi\+\_\+unordered\+\_\+map$<$ ulong, ullong $>$ \hyperlink{classminerva_1_1foundation_1_1memory__tracker_a1440e17c5c56740dce312e2b49a48199}{pointer\+\_\+search}
+\begin{DoxyCompactList}\small\item\em for memory address record \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classminerva_1_1foundation_1_1memory__tracker_a821e4d5c9e9e077861d561d918b3218c}\label{classminerva_1_1foundation_1_1memory__tracker_a821e4d5c9e9e077861d561d918b3218c}} 
+size\+\_\+t \hyperlink{classminerva_1_1foundation_1_1memory__tracker_a821e4d5c9e9e077861d561d918b3218c}{\+\_\+increase} (size\+\_\+t index, size\+\_\+t size, uint line)
+\begin{DoxyCompactList}\small\item\em increase count based on index and size \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classminerva_1_1foundation_1_1memory__tracker_afb9e4a478044a8ceae79b5cccf3dbf0c}\label{classminerva_1_1foundation_1_1memory__tracker_afb9e4a478044a8ceae79b5cccf3dbf0c}} 
+void \hyperlink{classminerva_1_1foundation_1_1memory__tracker_afb9e4a478044a8ceae79b5cccf3dbf0c}{\+\_\+decrease} (ullong index)
+\begin{DoxyCompactList}\small\item\em decrease count based on index and size \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classminerva_1_1foundation_1_1memory__tracker_af1ca0ea6da700237e944807eee244795}\label{classminerva_1_1foundation_1_1memory__tracker_af1ca0ea6da700237e944807eee244795}} 
+size\+\_\+t \hyperlink{classminerva_1_1foundation_1_1memory__tracker_af1ca0ea6da700237e944807eee244795}{\+\_\+get\+\_\+memory\+\_\+group\+\_\+index\+\_\+by\+\_\+name} (const std\+::string \&function\+\_\+name, uint line) const
+\begin{DoxyCompactList}\small\item\em finding \hyperlink{structminerva_1_1foundation_1_1memory__tracker_1_1memory__group}{memory\+\_\+group} by filename and line number \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classminerva_1_1foundation_1_1memory__tracker_a284ff79dd13867f374f438f6a30fc485}\label{classminerva_1_1foundation_1_1memory__tracker_a284ff79dd13867f374f438f6a30fc485}} 
+\hyperlink{classminerva_1_1foundation_1_1memory__tracker_a5be7a3215edb1bc52e0cbd54b20c51f0}{memory\+\_\+groups} \hyperlink{classminerva_1_1foundation_1_1memory__tracker_a284ff79dd13867f374f438f6a30fc485}{\+\_\+groups}
+\begin{DoxyCompactList}\small\item\em container for memory that allocated \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classminerva_1_1foundation_1_1memory__tracker_adc70e38578d79de1361fc7c3ddda70dd}\label{classminerva_1_1foundation_1_1memory__tracker_adc70e38578d79de1361fc7c3ddda70dd}} 
+\hyperlink{classminerva_1_1foundation_1_1memory__tracker_a1540e795038843a4a2d7e965b69aee17}{memory\+\_\+search} \hyperlink{classminerva_1_1foundation_1_1memory__tracker_adc70e38578d79de1361fc7c3ddda70dd}{\+\_\+search}
+\begin{DoxyCompactList}\small\item\em used for quickly search \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classminerva_1_1foundation_1_1memory__tracker_a4bd388dba6692aa64e8fbb8f583bcd82}\label{classminerva_1_1foundation_1_1memory__tracker_a4bd388dba6692aa64e8fbb8f583bcd82}} 
+\hyperlink{classminerva_1_1foundation_1_1memory__tracker_a1440e17c5c56740dce312e2b49a48199}{pointer\+\_\+search} \hyperlink{classminerva_1_1foundation_1_1memory__tracker_a4bd388dba6692aa64e8fbb8f583bcd82}{\+\_\+pointers}
+\begin{DoxyCompactList}\small\item\em pointers \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classminerva_1_1foundation_1_1memory__tracker_a5df2da7a1a0e106c3946982c37b2a499}\label{classminerva_1_1foundation_1_1memory__tracker_a5df2da7a1a0e106c3946982c37b2a499}} 
+std\+::mutex \hyperlink{classminerva_1_1foundation_1_1memory__tracker_a5df2da7a1a0e106c3946982c37b2a499}{\+\_\+mutex}
+\begin{DoxyCompactList}\small\item\em lock containers \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Tracking memory allocations. 
+
+This is a thread-\/safe memory tracker, due to performance concerns, please do not use this class in a release version. 
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classminerva_1_1foundation_1_1memory__tracker_a1440e17c5c56740dce312e2b49a48199}\label{classminerva_1_1foundation_1_1memory__tracker_a1440e17c5c56740dce312e2b49a48199}} 
+\index{minerva\+::foundation\+::memory\+\_\+tracker@{minerva\+::foundation\+::memory\+\_\+tracker}!pointer\+\_\+search@{pointer\+\_\+search}}
+\index{pointer\+\_\+search@{pointer\+\_\+search}!minerva\+::foundation\+::memory\+\_\+tracker@{minerva\+::foundation\+::memory\+\_\+tracker}}
+\subsubsection{\texorpdfstring{pointer\+\_\+search}{pointer\_search}}
+{\footnotesize\ttfamily typedef mi\+\_\+unordered\+\_\+map$<$ ulong, ullong $>$ \hyperlink{classminerva_1_1foundation_1_1memory__tracker_a1440e17c5c56740dce312e2b49a48199}{minerva\+::foundation\+::memory\+\_\+tracker\+::pointer\+\_\+search}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+for memory address record 
+
+for finding purpose, func/index, high-\/32-\/bit are the \+\_\+groups\textquotesingle{} index, low-\/32-\/bit are the size\+\_\+count\+\_\+array\textquotesingle{}s index. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+foundation/foundation/memory/\hyperlink{memory__tracker_8h}{memory\+\_\+tracker.\+h}\item 
+foundation/foundation/memory/memory\+\_\+tracker.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,1849 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		102F1B696CE94E68A8A76CD9 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 725BF2BD01E64170B8DE4444 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				2A06B7F5EFC04B11BE0A7599 /* CMake Rules */,
+			);
+			dependencies = (
+				DB9CE56D05AB41B88044CE5D /* PBXTargetDependency */,
+				50B073E258B6452CB4A044D6 /* PBXTargetDependency */,
+				ABCB861D4E0849ECAECB8762 /* PBXTargetDependency */,
+				65C537F1863147ACA1715521 /* PBXTargetDependency */,
+				1B66FC0951F6490D977F9DD4 /* PBXTargetDependency */,
+				A69CF00275364A1091A2E91E /* PBXTargetDependency */,
+				2A5A1F69793B444A8B57313B /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+		AAB6571FE64E40C48DD7D6FF /* install */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 4883466DB1174B2E959610F2 /* Build configuration list for PBXAggregateTarget "install" */;
+			buildPhases = (
+				6AD451724E3C4369ABFF44EF /* CMake PostBuild Rules */,
+			);
+			dependencies = (
+				C77ED47065754C7B994FC4A1 /* PBXTargetDependency */,
+			);
+			name = install;
+			productName = install;
+		};
+		B34F5A55577F451C8F498AB7 /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = AAB6F894C983493080F5A6C5 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				340DAFCC5B224A95A8B48567 /* CMake Rules */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		1E561E859773495CACB55BC5 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/src/glew.c */ = {isa = PBXBuildFile; fileRef = 0BFECC6931A840B5806BBA41 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/src/glew.c */; };
+		4EAB151123F64EDC853B4664 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = EA12C2935961465A974FA07F /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/CMakeLists.txt */; };
+		50E76476364848179FEBD3D8 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 2ADE6A9D815B4FEFB4410E60 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/CMakeLists.txt */; };
+		5288A3D2E546481899878ECF /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = A92FB2062D0E410EADC1BB07 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/CMakeLists.txt */; };
+		5A63EE4A731D4FBE9D2A9620 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 5F9B998E3D87495788A7A7B6 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/CMakeLists.txt */; };
+		72BF1F14A5D545C0A33C042A /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/src/glewinfo.c */ = {isa = PBXBuildFile; fileRef = 241C2996CA384478A0B05FB0 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/src/glewinfo.c */; };
+		98E8500040B7460B9E0CFB0B /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/src/glew.c */ = {isa = PBXBuildFile; fileRef = 72FCDAC8C0A4496C8EED90F7 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/src/glew.c */; };
+		B55255936D004EF19B9856BA /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 1D88BB93F6DD4DB7A545B10C /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/CMakeLists.txt */; };
+		F58AE4D09645438CAFED670C /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/src/visualinfo.c */ = {isa = PBXBuildFile; fileRef = 27805D0B04CA4567B41F0701 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/src/visualinfo.c */; };
+		F669B968A4934668BD34C659 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/src/glew.c */ = {isa = PBXBuildFile; fileRef = 3652EA6AA482459E9332E61E /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/src/glew.c */; };
+		FD85CA24EA0E4D9D91608D18 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/src/glew.c */ = {isa = PBXBuildFile; fileRef = B50F53DC809F46F486BA1514 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/src/glew.c */; };
+		FEFF61A3C39346FDA174F252 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = F68CBA11B9EE4459A7A87825 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/CMakeLists.txt */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		38AB9C57233643F99018EDF8 /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+		5F7F22146F3749CA93B4239C /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+		9FC864F6907545E9B7789052 = {
+			isa = PBXBuildStyle;
+		};
+		A3DC59930EA942B2A51B9FA0 /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+		CAF9AAC2474345B38F973653 /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		1082FE3E99AD4A8CBDF9763F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73D36CA5EC1B413098AF647A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 102F1B696CE94E68A8A76CD9;
+			remoteInfo = ALL_BUILD;
+		};
+		13D9587675EC40AA8914E5A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73D36CA5EC1B413098AF647A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65AD117DDDD14962ABEE21D7;
+			remoteInfo = glew;
+		};
+		381D9607B2DC42C3BA9933A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73D36CA5EC1B413098AF647A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B34F5A55577F451C8F498AB7;
+			remoteInfo = ZERO_CHECK;
+		};
+		6F57A8CBD46249558BDE9E3C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73D36CA5EC1B413098AF647A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B34F5A55577F451C8F498AB7;
+			remoteInfo = ZERO_CHECK;
+		};
+		7C883380CD06494B8F9B67FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73D36CA5EC1B413098AF647A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65AD117DDDD14962ABEE21D7;
+			remoteInfo = glew;
+		};
+		9C4BA34C4A0A4F03A2599DC9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73D36CA5EC1B413098AF647A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 64875DD50F4F438E9BA36B40;
+			remoteInfo = glewinfo;
+		};
+		A0701762A04D498E8D76A624 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73D36CA5EC1B413098AF647A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65AD117DDDD14962ABEE21D7;
+			remoteInfo = glew;
+		};
+		ACA963732AC24960A033E42F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73D36CA5EC1B413098AF647A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 72A2C0EBE01541138B945EF0;
+			remoteInfo = glewmx_s;
+		};
+		AF5AAAE6CD71468A87249360 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73D36CA5EC1B413098AF647A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B34F5A55577F451C8F498AB7;
+			remoteInfo = ZERO_CHECK;
+		};
+		B4CB9156D9974B8D8D6FCED8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73D36CA5EC1B413098AF647A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4DC087629E914641BB1D3835;
+			remoteInfo = visualinfo;
+		};
+		B6403060343145938B2FA8C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73D36CA5EC1B413098AF647A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B34F5A55577F451C8F498AB7;
+			remoteInfo = ZERO_CHECK;
+		};
+		BC52276BE3D0405DA402525F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73D36CA5EC1B413098AF647A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B34F5A55577F451C8F498AB7;
+			remoteInfo = ZERO_CHECK;
+		};
+		C508472C81E6455C969EC29F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73D36CA5EC1B413098AF647A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B217149E732A4783A74CA85F;
+			remoteInfo = glew_s;
+		};
+		E422E89AEF814262B57A1EFA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73D36CA5EC1B413098AF647A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B34F5A55577F451C8F498AB7;
+			remoteInfo = ZERO_CHECK;
+		};
+		E5CEED3A2F4F47D294F70435 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73D36CA5EC1B413098AF647A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D082F6B7577B440E9D8EE340;
+			remoteInfo = glewmx;
+		};
+		EA5F33B678CE40B7947C8CB3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73D36CA5EC1B413098AF647A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B34F5A55577F451C8F498AB7;
+			remoteInfo = ZERO_CHECK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0BFECC6931A840B5806BBA41 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/src/glew.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = glew.c; path = ../../src/glew.c; sourceTree = SOURCE_ROOT; };
+		1D88BB93F6DD4DB7A545B10C /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		241C2996CA384478A0B05FB0 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/src/glewinfo.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = glewinfo.c; path = ../../src/glewinfo.c; sourceTree = SOURCE_ROOT; };
+		27805D0B04CA4567B41F0701 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/src/visualinfo.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = visualinfo.c; path = ../../src/visualinfo.c; sourceTree = SOURCE_ROOT; };
+		2ADE6A9D815B4FEFB4410E60 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		31F75E232D5248E39FD7C135 /* glewmx */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libGLEWmxd.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		3652EA6AA482459E9332E61E /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/src/glew.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = glew.c; path = ../../src/glew.c; sourceTree = SOURCE_ROOT; };
+		54AC4B8ADAB34DEF93CB6650 /* visualinfo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = visualinfo; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F9B998E3D87495788A7A7B6 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		72FCDAC8C0A4496C8EED90F7 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/src/glew.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = glew.c; path = ../../src/glew.c; sourceTree = SOURCE_ROOT; };
+		A87A27F215CC46FF9E0F0DC9 /* glewmx_s */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libGLEWmxd.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A92FB2062D0E410EADC1BB07 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		B50F53DC809F46F486BA1514 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/src/glew.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = glew.c; path = ../../src/glew.c; sourceTree = SOURCE_ROOT; };
+		B51273DF830D4AA3BE9011D5 /* glewinfo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = glewinfo; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC1F4BDC145C493C98BBEEFC /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		C279020824014A06941EDAD2 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		DB5B4EFDC5304AB98812F763 /* glew */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libGLEWd.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA12C2935961465A974FA07F /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		F5FC5E3AC9D9421E87A09709 /* glew_s */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libGLEWd.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F68CBA11B9EE4459A7A87825 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0123924E070F4DAAA63C9C82 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		07C8DC71062240ABAB793A98 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				7F34602D48804D34A2DB98EE /* visualinfo */,
+				D8E6791A5A7345F0BBFDCD7F /* glewmx_s */,
+				8A9FC455D9C843F5BDABE324 /* glewinfo */,
+				D000E68E5BA14AA59FA0495A /* glewmx */,
+				480329D2BCC8491A911AFA19 /* glew_s */,
+				3EE61DCA3E874B6EB8921A07 /* glew */,
+				C7C155B880F44990B6C25921 /* ALL_BUILD */,
+				2F948FEDBA9C491B92FFD419 /* ZERO_CHECK */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		0A26449B0CDF4588B5C0C548 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				B50F53DC809F46F486BA1514 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/src/glew.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		1E43D64ADC374300B2C32EEA /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				27805D0B04CA4567B41F0701 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/src/visualinfo.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		2F948FEDBA9C491B92FFD419 /* ZERO_CHECK */ = {
+			isa = PBXGroup;
+			children = (
+				3D3BEB0EA48940028E88F0AB /* CMake Rules */,
+				C279020824014A06941EDAD2 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/CMakeLists.txt */,
+			);
+			name = ZERO_CHECK;
+			sourceTree = "<group>";
+		};
+		3D3BEB0EA48940028E88F0AB /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		3EE61DCA3E874B6EB8921A07 /* glew */ = {
+			isa = PBXGroup;
+			children = (
+				0A26449B0CDF4588B5C0C548 /* Source Files */,
+				EA12C2935961465A974FA07F /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/CMakeLists.txt */,
+			);
+			name = glew;
+			sourceTree = "<group>";
+		};
+		480329D2BCC8491A911AFA19 /* glew_s */ = {
+			isa = PBXGroup;
+			children = (
+				9D440185A6754234A79D18B6 /* Source Files */,
+				F68CBA11B9EE4459A7A87825 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/CMakeLists.txt */,
+			);
+			name = glew_s;
+			sourceTree = "<group>";
+		};
+		56D5F160ECC5469FB48798CA /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				3652EA6AA482459E9332E61E /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/src/glew.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		6226E9813A1E4363B1C7725C /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				0BFECC6931A840B5806BBA41 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/src/glew.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		7077E0986EFF4E218671B825 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				241C2996CA384478A0B05FB0 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/src/glewinfo.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		7B2D65A12A0840089701439F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB5B4EFDC5304AB98812F763 /* glew */,
+				F5FC5E3AC9D9421E87A09709 /* glew_s */,
+				B51273DF830D4AA3BE9011D5 /* glewinfo */,
+				31F75E232D5248E39FD7C135 /* glewmx */,
+				A87A27F215CC46FF9E0F0DC9 /* glewmx_s */,
+				54AC4B8ADAB34DEF93CB6650 /* visualinfo */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7F34602D48804D34A2DB98EE /* visualinfo */ = {
+			isa = PBXGroup;
+			children = (
+				1E43D64ADC374300B2C32EEA /* Source Files */,
+				A92FB2062D0E410EADC1BB07 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/CMakeLists.txt */,
+			);
+			name = visualinfo;
+			sourceTree = "<group>";
+		};
+		8A9FC455D9C843F5BDABE324 /* glewinfo */ = {
+			isa = PBXGroup;
+			children = (
+				7077E0986EFF4E218671B825 /* Source Files */,
+				2ADE6A9D815B4FEFB4410E60 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/CMakeLists.txt */,
+			);
+			name = glewinfo;
+			sourceTree = "<group>";
+		};
+		9D440185A6754234A79D18B6 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				72FCDAC8C0A4496C8EED90F7 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/src/glew.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		C7C155B880F44990B6C25921 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				0123924E070F4DAAA63C9C82 /* CMake Rules */,
+				BC1F4BDC145C493C98BBEEFC /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		CFE87A9291AE472C84180ED4 = {
+			isa = PBXGroup;
+			children = (
+				07C8DC71062240ABAB793A98 /* Sources */,
+				DE4271975A844A438322183A /* Resources */,
+				7B2D65A12A0840089701439F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D000E68E5BA14AA59FA0495A /* glewmx */ = {
+			isa = PBXGroup;
+			children = (
+				6226E9813A1E4363B1C7725C /* Source Files */,
+				1D88BB93F6DD4DB7A545B10C /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/CMakeLists.txt */,
+			);
+			name = glewmx;
+			sourceTree = "<group>";
+		};
+		D8E6791A5A7345F0BBFDCD7F /* glewmx_s */ = {
+			isa = PBXGroup;
+			children = (
+				56D5F160ECC5469FB48798CA /* Source Files */,
+				5F9B998E3D87495788A7A7B6 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/CMakeLists.txt */,
+			);
+			name = glewmx_s;
+			sourceTree = "<group>";
+		};
+		DE4271975A844A438322183A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4DC087629E914641BB1D3835 /* visualinfo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D53E7F2B03B24A23A3BF9A6E /* Build configuration list for PBXNativeTarget "visualinfo" */;
+			buildPhases = (
+				56EA92C21F5E4915A8941CD6 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AAE6A56AEA8F4B13A782A187 /* PBXTargetDependency */,
+				79A03849A2194D38B2B4B55D /* PBXTargetDependency */,
+			);
+			name = visualinfo;
+			productName = visualinfo;
+			productReference = 54AC4B8ADAB34DEF93CB6650 /* visualinfo */;
+			productType = "com.apple.product-type.tool";
+		};
+		64875DD50F4F438E9BA36B40 /* glewinfo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AAFB034D7BD4D54AD3DB1AF /* Build configuration list for PBXNativeTarget "glewinfo" */;
+			buildPhases = (
+				C3213E7A976A4EEEA149F5EA /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				31CE13A661224AA49C8D9E4A /* PBXTargetDependency */,
+				0BFF7E5D09CB47B595A8772B /* PBXTargetDependency */,
+			);
+			name = glewinfo;
+			productName = glewinfo;
+			productReference = B51273DF830D4AA3BE9011D5 /* glewinfo */;
+			productType = "com.apple.product-type.tool";
+		};
+		65AD117DDDD14962ABEE21D7 /* glew */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C49F2DD877DA4EAF8D3D836B /* Build configuration list for PBXNativeTarget "glew" */;
+			buildPhases = (
+				DF99468CF8304DA7A9133C3E /* Sources */,
+				F13F10D2D6244976A2A781C8 /* CMake PostBuild Rules */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7D30F700925F4940BF06CCDA /* PBXTargetDependency */,
+			);
+			name = glew;
+			productName = glew;
+			productReference = DB5B4EFDC5304AB98812F763 /* glew */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		72A2C0EBE01541138B945EF0 /* glewmx_s */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 72F888ADD64F40BA8307BF5E /* Build configuration list for PBXNativeTarget "glewmx_s" */;
+			buildPhases = (
+				9EC331F680CF4091A39B360E /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11762E506B7E4D139C832ACC /* PBXTargetDependency */,
+			);
+			name = glewmx_s;
+			productName = glewmx_s;
+			productReference = A87A27F215CC46FF9E0F0DC9 /* glewmx_s */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B217149E732A4783A74CA85F /* glew_s */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DB222A906B4466E85A329BE /* Build configuration list for PBXNativeTarget "glew_s" */;
+			buildPhases = (
+				B0998AE8CCE04FF281F0982A /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				41E8B2600E584D1BA7886576 /* PBXTargetDependency */,
+			);
+			name = glew_s;
+			productName = glew_s;
+			productReference = F5FC5E3AC9D9421E87A09709 /* glew_s */;
+			productType = "com.apple.product-type.library.static";
+		};
+		D082F6B7577B440E9D8EE340 /* glewmx */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B974FD182A549F1ABC7708E /* Build configuration list for PBXNativeTarget "glewmx" */;
+			buildPhases = (
+				A7E142B951D648C9BF117639 /* Sources */,
+				89E0DBF26DA7415693DDC55C /* CMake PostBuild Rules */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8A6A3E2031C34FE9A1D69BAE /* PBXTargetDependency */,
+			);
+			name = glewmx;
+			productName = glewmx;
+			productReference = 31F75E232D5248E39FD7C135 /* glewmx */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		73D36CA5EC1B413098AF647A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 0820;
+			};
+			buildConfigurationList = 0ECECE607ED5402B8404756F /* Build configuration list for PBXProject "glew" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				CAF9AAC2474345B38F973653 /* Debug */,
+				5F7F22146F3749CA93B4239C /* Release */,
+				A3DC59930EA942B2A51B9FA0 /* MinSizeRel */,
+				38AB9C57233643F99018EDF8 /* RelWithDebInfo */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = CFE87A9291AE472C84180ED4;
+			projectDirPath = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake";
+			projectRoot = "";
+			targets = (
+				102F1B696CE94E68A8A76CD9 /* ALL_BUILD */,
+				B34F5A55577F451C8F498AB7 /* ZERO_CHECK */,
+				65AD117DDDD14962ABEE21D7 /* glew */,
+				B217149E732A4783A74CA85F /* glew_s */,
+				64875DD50F4F438E9BA36B40 /* glewinfo */,
+				D082F6B7577B440E9D8EE340 /* glewmx */,
+				72A2C0EBE01541138B945EF0 /* glewmx_s */,
+				AAB6571FE64E40C48DD7D6FF /* install */,
+				4DC087629E914641BB1D3835 /* visualinfo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A06B7F5EFC04B11BE0A7599 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj -f /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		340DAFCC5B224A95A8B48567 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj -f /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		451BDAA2E6BF46A5AD04EAD9 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		65FEE6B126F04CB18F228680 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		6AD451724E3C4369ABFF44EF /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj -f /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/CMakeScripts/install_postBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		89E0DBF26DA7415693DDC55C /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj -f /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/CMakeScripts/glewmx_postBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		B4E1F54AF369436480022890 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		F13F10D2D6244976A2A781C8 /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj -f /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/CMakeScripts/glew_postBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		56EA92C21F5E4915A8941CD6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F58AE4D09645438CAFED670C /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/src/visualinfo.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9EC331F680CF4091A39B360E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F669B968A4934668BD34C659 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/src/glew.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7E142B951D648C9BF117639 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E561E859773495CACB55BC5 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/src/glew.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0998AE8CCE04FF281F0982A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98E8500040B7460B9E0CFB0B /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/src/glew.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3213E7A976A4EEEA149F5EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72BF1F14A5D545C0A33C042A /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/src/glewinfo.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF99468CF8304DA7A9133C3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD85CA24EA0E4D9D91608D18 /* /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/src/glew.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0BFF7E5D09CB47B595A8772B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B34F5A55577F451C8F498AB7 /* ZERO_CHECK */;
+			targetProxy = E422E89AEF814262B57A1EFA /* PBXContainerItemProxy */;
+		};
+		11762E506B7E4D139C832ACC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B34F5A55577F451C8F498AB7 /* ZERO_CHECK */;
+			targetProxy = 6F57A8CBD46249558BDE9E3C /* PBXContainerItemProxy */;
+		};
+		1B66FC0951F6490D977F9DD4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D082F6B7577B440E9D8EE340 /* glewmx */;
+			targetProxy = E5CEED3A2F4F47D294F70435 /* PBXContainerItemProxy */;
+		};
+		2A5A1F69793B444A8B57313B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B34F5A55577F451C8F498AB7 /* ZERO_CHECK */;
+			targetProxy = 381D9607B2DC42C3BA9933A1 /* PBXContainerItemProxy */;
+		};
+		31CE13A661224AA49C8D9E4A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65AD117DDDD14962ABEE21D7 /* glew */;
+			targetProxy = 13D9587675EC40AA8914E5A2 /* PBXContainerItemProxy */;
+		};
+		41E8B2600E584D1BA7886576 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B34F5A55577F451C8F498AB7 /* ZERO_CHECK */;
+			targetProxy = EA5F33B678CE40B7947C8CB3 /* PBXContainerItemProxy */;
+		};
+		50B073E258B6452CB4A044D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65AD117DDDD14962ABEE21D7 /* glew */;
+			targetProxy = A0701762A04D498E8D76A624 /* PBXContainerItemProxy */;
+		};
+		65C537F1863147ACA1715521 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 64875DD50F4F438E9BA36B40 /* glewinfo */;
+			targetProxy = 9C4BA34C4A0A4F03A2599DC9 /* PBXContainerItemProxy */;
+		};
+		79A03849A2194D38B2B4B55D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B34F5A55577F451C8F498AB7 /* ZERO_CHECK */;
+			targetProxy = B6403060343145938B2FA8C1 /* PBXContainerItemProxy */;
+		};
+		7D30F700925F4940BF06CCDA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B34F5A55577F451C8F498AB7 /* ZERO_CHECK */;
+			targetProxy = BC52276BE3D0405DA402525F /* PBXContainerItemProxy */;
+		};
+		8A6A3E2031C34FE9A1D69BAE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B34F5A55577F451C8F498AB7 /* ZERO_CHECK */;
+			targetProxy = AF5AAAE6CD71468A87249360 /* PBXContainerItemProxy */;
+		};
+		A69CF00275364A1091A2E91E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4DC087629E914641BB1D3835 /* visualinfo */;
+			targetProxy = B4CB9156D9974B8D8D6FCED8 /* PBXContainerItemProxy */;
+		};
+		AAE6A56AEA8F4B13A782A187 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65AD117DDDD14962ABEE21D7 /* glew */;
+			targetProxy = 7C883380CD06494B8F9B67FE /* PBXContainerItemProxy */;
+		};
+		ABCB861D4E0849ECAECB8762 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 72A2C0EBE01541138B945EF0 /* glewmx_s */;
+			targetProxy = ACA963732AC24960A033E42F /* PBXContainerItemProxy */;
+		};
+		C77ED47065754C7B994FC4A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 102F1B696CE94E68A8A76CD9 /* ALL_BUILD */;
+			targetProxy = 1082FE3E99AD4A8CBDF9763F /* PBXContainerItemProxy */;
+		};
+		DB9CE56D05AB41B88044CE5D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B217149E732A4783A74CA85F /* glew_s */;
+			targetProxy = C508472C81E6455C969EC29F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		014E0E53EA7F4AAB9D21E54F /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk;
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/build";
+			};
+			name = RelWithDebInfo;
+		};
+		062C8E0098B24F8396CF6CC8 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/lib/RelWithDebInfo";
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",glewmx_EXPORTS,GLEW_BUILD,GLEW_MX,GLEW_NO_GLU);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/lib/RelWithDebInfo";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CFLAGS = "       -DNDEBUG -fPIC  ";
+				OTHER_LDFLAGS = " -dynamiclib -Wl,-headerpad_max_install_names  -framework OpenGL";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = GLEWmx;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		06AE866C4EE54B929219E78C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		2A8AE98D66DA4CCEB7BE1D9F /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/bin/MinSizeRel";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",GLEW_NO_GLU);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/lib/MinSizeRel/libGLEW.dylib -framework OpenGL";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = visualinfo;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		47ACB4F278E74FE1ABE9C91B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		5201250A1B8846719F1339CF /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/lib/RelWithDebInfo";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",GLEW_STATIC,GLEW_MX,GLEW_NO_GLU);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "       -DNDEBUG  ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = GLEWmx;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		5398786A06DE4195BCC22C6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		5B696BBF53DD4F029B9A78E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/lib/Release";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",GLEW_STATIC,GLEW_NO_GLU);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = GLEW;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		5D1E11CAB42A4FA086B69F8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/bin/Release";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",GLEW_NO_GLU);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/lib/Release/libGLEW.dylib -framework OpenGL";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = glewinfo;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		5F5A7839BB3D45ECB720FA90 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk;
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/build";
+			};
+			name = MinSizeRel;
+		};
+		62661313C0BB4AE6A94B0DC5 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		680008C0471F4A0FAB517A90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/bin/Debug";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",GLEW_NO_GLU);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/lib/Debug/libGLEWd.dylib -framework OpenGL";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = glewinfo;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		6C1A40C57CB34FA7862A67E9 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/lib/MinSizeRel";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",GLEW_STATIC,GLEW_MX,GLEW_NO_GLU);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = GLEWmx;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		6EA5829EAC274633BBAAD9FD /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/bin/MinSizeRel";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",GLEW_NO_GLU);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/lib/MinSizeRel/libGLEW.dylib -framework OpenGL";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = glewinfo;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		70A534B4D974466787ED6E1B /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		7261E4460C1D43B1B5090623 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		7BA566E1AC0D439186A1124E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/lib/Release";
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",glew_EXPORTS,GLEW_BUILD,GLEW_NO_GLU);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/lib/Release";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CFLAGS = "    -DNDEBUG -fPIC  ";
+				OTHER_LDFLAGS = " -dynamiclib -Wl,-headerpad_max_install_names  -framework OpenGL";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = GLEW;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		82C9F5005D3D457D8A630906 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		831EDD1620E54100B2B790A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/bin/Debug";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",GLEW_NO_GLU);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/lib/Debug/libGLEWd.dylib -framework OpenGL";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = visualinfo;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		8592BB51E58C4C7098D195ED /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/lib/MinSizeRel";
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",glew_EXPORTS,GLEW_BUILD,GLEW_NO_GLU);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/lib/MinSizeRel";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CFLAGS = "    -DNDEBUG -fPIC  ";
+				OTHER_LDFLAGS = " -dynamiclib -Wl,-headerpad_max_install_names  -framework OpenGL";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = GLEW;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		872A4C6C253548149B5BAFDC /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		8D77C0F9246C4B719801000F /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		8E74C9E987334D41BA84C7CD /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		8F0C564927D84E239386818E /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/lib/RelWithDebInfo";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",GLEW_STATIC,GLEW_NO_GLU);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "       -DNDEBUG  ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = GLEW;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		9A60EC4622924F0696B4383E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/lib/Debug";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",GLEW_STATIC,GLEW_MX,GLEW_NO_GLU);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = GLEWmxd;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		A9409E82175A44B6B9346EC3 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		B1F1416E2D79462D9C03C694 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/bin/RelWithDebInfo";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",GLEW_NO_GLU);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "       -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/lib/RelWithDebInfo/libGLEW.dylib -framework OpenGL";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = glewinfo;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		B4EFD8C0266848868680B09F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/lib/Debug";
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",glew_EXPORTS,GLEW_BUILD,GLEW_NO_GLU);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/lib/Debug";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CFLAGS = "   -fPIC  ";
+				OTHER_LDFLAGS = " -dynamiclib -Wl,-headerpad_max_install_names  -framework OpenGL";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = GLEWd;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		C9AEF8EE48D6408BB894CB57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk;
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/build";
+			};
+			name = Release;
+		};
+		CAE354F091704A99AADD8858 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/lib/MinSizeRel";
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",glewmx_EXPORTS,GLEW_BUILD,GLEW_MX,GLEW_NO_GLU);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/lib/MinSizeRel";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CFLAGS = "    -DNDEBUG -fPIC  ";
+				OTHER_LDFLAGS = " -dynamiclib -Wl,-headerpad_max_install_names  -framework OpenGL";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = GLEWmx;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		D1CFCC1B0F39452EAF430460 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk;
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/build";
+			};
+			name = Debug;
+		};
+		D377186B411E4A6EA7D8CBED /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/lib/RelWithDebInfo";
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",glew_EXPORTS,GLEW_BUILD,GLEW_NO_GLU);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/lib/RelWithDebInfo";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CFLAGS = "       -DNDEBUG -fPIC  ";
+				OTHER_LDFLAGS = " -dynamiclib -Wl,-headerpad_max_install_names  -framework OpenGL";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = GLEW;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		D5C17ED2996C47379FA13FDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/lib/Release";
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",glewmx_EXPORTS,GLEW_BUILD,GLEW_MX,GLEW_NO_GLU);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/lib/Release";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CFLAGS = "    -DNDEBUG -fPIC  ";
+				OTHER_LDFLAGS = " -dynamiclib -Wl,-headerpad_max_install_names  -framework OpenGL";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = GLEWmx;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		D881B9496DC247DDBAE0ACD6 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/lib/MinSizeRel";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",GLEW_STATIC,GLEW_NO_GLU);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = GLEW;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		D8BEB9784D4E47E5B026037B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/bin/Release";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",GLEW_NO_GLU);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/lib/Release/libGLEW.dylib -framework OpenGL";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = visualinfo;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		E2A625EB458E4527AF694999 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/lib/Debug";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",GLEW_STATIC,GLEW_NO_GLU);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = GLEWd;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		E51BE19C178448158BC3A55E /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/bin/RelWithDebInfo";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",GLEW_NO_GLU);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "       -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/lib/RelWithDebInfo/libGLEW.dylib -framework OpenGL";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = visualinfo;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		EE760995EB7541B4B064D200 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/lib/Release";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",GLEW_STATIC,GLEW_MX,GLEW_NO_GLU);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = GLEWmx;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		EFAE1F96521246EBADF7EFAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		F2279DF6B0A4414F8A500D60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/lib/Debug";
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",glewmx_EXPORTS,GLEW_BUILD,GLEW_MX,GLEW_NO_GLU);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/build/cmake/../../include");
+				INSTALL_PATH = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj/lib/Debug";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CFLAGS = "   -fPIC  ";
+				OTHER_LDFLAGS = " -dynamiclib -Wl,-headerpad_max_install_names  -framework OpenGL";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = GLEWmxd;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Work/git/github/minverva/thirdparty/glew-1.13.0/proj";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0ECECE607ED5402B8404756F /* Build configuration list for PBXProject "glew" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1CFCC1B0F39452EAF430460 /* Debug */,
+				C9AEF8EE48D6408BB894CB57 /* Release */,
+				5F5A7839BB3D45ECB720FA90 /* MinSizeRel */,
+				014E0E53EA7F4AAB9D21E54F /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		1AAFB034D7BD4D54AD3DB1AF /* Build configuration list for PBXNativeTarget "glewinfo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				680008C0471F4A0FAB517A90 /* Debug */,
+				5D1E11CAB42A4FA086B69F8D /* Release */,
+				6EA5829EAC274633BBAAD9FD /* MinSizeRel */,
+				B1F1416E2D79462D9C03C694 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		1DB222A906B4466E85A329BE /* Build configuration list for PBXNativeTarget "glew_s" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2A625EB458E4527AF694999 /* Debug */,
+				5B696BBF53DD4F029B9A78E9 /* Release */,
+				D881B9496DC247DDBAE0ACD6 /* MinSizeRel */,
+				8F0C564927D84E239386818E /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		4883466DB1174B2E959610F2 /* Build configuration list for PBXAggregateTarget "install" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5398786A06DE4195BCC22C6A /* Debug */,
+				EFAE1F96521246EBADF7EFAE /* Release */,
+				A9409E82175A44B6B9346EC3 /* MinSizeRel */,
+				872A4C6C253548149B5BAFDC /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6B974FD182A549F1ABC7708E /* Build configuration list for PBXNativeTarget "glewmx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2279DF6B0A4414F8A500D60 /* Debug */,
+				D5C17ED2996C47379FA13FDF /* Release */,
+				CAE354F091704A99AADD8858 /* MinSizeRel */,
+				062C8E0098B24F8396CF6CC8 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		725BF2BD01E64170B8DE4444 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06AE866C4EE54B929219E78C /* Debug */,
+				47ACB4F278E74FE1ABE9C91B /* Release */,
+				70A534B4D974466787ED6E1B /* MinSizeRel */,
+				62661313C0BB4AE6A94B0DC5 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		72F888ADD64F40BA8307BF5E /* Build configuration list for PBXNativeTarget "glewmx_s" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A60EC4622924F0696B4383E /* Debug */,
+				EE760995EB7541B4B064D200 /* Release */,
+				6C1A40C57CB34FA7862A67E9 /* MinSizeRel */,
+				5201250A1B8846719F1339CF /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		AAB6F894C983493080F5A6C5 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7261E4460C1D43B1B5090623 /* Debug */,
+				82C9F5005D3D457D8A630906 /* Release */,
+				8D77C0F9246C4B719801000F /* MinSizeRel */,
+				8E74C9E987334D41BA84C7CD /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C49F2DD877DA4EAF8D3D836B /* Build configuration list for PBXNativeTarget "glew" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4EFD8C0266848868680B09F /* Debug */,
+				7BA566E1AC0D439186A1124E /* Release */,
+				8592BB51E58C4C7098D195ED /* MinSizeRel */,
+				D377186B411E4A6EA7D8CBED /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D53E7F2B03B24A23A3BF9A6E /* Build configuration list for PBXNativeTarget "visualinfo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				831EDD1620E54100B2B790A8 /* Debug */,
+				D8BEB9784D4E47E5B026037B /* Release */,
+				2A8AE98D66DA4CCEB7BE1D9F /* MinSizeRel */,
+				E51BE19C178448158BC3A55E /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 73D36CA5EC1B413098AF647A /* Project object */;
+}
