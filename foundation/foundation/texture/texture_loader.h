@@ -30,13 +30,18 @@ namespace minerva { namespace foundation {
         ///
         /// @param[in] file_name texture's file name.
         /// @param[out] data output data
-        void load_dds_from_file_no_safe( const std::string& file_name, texture_data* data );
+        /// @return whether the texture is loaded
+        bool load_dds_from_file_no_safe( const std::string& file_name, texture_data* data );
         
         
     protected:
+        friend class singleton< texture_loader >;
         texture_loader(){}
     };
     
 } }
+
+/// for short
+#define the_texture_loader texture_loader::get()
 
 #endif /* texture_loader_h */

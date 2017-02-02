@@ -9,6 +9,7 @@
 #include "foundation/memory/memory_tracker.h"
 #include "foundation/singleton.h"
 #include "foundation/standard_libraries/vector.h"
+#include "foundation/texture/texture_loader.h"
 //#include "testApp.h"
 #include <iostream>
 #include <fstream>
@@ -145,6 +146,7 @@ int main(int argc, const char * argv[]) {
     std::cout << "Hello, World!\n";
     
     test_singleton::initialize();
+    texture_loader::initialize();
     
     test_singleton* foo = test_singleton::get();
     foo->test();
@@ -194,6 +196,50 @@ int main(int argc, const char * argv[]) {
     glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
     
     
+    /// Tutorial 3 texture
+    texture_data tex_data;
+    if ( !the_texture_loader->load_dds_from_file_no_safe( "resources/uvtemplate.dds", &tex_data ) ) {
+        mi_log( "error when loading dds" );
+        return false;
+    }
+    
+    // Create one OpenGL texture
+    GLuint textureID;
+    glGenTextures(1, &textureID);
+    
+    // "Bind" the newly created texture : all future texture functions will modify this texture
+    glBindTexture(GL_TEXTURE_2D, textureID);
+    
+    unsigned int blockSize = (tex_data.format == GL_COMPRESSED_RGBA_S3TC_DXT1_EXT) ? 8 : 16;
+    unsigned int offset = 0;
+    
+    /* load the mipmaps */
+    for (unsigned int level = 0; level < tex_data.mipmap_count && (tex_data.width || tex_data.height); ++level)
+    {
+        unsigned int size = ((tex_data.width+3)/4)*((tex_data.height+3)/4)*blockSize;
+        glCompressedTexImage2D(GL_TEXTURE_2D, level, tex_data.format, tex_data.width, tex_data.height,
+                               0, size, tex_data.buffer + offset);
+        
+        offset += size;
+        tex_data.width  /= 2;
+        tex_data.height /= 2;
+    }
+    
+    // uv
+    static const GLfloat g_uv_buffer_data[] = {
+        0.000059f, 1.0f-0.000004f,
+        0.000103f, 1.0f-0.336048f,
+        0.335973f, 1.0f-0.335903f,
+        1.000023f, 1.0f-0.000013f,
+        0.667979f, 1.0f-0.335851f,
+        0.999958f, 1.0f-0.336064f
+    };
+    
+    GLuint uvbuffer;
+    glGenBuffers( 1, &uvbuffer );
+    glBindBuffer( GL_ARRAY_BUFFER, uvbuffer );
+    glBufferData( GL_ARRAY_BUFFER, sizeof(g_uv_buffer_data), g_uv_buffer_data, GL_STATIC_DRAW );
+    ////////////////////////////////////////////////////////////////////////
     
     /// Tutorial 2 stuff
     GLuint VertexArrayID;
@@ -244,6 +290,7 @@ int main(int argc, const char * argv[]) {
     // get uniforms
     GLuint matrixId = glGetUniformLocation( programID, "mvp" );
     GLuint timeId = glGetUniformLocation( programID, "time" );
+    GLuint sampler2D = glGetUniformLocation( programID, "textureSampler" );
     
     
     
@@ -286,6 +333,22 @@ int main(int argc, const char * argv[]) {
                               (void*)0
                               );
         
+        // 3rd uv buffer
+        glEnableVertexAttribArray(2);
+        glBindBuffer(GL_ARRAY_BUFFER, uvbuffer );
+        glVertexAttribPointer(2,
+                              2,
+                              GL_FLOAT,
+                              GL_FALSE,
+                              0,
+                              (void*)0
+                              );
+        
+        // bind sampler2D
+        glActiveTexture( GL_TEXTURE0 );
+        glBindTexture( GL_TEXTURE_2D, textureID );
+        glUniform1i( sampler2D, 0 );
+        
         // Draw the triangle !
         glDrawArrays(GL_TRIANGLES, 0, 3 * 2); // Starting from vertex 0; 3 vertices total -> 1 triangle
         glDisableVertexAttribArray(0);
@@ -300,7 +363,10 @@ int main(int argc, const char * argv[]) {
           glfwWindowShouldClose(window) == 0 );
     
     glDeleteBuffers( 1, &vertexbuffer );
+    glDeleteBuffers( 1, &uvbuffer );
+    glDeleteBuffers( 1, &colorbuffer );
     glDeleteVertexArrays( 1, &VertexArrayID );
+    glDeleteTextures( 1, &textureID );
     glDeleteProgram( programID );
     
     glfwTerminate();

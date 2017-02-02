@@ -16,6 +16,15 @@ namespace minerva { namespace foundation {
     /// texture data loaded from disk
     struct texture_data
     {
+        /// ctor
+        texture_data() : buffer(0) {}
+        
+        /// dtor
+        ~texture_data() {
+            if ( buffer ) {
+                free( buffer );
+            }
+        }
         uint format;        ///< texture format
         uint width;         ///< texture width
         uint height;        ///< texture height
