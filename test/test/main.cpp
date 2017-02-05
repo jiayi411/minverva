@@ -10,6 +10,7 @@
 #include "foundation/singleton.h"
 #include "foundation/standard_libraries/vector.h"
 #include "foundation/texture/texture_loader.h"
+#include "foundation/basic/smart_object.h"
 //#include "testApp.h"
 #include <iostream>
 #include <fstream>
@@ -33,6 +34,17 @@ public:
     
     void test(){ printf("singleton success\n"); }
 };
+
+class test_smart : public reference_object
+{
+public:
+    test_smart(int i ) : _i(i){}
+    
+private:
+    int _i;
+};
+
+make_smart( test_smart );
 
 template<> test_singleton* singleton<test_singleton>::_this = nullptr;
 
@@ -142,6 +154,10 @@ GLuint LoadShaders(const char * vertex_file_path,const char * fragment_file_path
 
 //int testApp::run() {
 int main(int argc, const char * argv[]) {
+    
+    test_smart_ptr smart1 = mi_new test_smart(1);
+    test_smart_ptr smart2 = smart1;
+    
     // insert code here...
     std::cout << "Hello, World!\n";
     
@@ -156,9 +172,8 @@ int main(int argc, const char * argv[]) {
     // allocator
     mi_vector<test_allocator*> allocators;
     for ( int i = 0; i < 100; ++i ){
-        allocators.emplace_back( mi_new test_allocator() );
+//        allocators.emplace_back( mi_new test_allocator() );
     }
-    the_memory_tracker->output_informations();
     
     // for opengl
     // Initialise GLFW
@@ -203,27 +218,24 @@ int main(int argc, const char * argv[]) {
         return false;
     }
     
-    // Create one OpenGL texture
-    GLuint textureID;
-    glGenTextures(1, &textureID);
     
     // "Bind" the newly created texture : all future texture functions will modify this texture
-    glBindTexture(GL_TEXTURE_2D, textureID);
+//    glBindTexture(GL_TEXTURE_2D, textureID);
+//    
+//    unsigned int blockSize = (tex_data.format == GL_COMPRESSED_RGBA_S3TC_DXT1_EXT) ? 8 : 16;
+//    unsigned int offset = 0;
     
-    unsigned int blockSize = (tex_data.format == GL_COMPRESSED_RGBA_S3TC_DXT1_EXT) ? 8 : 16;
-    unsigned int offset = 0;
-    
-    /* load the mipmaps */
-    for (unsigned int level = 0; level < tex_data.mipmap_count && (tex_data.width || tex_data.height); ++level)
-    {
-        unsigned int size = ((tex_data.width+3)/4)*((tex_data.height+3)/4)*blockSize;
-        glCompressedTexImage2D(GL_TEXTURE_2D, level, tex_data.format, tex_data.width, tex_data.height,
-                               0, size, tex_data.buffer + offset);
-        
-        offset += size;
-        tex_data.width  /= 2;
-        tex_data.height /= 2;
-    }
+//    /* load the mipmaps */
+//    for (unsigned int level = 0; level < tex_data.mipmap_count && (tex_data.width || tex_data.height); ++level)
+//    {
+//        unsigned int size = ((tex_data.width+3)/4)*((tex_data.height+3)/4)*blockSize;
+//        glCompressedTexImage2D(GL_TEXTURE_2D, level, tex_data.format, tex_data.width, tex_data.height,
+//                               0, size, tex_data.buffer + offset);
+//        
+//        offset += size;
+//        tex_data.width  /= 2;
+//        tex_data.height /= 2;
+//    }
     
     // uv
     static const GLfloat g_uv_buffer_data[] = {
@@ -293,8 +305,36 @@ int main(int argc, const char * argv[]) {
     GLuint sampler2D = glGetUniformLocation( programID, "textureSampler" );
     
     
-    
+    // output memory
+    the_memory_tracker->output_informations();
+    // Create one OpenGL texture
+    GLuint textureID;
+    glGenTextures(1, &textureID);
     do{
+        if( glfwGetKey( window, GLFW_KEY_T) == GLFW_PRESS ) {
+            
+            // bind sampler2D
+            glActiveTexture( GL_TEXTURE0 );
+            glBindTexture( GL_TEXTURE_2D, textureID );
+            glUniform1i( sampler2D, 0 );
+            
+            unsigned int blockSize = (tex_data.format == GL_COMPRESSED_RGBA_S3TC_DXT1_EXT) ? 8 : 16;
+            unsigned int offset = 0;
+            
+            
+            /* load the mipmaps */
+            for (unsigned int level = 0; level < tex_data.mipmap_count && (tex_data.width || tex_data.height); ++level)
+            {
+                unsigned int size = ((tex_data.width+3)/4)*((tex_data.height+3)/4)*blockSize;
+                glCompressedTexImage2D(GL_TEXTURE_2D, level, tex_data.format, tex_data.width, tex_data.height,
+                                       0, size, tex_data.buffer + offset);
+                
+                offset += size;
+                tex_data.width  /= 2;
+                tex_data.height /= 2;
+            }
+        }
+        
         // Draw nothing, see you in tutorial 2 !
        glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
         
@@ -344,10 +384,7 @@ int main(int argc, const char * argv[]) {
                               (void*)0
                               );
         
-        // bind sampler2D
-        glActiveTexture( GL_TEXTURE0 );
-        glBindTexture( GL_TEXTURE_2D, textureID );
-        glUniform1i( sampler2D, 0 );
+        
         
         // Draw the triangle !
         glDrawArrays(GL_TRIANGLES, 0, 3 * 2); // Starting from vertex 0; 3 vertices total -> 1 triangle
@@ -357,6 +394,8 @@ int main(int argc, const char * argv[]) {
         // Swap buffers
         glfwSwapBuffers(window);
         glfwPollEvents();
+        
+        
         
     } // Check if the ESC key was pressed or the window was closed
     while( glfwGetKey(window, GLFW_KEY_ESCAPE ) != GLFW_PRESS &&

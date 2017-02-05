@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180C96EF1E468638002ED6A0 /* smart_object.h in Headers */ = {isa = PBXBuildFile; fileRef = 180C96ED1E468638002ED6A0 /* smart_object.h */; };
+		180C96F41E478C06002ED6A0 /* reference_object.h in Headers */ = {isa = PBXBuildFile; fileRef = 180C96F21E478C06002ED6A0 /* reference_object.h */; };
 		186078D01E3199CF00161801 /* consts.h in Headers */ = {isa = PBXBuildFile; fileRef = 186078C11E3199CF00161801 /* consts.h */; };
 		186078D11E3199CF00161801 /* defines.h in Headers */ = {isa = PBXBuildFile; fileRef = 186078C21E3199CF00161801 /* defines.h */; };
 		186078D21E3199CF00161801 /* foundation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 186078C31E3199CF00161801 /* foundation.cpp */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		180C96ED1E468638002ED6A0 /* smart_object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = smart_object.h; path = basic/smart_object.h; sourceTree = "<group>"; };
+		180C96F21E478C06002ED6A0 /* reference_object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = reference_object.h; path = basic/reference_object.h; sourceTree = "<group>"; };
 		186078C11E3199CF00161801 /* consts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = consts.h; sourceTree = "<group>"; };
 		186078C21E3199CF00161801 /* defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = defines.h; sourceTree = "<group>"; };
 		186078C31E3199CF00161801 /* foundation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = foundation.cpp; sourceTree = "<group>"; };
@@ -57,9 +61,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		180C96F01E46863F002ED6A0 /* basic */ = {
+			isa = PBXGroup;
+			children = (
+				180C96ED1E468638002ED6A0 /* smart_object.h */,
+				180C96F21E478C06002ED6A0 /* reference_object.h */,
+			);
+			name = basic;
+			sourceTree = "<group>";
+		};
 		186078C01E3199CF00161801 /* foundation */ = {
 			isa = PBXGroup;
 			children = (
+				180C96F01E46863F002ED6A0 /* basic */,
 				18A402931E42CE3100BB70CB /* texture */,
 				186078C91E3199CF00161801 /* standard_libraries */,
 				186078C41E3199CF00161801 /* memory */,
@@ -132,6 +146,7 @@
 				186078D01E3199CF00161801 /* consts.h in Headers */,
 				1895553F1E31C7D000563E6C /* foundation.h in Headers */,
 				186078DA1E3199CF00161801 /* unordered_map.h in Headers */,
+				180C96EF1E468638002ED6A0 /* smart_object.h in Headers */,
 				186078D91E3199CF00161801 /* multimap.h in Headers */,
 				189555551E31D12000563E6C /* list.h in Headers */,
 				186078DC1E3199CF00161801 /* vector.h in Headers */,
@@ -141,6 +156,7 @@
 				186078DB1E3199CF00161801 /* unordered_multimap.h in Headers */,
 				18A4029F1E42CFF500BB70CB /* texture_loader.h in Headers */,
 				186078D61E3199CF00161801 /* singleton.h in Headers */,
+				180C96F41E478C06002ED6A0 /* reference_object.h in Headers */,
 				186078D11E3199CF00161801 /* defines.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

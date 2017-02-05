@@ -36,7 +36,7 @@ void memory_tracker::add(void *ptr, size_t size, const char *function, uint line
     // increase size count of memory_group
     size_t memory_index = _increase( index, size, line );
     
-    _pointers.emplace( std::make_pair( *(ulong*)&ptr, index << 32 | memory_index ) );
+    _pointers.emplace( std::make_pair( *(ulong*)&ptr, index << 31 | memory_index ) );
     
     _mutex.unlock();
     
@@ -64,7 +64,7 @@ void memory_tracker::output_informations()
         for( const auto s : group.size_count_array )
         {
             if( s.ui_count > 0 )
-            { mi_log( "function: %s, line: %d, allocated count: %d, total memory: %.1f kbytes\n",
+            { mi_log( "function: %s, line: %d, allocated count: %d, total memory: %.3f kbytes\n",
                      group.function_name.c_str(), s.n_line, s.ui_count, (s.t_size * s.ui_count) / 1024.0 ); }
         }
     }
@@ -99,7 +99,6 @@ size_t memory_tracker::_get_memory_group_index_by_name( const std::string& funct
 size_t memory_tracker::_increase( size_t index, size_t size, uint line )
 {
     if( index >= _groups.size() ){
-        _mutex.unlock();
         return -1;
     }
     
@@ -111,7 +110,6 @@ size_t memory_tracker::_increase( size_t index, size_t size, uint line )
         if ( info.n_line == line && info.t_size == size )
         {
             ++info.ui_count;
-            _mutex.unlock();
             return i;
         }
     }
@@ -126,10 +124,9 @@ size_t memory_tracker::_increase( size_t index, size_t size, uint line )
 void memory_tracker::_decrease( ullong index )
 {
     size_t memory_index = index & 0x00000000ffffffff;
-    size_t group_index = index >> 32;
+    size_t group_index = index >> 31;
     
     if ( group_index >= _groups.size() ){
-        _mutex.unlock();
         return;
     }
     

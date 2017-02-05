@@ -22,13 +22,13 @@ namespace minerva { namespace foundation {
         /// dtor
         ~texture_data() {
             if ( buffer ) {
-                free( buffer );
+                mi_free( buffer );
             }
         }
         uint format;        ///< texture format
         uint width;         ///< texture width
         uint height;        ///< texture height
-        uint mipmap_count;  ///< mipmap count, 0 mean no mimap
+        uint mipmap_count;  ///< mipmap count, 0 means no mimap
         uchar* buffer;      ///< texture data
     };
 } }

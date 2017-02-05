@@ -24,6 +24,7 @@ bool texture_loader::load_dds_from_file_no_safe( const std::string& file_name,
     
     std::ifstream stream( file_name, std::ios::binary | std::ios::in );
     if ( !stream.good() ) {
+        mi_log("error occurs when loading file: %s", file_name.c_str());
         return false;
     }
     
@@ -37,7 +38,6 @@ bool texture_loader::load_dds_from_file_no_safe( const std::string& file_name,
     }
     
     /* get the surface desc */
-    //    fread(&header, 124, 1, fp);
     stream.read( header, 124 );
     
     unsigned int height      = *(unsigned int*)&(header[8 ]);
@@ -50,7 +50,7 @@ bool texture_loader::load_dds_from_file_no_safe( const std::string& file_name,
     
     /* how big is it going to be including all mipmaps? */
     bufsize = mipMapCount > 1 ? linearSize * 2 : linearSize;
-    char *buffer = (char*)malloc(bufsize * sizeof(char));
+    char *buffer = (char*)mi_malloc(bufsize * sizeof(char));
     stream.read( buffer, bufsize * sizeof(char) );
     /* close the file pointer */
     stream.close();

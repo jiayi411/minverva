@@ -189,6 +189,7 @@
 				18A402A31E42E2D300BB70CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
