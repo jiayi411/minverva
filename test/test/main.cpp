@@ -155,14 +155,26 @@ GLuint LoadShaders(const char * vertex_file_path,const char * fragment_file_path
 //int testApp::run() {
 int main(int argc, const char * argv[]) {
     
-    test_smart_ptr smart1 = mi_new test_smart(1);
-    test_smart_ptr smart2 = smart1;
+    
+    std::chrono::high_resolution_clock::time_point beginTime = std::chrono::high_resolution_clock::now();
+    mi_vector< test_smart_ptr > v_smart;
+    
+    for (int i = 0; i < 1000000; ++ i) {
+        test_smart_ptr smart = mi_new test_smart(1);
+        v_smart.emplace_back( std::move(smart) );
+    }
+    std::chrono::high_resolution_clock::time_point endTime = std::chrono::high_resolution_clock::now();
+    std::chrono::milliseconds timeInterval = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - beginTime);
+    std::cout << timeInterval.count() << "ms\n";
+    
     
     // insert code here...
     std::cout << "Hello, World!\n";
     
     test_singleton::initialize();
     texture_loader::initialize();
+    
+    v_smart.clear();
     
     test_singleton* foo = test_singleton::get();
     foo->test();

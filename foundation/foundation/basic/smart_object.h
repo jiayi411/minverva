@@ -18,7 +18,8 @@ namespace minerva { namespace foundation {
     /// @brief The basic class of any smart object
     ///
     /// Smart object is an object that maintain its lifecycle
-    /// automatically, it cannot be new/delete from outside
+    /// automatically, it cannot be new/delete from outside. This
+    /// class is thread safety.
     ///
     template< class T >
     class smart_object
@@ -28,6 +29,9 @@ namespace minerva { namespace foundation {
         static T* create_smart() { return mi_new T(); }
         
     public:
+        /// for rhs operator
+        inline T& operator= ( smart_object&& );
+        
         /// assign a reference to the object
         inline T& operator= ( const smart_object& );
         
@@ -57,12 +61,15 @@ namespace minerva { namespace foundation {
         
         
     public:
-        inline ~smart_object() { if (_object) { _object->decrease_reference(); } }
+        inline ~smart_object();
         inline smart_object( T* object = nullptr );
-        inline smart_object( const smart_object& );
+        inline smart_object( smart_object&& );
+        
+        smart_object( const smart_object& );
         
     protected:
-        T* _object;
+        T* _object = nullptr;
+        std::atomic_flag _smart_lock;   ///< lock
     };
     
     ////////////////////////////////////////////////////////////////////////
@@ -70,8 +77,16 @@ namespace minerva { namespace foundation {
         class T;\
         typedef smart_object<T> T##_ptr;
     ////////////////////////////////////////////////////////////////////////
+    template<class T> smart_object<T>::~smart_object()
+    {
+        while (_smart_lock.test_and_set());
+        if (_object) { _object->decrease_reference(); }
+        _smart_lock.clear();
+    }
+    
     template<class T> smart_object<T>::smart_object( T* object /*=nullptr*/)
     {
+        _smart_lock.clear();
         if (object)
         {
             _object = object;
@@ -81,23 +96,46 @@ namespace minerva { namespace foundation {
     
     template<class T> smart_object<T>::smart_object( const smart_object& smart )
     {
+        _smart_lock.clear();
         _object = smart._object;
         _object->increase_reference();
     }
     
-    template<class T> T& smart_object<T>::operator=( const smart_object& pointer )
+    template<class T> smart_object<T>::smart_object( smart_object&& smart )
     {
+        _smart_lock.clear();
+        if (_object) { _object->decrease_reference(); }
+        _object = smart._object;
+        if (_object) { _object->increase_reference(); }        
+    }
+    
+    template<class T> T& smart_object<T>::operator=( smart_object&& pointer )
+    {
+        while (_smart_lock.test_and_set());
         if (_object) { _object->decrease_reference(); }
         _object = pointer._object;
         if (_object) { _object->increase_reference(); }
+        _smart_lock.clear();
+        return *this;
+    }
+    
+    template<class T> T& smart_object<T>::operator=( const smart_object& pointer )
+    {
+        while (_smart_lock.test_and_set());
+        if (_object) { _object->decrease_reference(); }
+        _object = pointer._object;
+        if (_object) { _object->increase_reference(); }
+        _smart_lock.clear();
         return *this;
     }
     
     template<class T> T& smart_object<T>::operator=( T* object )
     {
+        while (_smart_lock.test_and_set());
         if (_object) { _object->decrease_reference(); }
         _object = object;
         if (_object) { _object->increase_reference(); }
+        _smart_lock.clear();
         return *this;
     }
     
