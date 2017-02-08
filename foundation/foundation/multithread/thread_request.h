@@ -10,7 +10,7 @@
 #ifndef thread_request_H
 #define thread_request_H
 
-#include "basic/smart_object.h"
+#include "object/smart_object.h"
 #include "multithread/thread_common.h"
 
 namespace minerva { namespace foundation {

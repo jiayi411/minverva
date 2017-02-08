@@ -10,7 +10,7 @@
 #ifndef smart_object_H
 #define smart_object_H
 
-#include "basic/reference_object.h"
+#include "object/reference_object.h"
 
 namespace minerva { namespace foundation {
     

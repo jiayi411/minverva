@@ -11,7 +11,7 @@
 #define thread_procedure_H
 
 #include "memory/allocator.h"
-#include "basic/update_object.h"
+#include "object/update_object.h"
 #include "multithread/thread_request.h"
 #include "standard_libraries/queue.h"
 #include <atomic>

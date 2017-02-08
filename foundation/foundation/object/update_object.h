@@ -9,7 +9,7 @@
 #ifndef update_object_h
 #define update_object_h
 
-#include "basic/reference_object.h"
+#include "object/reference_object.h"
 
 namespace minerva { namespace foundation {
     

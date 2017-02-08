@@ -9,7 +9,7 @@
 #ifndef render_object_h
 #define render_object_h
 
-#include "basic/update_object"
+#include "object/update_object"
 
 namespace minerva { namespace foundation {
     
