@@ -329,6 +329,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 95BDJ9G9B4;
+				GCC_ENABLE_CPP_RTTI = NO;
 				HEADER_SEARCH_PATHS = (
 					"../foundation/**",
 					"../thirdparty/glew-1.13.0/include",
@@ -348,6 +349,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 95BDJ9G9B4;
+				GCC_ENABLE_CPP_RTTI = NO;
 				HEADER_SEARCH_PATHS = (
 					"../foundation/**",
 					"../thirdparty/glew-1.13.0/include",

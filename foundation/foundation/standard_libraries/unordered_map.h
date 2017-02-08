@@ -10,6 +10,9 @@
 #define unordered_map_h
 
 #include <unordered_map>
-#define mi_unordered_map std::unordered_map
+#include "defines.h"
+
+template< typename Key, typename T >
+using mi_unordered_map = std::unordered_map<Key, T, HashType<Key>>;
 
 #endif /* unordered_map_h */

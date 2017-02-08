@@ -53,6 +53,7 @@ namespace minerva { namespace foundation {
         std::atomic_uint _reference;        ///< reference count
         std::atomic_flag _reference_lock;   ///< lock
     };
+    
 } }
 
 #endif /* reference_object_h */

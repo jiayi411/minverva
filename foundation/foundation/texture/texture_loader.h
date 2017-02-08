@@ -26,12 +26,15 @@ namespace minerva { namespace foundation {
     public:
         ~texture_loader(){}
         
+        /// @breif Load .dds file, thread-safe
+        void* load_dds( void* file_name ) thread_safe;
+        
         /// @brief Load .dds file, not thread-safe
         ///
         /// @param[in] file_name texture's file name.
         /// @param[out] data output data
         /// @return whether the texture is loaded
-        bool load_dds_from_file_no_safe( const std::string& file_name, texture_data* data );
+        bool load_dds_from_file( const std::string& file_name, texture_data* data );
         
         
     protected:

@@ -26,17 +26,17 @@ namespace minerva { namespace foundation {
     {
     public:
         /// create a new object, this is the only function to do that
-        static T* create_smart() { return mi_new T(); }
+//        static T* create_smart() { return mi_new T(); }
         
     public:
         /// for rhs operator
-        inline T& operator= ( smart_object&& );
+        inline smart_object& operator= ( smart_object&& );
         
         /// assign a reference to the object
-        inline T& operator= ( const smart_object& );
+        inline smart_object& operator= ( const smart_object& );
         
         /// assign a pointer to the object
-        inline T& operator= ( T* );
+        inline smart_object& operator= ( T* );
         
         /// compare operators 1/4
         inline bool operator== ( T* );
@@ -109,7 +109,7 @@ namespace minerva { namespace foundation {
         if (_object) { _object->increase_reference(); }        
     }
     
-    template<class T> T& smart_object<T>::operator=( smart_object&& pointer )
+    template<class T> smart_object<T>& smart_object<T>::operator=( smart_object&& pointer )
     {
         while (_smart_lock.test_and_set());
         if (_object) { _object->decrease_reference(); }
@@ -119,7 +119,7 @@ namespace minerva { namespace foundation {
         return *this;
     }
     
-    template<class T> T& smart_object<T>::operator=( const smart_object& pointer )
+    template<class T> smart_object<T>& smart_object<T>::operator=( const smart_object& pointer )
     {
         while (_smart_lock.test_and_set());
         if (_object) { _object->decrease_reference(); }
@@ -129,7 +129,7 @@ namespace minerva { namespace foundation {
         return *this;
     }
     
-    template<class T> T& smart_object<T>::operator=( T* object )
+    template<class T> smart_object<T>& smart_object<T>::operator=( T* object )
     {
         while (_smart_lock.test_and_set());
         if (_object) { _object->decrease_reference(); }

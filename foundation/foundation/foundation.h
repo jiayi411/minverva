@@ -14,7 +14,8 @@ namespace minerva { namespace foundation {
   
     class core
     {
-        
+    public:
+        static void initialize_singeltons();
     };
     
 } }

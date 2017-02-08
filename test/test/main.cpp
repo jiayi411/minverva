@@ -20,6 +20,9 @@
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 #include <glm/ext.hpp>
+
+#include "foundation/foundation.h"
+#include "multithread/thread_manager.h"
 using namespace glm;
 
 
@@ -39,6 +42,7 @@ class test_smart : public reference_object
 {
 public:
     test_smart(int i ) : _i(i){}
+    void test() { mi_log("%d", _i ); }
     
 private:
     int _i;
@@ -53,6 +57,40 @@ template<> test_singleton* singleton<test_singleton>::_this = nullptr;
 class test_allocator : public allocator
 {
 public:
+    virtual ~test_allocator() { mi_log("~\n"); }
+    test_allocator() { mi_log("ctor\n"); }
+//    test_allocator( test_allocator&& t ){
+//        i = t.i;
+//        t.i = 999;
+//        mi_log("1\n");
+//    }
+//    test_allocator& operator= ( test_allocator&& t ){
+//        i = t.i;
+//        t.i = 99;
+//        mi_log("2\n");
+//        return *this;
+//    }
+//    test_allocator( test_allocator& ) = delete;
+//    test_allocator& operator= ( const test_allocator&) = delete;
+    
+//    test_allocator( test_allocator& )
+//    {
+//        i = t.i;
+//        t.i = 999;
+//    }
+//    test_allocator& operator= ( const test_allocator&)
+//    {
+//        i = t.i;
+////        t.i = 99;
+//        return *this;
+//    }
+    
+    inline static void test_move(std::string& a1, std::string& a2) {
+        
+        a1.swap( a2 );
+    }
+    
+    
     void test(){ printf("allocator success %d\n", i); }
     
     int i = 0;
@@ -152,17 +190,28 @@ GLuint LoadShaders(const char * vertex_file_path,const char * fragment_file_path
     return ProgramID;
 }
 
+void test_thread( void* data ) {
+    texture_data* t_data = ( texture_data* )(data);
+    mi_log( "texture width: %d\n", t_data->width );
+}
+
 //int testApp::run() {
 int main(int argc, const char * argv[]) {
     
+    core::initialize_singeltons();
     
     std::chrono::high_resolution_clock::time_point beginTime = std::chrono::high_resolution_clock::now();
-    mi_vector< test_smart_ptr > v_smart;
-    
-    for (int i = 0; i < 1000000; ++ i) {
-        test_smart_ptr smart = mi_new test_smart(1);
-        v_smart.emplace_back( std::move(smart) );
-    }
+    mi_vector< test_allocator > v_smart;
+    std::string s1 = "s1";
+    std::string s2 = "s2";
+//    for (int i = 0; i < 1000000; ++ i) {
+//        v_smart.emplace_back( test_allocator() );
+//        test_allocator::test_move( s1, s2 );
+//        std::string o(std::move(s1));
+//        s1 = std::move( s2 );
+//        s2 = std::move(o);
+//        std::swap( s1, s2 );
+//    }
     std::chrono::high_resolution_clock::time_point endTime = std::chrono::high_resolution_clock::now();
     std::chrono::milliseconds timeInterval = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - beginTime);
     std::cout << timeInterval.count() << "ms\n";
@@ -171,10 +220,30 @@ int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
     
-    test_singleton::initialize();
-    texture_loader::initialize();
+    /// test smart_ptr's reference in std::bind
+    test_smart_ptr smart_ = mi_new test_smart(98);
+    auto func = std::bind(&test_smart::test, smart_ );
     
-    v_smart.clear();
+    test_singleton::initialize();
+    
+    /// test thread manager
+    the_thread_manager->add_procedure( e_thread_type::background_loading );
+    the_thread_manager->start_all();
+    
+    
+    std::function<void*(void*)> p3 = std::bind( &texture_loader::load_dds, texture_loader::get(), std::placeholders::_1 );
+    std::function<void(void*)> p4 = std::bind( &test_thread, std::placeholders::_1 );
+        
+    std::string thread_test_string = "resources/uvtemplate.dds";
+    thread_request_ptr t_request = mi_new thread_request(
+                                                         e_thread_type::background_loading,
+                                                         (void*)(&thread_test_string),
+                                                         p3, p4
+                                                         );
+    
+    the_thread_manager->push_request( t_request );
+    
+//    v_smart.clear();
     
     test_singleton* foo = test_singleton::get();
     foo->test();
@@ -225,7 +294,7 @@ int main(int argc, const char * argv[]) {
     
     /// Tutorial 3 texture
     texture_data tex_data;
-    if ( !the_texture_loader->load_dds_from_file_no_safe( "resources/uvtemplate.dds", &tex_data ) ) {
+    if ( !the_texture_loader->load_dds_from_file( "resources/uvtemplate.dds", &tex_data ) ) {
         mi_log( "error when loading dds" );
         return false;
     }
@@ -406,6 +475,9 @@ int main(int argc, const char * argv[]) {
         // Swap buffers
         glfwSwapBuffers(window);
         glfwPollEvents();
+        
+        // update manager
+        the_thread_manager->update( 0.f );
         
         
         

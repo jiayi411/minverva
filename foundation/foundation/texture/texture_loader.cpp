@@ -17,7 +17,18 @@ using namespace minerva::foundation;
 #define FOURCC_DXT3 0x33545844 // Equivalent to "DXT3" in ASCII
 #define FOURCC_DXT5 0x35545844 // Equivalent to "DXT5" in ASCII
 
-bool texture_loader::load_dds_from_file_no_safe( const std::string& file_name,
+void* texture_loader::load_dds( void* v_file_name ) thread_safe
+{
+    texture_data* data = mi_new texture_data();
+    std::string file_name = *(std::string*)(v_file_name);
+    if ( load_dds_from_file( ( file_name), data ) ) {
+        return (void*)data;
+    }
+    
+    return nullptr;
+}
+
+bool texture_loader::load_dds_from_file( const std::string& file_name,
                                                 texture_data* data )
 {
     char header[124];

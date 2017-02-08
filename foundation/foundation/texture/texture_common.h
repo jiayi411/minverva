@@ -14,7 +14,7 @@
 namespace minerva { namespace foundation {
     
     /// texture data loaded from disk
-    struct texture_data
+    struct texture_data : public allocator
     {
         /// ctor
         texture_data() : buffer(0) {}

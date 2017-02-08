@@ -8,6 +8,7 @@
 
 #pragma once
 #include <assert.h>
+#include <string>
 
 #ifdef DEBUG
 #define MI_DEBUG
@@ -39,6 +40,9 @@
 // log
 #define mi_log printf
 
+// thread
+#define thread_safe
+
 
 // datas
 using llong = long long;
@@ -47,4 +51,17 @@ using ullong = unsigned long long;
 using uint = unsigned int;
 using ushort = unsigned short;
 using uchar = unsigned char;
+
+// structs
+struct EnumClassHash
+{
+    template <typename T>
+    std::size_t operator()(T t) const
+    {
+        return static_cast<std::size_t>(t);
+    }
+};
+
+template <typename Key>
+using HashType = typename std::conditional<std::is_enum<Key>::value, EnumClassHash, std::hash<Key>>::type;
 

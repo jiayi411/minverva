@@ -10,6 +10,8 @@
 #define multimap_h
 
 #include <multimap>
-#define mi_multimap std::multimap
+#include "defines.h"
+template< typename Key, typename T >
+using mi_multimap = std::multimap<Key, T, HashType<T>>;
 
 #endif /* multimap_h */
