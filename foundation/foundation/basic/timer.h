@@ -10,7 +10,7 @@
 #ifndef timer_H
 #define timer_H
 
-#include "singleton.h"
+#include "basic/singleton.h"
 
 using std::chrono::high_resolution_clock;
 

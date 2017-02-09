@@ -9,7 +9,7 @@
 #ifndef thread_common_h
 #define thread_common_h
 
-#include "defines.h"
+#include "basic/defines.h"
 
 namespace minerva { namespace foundation {
     

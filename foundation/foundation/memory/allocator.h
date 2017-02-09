@@ -9,8 +9,8 @@
 
 #pragma once
 
-#include "defines.h"
-#include "consts.h"
+#include "basic/defines.h"
+#include "basic/consts.h"
 #include "memory/memory_tracker.h"
 #include <stdlib.h>
 

@@ -8,7 +8,7 @@
 
 #ifndef foundation_h
 #define foundation_h
-#include "singleton.h"
+#include "basic/singleton.h"
 #include "basic/timer.h"
 
 namespace minerva { namespace foundation {

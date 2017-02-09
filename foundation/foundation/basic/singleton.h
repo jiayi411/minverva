@@ -9,7 +9,7 @@
 #ifndef singleton_h
 #define singleton_h
 
-#include "defines.h"
+#include "basic/defines.h"
 #include "memory/allocator.h"
 
 namespace minerva

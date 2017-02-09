@@ -10,7 +10,7 @@
 #ifndef texture_manager_H
 #define texture_manager_H
 
-#include "singleton.h"
+#include "basic/singleton.h"
 #include "standard_libraries/unordered_map.h"
 #include "texture/texture_common.h"
 

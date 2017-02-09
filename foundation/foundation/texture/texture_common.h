@@ -9,7 +9,7 @@
 #ifndef texture_common_h
 #define texture_common_h
 
-#include "defines.h"
+#include "basic/defines.h"
 #include "object/smart_object.h"
 
 namespace minerva { namespace foundation {

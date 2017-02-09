@@ -10,7 +10,7 @@
 #ifndef thread_manager_H
 #define thread_manager_H
 
-#include "singleton.h"
+#include "basic/singleton.h"
 #include "standard_libraries/unordered_map.h"
 #include "multithread/thread_request.h"
 #include "multithread/thread_procedure.h"

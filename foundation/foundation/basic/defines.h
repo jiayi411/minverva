@@ -43,7 +43,6 @@
 // thread
 #define thread_safe
 
-
 // datas
 using llong = long long;
 using ulong = unsigned long;

@@ -22,13 +22,10 @@
 		180C97121E4BA501002ED6A0 /* update_object.h in Headers */ = {isa = PBXBuildFile; fileRef = 180C970E1E4BA501002ED6A0 /* update_object.h */; };
 		180C97161E4BA55D002ED6A0 /* timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 180C97141E4BA55D002ED6A0 /* timer.cpp */; };
 		180C97171E4BA55D002ED6A0 /* timer.h in Headers */ = {isa = PBXBuildFile; fileRef = 180C97151E4BA55D002ED6A0 /* timer.h */; };
-		186078D01E3199CF00161801 /* consts.h in Headers */ = {isa = PBXBuildFile; fileRef = 186078C11E3199CF00161801 /* consts.h */; };
-		186078D11E3199CF00161801 /* defines.h in Headers */ = {isa = PBXBuildFile; fileRef = 186078C21E3199CF00161801 /* defines.h */; };
 		186078D21E3199CF00161801 /* foundation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 186078C31E3199CF00161801 /* foundation.cpp */; };
 		186078D31E3199CF00161801 /* allocator.h in Headers */ = {isa = PBXBuildFile; fileRef = 186078C51E3199CF00161801 /* allocator.h */; };
 		186078D41E3199CF00161801 /* memory_tracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 186078C61E3199CF00161801 /* memory_tracker.cpp */; };
 		186078D51E3199CF00161801 /* memory_tracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 186078C71E3199CF00161801 /* memory_tracker.h */; };
-		186078D61E3199CF00161801 /* singleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 186078C81E3199CF00161801 /* singleton.h */; };
 		186078D81E3199CF00161801 /* map.h in Headers */ = {isa = PBXBuildFile; fileRef = 186078CB1E3199CF00161801 /* map.h */; };
 		186078D91E3199CF00161801 /* multimap.h in Headers */ = {isa = PBXBuildFile; fileRef = 186078CC1E3199CF00161801 /* multimap.h */; };
 		186078DA1E3199CF00161801 /* unordered_map.h in Headers */ = {isa = PBXBuildFile; fileRef = 186078CD1E3199CF00161801 /* unordered_map.h */; };
@@ -36,6 +33,9 @@
 		186078DC1E3199CF00161801 /* vector.h in Headers */ = {isa = PBXBuildFile; fileRef = 186078CF1E3199CF00161801 /* vector.h */; };
 		187863AF1E4BCDE300DE334A /* texture_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 187863AD1E4BCDE300DE334A /* texture_manager.cpp */; };
 		187863B01E4BCDE300DE334A /* texture_manager.h in Headers */ = {isa = PBXBuildFile; fileRef = 187863AE1E4BCDE300DE334A /* texture_manager.h */; };
+		187863B41E4C24BB00DE334A /* consts.h in Headers */ = {isa = PBXBuildFile; fileRef = 187863B11E4C24BB00DE334A /* consts.h */; };
+		187863B51E4C24BB00DE334A /* defines.h in Headers */ = {isa = PBXBuildFile; fileRef = 187863B21E4C24BB00DE334A /* defines.h */; };
+		187863B61E4C24BB00DE334A /* singleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 187863B31E4C24BB00DE334A /* singleton.h */; };
 		1895553F1E31C7D000563E6C /* foundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 186078DD1E31B1D900161801 /* foundation.h */; };
 		189555551E31D12000563E6C /* list.h in Headers */ = {isa = PBXBuildFile; fileRef = 189555541E31D12000563E6C /* list.h */; };
 		18A4029E1E42CFF500BB70CB /* texture_loader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18A4029C1E42CFF500BB70CB /* texture_loader.cpp */; };
@@ -59,13 +59,10 @@
 		180C970E1E4BA501002ED6A0 /* update_object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = update_object.h; path = object/update_object.h; sourceTree = "<group>"; };
 		180C97141E4BA55D002ED6A0 /* timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = timer.cpp; path = basic/timer.cpp; sourceTree = "<group>"; };
 		180C97151E4BA55D002ED6A0 /* timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = timer.h; path = basic/timer.h; sourceTree = "<group>"; };
-		186078C11E3199CF00161801 /* consts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = consts.h; sourceTree = "<group>"; };
-		186078C21E3199CF00161801 /* defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = defines.h; sourceTree = "<group>"; };
 		186078C31E3199CF00161801 /* foundation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = foundation.cpp; sourceTree = "<group>"; };
 		186078C51E3199CF00161801 /* allocator.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = allocator.h; sourceTree = "<group>"; };
 		186078C61E3199CF00161801 /* memory_tracker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = memory_tracker.cpp; sourceTree = "<group>"; };
 		186078C71E3199CF00161801 /* memory_tracker.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = memory_tracker.h; sourceTree = "<group>"; };
-		186078C81E3199CF00161801 /* singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = singleton.h; sourceTree = "<group>"; };
 		186078CB1E3199CF00161801 /* map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = map.h; sourceTree = "<group>"; };
 		186078CC1E3199CF00161801 /* multimap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = multimap.h; sourceTree = "<group>"; };
 		186078CD1E3199CF00161801 /* unordered_map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unordered_map.h; sourceTree = "<group>"; };
@@ -74,6 +71,9 @@
 		186078DD1E31B1D900161801 /* foundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = foundation.h; sourceTree = "<group>"; };
 		187863AD1E4BCDE300DE334A /* texture_manager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = texture_manager.cpp; path = texture/texture_manager.cpp; sourceTree = "<group>"; };
 		187863AE1E4BCDE300DE334A /* texture_manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = texture_manager.h; path = texture/texture_manager.h; sourceTree = "<group>"; };
+		187863B11E4C24BB00DE334A /* consts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = consts.h; path = basic/consts.h; sourceTree = "<group>"; };
+		187863B21E4C24BB00DE334A /* defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = defines.h; path = basic/defines.h; sourceTree = "<group>"; };
+		187863B31E4C24BB00DE334A /* singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = singleton.h; path = basic/singleton.h; sourceTree = "<group>"; };
 		188934D61E2A8A9700755A32 /* libfoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libfoundation.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		189555541E31D12000563E6C /* list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = list.h; sourceTree = "<group>"; };
 		18A4029C1E42CFF500BB70CB /* texture_loader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = texture_loader.cpp; path = texture/texture_loader.cpp; sourceTree = "<group>"; };
@@ -122,6 +122,9 @@
 		180C97131E4BA536002ED6A0 /* basic */ = {
 			isa = PBXGroup;
 			children = (
+				187863B11E4C24BB00DE334A /* consts.h */,
+				187863B21E4C24BB00DE334A /* defines.h */,
+				187863B31E4C24BB00DE334A /* singleton.h */,
 				180C97141E4BA55D002ED6A0 /* timer.cpp */,
 				180C97151E4BA55D002ED6A0 /* timer.h */,
 			);
@@ -137,10 +140,7 @@
 				18A402931E42CE3100BB70CB /* texture */,
 				186078C91E3199CF00161801 /* standard_libraries */,
 				186078C41E3199CF00161801 /* memory */,
-				186078C11E3199CF00161801 /* consts.h */,
-				186078C21E3199CF00161801 /* defines.h */,
 				186078C31E3199CF00161801 /* foundation.cpp */,
-				186078C81E3199CF00161801 /* singleton.h */,
 				186078DD1E31B1D900161801 /* foundation.h */,
 			);
 			name = foundation;
@@ -206,7 +206,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				186078D01E3199CF00161801 /* consts.h in Headers */,
 				180C96FD1E47D8AC002ED6A0 /* thread_request.h in Headers */,
 				1895553F1E31C7D000563E6C /* foundation.h in Headers */,
 				180C97171E4BA55D002ED6A0 /* timer.h in Headers */,
@@ -219,6 +218,7 @@
 				186078D31E3199CF00161801 /* allocator.h in Headers */,
 				180C97111E4BA501002ED6A0 /* smart_object.h in Headers */,
 				180C96F91E47CA73002ED6A0 /* thread_procedure.h in Headers */,
+				187863B61E4C24BB00DE334A /* singleton.h in Headers */,
 				180C970F1E4BA501002ED6A0 /* reference_object.h in Headers */,
 				186078D81E3199CF00161801 /* map.h in Headers */,
 				180C97121E4BA501002ED6A0 /* update_object.h in Headers */,
@@ -226,9 +226,9 @@
 				180C96FF1E484723002ED6A0 /* queue.h in Headers */,
 				187863B01E4BCDE300DE334A /* texture_manager.h in Headers */,
 				186078DB1E3199CF00161801 /* unordered_multimap.h in Headers */,
+				187863B51E4C24BB00DE334A /* defines.h in Headers */,
 				18A4029F1E42CFF500BB70CB /* texture_loader.h in Headers */,
-				186078D61E3199CF00161801 /* singleton.h in Headers */,
-				186078D11E3199CF00161801 /* defines.h in Headers */,
+				187863B41E4C24BB00DE334A /* consts.h in Headers */,
 				180C97101E4BA501002ED6A0 /* render_object.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

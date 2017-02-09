@@ -7,7 +7,7 @@
 //
 
 #include "foundation/memory/memory_tracker.h"
-#include "foundation/singleton.h"
+#include "foundation/basic/singleton.h"
 #include "foundation/standard_libraries/vector.h"
 #include "foundation/texture/texture_loader.h"
 #include "foundation/object/smart_object.h"

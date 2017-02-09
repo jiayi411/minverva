@@ -10,7 +10,7 @@
 #ifndef texture_loader_H
 #define texture_loader_H
 
-#include "singleton.h"
+#include "basic/singleton.h"
 #include "texture/texture_common.h"
 
 namespace minerva { namespace foundation {
