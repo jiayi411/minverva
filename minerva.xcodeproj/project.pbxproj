@@ -21,6 +21,13 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXContainerItemProxy section */
+		187863DB1E4D232A00DE334A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 187863D71E4D232A00DE334A /* graphic.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 187863C11E4D22B400DE334A;
+			remoteInfo = graphic;
+		};
 		18D563A01E2AC95500680B1C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 18D5639B1E2AC95500680B1C /* foundation.xcodeproj */;
@@ -38,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		187863D71E4D232A00DE334A /* graphic.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = graphic.xcodeproj; path = graphic/projs/mac/graphic.xcodeproj; sourceTree = "<group>"; };
 		18D5639B1E2AC95500680B1C /* foundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = foundation.xcodeproj; path = foundation/projs/mac/foundation.xcodeproj; sourceTree = "<group>"; };
 		18D563C01E2ACC9E00680B1C /* test.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = test.xcodeproj; path = test/test.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -47,8 +55,17 @@
 			isa = PBXGroup;
 			children = (
 				18D563C01E2ACC9E00680B1C /* test.xcodeproj */,
+				187863D71E4D232A00DE334A /* graphic.xcodeproj */,
 				18D5639B1E2AC95500680B1C /* foundation.xcodeproj */,
 			);
+			sourceTree = "<group>";
+		};
+		187863D81E4D232A00DE334A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				187863DC1E4D232A00DE334A /* libgraphic.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		18D5639C1E2AC95500680B1C /* Products */ = {
@@ -97,6 +114,10 @@
 					ProjectRef = 18D5639B1E2AC95500680B1C /* foundation.xcodeproj */;
 				},
 				{
+					ProductGroup = 187863D81E4D232A00DE334A /* Products */;
+					ProjectRef = 187863D71E4D232A00DE334A /* graphic.xcodeproj */;
+				},
+				{
 					ProductGroup = 18D563C11E2ACC9E00680B1C /* Products */;
 					ProjectRef = 18D563C01E2ACC9E00680B1C /* test.xcodeproj */;
 				},
@@ -109,6 +130,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		187863DC1E4D232A00DE334A /* libgraphic.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libgraphic.a;
+			remoteRef = 187863DB1E4D232A00DE334A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		18D563A11E2AC95500680B1C /* libfoundation.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		187863FC1E4D24EA00DE334A /* libgraphic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 187863E51E4D249300DE334A /* libgraphic.a */; };
 		189555531E31D10400563E6C /* libfoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1895554F1E31D0D700563E6C /* libfoundation.a */; };
 		18A402921E4245F600BB70CB /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A402911E4245F600BB70CB /* OpenGL.framework */; };
 		18D563BA1E2ACC9E00680B1C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D563B91E2ACC9E00680B1C /* main.cpp */; };
@@ -17,10 +18,24 @@
 		18D8CDD71E40016500EC18D9 /* libGLEW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D8CDD51E40016500EC18D9 /* libGLEW.a */; };
 		18D8CDD81E40016500EC18D9 /* libGLEWmx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D8CDD61E40016500EC18D9 /* libGLEWmx.a */; };
 		18D8CDDA1E40016D00EC18D9 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D8CDD91E40016D00EC18D9 /* libglfw3.a */; };
-		18D8CDDC1E4003A700EC18D9 /* resources in CopyFiles */ = {isa = PBXBuildFile; fileRef = 18D8CDDB1E40030300EC18D9 /* resources */; };
+		18D8CDDC1E4003A700EC18D9 /* resources in Copy Files */ = {isa = PBXBuildFile; fileRef = 18D8CDDB1E40030300EC18D9 /* resources */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		187863E41E4D249300DE334A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 187863E01E4D249300DE334A /* graphic.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 187863C11E4D22B400DE334A;
+			remoteInfo = graphic;
+		};
+		187863FA1E4D24E300DE334A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 187863E01E4D249300DE334A /* graphic.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 187863C01E4D22B400DE334A;
+			remoteInfo = graphic;
+		};
 		1895554E1E31D0D700563E6C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 189555491E31D0D700563E6C /* foundation.xcodeproj */;
@@ -38,19 +53,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		18D563B41E2ACC9E00680B1C /* CopyFiles */ = {
+		18D563B41E2ACC9E00680B1C /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				18D8CDDC1E4003A700EC18D9 /* resources in CopyFiles */,
+				18D8CDDC1E4003A700EC18D9 /* resources in Copy Files */,
 			);
+			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		187863E01E4D249300DE334A /* graphic.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = graphic.xcodeproj; path = ../graphic/projs/mac/graphic.xcodeproj; sourceTree = "<group>"; };
 		189555491E31D0D700563E6C /* foundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = foundation.xcodeproj; path = ../foundation/projs/mac/foundation.xcodeproj; sourceTree = "<group>"; };
 		18A402911E4245F600BB70CB /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		18D563B61E2ACC9E00680B1C /* test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = test; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,19 +95,28 @@
 			files = (
 				18A402921E4245F600BB70CB /* OpenGL.framework in Frameworks */,
 				18D8CDC81E3FEBD600EC18D9 /* Cocoa.framework in Frameworks */,
-				189555531E31D10400563E6C /* libfoundation.a in Frameworks */,
 				18D8CDCA1E3FEBD600EC18D9 /* CoreGraphics.framework in Frameworks */,
+				18D8CDC71E3FEBD600EC18D9 /* CoreVideo.framework in Frameworks */,
 				18D8CDC61E3FEBD600EC18D9 /* IOKit.framework in Frameworks */,
 				18D8CDDA1E40016D00EC18D9 /* libglfw3.a in Frameworks */,
 				18D8CDD71E40016500EC18D9 /* libGLEW.a in Frameworks */,
 				18D8CDD81E40016500EC18D9 /* libGLEWmx.a in Frameworks */,
-				18D8CDC71E3FEBD600EC18D9 /* CoreVideo.framework in Frameworks */,
+				189555531E31D10400563E6C /* libfoundation.a in Frameworks */,
+				187863FC1E4D24EA00DE334A /* libgraphic.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		187863E11E4D249300DE334A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				187863E51E4D249300DE334A /* libgraphic.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		1895554A1E31D0D700563E6C /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +130,7 @@
 			children = (
 				18D8CDDB1E40030300EC18D9 /* resources */,
 				189555491E31D0D700563E6C /* foundation.xcodeproj */,
+				187863E01E4D249300DE334A /* graphic.xcodeproj */,
 				18D563B81E2ACC9E00680B1C /* test */,
 				18D563B71E2ACC9E00680B1C /* Products */,
 				18D563C61E2ACCDD00680B1C /* Frameworks */,
@@ -156,12 +183,13 @@
 			buildPhases = (
 				18D563B21E2ACC9E00680B1C /* Sources */,
 				18D563B31E2ACC9E00680B1C /* Frameworks */,
-				18D563B41E2ACC9E00680B1C /* CopyFiles */,
+				18D563B41E2ACC9E00680B1C /* Copy Files */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				189555511E31D0E800563E6C /* PBXTargetDependency */,
+				187863FB1E4D24E300DE334A /* PBXTargetDependency */,
 			);
 			name = test;
 			productName = test;
@@ -200,6 +228,10 @@
 					ProductGroup = 1895554A1E31D0D700563E6C /* Products */;
 					ProjectRef = 189555491E31D0D700563E6C /* foundation.xcodeproj */;
 				},
+				{
+					ProductGroup = 187863E11E4D249300DE334A /* Products */;
+					ProjectRef = 187863E01E4D249300DE334A /* graphic.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -209,6 +241,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		187863E51E4D249300DE334A /* libgraphic.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libgraphic.a;
+			remoteRef = 187863E41E4D249300DE334A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		1895554F1E31D0D700563E6C /* libfoundation.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -230,6 +269,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		187863FB1E4D24E300DE334A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = graphic;
+			targetProxy = 187863FA1E4D24E300DE334A /* PBXContainerItemProxy */;
+		};
 		189555511E31D0E800563E6C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = foundation;

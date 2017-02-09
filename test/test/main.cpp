@@ -234,14 +234,8 @@ int main(int argc, const char * argv[]) {
     
     std::string thread_test_string = "resources/uvtemplate.dds";
     for ( int i = 0; i < 1000; ++i ) {
-        the_texture_manager->load_texture_by_file_name( "resources/uvtemplate.dds", std::bind( test_thread, std::placeholders::_1 ) );
-//    thread_request_ptr t_request = mi_new thread_request(
-//                                                         e_thread_type::background_loading,
-//                                                         std::bind( &texture_loader::load_dds, texture_loader::get(), (void*)(&thread_test_string) ),
-//                                                         std::bind( test_thread, std::placeholders::_1 )
-//                                                         );
-//    
-//    the_thread_manager->push_request( t_request );
+        the_texture_manager->load_texture_by_file_name( "resources/uvtemplate.dds",
+                                                       std::bind( test_thread, std::placeholders::_1 ) );
     }
     
 //    v_smart.clear();

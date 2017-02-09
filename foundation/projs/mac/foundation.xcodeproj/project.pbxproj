@@ -106,15 +106,12 @@
 		180C96F51E47CA40002ED6A0 /* multithread */ = {
 			isa = PBXGroup;
 			children = (
-				180C96F61E47CA73002ED6A0 /* thread_procedure.cpp */,
-				180C96F71E47CA73002ED6A0 /* thread_procedure.h */,
+				187863B71E4C24E100DE334A /* thread_procedure */,
 				180C96FA1E47D8AC002ED6A0 /* thread_request.cpp */,
 				180C96FB1E47D8AC002ED6A0 /* thread_request.h */,
 				180C97001E491D00002ED6A0 /* thread_common.h */,
 				180C97011E493329002ED6A0 /* thread_manager.cpp */,
 				180C97021E493329002ED6A0 /* thread_manager.h */,
-				180C97071E4AD063002ED6A0 /* thread_background_loading.cpp */,
-				180C97081E4AD063002ED6A0 /* thread_background_loading.h */,
 			);
 			name = multithread;
 			sourceTree = "<group>";
@@ -169,6 +166,17 @@
 				186078CF1E3199CF00161801 /* vector.h */,
 			);
 			path = standard_libraries;
+			sourceTree = "<group>";
+		};
+		187863B71E4C24E100DE334A /* thread_procedure */ = {
+			isa = PBXGroup;
+			children = (
+				180C96F61E47CA73002ED6A0 /* thread_procedure.cpp */,
+				180C96F71E47CA73002ED6A0 /* thread_procedure.h */,
+				180C97071E4AD063002ED6A0 /* thread_background_loading.cpp */,
+				180C97081E4AD063002ED6A0 /* thread_background_loading.h */,
+			);
+			name = thread_procedure;
 			sourceTree = "<group>";
 		};
 		188934CD1E2A8A9600755A32 = {
@@ -436,7 +444,10 @@
 					"$(SRCROOT)/../../../thirdparty/glm-0.9.7.1/",
 					"$(SRCROOT)/../../../thirdparty/glfw-3.1.2/include",
 				);
-				LIBRARY_SEARCH_PATHS = "../thirdparty/glfw-3.1.2/lib/mac/$(CONFIGURATION)";
+				LIBRARY_SEARCH_PATHS = (
+					"../thirdparty/glfw-3.1.2/lib/mac/$(CONFIGURATION)",
+					"../thirdparty/glew-1.13.0/lib/mac/$(CONFIGURATION)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "";
 			};
