@@ -10,11 +10,12 @@
 #define texture_common_h
 
 #include "defines.h"
+#include "object/smart_object.h"
 
 namespace minerva { namespace foundation {
     
     /// texture data loaded from disk
-    struct texture_data : public allocator
+    struct texture_data : public reference_object
     {
         /// ctor
         texture_data() : buffer(0) {}
@@ -25,12 +26,15 @@ namespace minerva { namespace foundation {
                 mi_free( buffer );
             }
         }
-        uint format;        ///< texture format
-        uint width;         ///< texture width
-        uint height;        ///< texture height
-        uint mipmap_count;  ///< mipmap count, 0 means no mimap
-        uchar* buffer;      ///< texture data
+        std::string filename;   ///< filename with path
+        uint format;            ///< texture format
+        uint width;             ///< texture width
+        uint height;            ///< texture height
+        uint mipmap_count;      ///< mipmap count, 0 means no mimap
+        uchar* buffer;          ///< texture data
     };
+    
+    make_smart( texture_data );
 } }
 
 #endif /* texture_common_h */

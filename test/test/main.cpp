@@ -23,6 +23,9 @@
 
 #include "foundation/foundation.h"
 #include "multithread/thread_manager.h"
+#include "texture/texture_manager.h"
+
+#include "foundation/basic/timer.h"
 using namespace glm;
 
 
@@ -191,16 +194,17 @@ GLuint LoadShaders(const char * vertex_file_path,const char * fragment_file_path
 }
 
 void test_thread( void* data ) {
-    texture_data* t_data = ( texture_data* )(data);
-    mi_log( "texture width: %d\n", t_data->width );
+    static int count = 0;
+    texture_data_ptr t_data = ( texture_data* )(data);
+    mi_log( "width: %d, texture load count: %dw\n", t_data->width, ++count );
 }
 
 //int testApp::run() {
 int main(int argc, const char * argv[]) {
     
-    core::initialize_singeltons();
+    core::initialize_singletons();
     
-    std::chrono::high_resolution_clock::time_point beginTime = std::chrono::high_resolution_clock::now();
+    timer::duration<timer::milliseconds> dur(true);
     mi_vector< test_allocator > v_smart;
     std::string s1 = "s1";
     std::string s2 = "s2";
@@ -212,9 +216,8 @@ int main(int argc, const char * argv[]) {
 //        s2 = std::move(o);
 //        std::swap( s1, s2 );
 //    }
-    std::chrono::high_resolution_clock::time_point endTime = std::chrono::high_resolution_clock::now();
-    std::chrono::milliseconds timeInterval = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - beginTime);
-    std::cout << timeInterval.count() << "ms\n";
+    
+    std::cout << dur.stop() << "ms\n";
     
     
     // insert code here...
@@ -228,20 +231,18 @@ int main(int argc, const char * argv[]) {
     
     /// test thread manager
     the_thread_manager->add_procedure( e_thread_type::background_loading );
-    the_thread_manager->start_all();
     
-    
-    std::function<void*(void*)> p3 = std::bind( &texture_loader::load_dds, texture_loader::get(), std::placeholders::_1 );
-    std::function<void(void*)> p4 = std::bind( &test_thread, std::placeholders::_1 );
-        
     std::string thread_test_string = "resources/uvtemplate.dds";
-    thread_request_ptr t_request = mi_new thread_request(
-                                                         e_thread_type::background_loading,
-                                                         (void*)(&thread_test_string),
-                                                         p3, p4
-                                                         );
-    
-    the_thread_manager->push_request( t_request );
+    for ( int i = 0; i < 1000; ++i ) {
+        the_texture_manager->load_texture_by_file_name( "resources/uvtemplate.dds", std::bind( test_thread, std::placeholders::_1 ) );
+//    thread_request_ptr t_request = mi_new thread_request(
+//                                                         e_thread_type::background_loading,
+//                                                         std::bind( &texture_loader::load_dds, texture_loader::get(), (void*)(&thread_test_string) ),
+//                                                         std::bind( test_thread, std::placeholders::_1 )
+//                                                         );
+//    
+//    the_thread_manager->push_request( t_request );
+    }
     
 //    v_smart.clear();
     
@@ -293,8 +294,8 @@ int main(int argc, const char * argv[]) {
     
     
     /// Tutorial 3 texture
-    texture_data tex_data;
-    if ( !the_texture_loader->load_dds_from_file( "resources/uvtemplate.dds", &tex_data ) ) {
+    texture_data_ptr tex_data = mi_new texture_data;
+    if ( !the_texture_loader->load_dds_from_file( "resources/uvtemplate.dds", tex_data ) ) {
         mi_log( "error when loading dds" );
         return false;
     }
@@ -303,19 +304,19 @@ int main(int argc, const char * argv[]) {
     // "Bind" the newly created texture : all future texture functions will modify this texture
 //    glBindTexture(GL_TEXTURE_2D, textureID);
 //    
-//    unsigned int blockSize = (tex_data.format == GL_COMPRESSED_RGBA_S3TC_DXT1_EXT) ? 8 : 16;
+//    unsigned int blockSize = (tex_data->format == GL_COMPRESSED_RGBA_S3TC_DXT1_EXT) ? 8 : 16;
 //    unsigned int offset = 0;
     
 //    /* load the mipmaps */
-//    for (unsigned int level = 0; level < tex_data.mipmap_count && (tex_data.width || tex_data.height); ++level)
+//    for (unsigned int level = 0; level < tex_data->mipmap_count && (tex_data->width || tex_data->height); ++level)
 //    {
-//        unsigned int size = ((tex_data.width+3)/4)*((tex_data.height+3)/4)*blockSize;
-//        glCompressedTexImage2D(GL_TEXTURE_2D, level, tex_data.format, tex_data.width, tex_data.height,
-//                               0, size, tex_data.buffer + offset);
+//        unsigned int size = ((tex_data->width+3)/4)*((tex_data->height+3)/4)*blockSize;
+//        glCompressedTexImage2D(GL_TEXTURE_2D, level, tex_data->format, tex_data->width, tex_data->height,
+//                               0, size, tex_data->buffer + offset);
 //        
 //        offset += size;
-//        tex_data.width  /= 2;
-//        tex_data.height /= 2;
+//        tex_data->width  /= 2;
+//        tex_data->height /= 2;
 //    }
     
     // uv
@@ -391,7 +392,13 @@ int main(int argc, const char * argv[]) {
     // Create one OpenGL texture
     GLuint textureID;
     glGenTextures(1, &textureID);
+    
+    // start thread
+    the_thread_manager->start_all();
     do{
+        
+        long time = the_core->get_frame_time();
+//        mi_log("fps:%d\n", the_core->get_fps(time) );
         if( glfwGetKey( window, GLFW_KEY_T) == GLFW_PRESS ) {
             
             // bind sampler2D
@@ -399,21 +406,25 @@ int main(int argc, const char * argv[]) {
             glBindTexture( GL_TEXTURE_2D, textureID );
             glUniform1i( sampler2D, 0 );
             
-            unsigned int blockSize = (tex_data.format == GL_COMPRESSED_RGBA_S3TC_DXT1_EXT) ? 8 : 16;
+            unsigned int blockSize = (tex_data->format == GL_COMPRESSED_RGBA_S3TC_DXT1_EXT) ? 8 : 16;
             unsigned int offset = 0;
             
             
             /* load the mipmaps */
-            for (unsigned int level = 0; level < tex_data.mipmap_count && (tex_data.width || tex_data.height); ++level)
+            for (unsigned int level = 0; level < tex_data->mipmap_count && (tex_data->width || tex_data->height); ++level)
             {
-                unsigned int size = ((tex_data.width+3)/4)*((tex_data.height+3)/4)*blockSize;
-                glCompressedTexImage2D(GL_TEXTURE_2D, level, tex_data.format, tex_data.width, tex_data.height,
-                                       0, size, tex_data.buffer + offset);
+                unsigned int size = ((tex_data->width+3)/4)*((tex_data->height+3)/4)*blockSize;
+                glCompressedTexImage2D(GL_TEXTURE_2D, level, tex_data->format, tex_data->width, tex_data->height,
+                                       0, size, tex_data->buffer + offset);
                 
                 offset += size;
-                tex_data.width  /= 2;
-                tex_data.height /= 2;
+                tex_data->width  /= 2;
+                tex_data->height /= 2;
             }
+        }
+        
+        if( glfwGetKey( window, GLFW_KEY_W) == GLFW_PRESS ) {
+            the_texture_manager->load_texture_by_file_name( "resources/uvtemplate.dds", std::bind( test_thread, std::placeholders::_1 ) );
         }
         
         // Draw nothing, see you in tutorial 2 !

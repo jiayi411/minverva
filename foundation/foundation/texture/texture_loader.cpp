@@ -21,6 +21,8 @@ void* texture_loader::load_dds( void* v_file_name ) thread_safe
 {
     texture_data* data = mi_new texture_data();
     std::string file_name = *(std::string*)(v_file_name);
+    data->filename = file_name;
+    
     if ( load_dds_from_file( ( file_name), data ) ) {
         return (void*)data;
     }
@@ -31,7 +33,7 @@ void* texture_loader::load_dds( void* v_file_name ) thread_safe
 bool texture_loader::load_dds_from_file( const std::string& file_name,
                                                 texture_data* data )
 {
-    char header[124];
+    char header[124];    
     
     std::ifstream stream( file_name, std::ios::binary | std::ios::in );
     if ( !stream.good() ) {

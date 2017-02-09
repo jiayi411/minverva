@@ -29,6 +29,10 @@ void thread_procedure::push_request( const thread_request_ptr& request )
 
 void thread_procedure::start()
 {
+    // already started
+    if (_thread.native_handle()) {
+        return;
+    }
     _thread = std::thread(std::bind(&thread_procedure::update_thread, this ));
     _thread.detach();
 }

@@ -35,6 +35,9 @@ namespace minerva { namespace foundation {
     /// thread request data
     struct thread_request_data
     {
+        typedef std::function<void*(void)> function_thread;
+        typedef std::function<void(void*)> function_main;
+        
         ///< request type
         e_thread_type type = e_thread_type::error;
         
@@ -42,13 +45,13 @@ namespace minerva { namespace foundation {
         void* out_data = nullptr;
         
         ///< intput data
-        void* in_data = nullptr;
+//        void* in_data = nullptr;
         
         ///< function need to be execute in thread
-        std::function<void*(void*)> function_in_thread;
+        function_thread function_in_thread;
         
         ///< function need to be execute in main thread
-        std::function<void(void*)> function_in_main_thread;
+        function_main function_in_main_thread;        
         
         /// default constructor
         thread_request_data(){}
@@ -57,7 +60,7 @@ namespace minerva { namespace foundation {
         thread_request_data& operator= ( thread_request_data&& t )
         {
             out_data = t.out_data;
-            in_data = t.in_data;
+//            in_data = t.in_data;
             function_in_main_thread = t.function_in_main_thread;
             function_in_thread = t.function_in_thread;
             return *this;
@@ -66,7 +69,7 @@ namespace minerva { namespace foundation {
         thread_request_data( thread_request_data&& t )
         {
             out_data = t.out_data;
-            in_data = t.in_data;
+//            in_data = t.in_data;
             function_in_main_thread = t.function_in_main_thread;
             function_in_thread = t.function_in_thread;
         }

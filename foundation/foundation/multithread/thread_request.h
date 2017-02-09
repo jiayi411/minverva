@@ -23,16 +23,13 @@ namespace minerva { namespace foundation {
     ///
     class thread_request : public reference_object
     {
-        typedef std::function<void*(void*)> function_thread;
-        typedef std::function<void(void*)> function_main;
     public:
         /// ctor
-        thread_request( e_thread_type type, void* in_data,
-                    function_thread& f_thread,
-                    function_main& f_main_thread )
+        thread_request( e_thread_type type,
+                       const thread_request_data::function_thread& f_thread,
+                    const thread_request_data::function_main& f_main_thread )
         {
             _data.type = type;
-            _data.in_data = in_data;
             _data.function_in_thread = f_thread;
             _data.function_in_main_thread = f_main_thread;
         }

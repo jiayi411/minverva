@@ -46,7 +46,7 @@ void thread_manager::add_procedure( e_thread_type type )
     }
     
     if ( procedure != nullptr )
-    { _procedures.insert( std::make_pair( type, procedure ) ); }
+    { _procedures.emplace( std::make_pair( type, procedure ) ); }
 }
 
 void thread_manager::start_all()

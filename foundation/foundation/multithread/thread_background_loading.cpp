@@ -22,7 +22,7 @@ void thread_background_loading::update_thread()
         thread_request_data& data = request->get_data();
         
         // execute function from data
-        data.out_data = data.function_in_thread( data.in_data );
+        data.out_data = data.function_in_thread();// data.in_data );
         
         // push to the 'done' queue
         _mutex[e_mutex_type::done].lock();
