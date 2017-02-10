@@ -8,16 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		187863F71E4D24D900DE334A /* graphic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 187863F41E4D24D900DE334A /* graphic.cpp */; };
-		187863F81E4D24D900DE334A /* graphic.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 187863F51E4D24D900DE334A /* graphic.hpp */; };
-		187863F91E4D24D900DE334A /* graphicPriv.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 187863F61E4D24D900DE334A /* graphicPriv.hpp */; };
+		187863F81E4D24D900DE334A /* graphic.h in Headers */ = {isa = PBXBuildFile; fileRef = 187863F51E4D24D900DE334A /* graphic.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18608CDC1E4E0AF9009C8A68 /* vector4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vector4.h; sourceTree = "<group>"; };
 		187863C11E4D22B400DE334A /* libgraphic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libgraphic.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		187863DE1E4D243500DE334A /* libfoundation.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfoundation.a; path = ../../../foundation/lib/mac/Debug/libfoundation.a; sourceTree = "<group>"; };
 		187863F41E4D24D900DE334A /* graphic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = graphic.cpp; sourceTree = "<group>"; };
-		187863F51E4D24D900DE334A /* graphic.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = graphic.hpp; sourceTree = "<group>"; };
-		187863F61E4D24D900DE334A /* graphicPriv.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = graphicPriv.hpp; sourceTree = "<group>"; };
+		187863F51E4D24D900DE334A /* graphic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = graphic.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +30,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18608CDB1E4E0AF9009C8A68 /* mm */ = {
+			isa = PBXGroup;
+			children = (
+				18608CDC1E4E0AF9009C8A68 /* vector4.h */,
+			);
+			path = mm;
+			sourceTree = "<group>";
+		};
 		187863B81E4D22B400DE334A = {
 			isa = PBXGroup;
 			children = (
@@ -59,9 +66,9 @@
 		187863F31E4D24D900DE334A /* graphic */ = {
 			isa = PBXGroup;
 			children = (
+				18608CDB1E4E0AF9009C8A68 /* mm */,
 				187863F41E4D24D900DE334A /* graphic.cpp */,
-				187863F51E4D24D900DE334A /* graphic.hpp */,
-				187863F61E4D24D900DE334A /* graphicPriv.hpp */,
+				187863F51E4D24D900DE334A /* graphic.h */,
 			);
 			name = graphic;
 			path = ../../graphic;
@@ -74,8 +81,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				187863F91E4D24D900DE334A /* graphicPriv.hpp in Headers */,
-				187863F81E4D24D900DE334A /* graphic.hpp in Headers */,
+				187863F81E4D24D900DE334A /* graphic.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,8 +246,7 @@
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_ENABLE_CPP_RTTI = NO;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../../foundation",
-					"$(SRCROOT)/../../../foundation/foundation",
+					"$(SRCROOT)/../../../foundation/**",
 					"$(SRCROOT)/../../graphic",
 					"$(SRCROOT)/../../../thirdparty/glew-1.13.0/include",
 					"$(SRCROOT)/../../../thirdparty/glm-0.9.7.1/",
@@ -265,8 +270,7 @@
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_ENABLE_CPP_RTTI = NO;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../../foundation",
-					"$(SRCROOT)/../../../foundation/foundation",
+					"$(SRCROOT)/../../../foundation/**",
 					"$(SRCROOT)/../../graphic",
 					"$(SRCROOT)/../../../thirdparty/glew-1.13.0/include",
 					"$(SRCROOT)/../../../thirdparty/glm-0.9.7.1/",

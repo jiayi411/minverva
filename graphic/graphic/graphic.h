@@ -13,7 +13,7 @@
 /* The classes below are exported */
 #pragma GCC visibility push(default)
 
-class graphic
+class graphic_core
 {
     public:
     void HelloWorld(const char *);

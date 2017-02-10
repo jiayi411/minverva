@@ -7,26 +7,19 @@
  *
  */
 
-#include <iostream>
-#include "graphic.hpp"
-#include "graphicPriv.hpp"
-#include "foundation/memory/memory_tracker.h"
-#include "foundation/basic/singleton.h"
-#include "foundation/standard_libraries/vector.h"
-#include "foundation/texture/texture_loader.h"
+//#include <iostream>
+#include "graphic.h"
+#include "mm/vector4.h"
 #include "foundation/object/smart_object.h"
-#include "foundation/foundation.h"
+#include "foundation/basic/defines.h"
 
 
-void graphic::HelloWorld(const char * s)
+
+using namespace minerva;
+using namespace graphic;
+
+void graphic_core::HelloWorld(const char * s)
 {
-    graphicPriv *theObj = new graphicPriv;
-    theObj->HelloWorldPriv(s);
-    delete theObj;
-};
-
-void graphicPriv::HelloWorldPriv(const char * s) 
-{
-    std::cout << s << std::endl;
+//    vector4<float> v;
 };
 

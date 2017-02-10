@@ -10,6 +10,8 @@
 #define vector_h
 
 #include <vector>
+namespace minerva { namespace foundation {
 #define mi_vector std::vector
+} }
 
 #endif /* vector_h */
