@@ -26,10 +26,14 @@
 #include "texture/texture_manager.h"
 
 #include "foundation/basic/timer.h"
+#include "graphic/math/vector4.h"
+#include "graphic/math/math_functions.h"
+#include "graphic/math/matrix4x4.h"
 using namespace glm;
 
 
 using namespace minerva::foundation;
+using namespace minerva::graphic;
 
 class test_singleton : public singleton< test_singleton >
 {
@@ -202,22 +206,41 @@ void test_thread( void* data ) {
 //int testApp::run() {
 int main(int argc, const char * argv[]) {
     
+    vector4<float> v(1.2f, .4f, 2.f, 4.123f);
+    v += 1.2;
+    v = vector4<float>(1,2,3,4) + vector4<float>(1,2,3,4);
+    //    mi_log("%f\n", v.x );
+    mi_log_vector4(%f, v);
+    
+    matrix4x4<float> matrix(
+                            1, 2, 3,  4,
+                            5, 1, 6,  7,
+                            8, 9, 1, 10,
+                            11,12,13, 1
+                            );
+    
+    glm::mat4x4 mat4(
+                     1, 2, 3,  4,
+                     5, 1, 6,  7,
+                     8, 9, 1, 10,
+                     11,12,13, 1
+                     );
+    
+    mat4 = glm::transpose( mat4 );
+//    mat4 /= 2;
+//    mat4 = glm::inverse( mat4 );
+//    float d1 = glm::determinant( mat4 );
+//    printf("%.f\n", d1 );
+//    mi_log_matrix4x4( %f, mat4 );
+    
+    
+//    matrix.inverse();
+//    matrix /= 2;
+    float d2 = math::determinant( matrix );
+    printf("%.f\n", d2 );
+//    mi_log_matrix4x4( %f, matrix );
+    
     core::initialize_singletons();
-    
-    timer::duration<timer::milliseconds> dur(true);
-    mi_vector< test_allocator > v_smart;
-    std::string s1 = "s1";
-    std::string s2 = "s2";
-//    for (int i = 0; i < 1000000; ++ i) {
-//        v_smart.emplace_back( test_allocator() );
-//        test_allocator::test_move( s1, s2 );
-//        std::string o(std::move(s1));
-//        s1 = std::move( s2 );
-//        s2 = std::move(o);
-//        std::swap( s1, s2 );
-//    }
-    
-    std::cout << dur.stop() << "ms\n";
     
     
     // insert code here...

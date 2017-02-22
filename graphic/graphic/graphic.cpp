@@ -9,17 +9,15 @@
 
 //#include <iostream>
 #include "graphic.h"
-#include "mm/vector4.h"
+#include "math/vector4.h"
 #include "foundation/object/smart_object.h"
 #include "foundation/basic/defines.h"
-
-
 
 using namespace minerva;
 using namespace graphic;
 
 void graphic_core::HelloWorld(const char * s)
 {
-//    vector4<float> v;
+    
 };
 

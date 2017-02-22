@@ -376,6 +376,7 @@
 				GCC_ENABLE_CPP_RTTI = NO;
 				HEADER_SEARCH_PATHS = (
 					"../foundation/**",
+					"../graphic/**",
 					"../thirdparty/glew-1.13.0/include",
 					"../thirdparty/glm-0.9.7.1/",
 					"../thirdparty/glfw-3.1.2/include",
@@ -396,6 +397,7 @@
 				GCC_ENABLE_CPP_RTTI = NO;
 				HEADER_SEARCH_PATHS = (
 					"../foundation/**",
+					"../graphic/**",
 					"../thirdparty/glew-1.13.0/include",
 					"../thirdparty/glm-0.9.7.1/",
 					"../thirdparty/glfw-3.1.2/include",
