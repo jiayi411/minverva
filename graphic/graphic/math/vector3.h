@@ -29,8 +29,8 @@ namespace minerva { namespace graphic {
     public:
         vector3( vector3&& );
         vector3& operator= ( vector3&& );
-        vector3( const vector3& ) = delete;
-        vector3& operator= ( const vector3& ) = delete;
+        vector3( const vector3& );
+        vector3& operator= ( const vector3& );
         
     public:        
         vector3& operator+= ( const vector3& );
@@ -47,6 +47,12 @@ namespace minerva { namespace graphic {
         vector3  operator++ (int);
         vector3& operator-- ();
         vector3  operator-- (int);
+        
+        /*-- mathematics --*/
+        vector3& normalize();
+        vector3 cross( const vector3& v ) const;
+        T dot( const vector3& v ) const;
+        T length() const;
         
     public:
         union { T x, r; };

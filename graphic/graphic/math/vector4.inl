@@ -104,6 +104,22 @@ namespace minerva { namespace graphic {
     }
     
     ////
+    template<typename T>
+    vector4<T>& vector4<T>::normalize()
+    { return *this /= length(); }
+    
+    template<typename T>
+    T vector4<T>::dot( const vector4& v ) const
+    {
+        vector4<T> ans = (*this) * v;
+        return ( ans.x + ans.y + ans.z + ans.w );
+    }
+    
+    template<typename T>
+    T vector4<T>::length()
+    { return sqrtf( dot( *this ) ); }
+    
+    ////
     
     template<typename T>
     vector4<T> operator+ ( const vector4<T>& v1, const vector4<T>& v2 )
@@ -133,6 +149,13 @@ namespace minerva { namespace graphic {
     
     template<typename T, typename U>
     vector4<T> operator* ( const vector4<T>& v1, U u )
+    {
+        T t = static_cast<T>(u);
+        return vector4<T>( v1.x * t, v1.y * t, v1.z * t, v1.w * t );
+    }
+    
+    template<typename T, typename U>
+    vector4<T> operator* ( U u, const vector4<T>& v1 )
     {
         T t = static_cast<T>(u);
         return vector4<T>( v1.x * t, v1.y * t, v1.z * t, v1.w * t );

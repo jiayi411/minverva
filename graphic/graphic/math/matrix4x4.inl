@@ -3,49 +3,58 @@ namespace minerva { namespace graphic {
     template<typename T>
     matrix4x4<T>::matrix4x4( matrix4x4&& source )
     {
-        columns[0] = std::move(source[0]);
-        columns[1] = std::move(source[1]);
-        columns[2] = std::move(source[2]);
-        columns[3] = std::move(source[3]);
+        _rows[0] = std::move(source[0]);
+        _rows[1] = std::move(source[1]);
+        _rows[2] = std::move(source[2]);
+        _rows[3] = std::move(source[3]);
     }
     
     template<typename T>
     matrix4x4<T>& matrix4x4<T>::operator= ( matrix4x4<T>&& source )
     {
-        columns[0] = source[0];
-        columns[1] = source[1];
-        columns[2] = source[2];
-        columns[3] = source[3];
+        _rows[0] = source[0];
+        _rows[1] = source[1];
+        _rows[2] = source[2];
+        _rows[3] = source[3];
         return *this;
     }
     
     template<typename T>
     matrix4x4<T>::matrix4x4( const matrix4x4& source )
     {
-        columns[0] = std::move(source[0]);
-        columns[1] = std::move(source[1]);
-        columns[2] = std::move(source[2]);
-        columns[3] = std::move(source[3]);
+        _rows[0] = std::move(source[0]);
+        _rows[1] = std::move(source[1]);
+        _rows[2] = std::move(source[2]);
+        _rows[3] = std::move(source[3]);
     }
     
     template<typename T>
     matrix4x4<T>& matrix4x4<T>::operator= ( const matrix4x4<T>& source )
     {
-        columns[0] = source[0];
-        columns[1] = source[1];
-        columns[2] = source[2];
-        columns[3] = source[3];
+        _rows[0] = source[0];
+        _rows[1] = source[1];
+        _rows[2] = source[2];
+        _rows[3] = source[3];
         return *this;
+    }
+    
+    template<typename T>
+    matrix4x4<T>::matrix4x4( T t )
+    {
+        _rows[0] = row_type( t, 0, 0, 0 );
+        _rows[1] = row_type( 0, t, 0, 0 );
+        _rows[2] = row_type( 0, 0, t, 0 );
+        _rows[3] = row_type( 0, 0, 0, t );        
     }
     
     template<typename T>
     matrix4x4<T>::matrix4x4( const column_type& c1, const column_type& c2,
               const column_type& c3, const column_type& c4 )
     {
-        columns[0] = (c1);
-        columns[1] = (c2);
-        columns[2] = (c3);
-        columns[3] = (c4);
+        _rows[0] = (c1);
+        _rows[1] = (c2);
+        _rows[2] = (c3);
+        _rows[3] = (c4);
     }
     
     template<typename T>
@@ -56,41 +65,41 @@ namespace minerva { namespace graphic {
               T x4, T y4, T z4, T w4
               )
     {
-        columns[0] = column_type( x1, x2, x3, x4 );
-        columns[1] = column_type( y1, y2, y3, y4 );
-        columns[2] = column_type( z1, z2, z3, z4 );
-        columns[3] = column_type( w1, w2, w3, w4 );
+        _rows[0] = column_type( x1, x2, x3, x4 );
+        _rows[1] = column_type( y1, y2, y3, y4 );
+        _rows[2] = column_type( z1, z2, z3, z4 );
+        _rows[3] = column_type( w1, w2, w3, w4 );
     }
     
     /*- Access Operators -*/
     template<typename T>
     typename matrix4x4<T>::column_type& matrix4x4<T>::operator[] ( size_type s )
-    { return columns[s]; }
+    { return _rows[s]; }
     
     template<typename T>
     const typename matrix4x4<T>::column_type& matrix4x4<T>::operator[] ( size_type s ) const
-    { return columns[s]; }
+    { return _rows[s]; }
     
     /*- Unary Arithmetic Operators -*/
     template<typename T>
     template<typename U>
     matrix4x4<T>& matrix4x4<T>::operator+= ( U u )
     {
-        columns[0] += u;
-        columns[1] += u;
-        columns[2] += u;
-        columns[3] += u;
-        return *columns;
+        _rows[0] += u;
+        _rows[1] += u;
+        _rows[2] += u;
+        _rows[3] += u;
+        return *_rows;
     }
     
     template<typename T>
     template<typename U>
     matrix4x4<T>& matrix4x4<T>::operator+= ( const matrix4x4<U>& m )
     {
-        columns[0] += m[0];
-        columns[1] += m[1];
-        columns[2] += m[2];
-        columns[3] += m[3];
+        _rows[0] += m[0];
+        _rows[1] += m[1];
+        _rows[2] += m[2];
+        _rows[3] += m[3];
         return *this;
     }
     
@@ -98,21 +107,21 @@ namespace minerva { namespace graphic {
     template<typename U>
     matrix4x4<T>& matrix4x4<T>::operator-= ( U u )
     {
-        columns[0] -= u;
-        columns[1] -= u;
-        columns[2] -= u;
-        columns[3] -= u;
-        return *columns;
+        _rows[0] -= u;
+        _rows[1] -= u;
+        _rows[2] -= u;
+        _rows[3] -= u;
+        return *_rows;
     }
     
     template<typename T>
     template<typename U>
     matrix4x4<T>& matrix4x4<T>::operator-= ( const matrix4x4<U>& m )
     {
-        columns[0] -= m[0];
-        columns[1] -= m[1];
-        columns[2] -= m[2];
-        columns[3] -= m[3];
+        _rows[0] -= m[0];
+        _rows[1] -= m[1];
+        _rows[2] -= m[2];
+        _rows[3] -= m[3];
         return *this;
     }
     
@@ -120,10 +129,10 @@ namespace minerva { namespace graphic {
     template<typename U>
     matrix4x4<T>& matrix4x4<T>::operator*= ( U u )
     {
-        columns[0] *= u;
-        columns[1] *= u;
-        columns[2] *= u;
-        columns[3] *= u;
+        _rows[0] *= u;
+        _rows[1] *= u;
+        _rows[2] *= u;
+        _rows[3] *= u;
         return *this;
     }
     
@@ -131,20 +140,20 @@ namespace minerva { namespace graphic {
     template<typename U>
     matrix4x4<T>& matrix4x4<T>::operator*= ( const matrix4x4<U>& m )
     {
-        typename matrix4x4<T>::column_type const SrcA0 = columns[0];
-        typename matrix4x4<T>::column_type const SrcA1 = columns[1];
-        typename matrix4x4<T>::column_type const SrcA2 = columns[2];
-        typename matrix4x4<T>::column_type const SrcA3 = columns[3];
+        typename matrix4x4<T>::column_type const SrcA0 = _rows[0];
+        typename matrix4x4<T>::column_type const SrcA1 = _rows[1];
+        typename matrix4x4<T>::column_type const SrcA2 = _rows[2];
+        typename matrix4x4<T>::column_type const SrcA3 = _rows[3];
         
         typename matrix4x4<T>::column_type const SrcB0 = m[0];
         typename matrix4x4<T>::column_type const SrcB1 = m[1];
         typename matrix4x4<T>::column_type const SrcB2 = m[2];
         typename matrix4x4<T>::column_type const SrcB3 = m[3];
         
-        columns[0] = SrcA0 * SrcB0[0] + SrcA1 * SrcB0[1] + SrcA2 * SrcB0[2] + SrcA3 * SrcB0[3];
-        columns[1] = SrcA0 * SrcB1[0] + SrcA1 * SrcB1[1] + SrcA2 * SrcB1[2] + SrcA3 * SrcB1[3];
-        columns[2] = SrcA0 * SrcB2[0] + SrcA1 * SrcB2[1] + SrcA2 * SrcB2[2] + SrcA3 * SrcB2[3];
-        columns[3] = SrcA0 * SrcB3[0] + SrcA1 * SrcB3[1] + SrcA2 * SrcB3[2] + SrcA3 * SrcB3[3];
+        _rows[0] = SrcA0[0] * SrcB0 + SrcA0[1] * SrcB1 + SrcA0[2] * SrcB2 + SrcA0[3] * SrcB3;
+        _rows[1] = SrcA1[0] * SrcB0 + SrcA1[1] * SrcB1 + SrcA1[2] * SrcB2 + SrcA1[3] * SrcB3;
+        _rows[2] = SrcA2[0] * SrcB0 + SrcA2[1] * SrcB1 + SrcA2[2] * SrcB2 + SrcA2[3] * SrcB3;
+        _rows[3] = SrcA3[0] * SrcB0 + SrcA3[1] * SrcB1 + SrcA3[2] * SrcB2 + SrcA3[3] * SrcB3;
 
         return *this;
     }
@@ -153,10 +162,10 @@ namespace minerva { namespace graphic {
     template<typename U>
     matrix4x4<T>& matrix4x4<T>::operator/= ( U u )
     {
-        columns[0] /= u;
-        columns[1] /= u;
-        columns[2] /= u;
-        columns[3] /= u;
+        _rows[0] /= u;
+        _rows[1] /= u;
+        _rows[2] /= u;
+        _rows[3] /= u;
         return *this;
     }
     
@@ -172,20 +181,20 @@ namespace minerva { namespace graphic {
     template<typename T>
     matrix4x4<T>& matrix4x4<T>::operator++()
     {
-        ++columns[0];
-        ++columns[1];
-        ++columns[2];
-        ++columns[3];
+        ++_rows[0];
+        ++_rows[1];
+        ++_rows[2];
+        ++_rows[3];
         return *this;
     }
     
     template<typename T>
     matrix4x4<T>& matrix4x4<T>::operator--()
     {
-        --columns[0];
-        --columns[1];
-        --columns[2];
-        --columns[3];
+        --_rows[0];
+        --_rows[1];
+        --_rows[2];
+        --_rows[3];
         return *this;
     }
     

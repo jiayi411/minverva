@@ -28,7 +28,11 @@ namespace minerva { namespace graphic {
         typedef size_t size_type;
         
     public:
+        typedef T value_type;
+        
+    public:
         matrix4x4(){}
+        matrix4x4( T t );
         matrix4x4( const matrix4x4& );
         matrix4x4& operator= ( const matrix4x4& );
         
@@ -93,7 +97,7 @@ namespace minerva { namespace graphic {
         T determinant() const;
         
     protected:
-        column_type columns[4];
+        row_type _rows[4];
     };
     
     // arithmetic operators
@@ -153,9 +157,9 @@ namespace minerva { namespace graphic {
 
 #define mi_log_matrix4x4(flag, m) \
     mi_log( "Matrix:\n" ); \
-    mi_log( #flag"    ,"#flag"    ,"#flag"    ,"#flag"\n", m[0][0], m[1][0], m[2][0], m[3][0] ); \
-    mi_log( #flag"    ,"#flag"    ,"#flag"    ,"#flag"\n", m[0][1], m[1][1], m[2][1], m[3][1] ); \
-    mi_log( #flag"    ,"#flag"    ,"#flag"    ,"#flag"\n", m[0][2], m[1][2], m[2][2], m[3][2] ); \
-    mi_log( #flag"    ,"#flag"    ,"#flag"    ,"#flag"\n", m[0][3], m[1][3], m[2][3], m[3][3] );
+    mi_log( #flag"    ,"#flag"    ,"#flag"    ,"#flag"\n", m[0][0], m[0][1], m[0][2], m[0][3] ); \
+    mi_log( #flag"    ,"#flag"    ,"#flag"    ,"#flag"\n", m[1][0], m[1][1], m[1][2], m[1][3] ); \
+    mi_log( #flag"    ,"#flag"    ,"#flag"    ,"#flag"\n", m[2][0], m[2][1], m[2][2], m[2][3] ); \
+    mi_log( #flag"    ,"#flag"    ,"#flag"    ,"#flag"\n", m[3][0], m[3][1], m[3][2], m[3][3] );
 
 #endif /* matrix4x4_h */

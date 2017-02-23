@@ -28,6 +28,7 @@ namespace minerva { namespace graphic {
 
     public:
         vector4() : vector4( 0, 0, 0, 0 ){}
+        vector4( T t ) : vector4( t,t,t,t) {}
         vector4( T ix, T iy, T iz, T iw ) : x(ix), y(iy), z(iz), w(iw) {}
         ~vector4(){}
         
@@ -63,6 +64,11 @@ namespace minerva { namespace graphic {
         vector4& operator-- ();
         vector4  operator-- (int);
         
+        /*-- mathematics --*/
+        vector4& normalize();
+        T dot( const vector4& v ) const;
+        T length();
+        
     public:
         union { T x, r; };
         union { T y, g; };
@@ -85,6 +91,8 @@ namespace minerva { namespace graphic {
     vector4<T> operator* ( const vector4<T>&, const vector4<T>& );
     template< typename T, typename U >
     vector4<T> operator* ( const vector4<T>&, U );
+    template< typename T, typename U >
+    vector4<T> operator* ( U, const vector4<T>& );
     
     template< typename T >
     vector4<T> operator/ ( const vector4<T>&, const vector4<T>& );

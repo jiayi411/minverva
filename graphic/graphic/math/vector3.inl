@@ -6,6 +6,12 @@ namespace minerva { namespace graphic {
     template<typename T> vector3<T>& vector3<T>::operator= ( vector3<T>&& v )
     { x = v.x; y = v.y; z = v.z; return *this; }
     
+    template<typename T> vector3<T>::vector3( const vector3<T>& v )
+    { x = v.x; y = v.y; z = v.z; }
+    
+    template<typename T> vector3<T>& vector3<T>::operator= ( const vector3<T>& v )
+    { x = v.x; y = v.y; z = v.z; return *this; }
+    
     template<typename T> vector3<T>& vector3<T>::operator+= ( const vector3<T>& v )
     { x += v.x; y += v.y; z += v.z; return *this; }
     
@@ -49,6 +55,32 @@ namespace minerva { namespace graphic {
         --v;
         return v;
     }
+    
+    ////
+    template<typename T>
+    vector3<T>& vector3<T>::normalize()
+    { return *this /= length(); }
+    
+    template<typename T>
+    vector3<T> vector3<T>::cross( const vector3<T>& v ) const
+    {
+        return vector3<T>(
+                          this->y * v.z - this->z * v.y,
+                          this->z * v.x - this->x * v.z,
+                          this->x * v.y - this->y * v.x
+                          );
+    }
+    
+    template<typename T>
+    T vector3<T>::dot( const vector3<T>& v ) const
+    {
+        vector3<T> ans = *this * v;
+        return ans.x + ans.y + ans.z;
+    }
+    
+    template<typename T>
+    T vector3<T>::length() const
+    { return sqrtf( dot( *this ) ); }
     
     ////
     

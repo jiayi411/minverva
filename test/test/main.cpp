@@ -200,17 +200,38 @@ GLuint LoadShaders(const char * vertex_file_path,const char * fragment_file_path
 void test_thread( void* data ) {
     static int count = 0;
     texture_data_ptr t_data = ( texture_data* )(data);
-    mi_log( "width: %d, texture load count: %dw\n", t_data->width, ++count );
+//    mi_log( "width: %d, texture load count: %dw\n", t_data->width, ++count );
 }
 
 //int testApp::run() {
 int main(int argc, const char * argv[]) {
     
-    vector4<float> v(1.2f, .4f, 2.f, 4.123f);
-    v += 1.2;
-    v = vector4<float>(1,2,3,4) + vector4<float>(1,2,3,4);
-    //    mi_log("%f\n", v.x );
-    mi_log_vector4(%f, v);
+    glm::vec4 v1(1.2f, .4f, 2.f, 4.123f);
+    glm::vec4 t1(1.2f, .4f, 2.f, 4.123f);
+    //v1 = glm::cross( v1 * t1 );
+    minerva::foundation::timer::duration<timer::milliseconds> v_duration(true);
+    
+    for (int i = 0; i < 1; ++i) {
+        float f1 = glm::dot( v1, t1 );
+    }
+//    printf("%f\n", f1 );
+//    mi_log_vector4(%f, v1);
+    
+    float duration = v_duration.stop();
+    printf("time of vector:%f\n", duration);
+    
+    vector4<float> v2(1.2f, .4f, 2.f, 4.123f);
+    vector4<float> t2(1.2f, .4f, 2.f, 4.123f);
+    
+    v_duration.start();
+    for (int i = 0; i < 1; ++i) {
+        float f2 = math::dot( v2, t2 );
+    }
+    duration = v_duration.stop();
+    printf("time of vector:%f\n", duration);
+    
+//    printf("%f\n", f2 );
+//    mi_log_vector4(%f, v2);
     
     matrix4x4<float> matrix(
                             1, 2, 3,  4,
@@ -231,14 +252,16 @@ int main(int argc, const char * argv[]) {
 //    mat4 = glm::inverse( mat4 );
 //    float d1 = glm::determinant( mat4 );
 //    printf("%.f\n", d1 );
-//    mi_log_matrix4x4( %f, mat4 );
+//    mat4 = glm::perspective( glm::radians( 45.f ), 1024/768.f, 0.1f, 100.f );
+    mi_log_matrix4x4( %f, mat4 );
     
     
-//    matrix.inverse();
+    matrix.inverse();
 //    matrix /= 2;
-    float d2 = math::determinant( matrix );
-    printf("%.f\n", d2 );
-//    mi_log_matrix4x4( %f, matrix );
+//    float d2 = math::determinant( matrix );
+//    printf("%.f\n", d2 );
+//    matrix = math::perspective<float>(45.f, 1024.f, 768, 0.1, 100);
+    mi_log_matrix4x4( %f, matrix );
     
     core::initialize_singletons();
     
@@ -256,7 +279,7 @@ int main(int argc, const char * argv[]) {
     the_thread_manager->add_procedure( e_thread_type::background_loading );
     
     std::string thread_test_string = "resources/uvtemplate.dds";
-    for ( int i = 0; i < 1000; ++i ) {
+    for ( int i = 0; i < 1; ++i ) {
         the_texture_manager->load_texture_by_file_name( "resources/uvtemplate.dds",
                                                        std::bind( test_thread, std::placeholders::_1 ) );
     }
@@ -317,25 +340,6 @@ int main(int argc, const char * argv[]) {
         return false;
     }
     
-    
-    // "Bind" the newly created texture : all future texture functions will modify this texture
-//    glBindTexture(GL_TEXTURE_2D, textureID);
-//    
-//    unsigned int blockSize = (tex_data->format == GL_COMPRESSED_RGBA_S3TC_DXT1_EXT) ? 8 : 16;
-//    unsigned int offset = 0;
-    
-//    /* load the mipmaps */
-//    for (unsigned int level = 0; level < tex_data->mipmap_count && (tex_data->width || tex_data->height); ++level)
-//    {
-//        unsigned int size = ((tex_data->width+3)/4)*((tex_data->height+3)/4)*blockSize;
-//        glCompressedTexImage2D(GL_TEXTURE_2D, level, tex_data->format, tex_data->width, tex_data->height,
-//                               0, size, tex_data->buffer + offset);
-//        
-//        offset += size;
-//        tex_data->width  /= 2;
-//        tex_data->height /= 2;
-//    }
-    
     // uv
     static const GLfloat g_uv_buffer_data[] = {
         0.000059f, 1.0f-0.000004f,
@@ -393,10 +397,19 @@ int main(int argc, const char * argv[]) {
     GLuint programID = LoadShaders( "resources/simple.vs", "resources/simple.fs" );
     
     // tutorial 3
-    glm::mat4 projection = glm::perspective( glm::radians( 45.f ), 1024/768.f, 0.1f, 100.f );
-    glm::mat4 view = glm::lookAt( glm::vec3(0,0,3), glm::vec3(0,0,0), glm::vec3(0,1,0) );
-    glm::mat4 model = glm::mat4(1);
-    glm::mat4 mvp = projection * view * model;
+//    glm::mat4 projection2 = glm::perspective( glm::radians( 45.f ), 1024/768.f, 0.1f, 100.f );
+//    glm::mat4 view2 = glm::lookAt( glm::vec3(0,0,3), glm::vec3(0,0,0), glm::vec3(0,1,0) );
+//    glm::mat4 model2 = glm::mat4(1);
+    
+    matrix4x4<float> projection = math::perspective<float>(45.f, 1024, 768, 0.1f, 100.f);
+    
+    matrix4x4<float> model  = matrix4x4<float>(1);
+    
+    vector3<float> eye = vector3<float>(0,0,3);
+    vector3<float> target = vector3<float>(0,0,0);
+    matrix4x4<float> view = math::view( eye, target, vector3<float>(0,1,0) );
+    matrix4x4<float> mvp = projection * view;// * model;
+    
     
     // get uniforms
     GLuint matrixId = glGetUniformLocation( programID, "mvp" );
@@ -440,7 +453,27 @@ int main(int argc, const char * argv[]) {
             }
         }
         
-        if( glfwGetKey( window, GLFW_KEY_W) == GLFW_PRESS ) {
+        if( glfwGetKey( window, GLFW_KEY_W) == GLFW_PRESS) {
+            
+            view = math::view( eye, target, vector3<float>(0,1,0) );
+            mvp = projection * view;// * model;
+        } else if( glfwGetKey( window, GLFW_KEY_S ) == GLFW_PRESS ) {
+            
+            view = math::view( eye, target, vector3<float>(0,1,0) );
+            mvp = projection * view;// * model;
+        } else if( glfwGetKey( window, GLFW_KEY_A ) == GLFW_PRESS ) {
+            target.x -= 0.1;
+            eye.x -= 0.1;
+            view = math::view( eye, target, vector3<float>(0,1,0) );
+            mvp = projection * view;// * model;
+        } else if( glfwGetKey( window, GLFW_KEY_D ) == GLFW_PRESS ) {
+            target.x += 0.1;
+            eye.x += 0.1;
+            view = math::view( eye, target, vector3<float>(0,1,0) );
+            mvp = projection * view;// * model;
+        }
+        
+        if( glfwGetKey( window, GLFW_KEY_Q) == GLFW_PRESS ) {
             the_texture_manager->load_texture_by_file_name( "resources/uvtemplate.dds", std::bind( test_thread, std::placeholders::_1 ) );
         }
         
@@ -456,7 +489,7 @@ int main(int argc, const char * argv[]) {
 //        glm::mat4 model = glm::rotate( glm::radians(ftime), glm::vec3(0,0,1) ) * glm::mat4(1);
 //        glm::mat4 mvp = projection * view * model;
         
-        glUniformMatrix4fv( matrixId, 1, GL_FALSE, &mvp[0][0] );
+        glUniformMatrix4fv( matrixId, 1, GL_TRUE, &mvp[0][0] );
         glUniform1f( timeId, ftime );
         
         // 1rst attribute buffer : vertices
