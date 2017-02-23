@@ -56,6 +56,31 @@ namespace minerva { namespace graphic {
         return v;
     }
     
+    template<typename T> T& vector3<T>::operator[] ( size_type s )
+    {
+        switch(s)
+        {
+            case 0: return x;
+            case 1: return y;
+            case 2: return z;
+        }
+        mi_assert( 0 && "error index of vector3" );
+        return x;
+    }
+    
+    template<typename T>
+    const T& vector3<T>::operator[] ( size_type s ) const
+    {
+        switch(s)
+        {
+            case 0: return x;
+            case 1: return y;
+            case 2: return z;
+        }
+        mi_assert( 0 && "error index of vector3" );
+        return x;
+    }
+    
     ////
     template<typename T>
     vector3<T>& vector3<T>::normalize()
@@ -106,6 +131,10 @@ namespace minerva { namespace graphic {
     
     template<typename T>
     vector3<T> operator* ( const vector3<T>& v1, T t )
+    { return vector3<T>( v1.x * t, v1.y * t, v1.z * t ); }
+    
+    template<typename T>
+    vector3<T> operator* ( T t, const vector3<T>& v1 )
     { return vector3<T>( v1.x * t, v1.y * t, v1.z * t ); }
     
     template<typename T>

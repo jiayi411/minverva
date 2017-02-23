@@ -40,7 +40,7 @@ namespace minerva { namespace foundation {
             duration(){}
             
             /// overload ctor
-            duration( bool begin ) { if (begin) {start();} }
+            explicit duration( bool begin ) { if (begin) {start();} }
             
             /// started
             bool is_started() {

@@ -32,7 +32,7 @@ namespace minerva { namespace graphic {
         
     public:
         matrix4x4(){}
-        matrix4x4( T t );
+        explicit matrix4x4( T t );
         matrix4x4( const matrix4x4& );
         matrix4x4& operator= ( const matrix4x4& );
         
@@ -43,10 +43,10 @@ namespace minerva { namespace graphic {
                   const column_type& c3, const column_type& c4 );
         
         matrix4x4(
-                  T x1, T y1, T z1, T w1,
-                  T x2, T y2, T z2, T w2,
-                  T x3, T y3, T z3, T w3,
-                  T x4, T y4, T z4, T w4
+                  T x1, T x2, T x3, T x4,
+                  T y1, T y2, T y3, T y4,
+                  T z1, T z2, T z3, T z4,
+                  T w1, T w2, T w3, T w4
                   );
         
     public:
@@ -151,6 +151,11 @@ namespace minerva { namespace graphic {
     
     template<typename T>
     bool operator!= ( const matrix4x4<T>& m1, const matrix4x4<T>& m2 );
+    
+    // typedefs
+    typedef matrix4x4<float> matrix4x4f;
+    typedef matrix4x4<int> matrix4x4i;
+    typedef matrix4x4<double> matrix4x4d;
 } }
 
 #include "math/matrix4x4.inl"

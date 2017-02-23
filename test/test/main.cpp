@@ -29,6 +29,7 @@
 #include "graphic/math/vector4.h"
 #include "graphic/math/math_functions.h"
 #include "graphic/math/matrix4x4.h"
+#include "graphic/math/matrix3x3.h"
 using namespace glm;
 
 
@@ -207,13 +208,12 @@ void test_thread( void* data ) {
 int main(int argc, const char * argv[]) {
     
     glm::vec4 v1(1.2f, .4f, 2.f, 4.123f);
-    glm::vec4 t1(1.2f, .4f, 2.f, 4.123f);
     //v1 = glm::cross( v1 * t1 );
     minerva::foundation::timer::duration<timer::milliseconds> v_duration(true);
     
-    for (int i = 0; i < 1; ++i) {
-        float f1 = glm::dot( v1, t1 );
-    }
+//    for (int i = 0; i < 1; ++i) {
+//        float f1 = glm::dot( v1, t1 );
+//    }
 //    printf("%f\n", f1 );
 //    mi_log_vector4(%f, v1);
     
@@ -239,6 +239,7 @@ int main(int argc, const char * argv[]) {
                             8, 9, 1, 10,
                             11,12,13, 1
                             );
+//    float d1 = matrix.determinant();
     
     glm::mat4x4 mat4(
                      1, 2, 3,  4,
@@ -246,8 +247,9 @@ int main(int argc, const char * argv[]) {
                      8, 9, 1, 10,
                      11,12,13, 1
                      );
+//    float d2 = glm::determinant( mat4 );
     
-    mat4 = glm::transpose( mat4 );
+//    mat4 = glm::transpose( mat4 );
 //    mat4 /= 2;
 //    mat4 = glm::inverse( mat4 );
 //    float d1 = glm::determinant( mat4 );
@@ -256,12 +258,43 @@ int main(int argc, const char * argv[]) {
     mi_log_matrix4x4( %f, mat4 );
     
     
-    matrix.inverse();
+//    matrix.inverse();
 //    matrix /= 2;
 //    float d2 = math::determinant( matrix );
 //    printf("%.f\n", d2 );
 //    matrix = math::perspective<float>(45.f, 1024.f, 768, 0.1, 100);
     mi_log_matrix4x4( %f, matrix );
+    
+//    matrix3x3<float> matrix3(
+//                            1, 2, 3,
+//                            5, 1, 6,
+//                            8, 9, 1
+//                            );
+//    matrix3x3<float> matrix3_1(
+//                             1, 2, 3,
+//                             5, 1, 6,
+//                             8, 9, 1
+//                             );
+////    float d1 = matrix3.determinant();
+//    matrix3 = matrix3 * matrix3_1;
+//    
+//    glm::mat3x3 mat3(
+//                     1, 2, 3,
+//                     5, 1, 6,
+//                     8, 9, 1
+//                     );
+//    glm::mat3x3 mat3_1(
+//                     1, 2, 3,
+//                     5, 1, 6,
+//                     8, 9, 1
+//                     );
+//    mat3 = mat3 * mat3_1;
+//    float d2 = glm::determinant( mat3 );
+//    printf("%.f\n", d1 );
+    //    printf("%.f\n", d2 );
+//    matrix3 = matrix3.transpose();
+//    mi_log_matrix3x3(%f, matrix3);
+//    mi_log_matrix3x3(%f, mat3);
     
     core::initialize_singletons();
     

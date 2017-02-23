@@ -74,14 +74,13 @@ namespace minerva { namespace graphic {
     {
         vector3<T> forward = ( target - eye ).normalize();
         vector3<T> right = forward.cross( up ).normalize();
-        vector3<T> fup = right.cross( forward );
+        vector3<T> fup = right.cross( forward ); // why this code useful? it is just the up vector I think.
         
         return matrix4x4<T>(
-                                right.x,          fup.x,            -forward.x,          0,
-                                right.y,          fup.y,            -forward.y,          0,
-                                right.z,          fup.z,            -forward.z,          0,
-                            -dot(right, eye), -dot(fup, eye),     dot(forward, eye),     1
+                                right.x,        right.y,            right.z,          -dot(right, eye),
+                                fup.x,          fup.y,                fup.z,          -dot(fup, eye),
+                            -forward.x,      -forward.y,         -forward.z,          dot(forward, eye),
+                                0,              0,                      0,                  1
                             );
-        
     }
 }}

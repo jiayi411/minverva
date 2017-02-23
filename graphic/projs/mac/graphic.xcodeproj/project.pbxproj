@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1844181D1E5EB3350076779C /* transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1844181B1E5EB3350076779C /* transform.cpp */; };
 		1844181E1E5EB3350076779C /* transform.h in Headers */ = {isa = PBXBuildFile; fileRef = 1844181C1E5EB3350076779C /* transform.h */; };
+		184418211E5F73000076779C /* matrix3x3.h in Headers */ = {isa = PBXBuildFile; fileRef = 1844181F1E5F73000076779C /* matrix3x3.h */; };
 		18608CDF1E4E0F93009C8A68 /* vector4.h in Headers */ = {isa = PBXBuildFile; fileRef = 18608CDE1E4E0F93009C8A68 /* vector4.h */; };
 		187863F71E4D24D900DE334A /* graphic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 187863F41E4D24D900DE334A /* graphic.cpp */; };
 		187863F81E4D24D900DE334A /* graphic.h in Headers */ = {isa = PBXBuildFile; fileRef = 187863F51E4D24D900DE334A /* graphic.h */; };
@@ -19,6 +20,8 @@
 /* Begin PBXFileReference section */
 		1844181B1E5EB3350076779C /* transform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = transform.cpp; sourceTree = "<group>"; };
 		1844181C1E5EB3350076779C /* transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = transform.h; sourceTree = "<group>"; };
+		1844181F1E5F73000076779C /* matrix3x3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = matrix3x3.h; sourceTree = "<group>"; };
+		184418201E5F73000076779C /* matrix3x3.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = matrix3x3.inl; sourceTree = "<group>"; };
 		18608CDE1E4E0F93009C8A68 /* vector4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vector4.h; sourceTree = "<group>"; };
 		18608CE01E4E1550009C8A68 /* vector4.inl */ = {isa = PBXFileReference; lastKnownFileType = text; path = vector4.inl; sourceTree = "<group>"; };
 		187863C11E4D22B400DE334A /* libgraphic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libgraphic.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +52,8 @@
 		18608CDD1E4E0F93009C8A68 /* math */ = {
 			isa = PBXGroup;
 			children = (
+				1844181F1E5F73000076779C /* matrix3x3.h */,
+				184418201E5F73000076779C /* matrix3x3.inl */,
 				18922DA51E57A51D008066B1 /* matrix4x4.h */,
 				18922DA61E57BB94008066B1 /* matrix4x4.inl */,
 				18922DA21E57A402008066B1 /* vector2.h */,
@@ -112,6 +117,7 @@
 				18608CDF1E4E0F93009C8A68 /* vector4.h in Headers */,
 				1844181E1E5EB3350076779C /* transform.h in Headers */,
 				18922DA11E57A365008066B1 /* vector3.h in Headers */,
+				184418211E5F73000076779C /* matrix3x3.h in Headers */,
 				187863F81E4D24D900DE334A /* graphic.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -59,10 +59,10 @@ namespace minerva { namespace graphic {
     
     template<typename T>
     matrix4x4<T>::matrix4x4(
-              T x1, T y1, T z1, T w1,
-              T x2, T y2, T z2, T w2,
-              T x3, T y3, T z3, T w3,
-              T x4, T y4, T z4, T w4
+              T x1, T x2, T x3, T x4,
+              T y1, T y2, T y3, T y4,
+              T z1, T z2, T z3, T z4,
+              T w1, T w2, T w3, T w4
               )
     {
         _rows[0] = column_type( x1, x2, x3, x4 );
@@ -395,9 +395,15 @@ namespace minerva { namespace graphic {
     // boolean operators
     
     template<typename T>
-    bool operator== ( const matrix4x4<T>& m1, const matrix4x4<T>& m2 );
+    bool operator== ( const matrix4x4<T>& m1, const matrix4x4<T>& m2 )
+    {
+        return ( m1[0] == m2[0] && m1[1] == m2[1] && m1[2] == m2[2] && m1[3] == m2[3] );
+    }
     
     template<typename T>
-    bool operator!= ( const matrix4x4<T>& m1, const matrix4x4<T>& m2 );
+    bool operator!= ( const matrix4x4<T>& m1, const matrix4x4<T>& m2 )
+    {
+        return !(m1 == m2);
+    }
     
 } }

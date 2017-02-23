@@ -10,6 +10,22 @@
 #ifndef transform_H
 #define transform_H
 
-#include <stdio.h>
+#include "foundation/object/reference_object.h"
+
+namespace minerva { namespace graphic {
+    
+    ///
+    /// @brief transfor classes
+    ///
+    /// contain the translate, rotate and scale
+    /// information that an object needed in
+    /// rendering
+    ///
+    class transform : public foundation::reference_object
+    {
+        
+    };
+    
+} }
 
 #endif /* transform_h */
