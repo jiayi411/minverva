@@ -10,6 +10,8 @@
 		1844181D1E5EB3350076779C /* transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1844181B1E5EB3350076779C /* transform.cpp */; };
 		1844181E1E5EB3350076779C /* transform.h in Headers */ = {isa = PBXBuildFile; fileRef = 1844181C1E5EB3350076779C /* transform.h */; };
 		184418211E5F73000076779C /* matrix3x3.h in Headers */ = {isa = PBXBuildFile; fileRef = 1844181F1E5F73000076779C /* matrix3x3.h */; };
+		184418251E5F7D600076779C /* quaternion.h in Headers */ = {isa = PBXBuildFile; fileRef = 184418231E5F7D600076779C /* quaternion.h */; };
+		184418291E6F69CD0076779C /* math_common.h in Headers */ = {isa = PBXBuildFile; fileRef = 184418271E6F69CD0076779C /* math_common.h */; };
 		18608CDF1E4E0F93009C8A68 /* vector4.h in Headers */ = {isa = PBXBuildFile; fileRef = 18608CDE1E4E0F93009C8A68 /* vector4.h */; };
 		187863F71E4D24D900DE334A /* graphic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 187863F41E4D24D900DE334A /* graphic.cpp */; };
 		187863F81E4D24D900DE334A /* graphic.h in Headers */ = {isa = PBXBuildFile; fileRef = 187863F51E4D24D900DE334A /* graphic.h */; };
@@ -22,6 +24,10 @@
 		1844181C1E5EB3350076779C /* transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = transform.h; sourceTree = "<group>"; };
 		1844181F1E5F73000076779C /* matrix3x3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = matrix3x3.h; sourceTree = "<group>"; };
 		184418201E5F73000076779C /* matrix3x3.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = matrix3x3.inl; sourceTree = "<group>"; };
+		184418231E5F7D600076779C /* quaternion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = quaternion.h; sourceTree = "<group>"; };
+		184418261E64CFFB0076779C /* quaternion.inl */ = {isa = PBXFileReference; lastKnownFileType = text; path = quaternion.inl; sourceTree = "<group>"; };
+		184418271E6F69CD0076779C /* math_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = math_common.h; sourceTree = "<group>"; };
+		184418281E6F69CD0076779C /* math_common.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = math_common.inl; sourceTree = "<group>"; };
 		18608CDE1E4E0F93009C8A68 /* vector4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vector4.h; sourceTree = "<group>"; };
 		18608CE01E4E1550009C8A68 /* vector4.inl */ = {isa = PBXFileReference; lastKnownFileType = text; path = vector4.inl; sourceTree = "<group>"; };
 		187863C11E4D22B400DE334A /* libgraphic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libgraphic.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,10 +68,14 @@
 				18922DA01E57A365008066B1 /* vector3.inl */,
 				18608CDE1E4E0F93009C8A68 /* vector4.h */,
 				18608CE01E4E1550009C8A68 /* vector4.inl */,
+				184418271E6F69CD0076779C /* math_common.h */,
+				184418281E6F69CD0076779C /* math_common.inl */,
 				18922DA71E59469D008066B1 /* math_functions.h */,
 				18922DA81E596568008066B1 /* math_functions.inl */,
 				1844181B1E5EB3350076779C /* transform.cpp */,
 				1844181C1E5EB3350076779C /* transform.h */,
+				184418231E5F7D600076779C /* quaternion.h */,
+				184418261E64CFFB0076779C /* quaternion.inl */,
 			);
 			path = math;
 			sourceTree = "<group>";
@@ -116,7 +126,9 @@
 				18922DA41E57A402008066B1 /* vector2.h in Headers */,
 				18608CDF1E4E0F93009C8A68 /* vector4.h in Headers */,
 				1844181E1E5EB3350076779C /* transform.h in Headers */,
+				184418251E5F7D600076779C /* quaternion.h in Headers */,
 				18922DA11E57A365008066B1 /* vector3.h in Headers */,
+				184418291E6F69CD0076779C /* math_common.h in Headers */,
 				184418211E5F73000076779C /* matrix3x3.h in Headers */,
 				187863F81E4D24D900DE334A /* graphic.h in Headers */,
 			);

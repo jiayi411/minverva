@@ -30,11 +30,15 @@
 #include "graphic/math/math_functions.h"
 #include "graphic/math/matrix4x4.h"
 #include "graphic/math/matrix3x3.h"
+#include "graphic/math/quaternion.h"
+#include "graphic/math/math_common.h"
 using namespace glm;
 
 
 using namespace minerva::foundation;
 using namespace minerva::graphic;
+
+GLuint LoadShaders(const char * vertex_file_path,const char * fragment_file_path);
 
 class test_singleton : public singleton< test_singleton >
 {
@@ -104,99 +108,7 @@ public:
     int i = 0;
 };
 
-GLuint LoadShaders(const char * vertex_file_path,const char * fragment_file_path){
-    
-    // Create the shaders
-    GLuint VertexShaderID = glCreateShader(GL_VERTEX_SHADER);
-    GLuint FragmentShaderID = glCreateShader(GL_FRAGMENT_SHADER);
-    
-    // Read the Vertex Shader code from the file
-    std::string VertexShaderCode;
-    std::ifstream VertexShaderStream(vertex_file_path, std::ios::in);
-    if(VertexShaderStream.is_open()){
-        std::string Line = "";
-        while(getline(VertexShaderStream, Line))
-            VertexShaderCode += "\n" + Line;
-        VertexShaderStream.close();
-    }else{
-        printf("Impossible to open %s. Are you in the right directory ? Don't forget to read the FAQ !\n", vertex_file_path);
-        getchar();
-        return 0;
-    }
-    
-    // Read the Fragment Shader code from the file
-    std::string FragmentShaderCode;
-    std::ifstream FragmentShaderStream(fragment_file_path, std::ios::in);
-    if(FragmentShaderStream.is_open()){
-        std::string Line = "";
-        while(getline(FragmentShaderStream, Line))
-            FragmentShaderCode += "\n" + Line;
-        FragmentShaderStream.close();
-    }
-    
-    GLint Result = GL_FALSE;
-    int InfoLogLength;
-    
-    
-    // Compile Vertex Shader
-    printf("Compiling shader : %s\n", vertex_file_path);
-    char const * VertexSourcePointer = VertexShaderCode.c_str();
-    glShaderSource(VertexShaderID, 1, &VertexSourcePointer , NULL);
-    glCompileShader(VertexShaderID);
-    
-    // Check Vertex Shader
-    glGetShaderiv(VertexShaderID, GL_COMPILE_STATUS, &Result);
-    glGetShaderiv(VertexShaderID, GL_INFO_LOG_LENGTH, &InfoLogLength);
-    if ( InfoLogLength > 0 ){
-        std::vector<char> VertexShaderErrorMessage(InfoLogLength+1);
-        glGetShaderInfoLog(VertexShaderID, InfoLogLength, NULL, &VertexShaderErrorMessage[0]);
-        printf("%s\n", &VertexShaderErrorMessage[0]);
-    }
-    
-    
-    
-    // Compile Fragment Shader
-    printf("Compiling shader : %s\n", fragment_file_path);
-    char const * FragmentSourcePointer = FragmentShaderCode.c_str();
-    glShaderSource(FragmentShaderID, 1, &FragmentSourcePointer , NULL);
-    glCompileShader(FragmentShaderID);
-    
-    // Check Fragment Shader
-    glGetShaderiv(FragmentShaderID, GL_COMPILE_STATUS, &Result);
-    glGetShaderiv(FragmentShaderID, GL_INFO_LOG_LENGTH, &InfoLogLength);
-    if ( InfoLogLength > 0 ){
-        std::vector<char> FragmentShaderErrorMessage(InfoLogLength+1);
-        glGetShaderInfoLog(FragmentShaderID, InfoLogLength, NULL, &FragmentShaderErrorMessage[0]);
-        printf("%s\n", &FragmentShaderErrorMessage[0]);
-    }
-    
-    
-    
-    // Link the program
-    printf("Linking program\n");
-    GLuint ProgramID = glCreateProgram();
-    glAttachShader(ProgramID, VertexShaderID);
-    glAttachShader(ProgramID, FragmentShaderID);
-    glLinkProgram(ProgramID);
-    
-    // Check the program
-    glGetProgramiv(ProgramID, GL_LINK_STATUS, &Result);
-    glGetProgramiv(ProgramID, GL_INFO_LOG_LENGTH, &InfoLogLength);
-    if ( InfoLogLength > 0 ){
-        std::vector<char> ProgramErrorMessage(InfoLogLength+1);
-        glGetProgramInfoLog(ProgramID, InfoLogLength, NULL, &ProgramErrorMessage[0]);
-        printf("%s\n", &ProgramErrorMessage[0]);
-    }
-    
-    
-    glDetachShader(ProgramID, VertexShaderID);
-    glDetachShader(ProgramID, FragmentShaderID);
-    
-    glDeleteShader(VertexShaderID);
-    glDeleteShader(FragmentShaderID);
-    
-    return ProgramID;
-}
+
 
 void test_thread( void* data ) {
     static int count = 0;
@@ -204,6 +116,7 @@ void test_thread( void* data ) {
 //    mi_log( "width: %d, texture load count: %dw\n", t_data->width, ++count );
 }
 
+using namespace minerva;
 //int testApp::run() {
 int main(int argc, const char * argv[]) {
     
@@ -225,7 +138,7 @@ int main(int argc, const char * argv[]) {
     
     v_duration.start();
     for (int i = 0; i < 1; ++i) {
-        float f2 = math::dot( v2, t2 );
+        float f2 = graphic::dot( v2, t2 );
     }
     duration = v_duration.stop();
     printf("time of vector:%f\n", duration);
@@ -265,11 +178,11 @@ int main(int argc, const char * argv[]) {
 //    matrix = math::perspective<float>(45.f, 1024.f, 768, 0.1, 100);
     mi_log_matrix4x4( %f, matrix );
     
-//    matrix3x3<float> matrix3(
-//                            1, 2, 3,
-//                            5, 1, 6,
-//                            8, 9, 1
-//                            );
+    matrix3x3<float> matrix3(
+                            1, 2, 3,
+                            5, 1, 6,
+                            8, 9, 1
+                            );
 //    matrix3x3<float> matrix3_1(
 //                             1, 2, 3,
 //                             5, 1, 6,
@@ -277,12 +190,14 @@ int main(int argc, const char * argv[]) {
 //                             );
 ////    float d1 = matrix3.determinant();
 //    matrix3 = matrix3 * matrix3_1;
-//    
-//    glm::mat3x3 mat3(
-//                     1, 2, 3,
-//                     5, 1, 6,
-//                     8, 9, 1
-//                     );
+//
+    matrix3.inverse();
+    glm::mat3x3 mat3(
+                     1, 2, 3,
+                     5, 1, 6,
+                     8, 9, 1
+                     );
+    mat3 = glm::inverse(mat3);
 //    glm::mat3x3 mat3_1(
 //                     1, 2, 3,
 //                     5, 1, 6,
@@ -329,6 +244,22 @@ int main(int argc, const char * argv[]) {
     for ( int i = 0; i < 100; ++i ){
 //        allocators.emplace_back( mi_new test_allocator() );
     }
+    
+    // quaterion
+    quaternion<float> q1(1,2,3,4);
+    vector3f qv1(0.2,0.4,0.5);
+    
+    quaternion<float> q2(1,2,3,10);
+    q1.from_axis_angle(0.5, qv1);
+    
+    glm::quat gq1(4, 1, 2,3 );
+    glm::vec3 gv1(0.2,0.4,0.5);
+    
+    gq1 = glm::angleAxis(0.5f, gv1 );
+//    gq1 = glm::slerp( gq1, gq2, 0.2f );
+    
+    mi_log_quaternion("%f", q1);
+    mi_log_quaternion("%f", gq1);
     
     // for opengl
     // Initialise GLFW
@@ -434,13 +365,13 @@ int main(int argc, const char * argv[]) {
 //    glm::mat4 view2 = glm::lookAt( glm::vec3(0,0,3), glm::vec3(0,0,0), glm::vec3(0,1,0) );
 //    glm::mat4 model2 = glm::mat4(1);
     
-    matrix4x4<float> projection = math::perspective<float>(45.f, 1024, 768, 0.1f, 100.f);
+    matrix4x4<float> projection = graphic::perspective<float>(45.f, 1024, 768, 0.1f, 100.f);
     
     matrix4x4<float> model  = matrix4x4<float>(1);
     
     vector3<float> eye = vector3<float>(0,0,3);
     vector3<float> target = vector3<float>(0,0,0);
-    matrix4x4<float> view = math::view( eye, target, vector3<float>(0,1,0) );
+    matrix4x4<float> view = graphic::view( eye, target, vector3<float>(0,1,0) );
     matrix4x4<float> mvp = projection * view;// * model;
     
     
@@ -488,21 +419,21 @@ int main(int argc, const char * argv[]) {
         
         if( glfwGetKey( window, GLFW_KEY_W) == GLFW_PRESS) {
             
-            view = math::view( eye, target, vector3<float>(0,1,0) );
+            view = graphic::view( eye, target, vector3<float>(0,1,0) );
             mvp = projection * view;// * model;
         } else if( glfwGetKey( window, GLFW_KEY_S ) == GLFW_PRESS ) {
             
-            view = math::view( eye, target, vector3<float>(0,1,0) );
+            view = graphic::view( eye, target, vector3<float>(0,1,0) );
             mvp = projection * view;// * model;
         } else if( glfwGetKey( window, GLFW_KEY_A ) == GLFW_PRESS ) {
             target.x -= 0.1;
             eye.x -= 0.1;
-            view = math::view( eye, target, vector3<float>(0,1,0) );
+            view = graphic::view( eye, target, vector3<float>(0,1,0) );
             mvp = projection * view;// * model;
         } else if( glfwGetKey( window, GLFW_KEY_D ) == GLFW_PRESS ) {
             target.x += 0.1;
             eye.x += 0.1;
-            view = math::view( eye, target, vector3<float>(0,1,0) );
+            view = graphic::view( eye, target, vector3<float>(0,1,0) );
             mvp = projection * view;// * model;
         }
         
@@ -589,4 +520,98 @@ int main(int argc, const char * argv[]) {
     glfwTerminate();
     
     return 0;
+}
+
+GLuint LoadShaders(const char * vertex_file_path,const char * fragment_file_path){
+    
+    // Create the shaders
+    GLuint VertexShaderID = glCreateShader(GL_VERTEX_SHADER);
+    GLuint FragmentShaderID = glCreateShader(GL_FRAGMENT_SHADER);
+    
+    // Read the Vertex Shader code from the file
+    std::string VertexShaderCode;
+    std::ifstream VertexShaderStream(vertex_file_path, std::ios::in);
+    if(VertexShaderStream.is_open()){
+        std::string Line = "";
+        while(getline(VertexShaderStream, Line))
+            VertexShaderCode += "\n" + Line;
+        VertexShaderStream.close();
+    }else{
+        printf("Impossible to open %s. Are you in the right directory ? Don't forget to read the FAQ !\n", vertex_file_path);
+        getchar();
+        return 0;
+    }
+    
+    // Read the Fragment Shader code from the file
+    std::string FragmentShaderCode;
+    std::ifstream FragmentShaderStream(fragment_file_path, std::ios::in);
+    if(FragmentShaderStream.is_open()){
+        std::string Line = "";
+        while(getline(FragmentShaderStream, Line))
+            FragmentShaderCode += "\n" + Line;
+        FragmentShaderStream.close();
+    }
+    
+    GLint Result = GL_FALSE;
+    int InfoLogLength;
+    
+    
+    // Compile Vertex Shader
+    printf("Compiling shader : %s\n", vertex_file_path);
+    char const * VertexSourcePointer = VertexShaderCode.c_str();
+    glShaderSource(VertexShaderID, 1, &VertexSourcePointer , NULL);
+    glCompileShader(VertexShaderID);
+    
+    // Check Vertex Shader
+    glGetShaderiv(VertexShaderID, GL_COMPILE_STATUS, &Result);
+    glGetShaderiv(VertexShaderID, GL_INFO_LOG_LENGTH, &InfoLogLength);
+    if ( InfoLogLength > 0 ){
+        std::vector<char> VertexShaderErrorMessage(InfoLogLength+1);
+        glGetShaderInfoLog(VertexShaderID, InfoLogLength, NULL, &VertexShaderErrorMessage[0]);
+        printf("%s\n", &VertexShaderErrorMessage[0]);
+    }
+    
+    
+    
+    // Compile Fragment Shader
+    printf("Compiling shader : %s\n", fragment_file_path);
+    char const * FragmentSourcePointer = FragmentShaderCode.c_str();
+    glShaderSource(FragmentShaderID, 1, &FragmentSourcePointer , NULL);
+    glCompileShader(FragmentShaderID);
+    
+    // Check Fragment Shader
+    glGetShaderiv(FragmentShaderID, GL_COMPILE_STATUS, &Result);
+    glGetShaderiv(FragmentShaderID, GL_INFO_LOG_LENGTH, &InfoLogLength);
+    if ( InfoLogLength > 0 ){
+        std::vector<char> FragmentShaderErrorMessage(InfoLogLength+1);
+        glGetShaderInfoLog(FragmentShaderID, InfoLogLength, NULL, &FragmentShaderErrorMessage[0]);
+        printf("%s\n", &FragmentShaderErrorMessage[0]);
+    }
+    
+    
+    
+    // Link the program
+    printf("Linking program\n");
+    GLuint ProgramID = glCreateProgram();
+    glAttachShader(ProgramID, VertexShaderID);
+    glAttachShader(ProgramID, FragmentShaderID);
+    glLinkProgram(ProgramID);
+    
+    // Check the program
+    glGetProgramiv(ProgramID, GL_LINK_STATUS, &Result);
+    glGetProgramiv(ProgramID, GL_INFO_LOG_LENGTH, &InfoLogLength);
+    if ( InfoLogLength > 0 ){
+        std::vector<char> ProgramErrorMessage(InfoLogLength+1);
+        glGetProgramInfoLog(ProgramID, InfoLogLength, NULL, &ProgramErrorMessage[0]);
+        printf("%s\n", &ProgramErrorMessage[0]);
+    }
+    
+    
+    glDetachShader(ProgramID, VertexShaderID);
+    glDetachShader(ProgramID, FragmentShaderID);
+    
+    glDeleteShader(VertexShaderID);
+    glDeleteShader(FragmentShaderID);
+    
+    return ProgramID;
 }
