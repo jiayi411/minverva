@@ -7,4 +7,8 @@
  *
  */
 
+#include "graphic.h"
+#include "math/vector3.h"
+#include "math/quaternion.h"
 #include "transform.h"
+

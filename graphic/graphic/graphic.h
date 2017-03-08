@@ -13,11 +13,25 @@
 /* The classes below are exported */
 #pragma GCC visibility push(default)
 
-class graphic_core
-{
-    public:
-    void HelloWorld(const char *);
-};
+namespace minerva { namespace graphic {
+    
+    
+    template<typename T> class tmatrix3x3;
+    template<typename T> class tmatrix4x4;
+    template<typename T> class tvector2;
+    template<typename T> class tvector3;
+    template<typename T> class tvector4;
+    template<typename T> class tquaternion;
+    
+    typedef tmatrix3x3<float> matrix3x3;
+    typedef tmatrix4x4<float> matrix4x4;
+    typedef tvector2<float> vector2;
+    typedef tvector3<float> vector3;
+    typedef tvector4<float> vector4;
+    typedef tquaternion<float> quaternion;
+    
+} }
+
 
 #pragma GCC visibility pop
 #endif

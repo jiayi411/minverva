@@ -52,14 +52,14 @@ namespace minerva { namespace graphic {
     }
     
     template<typename T>
-    matrix4x4<T> perspective(float degrees, float width, float height, float near, float far)
+    tmatrix4x4<T> perspective(float degrees, float width, float height, float near, float far)
     {
         float aspect = width / height;
         float radian = radians( degrees );
         float range = far - near;//near - far;
         float tan_half = tanf( radian / 2.f );
         
-        matrix4x4<T> m;
+        tmatrix4x4<T> m;
         m[0][0] = 1.f / ( aspect * tan_half );
         m[1][1] = 1.f / tan_half;
         m[2][2] = ( -near - far ) / range;
@@ -69,13 +69,13 @@ namespace minerva { namespace graphic {
     }
     
     template<typename T>
-    matrix4x4<T> view( const vector3<T>& eye, const vector3<T>& target, const vector3<T>& up )
+    tmatrix4x4<T> view( const tvector3<T>& eye, const tvector3<T>& target, const tvector3<T>& up )
     {
-        vector3<T> forward = ( target - eye ).normalize();
-        vector3<T> right = forward.cross( up ).normalize();
-        vector3<T> fup = right.cross( forward ); // why this code useful? it is just the up vector I think.
+        tvector3<T> forward = ( target - eye ).normalize();
+        tvector3<T> right = forward.cross( up ).normalize();
+        tvector3<T> fup = right.cross( forward ); // why this code useful? it is just the up vector I think.
         
-        return matrix4x4<T>(
+        return tmatrix4x4<T>(
                             right.x,        right.y,            right.z,          -dot(right, eye),
                             fup.x,          fup.y,                fup.z,          -dot(fup, eye),
                             -forward.x,      -forward.y,         -forward.z,          dot(forward, eye),
@@ -84,30 +84,30 @@ namespace minerva { namespace graphic {
     }
     
     template<typename T>
-    quaternion<T> conjugate( const quaternion<T>& q )
+    tquaternion<T> conjugate( const tquaternion<T>& q )
     {
-        quaternion<T> v = q;
+        tquaternion<T> v = q;
         return v.conjugate();
     }
     
     template<typename T>
-    quaternion<T> inverse( const quaternion<T>& q )
+    tquaternion<T> inverse( const tquaternion<T>& q )
     {
-        quaternion<T> v = q;
+        tquaternion<T> v = q;
         return v.inverse();
     }
     
     template<typename T>
-    quaternion<T> normalize( const quaternion<T>& q )
+    tquaternion<T> normalize( const tquaternion<T>& q )
     {
-        quaternion<T> v = q;
+        tquaternion<T> v = q;
         return v.normalize();
     }
     
     template<typename T>
-    quaternion<T> cross( const quaternion<T>& q1, const quaternion<T>& q2 )
+    tquaternion<T> cross( const tquaternion<T>& q1, const tquaternion<T>& q2 )
     {
-        quaternion<T> v = q1;
+        tquaternion<T> v = q1;
         return v.cross(q2);
     }
     
@@ -118,10 +118,10 @@ namespace minerva { namespace graphic {
     { return t1 + a * ( t2 - t1 ); }
     
     template<typename T>
-    vector3<T> cos( const vector3<T>& v )
-    { return vector3<T>( std::cos(v.x), std::cos(v.y), std::cos(v.z) ); }
+    tvector3<T> cos( const tvector3<T>& v )
+    { return tvector3<T>( std::cos(v.x), std::cos(v.y), std::cos(v.z) ); }
     
     template<typename T>
-    vector3<T> sin( const vector3<T>& v )
-    { return vector3<T>( std::sin(v.x), std::sin(v.y), std::sin(v.z) ); }
+    tvector3<T> sin( const tvector3<T>& v )
+    { return tvector3<T>( std::sin(v.x), std::sin(v.y), std::sin(v.z) ); }
 }}

@@ -1,5 +1,5 @@
 /*
- *  quaternion.cpp
+ *  tquaternion.cpp
  *  graphic
  *
  *  Created by jiayi on 23/02/2017.
@@ -10,29 +10,29 @@
 namespace minerva { namespace graphic {
    
     template<typename T>
-    quaternion<T>::quaternion( const quaternion<T>& q )
+    tquaternion<T>::tquaternion( const tquaternion<T>& q )
     { this->x = q.x; this->y = q.y; this->z = q.z, this->w = q.w; }
     
     template<typename T>
-    quaternion<T>::quaternion( quaternion<T>&& q )
+    tquaternion<T>::tquaternion( tquaternion<T>&& q )
     { this->x = q.x; this->y = q.y; this->z = q.z, this->w = q.w; }
     
     template<typename T>
-    quaternion<T>& quaternion<T>::operator= ( const quaternion<T>& q )
+    tquaternion<T>& tquaternion<T>::operator= ( const tquaternion<T>& q )
     { this->x = q.x; this->y = q.y; this->z = q.z, this->w = q.w; return *this; }
     
     template<typename T>
-    quaternion<T>& quaternion<T>::operator= ( quaternion<T>&& q )
+    tquaternion<T>& tquaternion<T>::operator= ( tquaternion<T>&& q )
     { this->x = q.x; this->y = q.y; this->z = q.z, this->w = q.w; return *this; }
     
     template<typename T>
-    quaternion<T>& quaternion<T>::operator+= ( const quaternion<T>& q )
+    tquaternion<T>& tquaternion<T>::operator+= ( const tquaternion<T>& q )
     { this->x += q.x; this->y += q.y; this->z += q.z, this->w += q.w; return *this; }
     
     template<typename T>
-    quaternion<T>& quaternion<T>::operator*= ( const quaternion<T>& q )
+    tquaternion<T>& tquaternion<T>::operator*= ( const tquaternion<T>& q )
     {
-        quaternion p = *this;
+        tquaternion p = *this;
         this->w = p.w * q.w - p.x * q.x - p.y * q.y - p.z * q.z;
         this->x = p.w * q.x + p.x * q.w + p.y * q.z - p.z * q.y;
         this->y = p.w * q.y + p.y * q.w + p.z * q.x - p.x * q.z;
@@ -42,7 +42,7 @@ namespace minerva { namespace graphic {
     
     template<typename T>
     template<typename U>
-    quaternion<T>& quaternion<T>::operator= ( const quaternion<U>& q )
+    tquaternion<T>& tquaternion<T>::operator= ( const tquaternion<U>& q )
     {
         this->x = static_cast<T>(q.x);
         this->y = static_cast<T>(q.y);
@@ -53,7 +53,7 @@ namespace minerva { namespace graphic {
     
     template<typename T>
     template<typename U>
-    quaternion<T>& quaternion<T>::operator*= ( U u )
+    tquaternion<T>& tquaternion<T>::operator*= ( U u )
     {
         T t = static_cast<T>(u);
         this->x *= t;
@@ -65,7 +65,7 @@ namespace minerva { namespace graphic {
     
     template<typename T>
     template<typename U>
-    quaternion<T>& quaternion<T>::operator/= ( U u )
+    tquaternion<T>& tquaternion<T>::operator/= ( U u )
     {
         T t = static_cast<T>(u);
         this->x /= t;
@@ -76,21 +76,21 @@ namespace minerva { namespace graphic {
     }
     
     template<typename T>
-    T quaternion<T>::length() const
+    T tquaternion<T>::length() const
     {
         return sqrt( this->dot(*this) );
     }
     
     template<typename T>
-    T quaternion<T>::dot( const quaternion<T>& q ) const
+    T tquaternion<T>::dot( const tquaternion<T>& q ) const
     { return ( x * q.x + y * q.y + z * q.z + w * q.w ); }
     
     template<typename T>
-    quaternion<T>& quaternion<T>::conjugate()
+    tquaternion<T>& tquaternion<T>::conjugate()
     { this->x = -this->x; this->y = -this->y; this->z = -this->z; return *this; }
     
     template<typename T>
-    quaternion<T>& quaternion<T>::inverse()
+    tquaternion<T>& tquaternion<T>::inverse()
     {
         T d = this->dot( *this );
         conjugate() /= d;
@@ -98,7 +98,7 @@ namespace minerva { namespace graphic {
     }
     
     template<typename T>
-    quaternion<T>& quaternion<T>::normalize()
+    tquaternion<T>& tquaternion<T>::normalize()
     {
         T len = length();
         if (len <= T(0)) {
@@ -112,10 +112,10 @@ namespace minerva { namespace graphic {
     }
     
     template<typename T>
-    quaternion<T>& quaternion<T>::cross( const quaternion& q2 )
+    tquaternion<T>& tquaternion<T>::cross( const tquaternion& q2 )
     {
-        quaternion<T>& q1 = *this;
-        *this = quaternion<T>(
+        tquaternion<T>& q1 = *this;
+        *this = tquaternion<T>(
         q1.w * q2.x + q1.x * q2.w + q1.y * q2.z - q1.z * q2.y,
         q1.w * q2.y + q1.y * q2.w + q1.z * q2.x - q1.x * q2.z,
         q1.w * q2.z + q1.z * q2.w + q1.x * q2.y - q1.y * q2.x,
@@ -126,18 +126,18 @@ namespace minerva { namespace graphic {
     
     template<typename T>
     template<typename U>
-    vector3<U> quaternion<T>::operator*= ( const vector3<U>& v )
+    tvector3<U> tquaternion<T>::operator*= ( const tvector3<U>& v )
     {
-        quaternion<T> q( v.x, v.y, v.z, 0 );
-        quaternion<T> inv = *this;
+        tquaternion<T> q( v.x, v.y, v.z, 0 );
+        tquaternion<T> inv = *this;
         return *this * q * inv.inverse();
     }
     
     template<typename T>
-    quaternion<T>& quaternion<T>::from_euler( const vector3<T>& euler )
+    tquaternion<T>& tquaternion<T>::from_euler( const tvector3<T>& euler )
     {
-        vector3<T> c = cos(euler * T(0.5));
-        vector3<T> s = sin(euler * T(0.5));
+        tvector3<T> c = cos(euler * T(0.5));
+        tvector3<T> s = sin(euler * T(0.5));
         
         this->w = c.x * c.y * c.z + s.x * s.y * s.z;
         this->x = s.x * c.y * c.z - c.x * s.y * s.z;
@@ -147,7 +147,7 @@ namespace minerva { namespace graphic {
     }
     
     template<typename T>
-    quaternion<T>& quaternion<T>::from_axis_angle( float angle, const vector3<T>& axis )
+    tquaternion<T>& tquaternion<T>::from_axis_angle( float angle, const tvector3<T>& axis )
     {
         float half_angle = 0.5f * angle;
         float sin_angle = std::sin(half_angle);
@@ -160,26 +160,26 @@ namespace minerva { namespace graphic {
     }
     
     template<typename T>
-    T quaternion<T>::pitch() const
+    T tquaternion<T>::pitch() const
     { return T(atan(T(2) * (y * z + w * x), w * w - x * x - y * y + z * z)); }
     
     template<typename T>
-    T quaternion<T>::yaw() const
+    T tquaternion<T>::yaw() const
     { return asin(T(-2) * (x * z - w * y)); }
     
     template<typename T>
-    T quaternion<T>::roll() const
+    T tquaternion<T>::roll() const
     { return T(atan(T(2) * (x * y + w * z), w * w + x * x - y * y - z * z)); }
     
     template<typename T>
-    quaternion<T> quaternion<T>::lerp( const quaternion<T>& y, float a )
-    { quaternion<T>& x = *this; return x * (T(1) - a) + (y * a); }
+    tquaternion<T> tquaternion<T>::lerp( const tquaternion<T>& y, float a )
+    { tquaternion<T>& x = *this; return x * (T(1) - a) + (y * a); }
     
     template<typename T>
-    quaternion<T> quaternion<T>::slerp( const quaternion<T>& y, float a )
+    tquaternion<T> tquaternion<T>::slerp( const tquaternion<T>& y, float a )
     {
-        quaternion<T>& x = *this;
-        quaternion<T> z = y;
+        tquaternion<T>& x = *this;
+        tquaternion<T> z = y;
         
         T cosTheta = dot(y);
         
@@ -195,7 +195,7 @@ namespace minerva { namespace graphic {
         if(cosTheta > T(1) - std::numeric_limits<T>::epsilon())
         {
             // Linear interpolation
-            return quaternion<T>(
+            return tquaternion<T>(
                                  graphic::mix<T>(x.x, z.x, a),
                                  graphic::mix<T>(x.y, z.y, a),
                                  graphic::mix<T>(x.z, z.z, a),
@@ -213,41 +213,41 @@ namespace minerva { namespace graphic {
     
     //* - - - - - - - - - - - - -*//
     template< typename T >
-    quaternion<T> operator-( const quaternion<T>& q )
-    { return quaternion<T>( -q.x, -q.y, -q.z, -q.w ); }
+    tquaternion<T> operator-( const tquaternion<T>& q )
+    { return tquaternion<T>( -q.x, -q.y, -q.z, -q.w ); }
     
     template< typename T, typename U >
-    quaternion<T> operator*( const quaternion<T>& q1, U u )
+    tquaternion<T> operator*( const tquaternion<T>& q1, U u )
     {
-        quaternion<T> q = q1;
+        tquaternion<T> q = q1;
         return q *= static_cast<T>(u);
     }
     
     template< typename T, typename U >
-    quaternion<T> operator*( U u, const quaternion<T>& q1 )
+    tquaternion<T> operator*( U u, const tquaternion<T>& q1 )
     {
-        quaternion<T> q = q1;
+        tquaternion<T> q = q1;
         return q *= static_cast<T>(u);
     }
     
     template< typename T, typename U >
-    quaternion<T> operator/( const quaternion<T>& q1, U u )
+    tquaternion<T> operator/( const tquaternion<T>& q1, U u )
     {
-        quaternion<T> q = q1;
+        tquaternion<T> q = q1;
         return q /= static_cast<T>(u);
     }
     
     template< typename T>
-    quaternion<T> operator+( const quaternion<T>& q1, const quaternion<T>& q2 )
+    tquaternion<T> operator+( const tquaternion<T>& q1, const tquaternion<T>& q2 )
     {
-        quaternion<T> v = q1;
+        tquaternion<T> v = q1;
         return v += q2;
     }
     
     template <typename T>
-    matrix3x3<T> matrix3_cast(quaternion<T> const & q)
+    tmatrix3x3<T> matrix3_cast(tquaternion<T> const & q)
     {
-        matrix3x3<T> Result(T(1));
+        tmatrix3x3<T> Result(T(1));
         T qxx(q.x * q.x);
         T qyy(q.y * q.y);
         T qzz(q.z * q.z);
@@ -275,13 +275,13 @@ namespace minerva { namespace graphic {
     
     
     template <typename T>
-    matrix4x4<T> matrix4_cast(quaternion<T> const & x)
+    tmatrix4x4<T> matrix4_cast(tquaternion<T> const & x)
     {
-        return matrix4x4<T>( matrix3_cast(x) );
+        return tmatrix4x4<T>( matrix3_cast(x) );
     }
     
     template <typename T>
-    quaternion<T> quaternion_cast(matrix3x3<T> const & m)
+    tquaternion<T> tquaternion_cast(tmatrix3x3<T> const & m)
     {
         T fourXSquaredMinus1 = m[0][0] - m[1][1] - m[2][2];
         T fourYSquaredMinus1 = m[1][1] - m[0][0] - m[2][2];
@@ -309,7 +309,7 @@ namespace minerva { namespace graphic {
         T biggestVal = std::sqrt(fourBiggestSquaredMinus1 + T(1)) * T(0.5);
         T mult = static_cast<T>(0.25) / biggestVal;
         
-        quaternion<T> Result;
+        tquaternion<T> Result;
         switch(biggestIndex)
         {
             case 0:
@@ -346,9 +346,9 @@ namespace minerva { namespace graphic {
     }
     
     template <typename T>
-    quaternion<T> quaternion_cast(matrix4x4<T> const & x)
+    tquaternion<T> tquaternion_cast(tmatrix4x4<T> const & x)
     {
-        return quaternion_cast( matrix3x3<T>( x ) );
+        return tquaternion_cast( tmatrix3x3<T>( x ) );
     }
     
 } }

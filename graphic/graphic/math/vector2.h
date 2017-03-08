@@ -6,8 +6,8 @@
 //  Copyright © 2017 jiayi. All rights reserved.
 //
 
-#ifndef vector2_h
-#define vector2_h
+#ifndef tvector2_h
+#define tvector2_h
 
 namespace minerva { namespace graphic {
     
@@ -19,34 +19,34 @@ namespace minerva { namespace graphic {
     /// have to do this later.
     ///
     template<typename T>
-    class vector2
+    class tvector2
     {
     public:
-        vector2() : vector2( 0, 0 ){}
-        vector2( T ix, T iy) : x(ix), y(iy) {}
-        ~vector2(){}
+        tvector2() : tvector2( 0, 0 ){}
+        tvector2( T ix, T iy) : x(ix), y(iy) {}
+        ~tvector2(){}
         
     public:
-        vector2( vector2&& );
-        vector2& operator= ( vector2&& );
-        vector2( const vector2& ) = delete;
-        vector2& operator= ( const vector2& ) = delete;
+        tvector2( tvector2&& );
+        tvector2& operator= ( tvector2&& );
+        tvector2( const tvector2& ) = delete;
+        tvector2& operator= ( const tvector2& ) = delete;
         
     public:        
-        vector2& operator+= ( const vector2& );
-        vector2& operator-= ( const vector2& );
-        vector2& operator*= ( const vector2& );
-        vector2& operator/= ( const vector2& );
+        tvector2& operator+= ( const tvector2& );
+        tvector2& operator-= ( const tvector2& );
+        tvector2& operator*= ( const tvector2& );
+        tvector2& operator/= ( const tvector2& );
         
-        vector2& operator+= ( T );
-        vector2& operator-= ( T );
-        vector2& operator*= ( T );
-        vector2& operator/= ( T );
+        tvector2& operator+= ( T );
+        tvector2& operator-= ( T );
+        tvector2& operator*= ( T );
+        tvector2& operator/= ( T );
         
-        vector2& operator++ ();
-        vector2  operator++ (int);
-        vector2& operator-- ();
-        vector2  operator-- (int);
+        tvector2& operator++ ();
+        tvector2  operator++ (int);
+        tvector2& operator-- ();
+        tvector2  operator-- (int);
         
     public:
         T x, y;
@@ -54,35 +54,26 @@ namespace minerva { namespace graphic {
     
     
     template< typename T >
-    vector2<T> operator+ ( const vector2<T>&, const vector2<T>& );
+    tvector2<T> operator+ ( const tvector2<T>&, const tvector2<T>& );
     template< typename T >
-    vector2<T> operator+ ( const vector2<T>&, T );
+    tvector2<T> operator+ ( const tvector2<T>&, T );
     
     template< typename T >
-    vector2<T> operator- ( const vector2<T>&, const vector2<T>& );
+    tvector2<T> operator- ( const tvector2<T>&, const tvector2<T>& );
     template< typename T >
-    vector2<T> operator- ( const vector2<T>&, T );
+    tvector2<T> operator- ( const tvector2<T>&, T );
     
     template< typename T >
-    vector2<T> operator* ( const vector2<T>&, const vector2<T>& );
+    tvector2<T> operator* ( const tvector2<T>&, const tvector2<T>& );
     template< typename T >
-    vector2<T> operator* ( const vector2<T>&, T );
+    tvector2<T> operator* ( const tvector2<T>&, T );
     
     template< typename T >
-    vector2<T> operator/ ( const vector2<T>&, const vector2<T>& );
+    tvector2<T> operator/ ( const tvector2<T>&, const tvector2<T>& );
     template< typename T >
-    vector2<T> operator/ ( const vector2<T>&, T );
+    tvector2<T> operator/ ( const tvector2<T>&, T );
     template< typename T >
-    vector2<T> operator/ ( T, const vector2<T>& );
-    
-    /// vector2 in float
-    typedef vector2<float> vector2f;
-    
-    /// vector2 in int
-    typedef vector2<int> vector2i;
-    
-    /// vector2 in double
-    typedef vector2<double> vector2d;
+    tvector2<T> operator/ ( T, const tvector2<T>& );
     
 } }
 
@@ -91,4 +82,4 @@ namespace minerva { namespace graphic {
 #define mi_log_vector2(flag, v) \
     mi_log("x="#flag";y="#flag"\n", v.x,v.y,v.z );
 
-#endif /* vector2_h */
+#endif /* tvector2_h */

@@ -6,9 +6,9 @@
 //  Copyright © 2017 jiayi. All rights reserved.
 //
 
-#ifndef vector3_h
-#define vector3_h
-#include "graphic/math/vector4.h"
+#ifndef tvector3_h
+#define tvector3_h
+#include "math/vector4.h"
 
 namespace minerva { namespace graphic {
     
@@ -20,45 +20,45 @@ namespace minerva { namespace graphic {
     /// have to do this later.
     ///
     template<typename T>
-    class vector3
+    class tvector3
     {
         typedef size_t size_type;
         
     public:
-        vector3() : vector3( 0, 0, 0 ){}
-        vector3( T ix, T iy, T iz) : x(ix), y(iy), z(iz) {}
-        vector3( const vector4<T>& v ) : vector3( v.x, v.y, v.z ){}
-        ~vector3(){}
+        tvector3() : tvector3( 0, 0, 0 ){}
+        tvector3( T ix, T iy, T iz) : x(ix), y(iy), z(iz) {}
+        tvector3( const tvector4<T>& v ) : tvector3( v.x, v.y, v.z ){}
+        ~tvector3(){}
         
     public:
-        vector3( vector3&& );
-        vector3& operator= ( vector3&& );
-        vector3( const vector3& );
-        vector3& operator= ( const vector3& );
+        tvector3( tvector3&& );
+        tvector3& operator= ( tvector3&& );
+        tvector3( const tvector3& );
+        tvector3& operator= ( const tvector3& );
         
     public:
         T& operator[] ( size_type s );
         const T& operator[] ( size_type s ) const;
         
-        vector3& operator+= ( const vector3& );
-        vector3& operator-= ( const vector3& );
-        vector3& operator*= ( const vector3& );
-        vector3& operator/= ( const vector3& );
+        tvector3& operator+= ( const tvector3& );
+        tvector3& operator-= ( const tvector3& );
+        tvector3& operator*= ( const tvector3& );
+        tvector3& operator/= ( const tvector3& );
         
-        vector3& operator+= ( T );
-        vector3& operator-= ( T );
-        vector3& operator*= ( T );
-        vector3& operator/= ( T );
+        tvector3& operator+= ( T );
+        tvector3& operator-= ( T );
+        tvector3& operator*= ( T );
+        tvector3& operator/= ( T );
         
-        vector3& operator++ ();
-        vector3  operator++ (int);
-        vector3& operator-- ();
-        vector3  operator-- (int);
+        tvector3& operator++ ();
+        tvector3  operator++ (int);
+        tvector3& operator-- ();
+        tvector3  operator-- (int);
         
         /*-- mathematics --*/
-        vector3& normalize();
-        vector3 cross( const vector3& v ) const;
-        T dot( const vector3& v ) const;
+        tvector3& normalize();
+        tvector3 cross( const tvector3& v ) const;
+        T dot( const tvector3& v ) const;
         T length() const;
         
     public:
@@ -69,37 +69,28 @@ namespace minerva { namespace graphic {
     
     
     template< typename T >
-    vector3<T> operator+ ( const vector3<T>&, const vector3<T>& );
+    tvector3<T> operator+ ( const tvector3<T>&, const tvector3<T>& );
     template< typename T >
-    vector3<T> operator+ ( const vector3<T>&, T );
+    tvector3<T> operator+ ( const tvector3<T>&, T );
     
     template< typename T >
-    vector3<T> operator- ( const vector3<T>&, const vector3<T>& );
+    tvector3<T> operator- ( const tvector3<T>&, const tvector3<T>& );
     template< typename T >
-    vector3<T> operator- ( const vector3<T>&, T );
+    tvector3<T> operator- ( const tvector3<T>&, T );
     
     template< typename T >
-    vector3<T> operator* ( const vector3<T>&, const vector3<T>& );
+    tvector3<T> operator* ( const tvector3<T>&, const tvector3<T>& );
     template< typename T >
-    vector3<T> operator* ( const vector3<T>&, T );
+    tvector3<T> operator* ( const tvector3<T>&, T );
     template< typename T >
-    vector3<T> operator* ( T, const vector3<T>& );
+    tvector3<T> operator* ( T, const tvector3<T>& );
     
     template< typename T >
-    vector3<T> operator/ ( const vector3<T>&, const vector3<T>& );
+    tvector3<T> operator/ ( const tvector3<T>&, const tvector3<T>& );
     template< typename T >
-    vector3<T> operator/ ( const vector3<T>&, T );
+    tvector3<T> operator/ ( const tvector3<T>&, T );
     template< typename T >
-    vector3<T> operator/ ( T, const vector3<T>& );
-    
-    /// vector3 in float
-    typedef vector3<float> vector3f;
-    
-    /// vector3 in int
-    typedef vector3<int> vector3i;
-    
-    /// vector3 in double
-    typedef vector3<double> vector3d;
+    tvector3<T> operator/ ( T, const tvector3<T>& );
     
 } }
 
@@ -108,4 +99,4 @@ namespace minerva { namespace graphic {
 #define mi_log_vector3(flag, v) \
     mi_log("x="#flag";y="#flag";z="#flag"\n", v.x,v.y,v.z );
 
-#endif /* vector3_h */
+#endif /* tvector3_h */

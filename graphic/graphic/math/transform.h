@@ -13,7 +13,6 @@
 #include "foundation/object/reference_object.h"
 
 namespace minerva { namespace graphic {
-    
     ///
     /// @brief transfor classes
     ///
@@ -23,7 +22,34 @@ namespace minerva { namespace graphic {
     ///
     class transform : public foundation::reference_object
     {
+    public:
+        transform() : _scale(0.f){}
         
+        /// copy constructor
+        transform( const transform& t );
+        
+        /// copy constructor with rhs
+        transform( transform&& t );
+        
+        /// copy operator
+        transform& operator= ( const transform& t );
+        
+        /// copy operator with rhs
+        transform& operator= ( transform&& t );
+        
+    public:
+        /// set scale
+        const quaternion& get_quaternion() const;
+        
+    protected:
+        /// rotation represented by quaternion
+        quaternion _rotation;
+        
+        /// position
+        vector3  _position;
+        
+        /// scale represented by a float to save space
+        float _scale;
     };
     
 } }

@@ -31,6 +31,7 @@
 #include "graphic/math/matrix4x4.h"
 #include "graphic/math/matrix3x3.h"
 #include "graphic/math/quaternion.h"
+#include "graphic/graphic.h"
 using namespace glm;
 
 
@@ -132,8 +133,8 @@ int main(int argc, const char * argv[]) {
     float duration = v_duration.stop();
     printf("time of vector:%f\n", duration);
     
-    vector4<float> v2(1.2f, .4f, 2.f, 4.123f);
-    vector4<float> t2(1.2f, .4f, 2.f, 4.123f);
+    vector4 v2(1.2f, .4f, 2.f, 4.123f);
+    vector4 t2(1.2f, .4f, 2.f, 4.123f);
     
     v_duration.start();
     for (int i = 0; i < 1; ++i) {
@@ -145,7 +146,7 @@ int main(int argc, const char * argv[]) {
 //    printf("%f\n", f2 );
 //    mi_log_vector4(%f, v2);
     
-    matrix4x4<float> matrix4(
+    matrix4x4 matrix4(
                             1, 2, 3,  4,
                             5, 1, 6,  7,
                             8, 9, 1, 10,
@@ -177,12 +178,12 @@ int main(int argc, const char * argv[]) {
 //    matrix = math::perspective<float>(45.f, 1024.f, 768, 0.1, 100);
     mi_log_matrix4x4( %f, matrix4 );
     
-    matrix3x3<float> matrix3(
+    matrix3x3 matrix3(
                             1, 2, 3,
                             5, 1, 6,
                             8, 9, 1
                             );
-//    matrix3x3<float> matrix3_1(
+//    matrix3x3 matrix3_1(
 //                             1, 2, 3,
 //                             5, 1, 6,
 //                             8, 9, 1
@@ -245,8 +246,8 @@ int main(int argc, const char * argv[]) {
     }
     
     // quaterion
-    quaternion<float> q1(1,2,3,4);
-    q1.from_axis_angle(1, vector3f(0,0,1));
+    quaternion q1(1,2,3,4);
+    q1.from_axis_angle(1, vector3(0,0,1));
     matrix4 = graphic::matrix4_cast( q1 );
     
     
@@ -363,22 +364,22 @@ int main(int argc, const char * argv[]) {
 //    glm::mat4 view2 = glm::lookAt( glm::vec3(0,0,3), glm::vec3(0,0,0), glm::vec3(0,1,0) );
 //    glm::mat4 model2 = glm::mat4(1);
     
-    matrix4x4<float> projection = graphic::perspective<float>(45.f, 1024, 768, 0.1f, 100.f);
+    matrix4x4 projection = graphic::perspective<float>(45.f, 1024, 768, 0.1f, 100.f);
     
-    matrix4x4<float> model  = matrix4x4<float>(1);
+    matrix4x4 model  = matrix4x4(1);
     
     // rotation
-    quaternion<float> model_rotate;
-    quaternion<float> target_rotate;
-    model_rotate.from_axis_angle(0, vector3f(0,1,0));
-    target_rotate.from_axis_angle(1, vector3f(0,1,0));
+    quaternion model_rotate;
+    quaternion target_rotate;
+    model_rotate.from_axis_angle(0, vector3(0,1,0));
+    target_rotate.from_axis_angle(1, vector3(0,1,0));
     
     
     
-    vector3<float> eye = vector3<float>(0,0,3);
-    vector3<float> target = vector3<float>(0,0,0);
-    matrix4x4<float> view = graphic::view( eye, target, vector3<float>(0,1,0) );
-    matrix4x4<float> mvp = projection * view * model;
+    vector3 eye = vector3(0,0,3);
+    vector3 target = vector3(0,0,0);
+    matrix4x4 view = graphic::view( eye, target, vector3(0,1,0) );
+    matrix4x4 mvp = projection * view * model;
     
     
     
@@ -426,21 +427,21 @@ int main(int argc, const char * argv[]) {
         
         if( glfwGetKey( window, GLFW_KEY_W) == GLFW_PRESS) {
             
-            view = graphic::view( eye, target, vector3<float>(0,1,0) );
+            view = graphic::view( eye, target, vector3(0,1,0) );
             mvp = projection * view;// * model;
         } else if( glfwGetKey( window, GLFW_KEY_S ) == GLFW_PRESS ) {
             
-            view = graphic::view( eye, target, vector3<float>(0,1,0) );
+            view = graphic::view( eye, target, vector3(0,1,0) );
             mvp = projection * view;// * model;
         } else if( glfwGetKey( window, GLFW_KEY_A ) == GLFW_PRESS ) {
             target.x -= 0.1;
             eye.x -= 0.1;
-            view = graphic::view( eye, target, vector3<float>(0,1,0) );
+            view = graphic::view( eye, target, vector3(0,1,0) );
             mvp = projection * view;// * model;
         } else if( glfwGetKey( window, GLFW_KEY_D ) == GLFW_PRESS ) {
             target.x += 0.1;
             eye.x += 0.1;
-            view = graphic::view( eye, target, vector3<float>(0,1,0) );
+            view = graphic::view( eye, target, vector3(0,1,0) );
             mvp = projection * view;// * model;
         }
         
@@ -458,7 +459,7 @@ int main(int argc, const char * argv[]) {
         std::chrono::steady_clock::time_point now = std::chrono::steady_clock::now();
         float ftime =float(now.time_since_epoch().count())/ 1000000000.0;
         
-        quaternion<float> rotate = model_rotate.slerp( target_rotate, (std::sin(ftime)) );
+        quaternion rotate = model_rotate.slerp( target_rotate, (std::sin(ftime)) );
 
 //        model[0][0] = mmodel[0][0];
 //        model[0][1] = mmodel[0][1];

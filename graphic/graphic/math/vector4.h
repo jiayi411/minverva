@@ -6,15 +6,15 @@
 //  Copyright © 2017 jiayi. All rights reserved.
 //
 
-#ifndef vector4_h
-#define vector4_h
+#ifndef tvector4_h
+#define tvector4_h
 
 #include <stddef.h>
 #include "foundation/basic/defines.h"
 
 namespace minerva { namespace graphic {
     
-    template<typename T> class vector3;
+    template<typename T> class tvector3;
     
     ///
     /// @brief vector classes
@@ -24,52 +24,52 @@ namespace minerva { namespace graphic {
     /// have to do this later.
     ///
     template<typename T>
-    class vector4
+    class tvector4
     {
         typedef size_t size_type;
 
     public:
-        vector4() : vector4( 0, 0, 0, 0 ){}
-        vector4( T t ) : vector4( t,t,t,t) {}
-        vector4( T ix, T iy, T iz, T iw ) : x(ix), y(iy), z(iz), w(iw) {}
-        vector4( const vector3<T>& v );
-        ~vector4(){}
+        tvector4() : tvector4( 0, 0, 0, 0 ){}
+        tvector4( T t ) : tvector4( t,t,t,t) {}
+        tvector4( T ix, T iy, T iz, T iw ) : x(ix), y(iy), z(iz), w(iw) {}
+        tvector4( const tvector3<T>& v );
+        ~tvector4(){}
         
     public:
-        vector4( vector4&& );
-        vector4& operator= ( vector4&& );
-        vector4( const vector4& );
-        vector4& operator= ( const vector4& );
+        tvector4( tvector4&& );
+        tvector4& operator= ( tvector4&& );
+        tvector4( const tvector4& );
+        tvector4& operator= ( const tvector4& );
         
     public:
         T& operator[] ( size_type s );
         const T& operator[] ( size_type s ) const;
         
-        vector4& operator+= ( const vector4& );
-        vector4& operator-= ( const vector4& );
-        vector4& operator*= ( const vector4& );
-        vector4& operator/= ( const vector4& );
+        tvector4& operator+= ( const tvector4& );
+        tvector4& operator-= ( const tvector4& );
+        tvector4& operator*= ( const tvector4& );
+        tvector4& operator/= ( const tvector4& );
         
         template<typename U>
-        vector4& operator+= ( U );
+        tvector4& operator+= ( U );
         
         template<typename U>
-        vector4& operator-= ( U );
+        tvector4& operator-= ( U );
         
         template<typename U>
-        vector4& operator*= ( U );
+        tvector4& operator*= ( U );
         
         template<typename U>
-        vector4& operator/= ( U );
+        tvector4& operator/= ( U );
         
-        vector4& operator++ ();
-        vector4  operator++ (int);
-        vector4& operator-- ();
-        vector4  operator-- (int);
+        tvector4& operator++ ();
+        tvector4  operator++ (int);
+        tvector4& operator-- ();
+        tvector4  operator-- (int);
         
         /*-- mathematics --*/
-        vector4& normalize();
-        T dot( const vector4& v ) const;
+        tvector4& normalize();
+        T dot( const tvector4& v ) const;
         T length();
         
     public:
@@ -81,37 +81,28 @@ namespace minerva { namespace graphic {
     
     
     template< typename T >
-    vector4<T> operator+ ( const vector4<T>&, const vector4<T>& );
+    tvector4<T> operator+ ( const tvector4<T>&, const tvector4<T>& );
     template< typename T, typename U >
-    vector4<T> operator+ ( const vector4<T>&, U );
+    tvector4<T> operator+ ( const tvector4<T>&, U );
     
     template< typename T >
-    vector4<T> operator- ( const vector4<T>&, const vector4<T>& );
+    tvector4<T> operator- ( const tvector4<T>&, const tvector4<T>& );
     template< typename T, typename U >
-    vector4<T> operator- ( const vector4<T>&, U );
+    tvector4<T> operator- ( const tvector4<T>&, U );
     
     template< typename T >
-    vector4<T> operator* ( const vector4<T>&, const vector4<T>& );
+    tvector4<T> operator* ( const tvector4<T>&, const tvector4<T>& );
     template< typename T, typename U >
-    vector4<T> operator* ( const vector4<T>&, U );
+    tvector4<T> operator* ( const tvector4<T>&, U );
     template< typename T, typename U >
-    vector4<T> operator* ( U, const vector4<T>& );
+    tvector4<T> operator* ( U, const tvector4<T>& );
     
     template< typename T >
-    vector4<T> operator/ ( const vector4<T>&, const vector4<T>& );
+    tvector4<T> operator/ ( const tvector4<T>&, const tvector4<T>& );
     template< typename T, typename U >
-    vector4<T> operator/ ( const vector4<T>&, U );
+    tvector4<T> operator/ ( const tvector4<T>&, U );
     template< typename T, typename U >
-    vector4<T> operator/ ( U, const vector4<T>& );
-    
-    /// vector4 in float
-    typedef vector4<float> vector4f;
-    
-    /// vector4 in int
-    typedef vector4<int> vector4i;
-    
-    /// vector4 in double
-    typedef vector4<double> vector4d;
+    tvector4<T> operator/ ( U, const tvector4<T>& );
     
 } }
 
@@ -120,4 +111,4 @@ namespace minerva { namespace graphic {
 #define mi_log_vector4(flag, v) \
     mi_log("x="#flag";y="#flag";z="#flag";w="#flag"\n", v.x,v.y,v.z,v.w );
 
-#endif /* vector4_h */
+#endif /* tvector4_h */

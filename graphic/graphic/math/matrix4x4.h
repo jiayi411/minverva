@@ -6,14 +6,14 @@
 //  Copyright © 2017 jiayi. All rights reserved.
 //
 
-#ifndef matrix4x4_h
-#define matrix4x4_h
+#ifndef tmatrix4x4_h
+#define tmatrix4x4_h
 
-#include "graphic/math/vector4.h"
+#include "math/vector4.h"
 
 namespace minerva { namespace graphic {
     
-    template<typename T> class matrix3x3;
+    template<typename T> class tmatrix3x3;
     ///
     /// @brief matrix 4x4 classes
     ///
@@ -22,30 +22,30 @@ namespace minerva { namespace graphic {
     /// have to do this later.
     ///
     template<typename T>
-    class matrix4x4
+    class tmatrix4x4
     {
-        typedef vector4<T> column_type;
-        typedef vector4<T> row_type;
+        typedef tvector4<T> column_type;
+        typedef tvector4<T> row_type;
         typedef size_t size_type;
         
     public:
         typedef T value_type;
         
     public:
-        matrix4x4(){}
-        explicit matrix4x4( T t );
-        matrix4x4( const matrix4x4& );
-        matrix4x4& operator= ( const matrix4x4& );
+        tmatrix4x4(){}
+        explicit tmatrix4x4( T t );
+        tmatrix4x4( const tmatrix4x4& );
+        tmatrix4x4& operator= ( const tmatrix4x4& );
         
-        matrix4x4( matrix4x4&& source );
-        matrix4x4& operator= ( matrix4x4&& source );
+        tmatrix4x4( tmatrix4x4&& source );
+        tmatrix4x4& operator= ( tmatrix4x4&& source );
         
-        matrix4x4( const row_type& c1, const row_type& c2,
+        tmatrix4x4( const row_type& c1, const row_type& c2,
                   const row_type& c3, const row_type& c4 );
         
-        matrix4x4( const matrix3x3<T>& m );
+        tmatrix4x4( const tmatrix3x3<T>& m );
         
-        matrix4x4(
+        tmatrix4x4(
                   T x1, T x2, T x3, T x4,
                   T y1, T y2, T y3, T y4,
                   T z1, T z2, T z3, T z4,
@@ -60,42 +60,42 @@ namespace minerva { namespace graphic {
         
         /*- Unary Arithmetic Operators -*/
         template<typename U>
-        matrix4x4<T>& operator+= ( U u );
+        tmatrix4x4<T>& operator+= ( U u );
         
         template<typename U>
-        matrix4x4<T>& operator+= ( const matrix4x4<U>& m );
+        tmatrix4x4<T>& operator+= ( const tmatrix4x4<U>& m );
         
         template<typename U>
-        matrix4x4<T>& operator-= ( U u );
+        tmatrix4x4<T>& operator-= ( U u );
         
         template<typename U>
-        matrix4x4<T>& operator-= ( const matrix4x4<U>& m );
+        tmatrix4x4<T>& operator-= ( const tmatrix4x4<U>& m );
         
         template<typename U>
-        matrix4x4<T>& operator*= ( U u );
+        tmatrix4x4<T>& operator*= ( U u );
         
         template<typename U>
-        matrix4x4<T>& operator*= ( const matrix4x4<U>& m );
+        tmatrix4x4<T>& operator*= ( const tmatrix4x4<U>& m );
         
         template<typename U>
-        matrix4x4<T>& operator/= ( U u );
+        tmatrix4x4<T>& operator/= ( U u );
         
         template<typename U>
-        matrix4x4<T>& operator/= ( const matrix4x4<U>& m );
+        tmatrix4x4<T>& operator/= ( const tmatrix4x4<U>& m );
         
         /*- Increment & Decrement Operators -*/
-        matrix4x4& operator++();
+        tmatrix4x4& operator++();
         
-        matrix4x4& operator--();
+        tmatrix4x4& operator--();
         
-        matrix4x4 operator++(int);
+        tmatrix4x4 operator++(int);
         
-        matrix4x4 operator--(int);
+        tmatrix4x4 operator--(int);
         
         /*-- Matrix Related Functions --*/
-        matrix4x4<T>& inverse();
+        tmatrix4x4<T>& inverse();
         
-        matrix4x4<T>& transpose();
+        tmatrix4x4<T>& transpose();
         
         T determinant() const;
         
@@ -106,59 +106,54 @@ namespace minerva { namespace graphic {
     // arithmetic operators
     
     template<typename T>
-    matrix4x4<T> operator+ ( const matrix4x4<T>& m, const T& t );
+    tmatrix4x4<T> operator+ ( const tmatrix4x4<T>& m, const T& t );
     
     template<typename T>
-    matrix4x4<T> operator+ ( const T& t, const matrix4x4<T>& m );
+    tmatrix4x4<T> operator+ ( const T& t, const tmatrix4x4<T>& m );
     
     template<typename T>
-    matrix4x4<T> operator+ ( const matrix4x4<T>& m1, const matrix4x4<T>& m2 );
+    tmatrix4x4<T> operator+ ( const tmatrix4x4<T>& m1, const tmatrix4x4<T>& m2 );
     
     template<typename T>
-    matrix4x4<T> operator- ( const matrix4x4<T>& m, const T& t );
+    tmatrix4x4<T> operator- ( const tmatrix4x4<T>& m, const T& t );
     
     template<typename T>
-    matrix4x4<T> operator- ( const T& t, const matrix4x4<T>& m );
+    tmatrix4x4<T> operator- ( const T& t, const tmatrix4x4<T>& m );
     
     template<typename T>
-    matrix4x4<T> operator- ( const matrix4x4<T>& m1, const matrix4x4<T>& m2 );
+    tmatrix4x4<T> operator- ( const tmatrix4x4<T>& m1, const tmatrix4x4<T>& m2 );
     
     template<typename T>
-    matrix4x4<T> operator* ( const matrix4x4<T>& m, const T& t );
+    tmatrix4x4<T> operator* ( const tmatrix4x4<T>& m, const T& t );
     
     template<typename T>
-    matrix4x4<T> operator* ( const T& t, const matrix4x4<T>& m );
+    tmatrix4x4<T> operator* ( const T& t, const tmatrix4x4<T>& m );
     
     template<typename T>
-    typename matrix4x4<T>::column_type operator* ( const matrix4x4<T>& m, const typename matrix4x4<T>::column_type& v );
+    typename tmatrix4x4<T>::column_type operator* ( const tmatrix4x4<T>& m, const typename tmatrix4x4<T>::column_type& v );
     
     template<typename T>
-    typename matrix4x4<T>::row_type operator* ( const typename matrix4x4<T>::row_type& v, const matrix4x4<T>& m );
+    typename tmatrix4x4<T>::row_type operator* ( const typename tmatrix4x4<T>::row_type& v, const tmatrix4x4<T>& m );
     
     template<typename T>
-    matrix4x4<T> operator* ( const matrix4x4<T>& m1, const matrix4x4<T>& m2 );
+    tmatrix4x4<T> operator* ( const tmatrix4x4<T>& m1, const tmatrix4x4<T>& m2 );
     
     template<typename T>
-    matrix4x4<T> operator/ ( const matrix4x4<T>& m1, const matrix4x4<T>& m2 );
+    tmatrix4x4<T> operator/ ( const tmatrix4x4<T>& m1, const tmatrix4x4<T>& m2 );
     
     template<typename T, typename U>
-    matrix4x4<T> operator/ ( const matrix4x4<T>& m, U );
+    tmatrix4x4<T> operator/ ( const tmatrix4x4<T>& m, U );
     
     template<typename T, typename U>
-    matrix4x4<T> operator/ ( U, const matrix4x4<T>& m );
+    tmatrix4x4<T> operator/ ( U, const tmatrix4x4<T>& m );
     
     // boolean operators
     
     template<typename T>
-    bool operator== ( const matrix4x4<T>& m1, const matrix4x4<T>& m2 );
+    bool operator== ( const tmatrix4x4<T>& m1, const tmatrix4x4<T>& m2 );
     
     template<typename T>
-    bool operator!= ( const matrix4x4<T>& m1, const matrix4x4<T>& m2 );
-    
-    // typedefs
-    typedef matrix4x4<float> matrix4x4f;
-    typedef matrix4x4<int> matrix4x4i;
-    typedef matrix4x4<double> matrix4x4d;
+    bool operator!= ( const tmatrix4x4<T>& m1, const tmatrix4x4<T>& m2 );
 } }
 
 #include "math/matrix4x4.inl"

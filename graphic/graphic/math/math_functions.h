@@ -9,16 +9,14 @@
 #ifndef math_functions_h
 #define math_functions_h
 
-//#include "graphic/math/matrix4x4.h"
-//#include "graphic/math/vector3.h"
-//#include "graphic/math/quaternion.h"
+
 #include <cmath>
 
 namespace minerva { namespace graphic {
     
-    template<typename T> class matrix4x4;
-    template<typename T> class vector3;
-    template<typename T> class quaternion;
+    template<typename T> class tmatrix4x4;
+    template<typename T> class tvector3;
+    template<typename T> class tquaternion;
     
     /*-- Matrix Related Functions --*/
     
@@ -35,10 +33,10 @@ namespace minerva { namespace graphic {
     static typename M::value_type determinant( const M& m );
     
     /// convert degree to radian
-    static float radians( float degrees );
+    static inline float radians( float degrees );
     
     /// convert raidan to degree
-    static float degrees( float radians );
+    static inline float degrees( float radians );
     
     /// get dot of two vectors
     template<typename V>
@@ -60,22 +58,22 @@ namespace minerva { namespace graphic {
     ///             0                   0      (-near-far) / (near-far)  -(2*far*near)/(near-far)
     ///             0                   0                   1                       0
     template<typename T>
-    static matrix4x4<T> perspective( float degrees, float width, float height, float near, float far );
+    static tmatrix4x4<T> perspective( float degrees, float width, float height, float near, float far );
     
     template<typename T>
-    static matrix4x4<T> view( const vector3<T>& eye, const vector3<T>& target, const vector3<T>& up );
+    static tmatrix4x4<T> view( const tvector3<T>& eye, const tvector3<T>& target, const tvector3<T>& up );
     
     template<typename T>
-    static quaternion<T> conjugate( const quaternion<T>& q );
+    static tquaternion<T> conjugate( const tquaternion<T>& q );
     
     template<typename T>
-    static quaternion<T> inverse( const quaternion<T>& q );
+    static tquaternion<T> inverse( const tquaternion<T>& q );
     
     template<typename T>
-    static quaternion<T> normalize( const quaternion<T>& q );
+    static tquaternion<T> normalize( const tquaternion<T>& q );
     
     template<typename T>
-    static quaternion<T> cross( const quaternion<T>& q1, const quaternion<T>& q2 );
+    static tquaternion<T> cross( const tquaternion<T>& q1, const tquaternion<T>& q2 );
     
     /*-- Basic Mathematics --*/
     
@@ -84,13 +82,13 @@ namespace minerva { namespace graphic {
     T mix( const T& t1, const T& t2, float a );
     
     template<typename T>
-    vector3<T> cos( const vector3<T>& v );
+    tvector3<T> cos( const tvector3<T>& v );
     
     template<typename T>
-    vector3<T> sin( const vector3<T>& v );
+    tvector3<T> sin( const tvector3<T>& v );
     
 } }
 
-#include "graphic/math/math_functions.inl"
+#include "math/math_functions.inl"
 
 #endif /* math_functions_h */
