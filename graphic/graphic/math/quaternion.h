@@ -13,7 +13,7 @@
 #include "graphic/math/vector3.h"
 #include "graphic/math/matrix4x4.h"
 #include "graphic/math/matrix3x3.h"
-#include "graphic/math/math_common.h"
+#include "graphic/math/math_functions.h"
 
 namespace minerva { namespace graphic {
     

@@ -9,11 +9,16 @@
 #ifndef math_functions_h
 #define math_functions_h
 
-#include "graphic/math/matrix4x4.h"
-#include "graphic/math/vector3.h"
-#include "graphic/math/quaternion.h"
+//#include "graphic/math/matrix4x4.h"
+//#include "graphic/math/vector3.h"
+//#include "graphic/math/quaternion.h"
+#include <cmath>
 
 namespace minerva { namespace graphic {
+    
+    template<typename T> class matrix4x4;
+    template<typename T> class vector3;
+    template<typename T> class quaternion;
     
     /*-- Matrix Related Functions --*/
     
@@ -71,6 +76,18 @@ namespace minerva { namespace graphic {
     
     template<typename T>
     static quaternion<T> cross( const quaternion<T>& q1, const quaternion<T>& q2 );
+    
+    /*-- Basic Mathematics --*/
+    
+    /// mix things
+    template<typename T>
+    T mix( const T& t1, const T& t2, float a );
+    
+    template<typename T>
+    vector3<T> cos( const vector3<T>& v );
+    
+    template<typename T>
+    vector3<T> sin( const vector3<T>& v );
     
 } }
 
