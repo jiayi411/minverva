@@ -72,6 +72,7 @@ namespace minerva { namespace graphic {
         vector3<T> axis() const;
         
         quaternion slerp( const quaternion& q2, float s );
+        quaternion lerp( const quaternion& q2, float s );
         
     public:
         T x, y, z, w;

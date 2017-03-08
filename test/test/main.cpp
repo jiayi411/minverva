@@ -246,10 +246,12 @@ int main(int argc, const char * argv[]) {
     
     // quaterion
     quaternion<float> q1(1,2,3,4);
+    q1.from_axis_angle(1, vector3f(0,0,1));
     matrix4 = graphic::matrix4_cast( q1 );
     
     
     glm::quat gq1(4, 1, 2,3 );
+    gq1 = glm::angleAxis(1.f, vec3(0,0,1));
     mat4 = glm::transpose( glm::mat4_cast( gq1 ) );
 
     mi_log_matrix4x4(%f, matrix4);
@@ -365,10 +367,19 @@ int main(int argc, const char * argv[]) {
     
     matrix4x4<float> model  = matrix4x4<float>(1);
     
+    // rotation
+    quaternion<float> model_rotate;
+    quaternion<float> target_rotate;
+    model_rotate.from_axis_angle(0, vector3f(0,1,0));
+    target_rotate.from_axis_angle(1, vector3f(0,1,0));
+    
+    
+    
     vector3<float> eye = vector3<float>(0,0,3);
     vector3<float> target = vector3<float>(0,0,0);
     matrix4x4<float> view = graphic::view( eye, target, vector3<float>(0,1,0) );
-    matrix4x4<float> mvp = projection * view;// * model;
+    matrix4x4<float> mvp = projection * view * model;
+    
     
     
     // get uniforms
@@ -446,8 +457,29 @@ int main(int argc, const char * argv[]) {
         // change rotation
         std::chrono::steady_clock::time_point now = std::chrono::steady_clock::now();
         float ftime =float(now.time_since_epoch().count())/ 1000000000.0;
-//        glm::mat4 model = glm::rotate( glm::radians(ftime), glm::vec3(0,0,1) ) * glm::mat4(1);
-//        glm::mat4 mvp = projection * view * model;
+        
+        quaternion<float> rotate = model_rotate.slerp( target_rotate, (std::sin(ftime)) );
+
+//        model[0][0] = mmodel[0][0];
+//        model[0][1] = mmodel[0][1];
+//        model[0][2] = mmodel[0][2];
+//        model[0][3] = mmodel[0][3];
+//        model[1][0] = mmodel[1][0];
+//        model[1][1] = mmodel[1][1];
+//        model[1][2] = mmodel[1][2];
+//        model[1][3] = mmodel[1][3];
+//        model[2][0] = mmodel[2][0];
+//        model[2][1] = mmodel[2][1];
+//        model[2][2] = mmodel[2][2];
+//        model[2][3] = mmodel[2][3];
+//        model[3][0] = mmodel[3][0];
+//        model[3][1] = mmodel[3][1];
+//        model[3][2] = mmodel[3][2];
+//        model[3][3] = mmodel[3][3];
+//        
+
+        model = graphic::matrix4_cast( rotate );
+        mvp = projection * view * model;
         
         glUniformMatrix4fv( matrixId, 1, GL_TRUE, &mvp[0][0] );
         glUniform1f( timeId, ftime );

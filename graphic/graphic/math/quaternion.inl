@@ -83,7 +83,7 @@ namespace minerva { namespace graphic {
     
     template<typename T>
     T quaternion<T>::dot( const quaternion<T>& q ) const
-    { return ( q.x * q.x + q.y * q.y + q.z * q.z + q.w * q.w ); }
+    { return ( x * q.x + y * q.y + z * q.z + w * q.w ); }
     
     template<typename T>
     quaternion<T>& quaternion<T>::conjugate()
@@ -172,6 +172,10 @@ namespace minerva { namespace graphic {
     { return T(atan(T(2) * (x * y + w * z), w * w + x * x - y * y - z * z)); }
     
     template<typename T>
+    quaternion<T> quaternion<T>::lerp( const quaternion<T>& y, float a )
+    { quaternion<T>& x = *this; return x * (T(1) - a) + (y * a); }
+    
+    template<typename T>
     quaternion<T> quaternion<T>::slerp( const quaternion<T>& y, float a )
     {
         quaternion<T>& x = *this;
@@ -201,7 +205,7 @@ namespace minerva { namespace graphic {
         {
             // Essential Mathematics, page 467
             T angle = acos(cosTheta);
-            return (sin((T(1) - a) * angle) * x + sin(a * angle) * z) / sin(angle);
+            return (std::sin((T(1) - a) * angle) * x + std::sin(a * angle) * z) / std::sin(angle);
         }
 
     }
