@@ -12,6 +12,10 @@ namespace minerva { namespace graphic {
     template<typename T> vector4<T>& vector4<T>::operator= ( const vector4<T>& v )
     { x = v.x; y = v.y; z = v.z; w = v.w; return *this; }
     
+    template<typename T>
+    vector4<T>::vector4( const vector3<T>& v )
+    { x = v.x; y = v.y; z = v.z; w = 0; }
+    
     template<typename T> T& vector4<T>::operator[] ( size_type s )
     {
         switch(s)

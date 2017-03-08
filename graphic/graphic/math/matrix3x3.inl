@@ -26,6 +26,14 @@ namespace minerva { namespace graphic {
     }
     
     template<typename T>
+    matrix3x3<T>::matrix3x3( const matrix4x4<T>& m )
+    {
+        _rows[0] = row_type( m[0] );
+        _rows[1] = row_type( m[1] );
+        _rows[2] = row_type( m[2] );
+    }
+    
+    template<typename T>
     matrix3x3<T>& matrix3x3<T>::operator= ( const matrix3x3<T>& source )
     {
         _rows[0] = source[0];
@@ -37,9 +45,9 @@ namespace minerva { namespace graphic {
     template<typename T>
     matrix3x3<T>::matrix3x3( T t )
     {
-        _rows[0] = row_type( t, 0, 0, 0 );
-        _rows[1] = row_type( 0, t, 0, 0 );
-        _rows[2] = row_type( 0, 0, t, 0 );
+        _rows[0] = row_type( t, 0, 0 );
+        _rows[1] = row_type( 0, t, 0 );
+        _rows[2] = row_type( 0, 0, t );
     }
     
     template<typename T>

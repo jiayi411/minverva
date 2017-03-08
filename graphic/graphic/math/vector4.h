@@ -14,6 +14,8 @@
 
 namespace minerva { namespace graphic {
     
+    template<typename T> class vector3;
+    
     ///
     /// @brief vector classes
     ///
@@ -30,6 +32,7 @@ namespace minerva { namespace graphic {
         vector4() : vector4( 0, 0, 0, 0 ){}
         vector4( T t ) : vector4( t,t,t,t) {}
         vector4( T ix, T iy, T iz, T iw ) : x(ix), y(iy), z(iz), w(iw) {}
+        vector4( const vector3<T>& v );
         ~vector4(){}
         
     public:

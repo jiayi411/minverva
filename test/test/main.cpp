@@ -146,7 +146,7 @@ int main(int argc, const char * argv[]) {
 //    printf("%f\n", f2 );
 //    mi_log_vector4(%f, v2);
     
-    matrix4x4<float> matrix(
+    matrix4x4<float> matrix4(
                             1, 2, 3,  4,
                             5, 1, 6,  7,
                             8, 9, 1, 10,
@@ -176,7 +176,7 @@ int main(int argc, const char * argv[]) {
 //    float d2 = math::determinant( matrix );
 //    printf("%.f\n", d2 );
 //    matrix = math::perspective<float>(45.f, 1024.f, 768, 0.1, 100);
-    mi_log_matrix4x4( %f, matrix );
+    mi_log_matrix4x4( %f, matrix4 );
     
     matrix3x3<float> matrix3(
                             1, 2, 3,
@@ -247,19 +247,16 @@ int main(int argc, const char * argv[]) {
     
     // quaterion
     quaternion<float> q1(1,2,3,4);
-    vector3f qv1(0.2,0.4,0.5);
+    matrix4 = graphic::matrix4_cast( q1 );
     
-    quaternion<float> q2(1,2,3,10);
-    q1.from_axis_angle(0.5, qv1);
     
     glm::quat gq1(4, 1, 2,3 );
-    glm::vec3 gv1(0.2,0.4,0.5);
-    
-    gq1 = glm::angleAxis(0.5f, gv1 );
-//    gq1 = glm::slerp( gq1, gq2, 0.2f );
-    
-    mi_log_quaternion("%f", q1);
-    mi_log_quaternion("%f", gq1);
+    mat4 = glm::transpose( glm::mat4_cast( gq1 ) );
+
+    mi_log_matrix4x4(%f, matrix4);
+    mi_log_matrix4x4(%f, mat4);
+//    mi_log_quaternion("%f", q1);
+//    mi_log_quaternion("%f", gq1);
     
     // for opengl
     // Initialise GLFW

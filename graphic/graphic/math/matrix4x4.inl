@@ -48,13 +48,22 @@ namespace minerva { namespace graphic {
     }
     
     template<typename T>
-    matrix4x4<T>::matrix4x4( const column_type& c1, const column_type& c2,
-              const column_type& c3, const column_type& c4 )
+    matrix4x4<T>::matrix4x4( const row_type& c1, const row_type& c2,
+              const row_type& c3, const row_type& c4 )
     {
         _rows[0] = (c1);
         _rows[1] = (c2);
         _rows[2] = (c3);
         _rows[3] = (c4);
+    }
+    
+    template<typename T>
+    matrix4x4<T>::matrix4x4( const matrix3x3<T>& m )
+    {
+        _rows[0] = m[0];
+        _rows[1] = m[1];
+        _rows[2] = m[2];
+        _rows[3] = row_type(0,0,0,1);
     }
     
     template<typename T>

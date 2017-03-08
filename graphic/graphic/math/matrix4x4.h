@@ -13,6 +13,7 @@
 
 namespace minerva { namespace graphic {
     
+    template<typename T> class matrix3x3;
     ///
     /// @brief matrix 4x4 classes
     ///
@@ -39,8 +40,10 @@ namespace minerva { namespace graphic {
         matrix4x4( matrix4x4&& source );
         matrix4x4& operator= ( matrix4x4&& source );
         
-        matrix4x4( const column_type& c1, const column_type& c2,
-                  const column_type& c3, const column_type& c4 );
+        matrix4x4( const row_type& c1, const row_type& c2,
+                  const row_type& c3, const row_type& c4 );
+        
+        matrix4x4( const matrix3x3<T>& m );
         
         matrix4x4(
                   T x1, T x2, T x3, T x4,

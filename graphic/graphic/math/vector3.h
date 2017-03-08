@@ -8,6 +8,7 @@
 
 #ifndef vector3_h
 #define vector3_h
+#include "graphic/math/vector4.h"
 
 namespace minerva { namespace graphic {
     
@@ -26,6 +27,7 @@ namespace minerva { namespace graphic {
     public:
         vector3() : vector3( 0, 0, 0 ){}
         vector3( T ix, T iy, T iz) : x(ix), y(iy), z(iz) {}
+        vector3( const vector4<T>& v ) : vector3( v.x, v.y, v.z ){}
         ~vector3(){}
         
     public:

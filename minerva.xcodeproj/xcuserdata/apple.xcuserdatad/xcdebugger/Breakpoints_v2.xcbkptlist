@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "test/test/main.cpp"
-            timestampString = "510623394.741291"
+            timestampString = "510625560.769871"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "266"
-            endingLineNumber = "266"
+            startingLineNumber = "263"
+            endingLineNumber = "263"
             landmarkName = "main(int argc, const char * argv[])"
             landmarkType = "9">
          </BreakpointContent>
@@ -32,6 +32,22 @@
             startingLineNumber = "198"
             endingLineNumber = "198"
             landmarkName = "slerp( const quaternion&lt;T&gt;&amp; y, float a )"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "graphic/graphic/math/quaternion.inl"
+            timestampString = "510626353.273584"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "276"
+            endingLineNumber = "276"
+            landmarkName = "matrix4_cast(quaternion&lt;T&gt; const &amp; x)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>

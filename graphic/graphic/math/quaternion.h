@@ -11,6 +11,8 @@
 #define quaternion_H
 
 #include "graphic/math/vector3.h"
+#include "graphic/math/matrix4x4.h"
+#include "graphic/math/matrix3x3.h"
 #include "graphic/math/math_common.h"
 
 namespace minerva { namespace graphic {
@@ -88,6 +90,23 @@ namespace minerva { namespace graphic {
     
     template< typename T>
     quaternion<T> operator+( const quaternion<T>& q1, const quaternion<T>& q2 );
+    
+    /* conversion */
+    /// Converts a quaternion to a 3 * 3 matrix.
+    template <typename T>
+    matrix3x3<T> matrix3_cast(quaternion<T> const & x);
+    
+    /// Converts a quaternion to a 4 * 4 matrix.
+    template <typename T>
+    matrix4x4<T> matrix4_cast(quaternion<T> const & x);
+    
+    /// Converts a 3 * 3 matrix to a quaternion.
+    template <typename T>
+    quaternion<T> quaternion_cast(matrix3x3<T> const & x);
+    
+    /// Converts a 4 * 4 matrix to a quaternion.
+    template <typename T>
+    quaternion<T> quaternion_cast(matrix4x4<T> const & x);
     
     
 } }

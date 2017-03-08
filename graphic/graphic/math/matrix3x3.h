@@ -10,6 +10,7 @@
 #define matrix3x3_h
 
 #include "graphic/math/vector3.h"
+#include "graphic/math/matrix4x4.h"
 
 namespace minerva { namespace graphic {
     
@@ -47,6 +48,8 @@ namespace minerva { namespace graphic {
                   T y1, T y2, T y3, 
                   T z1, T z2, T z3
                   );
+        
+        matrix3x3( const matrix4x4<T>& m );
         
     public:
         /*- Access Operators -*/
