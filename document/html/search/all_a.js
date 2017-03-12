@@ -1,11 +1,7 @@
 var searchData=
 [
-  ['minverva',['minverva',['../md__r_e_a_d_m_e.html',1,'']]],
-  ['memory_5fgroup',['memory_group',['../structminerva_1_1foundation_1_1memory__tracker_1_1memory__group.html',1,'minerva::foundation::memory_tracker::memory_group'],['../structminerva_1_1foundation_1_1memory__tracker_1_1memory__group.html#a0b996e4b95bf6f86bcc6572b73ea5732',1,'minerva::foundation::memory_tracker::memory_group::memory_group()']]],
-  ['memory_5fgroups',['memory_groups',['../classminerva_1_1foundation_1_1memory__tracker.html#a5be7a3215edb1bc52e0cbd54b20c51f0',1,'minerva::foundation::memory_tracker']]],
-  ['memory_5fsearch',['memory_search',['../classminerva_1_1foundation_1_1memory__tracker.html#a1540e795038843a4a2d7e965b69aee17',1,'minerva::foundation::memory_tracker']]],
-  ['memory_5fsize_5fcount_5finfo',['memory_size_count_info',['../structminerva_1_1foundation_1_1memory__tracker_1_1memory__size__count__info.html',1,'minerva::foundation::memory_tracker::memory_size_count_info'],['../structminerva_1_1foundation_1_1memory__tracker_1_1memory__size__count__info.html#ab2a5feb1a5c4f7f22c41963e36f6c887',1,'minerva::foundation::memory_tracker::memory_size_count_info::memory_size_count_info()']]],
-  ['memory_5ftracker',['memory_tracker',['../classminerva_1_1foundation_1_1memory__tracker.html',1,'minerva::foundation']]],
-  ['memory_5ftracker_2eh',['memory_tracker.h',['../memory__tracker_8h.html',1,'']]],
-  ['mipmap_5fcount',['mipmap_count',['../structminerva_1_1foundation_1_1texture__data.html#aae8415655c566a326cedfaf2795260a8',1,'minerva::foundation::texture_data']]]
+  ['load_5fdds',['load_dds',['../classminerva_1_1foundation_1_1texture__loader.html#a4072bc4cce22ccd859f60bfaa565523b',1,'minerva::foundation::texture_loader']]],
+  ['load_5fdds_5ffrom_5ffile',['load_dds_from_file',['../classminerva_1_1foundation_1_1texture__loader.html#a08696ff3aa71a0cf977bf56b1999266f',1,'minerva::foundation::texture_loader']]],
+  ['load_5ftexture_5fby_5ffile_5fname',['load_texture_by_file_name',['../classminerva_1_1foundation_1_1texture__manager.html#af61e83fcd7e1fb90abf7617959fb1e7d',1,'minerva::foundation::texture_manager']]],
+  ['load_5ftexture_5ffinish',['load_texture_finish',['../classminerva_1_1foundation_1_1texture__manager.html#afbfd7e3f84ad248a7cef471cad2538c0',1,'minerva::foundation::texture_manager']]]
 ];

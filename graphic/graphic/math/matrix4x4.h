@@ -44,6 +44,7 @@ namespace minerva { namespace graphic {
                   const row_type& c3, const row_type& c4 );
         
         tmatrix4x4( const tmatrix3x3<T>& m );
+        tmatrix4x4& operator= ( const tmatrix3x3<T>& source );
         
         tmatrix4x4(
                   T x1, T x2, T x3, T x4,
@@ -98,6 +99,8 @@ namespace minerva { namespace graphic {
         tmatrix4x4<T>& transpose();
         
         T determinant() const;
+        
+        tmatrix4x4& scale( T x, T y, T z );
         
     protected:
         row_type _rows[4];

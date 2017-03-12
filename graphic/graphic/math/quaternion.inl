@@ -126,11 +126,12 @@ namespace minerva { namespace graphic {
     
     template<typename T>
     template<typename U>
-    tvector3<U> tquaternion<T>::operator*= ( const tvector3<U>& v )
+    tvector3<U> tquaternion<T>::operator* ( const tvector3<U>& v )
     {
         tquaternion<T> q( v.x, v.y, v.z, 0 );
         tquaternion<T> inv = *this;
-        return *this * q * inv.inverse();
+        tquaternion<T> ans = *this * q * inv.inverse();
+        return tvector3<U>( ans.x, ans.y, ans.z );
     }
     
     template<typename T>
@@ -230,6 +231,14 @@ namespace minerva { namespace graphic {
         return q *= static_cast<T>(u);
     }
     
+    template< typename T>
+    tquaternion<T> operator*( const tquaternion<T>& q1, const tquaternion<T>& q2 )
+    {
+        tquaternion<T> q = q1;
+        q *= q2;
+        return q;
+    }
+    
     template< typename T, typename U >
     tquaternion<T> operator/( const tquaternion<T>& q1, U u )
     {
@@ -244,10 +253,9 @@ namespace minerva { namespace graphic {
         return v += q2;
     }
     
-    template <typename T>
-    tmatrix3x3<T> matrix3_cast(tquaternion<T> const & q)
+    template <template<typename> class M, typename T>
+    void _matrix_cast(tquaternion<T> const & q, M<T>* out_matrix )
     {
-        tmatrix3x3<T> Result(T(1));
         T qxx(q.x * q.x);
         T qyy(q.y * q.y);
         T qzz(q.z * q.z);
@@ -258,26 +266,46 @@ namespace minerva { namespace graphic {
         T qwy(q.w * q.y);
         T qwz(q.w * q.z);
         
-        Result[0][0] = 1 - 2 * (qyy +  qzz);
-        Result[1][0] = 2 * (qxy + qwz);
-        Result[2][0] = 2 * (qxz - qwy);
+        (*out_matrix)[0][0] = 1 - 2 * (qyy +  qzz);
+        (*out_matrix)[1][0] = 2 * (qxy + qwz);
+        (*out_matrix)[2][0] = 2 * (qxz - qwy);
         
-        Result[0][1] = 2 * (qxy - qwz);
-        Result[1][1] = 1 - 2 * (qxx +  qzz);
-        Result[2][1] = 2 * (qyz + qwx);
+        (*out_matrix)[0][1] = 2 * (qxy - qwz);
+        (*out_matrix)[1][1] = 1 - 2 * (qxx +  qzz);
+        (*out_matrix)[2][1] = 2 * (qyz + qwx);
         
-        Result[0][2] = 2 * (qxz + qwy);
-        Result[1][2] = 2 * (qyz - qwx);
-        Result[2][2] = 1 - 2 * (qxx +  qyy);
-        return Result;
+        (*out_matrix)[0][2] = 2 * (qxz + qwy);
+        (*out_matrix)[1][2] = 2 * (qyz - qwx);
+        (*out_matrix)[2][2] = 1 - 2 * (qxx +  qyy);
+    }
+    
+    template <typename T>
+    tmatrix3x3<T> matrix3_cast(tquaternion<T> const & q)
+    {
+        tmatrix3x3<T> result(T(1));
+        matrix3_cast( q, &result );
+        return result;
 
+    }
+    template <typename T>
+    void matrix3_cast(tquaternion<T> const & q, tmatrix3x3<T>* out_matrix )
+    {
+        _matrix_cast( q, out_matrix );
     }
     
     
     template <typename T>
     tmatrix4x4<T> matrix4_cast(tquaternion<T> const & x)
+    { tmatrix4x4<T> result; matrix4_cast( x, &result ); return result; }
+    
+    template <typename T>
+    void matrix4_cast(tquaternion<T> const & x, tmatrix4x4<T>* out_matrix )
     {
-        return tmatrix4x4<T>( matrix3_cast(x) );
+        _matrix_cast( x, out_matrix );
+        (*out_matrix)[3][0] = 0;
+        (*out_matrix)[3][1] = 0;
+        (*out_matrix)[3][2] = 0;
+        (*out_matrix)[3][3] = 1;
     }
     
     template <typename T>

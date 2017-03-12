@@ -36,6 +36,9 @@ namespace minerva { namespace graphic {
         ~tvector4(){}
         
     public:
+        static tvector4 s_vector_zero;
+        
+    public:
         tvector4( tvector4&& );
         tvector4& operator= ( tvector4&& );
         tvector4( const tvector4& );

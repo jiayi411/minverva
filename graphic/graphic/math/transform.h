@@ -10,9 +10,13 @@
 #ifndef transform_H
 #define transform_H
 
-#include "foundation/object/reference_object.h"
+#include "foundation/object/update_object.h"
+#include "graphic.h"
+#include "math/vector3.h"
+#include "math/quaternion.h"
 
 namespace minerva { namespace graphic {
+    
     ///
     /// @brief transfor classes
     ///
@@ -20,10 +24,10 @@ namespace minerva { namespace graphic {
     /// information that an object needed in
     /// rendering
     ///
-    class transform : public foundation::reference_object
+    class transform : public foundation::allocator
     {
     public:
-        transform() : _scale(0.f){}
+        transform() : _scale_x(1.f), _scale_y(1.f), _scale_z(1.f), _rotation(0,0,0,1), _matrix_position(1){}
         
         /// copy constructor
         transform( const transform& t );
@@ -39,17 +43,41 @@ namespace minerva { namespace graphic {
         
     public:
         /// set scale
-        const quaternion& get_quaternion() const;
+        void set_scale( float scale );
+        
+    protected:
+        /// update all
+        void _update_all();
+        
+        /// update scale
+        void _update_scale();
+        
+        /// update rotation
+        void _update_rotation();
+        
+        /// update position
+        void _update_position();
         
     protected:
         /// rotation represented by quaternion
-        quaternion _rotation;
+        half_set_full_get_ref( quaternion, rotation );
         
         /// position
-        vector3  _position;
+        half_set_full_get_ref( vector3, position );
         
-        /// scale represented by a float to save space
-        float _scale;
+        /// scale represented by a float
+        half_set_full_get( float, scale_x );
+        half_set_full_get( float, scale_y );
+        half_set_full_get( float, scale_z );
+        
+        /// position matrix to be sent to opengl
+        get_ref_const( matrix4x4, matrix_position );
+        
+        /// rotation matrix to be sent to opengl
+        get_ref_const( matrix4x4, matrix_rotation );
+        
+        /// scale matrix to be sent to opengl
+        get_ref_const( matrix4x4, matrix_scale );
     };
     
 } }

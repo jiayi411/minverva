@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['clone',['clone',['../classminerva_1_1foundation_1_1smart__object.html#a3c622e025b27c7fb0b2889d6f829e1bd',1,'minerva::foundation::smart_object::clone()'],['../classminerva_1_1foundation_1_1smart__object.html#ac405a1761e594e572b4c5165137fd5ff',1,'minerva::foundation::smart_object::clone(const T &amp;)'],['../classminerva_1_1foundation_1_1smart__object.html#af521d7cc2697cf24a5ace5581193ab82',1,'minerva::foundation::smart_object::clone(T &amp;&amp;)']]],
-  ['create_5fsmart',['create_smart',['../classminerva_1_1foundation_1_1smart__object.html#a04ef5abf3808debb7563e3eb448b6cff',1,'minerva::foundation::smart_object']]]
+  ['decrease_5freference',['decrease_reference',['../classminerva_1_1foundation_1_1reference__object.html#aae030a4488f7ca1f5cae77211bc5a9b8',1,'minerva::foundation::reference_object']]],
+  ['destroy',['destroy',['../classminerva_1_1foundation_1_1singleton.html#a7dba3de79ff655d663909a7887191cdd',1,'minerva::foundation::singleton']]],
+  ['destroy_5fsingletons',['destroy_singletons',['../classminerva_1_1foundation_1_1core.html#a54be41cdd82e69085dcc070e06a79ae3',1,'minerva::foundation::core']]],
+  ['duration',['duration',['../classminerva_1_1foundation_1_1timer_1_1duration.html#a7b2c1476642f32b781f476ea6b58fa29',1,'minerva::foundation::timer::duration']]]
 ];

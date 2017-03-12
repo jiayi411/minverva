@@ -69,6 +69,10 @@ namespace minerva { namespace graphic {
     }
     
     template<typename T>
+    tvector3<T> tvector3<T>::operator- ()
+    { return tvector3<T>( -x, -y, -z ); }
+    
+    template<typename T>
     const T& tvector3<T>::operator[] ( size_type s ) const
     {
         switch(s)

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['singleton',['singleton',['../classminerva_1_1foundation_1_1singleton.html#ad300ebe4f0d5ebc93c701667b4275984',1,'minerva::foundation::singleton']]],
-  ['std_5ffree',['std_free',['../classminerva_1_1foundation_1_1allocator.html#a3cbe59964214c9be7317813eaf1371e8',1,'minerva::foundation::allocator']]],
-  ['std_5fmalloc',['std_malloc',['../classminerva_1_1foundation_1_1allocator.html#aadc5e82f5bf339757b6afecd9077d925',1,'minerva::foundation::allocator']]]
+  ['reference_5fcount',['reference_count',['../classminerva_1_1foundation_1_1reference__object.html#a8e9d6e7209768190a28a8f2d3a683df1',1,'minerva::foundation::reference_object']]],
+  ['reference_5fobject',['reference_object',['../classminerva_1_1foundation_1_1reference__object.html#a257a1cb92880fb800b481b2d74df471b',1,'minerva::foundation::reference_object']]],
+  ['remove',['remove',['../classminerva_1_1foundation_1_1memory__tracker.html#ae0e9730e34188b867d82d69bcbaf5277',1,'minerva::foundation::memory_tracker']]]
 ];

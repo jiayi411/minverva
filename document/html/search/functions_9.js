@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['reference_5fcount',['reference_count',['../classminerva_1_1foundation_1_1smart__object.html#ab7d5ecb8f50427fdd6c480d3178e93b1',1,'minerva::foundation::smart_object']]],
-  ['remove',['remove',['../classminerva_1_1foundation_1_1memory__tracker.html#ae0e9730e34188b867d82d69bcbaf5277',1,'minerva::foundation::memory_tracker']]]
+  ['push_5frequest',['push_request',['../classminerva_1_1foundation_1_1thread__manager.html#ae2eca2a85af79ddb74354667832d30dc',1,'minerva::foundation::thread_manager::push_request()'],['../classminerva_1_1foundation_1_1thread__procedure.html#a52d8114c2bd4db26ca6c32482533a6b9',1,'minerva::foundation::thread_procedure::push_request()']]]
 ];

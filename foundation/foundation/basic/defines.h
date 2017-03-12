@@ -43,6 +43,7 @@
 // thread
 #define thread_safe
 
+
 // datas
 using llong = long long;
 using ulong = unsigned long;
@@ -63,4 +64,54 @@ struct EnumClassHash
 
 template <typename Key>
 using HashType = typename std::conditional<std::is_enum<Key>::value, EnumClassHash, std::hash<Key>>::type;
+
+// properties
+#define set_get_ref(type, name) \
+protected:\
+type _##name;\
+public: \
+virtual const type& get_##name() const { return _##name; }\
+virtual type& get_##name() { return _##name; } \
+virtual void set_##name( const type& t ) { _##name = t; } \
+
+#define set_get(type, name) \
+protected:\
+type _##name;\
+public: \
+virtual type get_##name() { return _##name; } \
+virtual void set_##name( const type& t ) { _##name = t; } \
+
+#define get_ref(type, name) \
+protected:\
+type _##name;\
+public: \
+virtual const type& get_##name() const { return _##name; }\
+virtual type& get_##name() { return _##name; } \
+
+#define get_ref_const(type, name) \
+protected:\
+type _##name;\
+public: \
+virtual const type& get_##name() const { return _##name; }\
+
+#define getter(type, name) \
+protected:\
+type _##name;\
+public: \
+virtual type get_##name() { return _##name; } \
+
+#define half_set_full_get_ref(type, name) \
+protected:\
+type _##name;\
+public: \
+virtual const type& get_##name() const { return _##name; }\
+virtual type& get_##name() { return _##name; } \
+virtual void set_##name( const type& t );\
+
+#define half_set_full_get(type, name) \
+protected:\
+type _##name;\
+public: \
+virtual type get_##name() { return _##name; } \
+virtual void set_##name( type t );\
 

@@ -67,6 +67,19 @@ namespace minerva { namespace graphic {
     }
     
     template<typename T>
+    tmatrix4x4<T>& tmatrix4x4<T>::operator= ( const tmatrix3x3<T>& source )
+    {
+        _rows[0] = source[0];
+        _rows[1] = source[1];
+        _rows[2] = source[2];
+        _rows[3][0] = 0;
+        _rows[3][1] = 0;
+        _rows[3][2] = 0;
+        _rows[3][3] = 1;
+        return *this;
+    }
+    
+    template<typename T>
     tmatrix4x4<T>::tmatrix4x4(
               T x1, T x2, T x3, T x4,
               T y1, T y2, T y3, T y4,
@@ -322,6 +335,16 @@ namespace minerva { namespace graphic {
         return
         m[0][0] * DetCof[0] + m[0][1] * DetCof[1] +
         m[0][2] * DetCof[2] + m[0][3] * DetCof[3];
+    }
+    
+    template<typename T>
+    tmatrix4x4<T>& tmatrix4x4<T>::scale( T x, T y, T z )
+    {
+        _rows[0][0] = x;
+        _rows[1][1] = y;
+        _rows[2][2] = z;
+        _rows[3][3] = T(1);
+        return *this;
     }
     
     // arithmetic operators

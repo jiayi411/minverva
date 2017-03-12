@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['load_5fdds_5ffrom_5ffile_5fno_5fsafe',['load_dds_from_file_no_safe',['../classminerva_1_1foundation_1_1texture__loader.html#a571bb882c3fcf8ee32853bf8f34023c2',1,'minerva::foundation::texture_loader']]]
+  ['increase_5freference',['increase_reference',['../classminerva_1_1foundation_1_1reference__object.html#a174248381b89f6df6cf1c5d7cca04553',1,'minerva::foundation::reference_object']]],
+  ['initialize',['initialize',['../classminerva_1_1foundation_1_1singleton.html#afcf49cb2f73ad84c581ae042f14fcfa3',1,'minerva::foundation::singleton']]],
+  ['initialize_5fsingletons',['initialize_singletons',['../classminerva_1_1foundation_1_1core.html#a1c7903e464b6b7826a54b957a29d7194',1,'minerva::foundation::core']]],
+  ['input_5fprotocol',['input_protocol',['../classminerva_1_1foundation_1_1input__protocol.html',1,'minerva::foundation']]],
+  ['is_5fstarted',['is_started',['../classminerva_1_1foundation_1_1timer_1_1duration.html#a954b0498daad750a2ee92c0dc44670a1',1,'minerva::foundation::timer::duration']]]
 ];

@@ -32,6 +32,8 @@
 #include "graphic/math/matrix3x3.h"
 #include "graphic/math/quaternion.h"
 #include "graphic/graphic.h"
+#include "graphic/math/transform.h"
+#include "graphic/control/camera.h"
 using namespace glm;
 
 
@@ -117,6 +119,7 @@ void test_thread( void* data ) {
 }
 
 using namespace minerva;
+using namespace std;
 //int testApp::run() {
 int main(int argc, const char * argv[]) {
     
@@ -364,6 +367,11 @@ int main(int argc, const char * argv[]) {
 //    glm::mat4 view2 = glm::lookAt( glm::vec3(0,0,3), glm::vec3(0,0,0), glm::vec3(0,1,0) );
 //    glm::mat4 model2 = glm::mat4(1);
     
+    camera cam;
+    cam.initialize();
+    graphic::transform& cam_trans = cam.get_transform();
+    cam_trans.set_position( vector3( 0, 0, 10 ) );
+    
     matrix4x4 projection = graphic::perspective<float>(45.f, 1024, 768, 0.1f, 100.f);
     
     matrix4x4 model  = matrix4x4(1);
@@ -374,11 +382,7 @@ int main(int argc, const char * argv[]) {
     model_rotate.from_axis_angle(0, vector3(0,1,0));
     target_rotate.from_axis_angle(1, vector3(0,1,0));
     
-    
-    
-    vector3 eye = vector3(0,0,3);
-    vector3 target = vector3(0,0,0);
-    matrix4x4 view = graphic::view( eye, target, vector3(0,1,0) );
+    matrix4x4 view = cam.get_view_matrix();//graphic::view( eye, target, vector3(0,1,0) );
     matrix4x4 mvp = projection * view * model;
     
     
@@ -398,6 +402,19 @@ int main(int argc, const char * argv[]) {
     // start thread
     the_thread_manager->start_all();
     do{
+        cam.update(0);
+        
+        // get mouse pos
+        bool is_mouse_pressed = glfwGetMouseButton( window, GLFW_MOUSE_BUTTON_LEFT ) == GLFW_PRESS;
+        
+        if (is_mouse_pressed) {
+            double xpos, ypos;
+            glfwGetCursorPos( window, &xpos, &ypos);
+            
+            cam.set_screen_position( xpos, ypos );
+            view = cam.get_view_matrix();
+        }
+        mvp = projection * view * model;
         
         long time = the_core->get_frame_time();
 //        mi_log("fps:%d\n", the_core->get_fps(time) );
@@ -423,26 +440,6 @@ int main(int argc, const char * argv[]) {
                 tex_data->width  /= 2;
                 tex_data->height /= 2;
             }
-        }
-        
-        if( glfwGetKey( window, GLFW_KEY_W) == GLFW_PRESS) {
-            
-            view = graphic::view( eye, target, vector3(0,1,0) );
-            mvp = projection * view;// * model;
-        } else if( glfwGetKey( window, GLFW_KEY_S ) == GLFW_PRESS ) {
-            
-            view = graphic::view( eye, target, vector3(0,1,0) );
-            mvp = projection * view;// * model;
-        } else if( glfwGetKey( window, GLFW_KEY_A ) == GLFW_PRESS ) {
-            target.x -= 0.1;
-            eye.x -= 0.1;
-            view = graphic::view( eye, target, vector3(0,1,0) );
-            mvp = projection * view;// * model;
-        } else if( glfwGetKey( window, GLFW_KEY_D ) == GLFW_PRESS ) {
-            target.x += 0.1;
-            eye.x += 0.1;
-            view = graphic::view( eye, target, vector3(0,1,0) );
-            mvp = projection * view;// * model;
         }
         
         if( glfwGetKey( window, GLFW_KEY_Q) == GLFW_PRESS ) {

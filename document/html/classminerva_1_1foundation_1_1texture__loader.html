@@ -88,9 +88,13 @@ Inheritance diagram for minerva::foundation::texture_loader:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a571bb882c3fcf8ee32853bf8f34023c2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classminerva_1_1foundation_1_1texture__loader.html#a571bb882c3fcf8ee32853bf8f34023c2">load_dds_from_file_no_safe</a> (const std::string &amp;file_name, <a class="el" href="structminerva_1_1foundation_1_1texture__data.html">texture_data</a> *data)</td></tr>
-<tr class="memdesc:a571bb882c3fcf8ee32853bf8f34023c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load .dds file, not thread-safe.  <a href="#a571bb882c3fcf8ee32853bf8f34023c2">More...</a><br /></td></tr>
-<tr class="separator:a571bb882c3fcf8ee32853bf8f34023c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4072bc4cce22ccd859f60bfaa565523b"><td class="memItemLeft" align="right" valign="top"><a id="a4072bc4cce22ccd859f60bfaa565523b"></a>
+void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classminerva_1_1foundation_1_1texture__loader.html#a4072bc4cce22ccd859f60bfaa565523b">load_dds</a> (void *file_name) thread_safe</td></tr>
+<tr class="memdesc:a4072bc4cce22ccd859f60bfaa565523b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load .dds file, thread-safe <br /></td></tr>
+<tr class="separator:a4072bc4cce22ccd859f60bfaa565523b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08696ff3aa71a0cf977bf56b1999266f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classminerva_1_1foundation_1_1texture__loader.html#a08696ff3aa71a0cf977bf56b1999266f">load_dds_from_file</a> (const std::string &amp;file_name, <a class="el" href="structminerva_1_1foundation_1_1texture__data.html">texture_data</a> *data)</td></tr>
+<tr class="memdesc:a08696ff3aa71a0cf977bf56b1999266f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load .dds file, not thread-safe.  <a href="#a08696ff3aa71a0cf977bf56b1999266f">More...</a><br /></td></tr>
+<tr class="separator:a08696ff3aa71a0cf977bf56b1999266f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classminerva_1_1foundation_1_1allocator"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classminerva_1_1foundation_1_1allocator')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classminerva_1_1foundation_1_1allocator.html">minerva::foundation::allocator</a></td></tr>
 <tr class="memitem:a1d984a6c7360cac43c6182fc8c27f263 inherit pub_methods_classminerva_1_1foundation_1_1allocator"><td class="memItemLeft" align="right" valign="top"><a id="a1d984a6c7360cac43c6182fc8c27f263"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classminerva_1_1foundation_1_1allocator.html#a1d984a6c7360cac43c6182fc8c27f263">allocator</a> ()</td></tr>
@@ -151,14 +155,14 @@ static <a class="el" href="classminerva_1_1foundation_1_1texture__loader.html">t
 <div class="textblock"><p>A global thread-safe texture loader. </p>
 <p>Thread-safe texture loader, support DXTn,BMP,PNG and other popular texture format. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a571bb882c3fcf8ee32853bf8f34023c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a571bb882c3fcf8ee32853bf8f34023c2">&#9670;&nbsp;</a></span>load_dds_from_file_no_safe()</h2>
+<a id="a08696ff3aa71a0cf977bf56b1999266f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08696ff3aa71a0cf977bf56b1999266f">&#9670;&nbsp;</a></span>load_dds_from_file()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool texture_loader::load_dds_from_file_no_safe </td>
+          <td class="memname">bool texture_loader::load_dds_from_file </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>file_name</em>, </td>

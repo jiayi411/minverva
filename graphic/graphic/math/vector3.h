@@ -31,12 +31,19 @@ namespace minerva { namespace graphic {
         ~tvector3(){}
         
     public:
+        static tvector3 s_vector_x;
+        static tvector3 s_vector_y;
+        static tvector3 s_vector_z;
+        static tvector3 s_vector_zero;
+        
+    public:
         tvector3( tvector3&& );
         tvector3& operator= ( tvector3&& );
         tvector3( const tvector3& );
         tvector3& operator= ( const tvector3& );
         
     public:
+        tvector3 operator- ();
         T& operator[] ( size_type s );
         const T& operator[] ( size_type s ) const;
         

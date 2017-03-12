@@ -6,6 +6,12 @@ namespace minerva { namespace graphic {
     template<typename T> tvector2<T>& tvector2<T>::operator= ( tvector2<T>&& v )
     { x = v.x; y = v.y; return *this; }
     
+    template<typename T> tvector2<T>::tvector2( const tvector2<T>& v )
+    { x = v.x; y = v.y; }
+    
+    template<typename T> tvector2<T>& tvector2<T>::operator= ( const tvector2<T>& v )
+    { x = v.x; y = v.y; return *this; }
+    
     template<typename T> tvector2<T>& tvector2<T>::operator+= ( const tvector2<T>& v )
     { x += v.x; y += v.y; return *this; }
     
@@ -87,5 +93,17 @@ namespace minerva { namespace graphic {
     template<typename T>
     tvector2<T> operator/ ( T t, const tvector2<T>& v1 )
     { return tvector2<T>( t / v1.x, t / v1.y ); }
+    
+    template<typename T>
+    tvector2<T>& tvector2<T>::normalize()
+    { return *this /= length(); }
+    
+    template<typename T>
+    T tvector2<T>::dot( const tvector2<T>& v ) const
+    { return x * v.x + y * v.y; }
+    
+    template<typename T>
+    T tvector2<T>::length()
+    { return sqrt( dot( *this ) ); }
     
 } }

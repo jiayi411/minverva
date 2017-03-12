@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['size_5fcount_5farray',['size_count_array',['../structminerva_1_1foundation_1_1memory__tracker_1_1memory__group.html#a3de304ca6ef752b29198b97fde2208f4',1,'minerva::foundation::memory_tracker::memory_group']]]
+  ['out_5fdata',['out_data',['../structminerva_1_1foundation_1_1thread__request__data.html#a0b5a69359936a6e582ac1e1deb4c3f00',1,'minerva::foundation::thread_request_data']]]
 ];

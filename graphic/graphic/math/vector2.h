@@ -27,10 +27,13 @@ namespace minerva { namespace graphic {
         ~tvector2(){}
         
     public:
+        static tvector2 s_vector_zero;
+        
+    public:
         tvector2( tvector2&& );
         tvector2& operator= ( tvector2&& );
-        tvector2( const tvector2& ) = delete;
-        tvector2& operator= ( const tvector2& ) = delete;
+        tvector2( const tvector2& );
+        tvector2& operator= ( const tvector2& );
         
     public:        
         tvector2& operator+= ( const tvector2& );
@@ -47,6 +50,11 @@ namespace minerva { namespace graphic {
         tvector2  operator++ (int);
         tvector2& operator-- ();
         tvector2  operator-- (int);
+        
+    public:
+        tvector2& normalize();
+        T dot( const tvector2& v ) const;
+        T length();
         
     public:
         T x, y;

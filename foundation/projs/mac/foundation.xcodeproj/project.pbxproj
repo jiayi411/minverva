@@ -79,6 +79,7 @@
 		18A4029C1E42CFF500BB70CB /* texture_loader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = texture_loader.cpp; path = texture/texture_loader.cpp; sourceTree = "<group>"; };
 		18A4029D1E42CFF500BB70CB /* texture_loader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = texture_loader.h; path = texture/texture_loader.h; sourceTree = "<group>"; };
 		18A402A01E42D6B700BB70CB /* texture_common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = texture_common.h; path = texture/texture_common.h; sourceTree = "<group>"; };
+		18D081211E71C97D0016957F /* input_protocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = input_protocol.h; path = object/input_protocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +100,7 @@
 				180C970C1E4BA501002ED6A0 /* render_object.h */,
 				180C970D1E4BA501002ED6A0 /* smart_object.h */,
 				180C970E1E4BA501002ED6A0 /* update_object.h */,
+				18D081211E71C97D0016957F /* input_protocol.h */,
 			);
 			name = object;
 			sourceTree = "<group>";
