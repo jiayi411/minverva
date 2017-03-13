@@ -109,7 +109,11 @@ namespace minerva { namespace graphic {
     
     template<typename T>
     T tvector3<T>::length() const
-    { return sqrtf( dot( *this ) ); }
+    { return sqrtf( length2() ); }
+    
+    template<typename T>
+    T tvector3<T>::length2() const
+    { return dot( *this ); }
     
     ////
     
@@ -152,5 +156,12 @@ namespace minerva { namespace graphic {
     template<typename T>
     tvector3<T> operator/ ( T t, const tvector3<T>& v1 )
     { return tvector3<T>( t / v1.x, t / v1.y, t / v1.z ); }
+
+    template< typename T >
+    bool operator== ( const tvector3<T>& v1, const tvector3<T>& v2 )
+    { return v1.x == v2.x && v1.y == v2.y && v1.z == v2.z; }
     
+    template< typename T >
+    bool operator!= ( const tvector3<T>& v1, const tvector3<T>& v2 )
+    { return v1.x != v2.x || v1.y != v2.y || v1.z != v2.z ; }
 } }

@@ -368,11 +368,12 @@ int main(int argc, const char * argv[]) {
 //    glm::mat4 model2 = glm::mat4(1);
     
     camera cam;
-    cam.initialize();
+    cam.initialize( camera::perspective_data( 1024, 768, 45.f, 0.1f, 100.f ) );
+    
     graphic::transform& cam_trans = cam.get_transform();
     cam_trans.set_position( vector3( 0, 0, 10 ) );
     
-    matrix4x4 projection = graphic::perspective<float>(45.f, 1024, 768, 0.1f, 100.f);
+    matrix4x4 projection = cam.get_perspective_matrix();
     
     matrix4x4 model  = matrix4x4(1);
     
@@ -403,6 +404,9 @@ int main(int argc, const char * argv[]) {
     the_thread_manager->start_all();
     do{
         cam.update(0);
+        vector3& camera_position = cam.get_transform().get_position();
+        const vector3& camera_forward = cam.get_forward();
+        const vector3& camera_right = cam.get_right();
         
         // get mouse pos
         bool is_mouse_pressed = glfwGetMouseButton( window, GLFW_MOUSE_BUTTON_LEFT ) == GLFW_PRESS;
@@ -411,10 +415,9 @@ int main(int argc, const char * argv[]) {
             double xpos, ypos;
             glfwGetCursorPos( window, &xpos, &ypos);
             
-            cam.set_screen_position( xpos, ypos );
+            cam.update_screen_position( xpos, ypos );
             view = cam.get_view_matrix();
         }
-        mvp = projection * view * model;
         
         long time = the_core->get_frame_time();
 //        mi_log("fps:%d\n", the_core->get_fps(time) );
@@ -446,6 +449,21 @@ int main(int argc, const char * argv[]) {
             the_texture_manager->load_texture_by_file_name( "resources/uvtemplate.dds", std::bind( test_thread, std::placeholders::_1 ) );
         }
         
+        if( glfwGetKey( window, GLFW_KEY_F) == GLFW_PRESS ) {
+            cam.look_at( vector3(0,0,0) );
+        }
+        
+        if (glfwGetKey( window, GLFW_KEY_W) == GLFW_PRESS) {
+            camera_position += camera_forward * 0.1f;
+            
+        } else if (glfwGetKey( window, GLFW_KEY_A) == GLFW_PRESS) {
+            camera_position -= camera_right * 0.1f;
+        } else if (glfwGetKey( window, GLFW_KEY_S) == GLFW_PRESS) {
+            camera_position -= camera_forward * 0.1f;
+        } else if (glfwGetKey( window, GLFW_KEY_D) == GLFW_PRESS) {
+            camera_position += camera_right * 0.1f;
+        }
+        
         // Draw nothing, see you in tutorial 2 !
        glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
         
@@ -475,7 +493,8 @@ int main(int argc, const char * argv[]) {
 //        model[3][2] = mmodel[3][2];
 //        model[3][3] = mmodel[3][3];
 //        
-
+        
+        view = cam.get_view_matrix();
         model = graphic::matrix4_cast( rotate );
         mvp = projection * view * model;
         

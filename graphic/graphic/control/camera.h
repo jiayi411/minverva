@@ -23,20 +23,27 @@ namespace minerva { namespace graphic {
     class camera : public foundation::update_object
     {
     public:
-        camera() : _dirty(false){}
+        struct perspective_data
+        {
+            perspective_data(){}
+            
+            perspective_data( int w, int h, float d, float n, float f ) :
+            width(w), height(h), degree(d), near(n), far(f){}
+            
+            int width = 0;
+            int height = 0;
+            float degree = 0.f;
+            float near = 0.1f;
+            float far = 10000.f;
+        };
+        
+    public:
+        camera() : _dirty(true){}
         virtual ~camera(){}
         
     public:
         /// initialize camera
-        void initialize();
-        
-        ///
-        /// @brief rotate by self pivot
-        ///
-        /// recieve input from screen space
-        /// @param dx delta movement of screen position X
-        /// @param dy delta movement of screen position Y
-        void rotation( float dx, float dy );
+        void initialize( const perspective_data& data );
         
         ///
         /// @brief update the camera
@@ -48,19 +55,51 @@ namespace minerva { namespace graphic {
         ///
         /// @param x screen position of axis X
         /// @param y screen position of axis Y
-        void set_screen_position( float x, float y );
+        void update_screen_position( float x, float y );
+        
+        ///
+        /// @brief look at position
+        ///
+        /// @param position the position camera need to look at
+        void look_at( const vector3& position );
+        
+        /// get right vector
+        
         
         ///
         /// @brief get the view matrix
         ///
         matrix4x4 get_view_matrix() const;
         
+        ///
+        /// @brief get the projective matrix
+        ///
+        matrix4x4 get_perspective_matrix() const;
+        
     protected:
+        ///
+        /// @brief rotate by self pivot
+        ///
+        /// recieve input from screen space
+        /// @param dx delta movement of screen position X
+        /// @param dy delta movement of screen position Y
+        void _rotation( float dx, float dy );
+        
+        /// caculate right vector
+        void _caculate_right_vector();
+        
+    protected:
+        /// perspective data
+        set_get_ref( perspective_data, perspective_data );
+        
         /// transform
         set_get_ref( transform, transform );
         
         /// target or look-at
         set_get_ref( vector3, forward );
+        
+        /// right vector
+        get_ref( vector3, right );
         
         /// up vector
         set_get_ref( vector3, up );

@@ -75,6 +75,16 @@ namespace minerva { namespace graphic {
     template<typename T>
     static tquaternion<T> cross( const tquaternion<T>& q1, const tquaternion<T>& q2 );
     
+    template<typename T>
+    static tquaternion<T> rotation( const tvector3<T>& v1, const tvector3<T>& v2 );
+    
+    /*-- Constants --*/
+    template<typename T>
+    static T pi() { return T(3.14159265358979323846264338327950288); }
+    
+    template<typename T>
+    static T epsilon();
+    
     /*-- Basic Mathematics --*/
     
     /// mix things

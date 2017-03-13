@@ -123,6 +123,9 @@ namespace minerva { namespace graphic {
     T tvector4<T>::length()
     { return sqrtf( dot( *this ) ); }
     
+    template<typename T>
+    T tvector4<T>::length2()
+    { return dot( *this ); }
     ////
     
     template<typename T>

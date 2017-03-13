@@ -1,3 +1,4 @@
+#include <limits>
 namespace minerva { namespace graphic {
     
     /*-- Matrix Related Functions --*/
@@ -110,6 +111,49 @@ namespace minerva { namespace graphic {
         tquaternion<T> v = q1;
         return v.cross(q2);
     }
+    
+    template<typename T>
+    tquaternion<T> rotation( const tvector3<T>& v1, const tvector3<T>& v2 )
+    {
+        tquaternion<T> answer;
+        tvector3<T> v1n = v1;
+        tvector3<T> v2n = v2;
+        v1n.normalize();
+        v2n.normalize();
+        
+        T cos_theta = dot( v1n, v2n );
+        tvector3<T> cross_product = cross( v1n, v2n );
+        
+        // special cases
+        if (cos_theta >= T(1) - epsilon<T>()) {
+            return tquaternion<T>();
+        }
+        
+        if (cos_theta < T(-1) + epsilon<T>()) {
+            tvector3<T> try_one = cross( tvector3<T>::s_vector_z, v1n );
+            if (try_one.length2() < epsilon<T>()){
+                try_one = cross( tvector3<T>::s_vector_x, v1n);
+            }
+            
+            try_one.normalize();
+            answer.from_axis_angle( pi<T>(), try_one );
+            return answer;
+        }
+        
+        // normal
+        T s = std::sqrt( (T(1) + cos_theta) * T(2) );
+        T inverse = T(1) / s;
+        
+        answer = tquaternion<T>( s * T(0.5f), cross_product * inverse );
+        answer.normalize();
+        
+        return answer;
+    }
+    
+    /*-- Constants --*/
+    
+    template<typename T>
+    static T epsilon() { return std::numeric_limits<T>::epsilon(); }
     
     /*-- Basic Mathematics --*/
     

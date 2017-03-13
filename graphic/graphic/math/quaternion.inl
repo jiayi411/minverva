@@ -6,7 +6,7 @@
  *  Copyright © 2017 jiayi. All rights reserved.
  *
  */
-#include <limits>
+#include "graphic/graphic.h"
 namespace minerva { namespace graphic {
    
     template<typename T>
@@ -173,6 +173,20 @@ namespace minerva { namespace graphic {
     { return T(atan(T(2) * (x * y + w * z), w * w + x * x - y * y - z * z)); }
     
     template<typename T>
+    T tquaternion<T>::angle() const
+    { return acos(w) * T(2); }
+    
+    template<typename T>
+    tvector3<T> tquaternion<T>::axis() const
+    {
+        T tmp1 = static_cast<T>(1) - w * w;
+        if(tmp1 <= static_cast<T>(0))
+            return tvector3<T>(0, 0, 1);
+        T tmp2 = static_cast<T>(1) / sqrt(tmp1);
+        return tvector3<T>(x * tmp2, y * tmp2, z * tmp2);
+    }
+    
+    template<typename T>
     tquaternion<T> tquaternion<T>::lerp( const tquaternion<T>& y, float a )
     { tquaternion<T>& x = *this; return x * (T(1) - a) + (y * a); }
     
@@ -193,7 +207,7 @@ namespace minerva { namespace graphic {
         }
         
         // Perform a linear interpolation when cosTheta is close to 1 to avoid side effect of sin(angle) becoming a zero denominator
-        if(cosTheta > T(1) - std::numeric_limits<T>::epsilon())
+        if(cosTheta > T(1) - epsilon<T>())
         {
             // Linear interpolation
             return tquaternion<T>(

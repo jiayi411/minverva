@@ -106,4 +106,12 @@ namespace minerva { namespace graphic {
     T tvector2<T>::length()
     { return sqrt( dot( *this ) ); }
     
+    template< typename T >
+    bool operator== ( const tvector2<T>& v1, const tvector2<T>& v2 )
+    { return v1.x == v2.x && v1.y == v2.y; }
+    
+    template< typename T >
+    bool operator!= ( const tvector2<T>& v1, const tvector2<T>& v2 )
+    { return v1.x != v2.x || v1.y != v2.y; }
+    
 } }

@@ -83,6 +83,11 @@ namespace minerva { namespace graphic {
     template< typename T >
     tvector2<T> operator/ ( T, const tvector2<T>& );
     
+    template< typename T >
+    bool operator== ( const tvector2<T>& v1, const tvector2<T>& v2 );
+    
+    template< typename T >
+    bool operator!= ( const tvector2<T>& v1, const tvector2<T>& v2 );
 } }
 
 #include "math/vector2.inl"

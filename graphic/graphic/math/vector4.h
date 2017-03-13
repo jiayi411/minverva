@@ -74,6 +74,7 @@ namespace minerva { namespace graphic {
         tvector4& normalize();
         T dot( const tvector4& v ) const;
         T length();
+        T length2();
         
     public:
         union { T x, r; };

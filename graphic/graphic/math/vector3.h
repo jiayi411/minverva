@@ -63,10 +63,11 @@ namespace minerva { namespace graphic {
         tvector3  operator-- (int);
         
         /*-- mathematics --*/
-        tvector3& normalize();
+        tvector3& normalize();        
         tvector3 cross( const tvector3& v ) const;
         T dot( const tvector3& v ) const;
         T length() const;
+        T length2() const;
         
     public:
         union { T x, r; };
@@ -98,6 +99,11 @@ namespace minerva { namespace graphic {
     tvector3<T> operator/ ( const tvector3<T>&, T );
     template< typename T >
     tvector3<T> operator/ ( T, const tvector3<T>& );
+    
+    template< typename T >
+    bool operator== ( const tvector3<T>& v1, const tvector3<T>& v2 );
+    template< typename T >
+    bool operator!= ( const tvector3<T>& v1, const tvector3<T>& v2 );
     
 } }
 

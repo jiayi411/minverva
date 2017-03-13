@@ -23,7 +23,7 @@ namespace minerva { namespace graphic {
     class tquaternion
     {
     public:
-        tquaternion() : tquaternion(0,0,0,0){}
+        tquaternion() : tquaternion(0,0,0,1){}
         tquaternion( T a, T b, T c, T d ) : x(a), y(b), z(c), w(d){}
         tquaternion( T w, const tvector3<T>& v ) : tquaternion( v.x, v.y, v.z, w ){}
         
