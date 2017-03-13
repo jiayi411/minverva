@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18222E2C1E771DB100E8FFF3 /* technique.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18222E2A1E771DB100E8FFF3 /* technique.cpp */; };
+		18222E2D1E771DB100E8FFF3 /* technique.h in Headers */ = {isa = PBXBuildFile; fileRef = 18222E2B1E771DB100E8FFF3 /* technique.h */; };
 		1844181D1E5EB3350076779C /* transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1844181B1E5EB3350076779C /* transform.cpp */; };
 		1844181E1E5EB3350076779C /* transform.h in Headers */ = {isa = PBXBuildFile; fileRef = 1844181C1E5EB3350076779C /* transform.h */; };
 		184418211E5F73000076779C /* matrix3x3.h in Headers */ = {isa = PBXBuildFile; fileRef = 1844181F1E5F73000076779C /* matrix3x3.h */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18222E2A1E771DB100E8FFF3 /* technique.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = technique.cpp; path = shaders/technique.cpp; sourceTree = "<group>"; };
+		18222E2B1E771DB100E8FFF3 /* technique.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = technique.h; path = shaders/technique.h; sourceTree = "<group>"; };
 		1844181B1E5EB3350076779C /* transform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = transform.cpp; sourceTree = "<group>"; };
 		1844181C1E5EB3350076779C /* transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = transform.h; sourceTree = "<group>"; };
 		1844181F1E5F73000076779C /* matrix3x3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = matrix3x3.h; sourceTree = "<group>"; };
@@ -56,6 +60,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18222E291E771CAC00E8FFF3 /* shaders */ = {
+			isa = PBXGroup;
+			children = (
+				18222E2A1E771DB100E8FFF3 /* technique.cpp */,
+				18222E2B1E771DB100E8FFF3 /* technique.h */,
+			);
+			name = shaders;
+			sourceTree = "<group>";
+		};
 		18608CDD1E4E0F93009C8A68 /* math */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +120,7 @@
 		187863F31E4D24D900DE334A /* graphic */ = {
 			isa = PBXGroup;
 			children = (
+				18222E291E771CAC00E8FFF3 /* shaders */,
 				188F9D6A1E6FC94B005A2EB2 /* control */,
 				18608CDD1E4E0F93009C8A68 /* math */,
 				187863F41E4D24D900DE334A /* graphic.cpp */,
@@ -134,6 +148,7 @@
 			files = (
 				18922DA41E57A402008066B1 /* vector2.h in Headers */,
 				18608CDF1E4E0F93009C8A68 /* vector4.h in Headers */,
+				18222E2D1E771DB100E8FFF3 /* technique.h in Headers */,
 				1844181E1E5EB3350076779C /* transform.h in Headers */,
 				184418251E5F7D600076779C /* quaternion.h in Headers */,
 				18922DA11E57A365008066B1 /* vector3.h in Headers */,
@@ -201,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18222E2C1E771DB100E8FFF3 /* technique.cpp in Sources */,
 				1844181D1E5EB3350076779C /* transform.cpp in Sources */,
 				188F9D6D1E6FC95D005A2EB2 /* camera.cpp in Sources */,
 				187863F71E4D24D900DE334A /* graphic.cpp in Sources */,

@@ -13,6 +13,9 @@
 /* The classes below are exported */
 #pragma GCC visibility push(default)
 
+#include <GL/glew.h>
+#include "foundation/standard_libraries/vector.h"
+
 namespace minerva { namespace graphic {
     
     
@@ -29,6 +32,10 @@ namespace minerva { namespace graphic {
     typedef tvector3<float> vector3;
     typedef tvector4<float> vector4;
     typedef tquaternion<float> quaternion;
+    
+    typedef mi_vector<GLuint> gluint_vector;
+    
+    void mi_check_glerror();
     
 } }
 
