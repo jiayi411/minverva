@@ -129,7 +129,7 @@ void technique::enable()
 { glUseProgram( _program_id ); }
 
 /// get uniform location of shader
-GLuint technique::get_uniform( const std::string& name )
+mg_uint technique::get_uniform( const std::string& name )
 {
     GLuint location = glGetUniformLocation( _program_id, name.c_str() );
     
@@ -141,7 +141,7 @@ GLuint technique::get_uniform( const std::string& name )
 }
 
 /// get program parameter
-GLint technique::get_parameter( GLint param )
+mg_int technique::get_parameter( GLint param )
 {
     GLint ret;
     glGetProgramiv( _program_id, param, &ret );

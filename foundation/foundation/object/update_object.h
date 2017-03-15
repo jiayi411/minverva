@@ -10,6 +10,7 @@
 #define update_object_h
 
 #include "object/reference_object.h"
+#include "object/smart_object.h"
 
 namespace minerva { namespace foundation {
     
@@ -24,7 +25,16 @@ namespace minerva { namespace foundation {
         /// @param delta the delta time from last frame
         ///
         virtual void update( float delta ){}
+        
+        ///
+        /// @brief render function
+        /// @param delta the delta time from last frame
+        ///
+        virtual void render( float delta ){}
     };
+    
+    make_smart( update_object );
 } }
+
 
 #endif /* update_object_h */

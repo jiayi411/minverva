@@ -35,6 +35,7 @@
 #include "graphic/math/transform.h"
 #include "graphic/control/camera.h"
 #include "graphic/shaders/technique.h"
+#include "foundation/object/node_object.h"
 using namespace glm;
 
 
@@ -144,6 +145,7 @@ int main(int argc, const char * argv[]) {
     }
     duration = v_duration.stop();
     printf("time of vector:%f\n", duration);
+    
     
 //    printf("%f\n", f2 );
 //    mi_log_vector4(%f, v2);
@@ -550,7 +552,7 @@ int main(int argc, const char * argv[]) {
         
         // Draw the triangle !
         glDrawArrays(GL_TRIANGLES, 0, 3 * 2); // Starting from vertex 0; 3 vertices total -> 1 triangle
-        glDisableVertexAttribArray(0);
+//        glDisableVertexAttribArray(0);
         
         
         // Swap buffers

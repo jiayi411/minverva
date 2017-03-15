@@ -29,7 +29,7 @@ namespace minerva { namespace graphic {
     
     void mi_check_glerror()
     {
-        GLenum error = glGetError();
+        mg_enum error = glGetError();
         if (error == GL_NO_ERROR) { return; }
         mi_log( "opengl error: %#x\n", error );
         

@@ -43,14 +43,14 @@ namespace minerva { namespace graphic {
         void enable();
         
         /// get uniform location of shader
-        GLuint get_uniform( const std::string& name );
+        mg_uint get_uniform( const std::string& name );
         
         /// get program parameter
-        GLint get_parameter( GLint param );
+        mg_int get_parameter( GLint param );
         
     protected:
-        gluint_vector _shaders; ///< all loaded shaders
-        GLuint _program_id;     ///< shader program id
+        mg_uint_vector _shaders; ///< all loaded shaders
+        mg_uint _program_id;     ///< shader program id
         
         
     };

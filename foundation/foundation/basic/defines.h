@@ -43,6 +43,11 @@
 // thread
 #define thread_safe
 
+// check nullptr
+#define check_return( pointer, ret ) \
+    if (pointer == nullptr) \
+        { return ret; } \
+
 
 // datas
 using llong = long long;

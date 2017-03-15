@@ -33,7 +33,25 @@ namespace minerva { namespace graphic {
     typedef tvector4<float> vector4;
     typedef tquaternion<float> quaternion;
     
-    typedef mi_vector<GLuint> gluint_vector;
+    /* -- opengl types to minerva types */
+    typedef GLuint mg_uint;
+    typedef GLenum mg_enum;
+    typedef GLint mg_int;
+    typedef GLfloat mg_float;
+    typedef GLbitfield mg_bitfield;
+    typedef GLsizei mg_sizei;
+    typedef GLboolean mg_bollean;
+    typedef GLbyte mg_byte;
+    typedef GLshort mg_short;
+    typedef GLubyte mg_ubyte;
+    typedef GLushort mg_ushort;
+    typedef GLulong mg_ulong;
+    typedef GLclampf mg_clampf;
+    typedef GLdouble mg_double;
+    typedef GLclampd mg_clampd;
+    typedef GLvoid mg_void;
+    
+    typedef mi_vector<mg_uint> mg_uint_vector;
     
     void mi_check_glerror();
     
