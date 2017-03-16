@@ -10,14 +10,13 @@
 #ifndef technique_H
 #define technique_H
 
-#include "foundation/object/update_object.h"
 #include "graphic.h"
 namespace minerva { namespace graphic {
     
     ///
     /// @brief base class for shader
     ///
-    class technique : public foundation::update_object
+    class technique
     {
     public:
         enum e_shader_type {
@@ -31,16 +30,16 @@ namespace minerva { namespace graphic {
         
     public:
         /// initialize
-        bool initialize();
+        bool initialize_technique();
         
         /// add shader by filename and shader type
         bool add_shader( e_shader_type shader_type, const std::string& file );
         
         /// finalize when add all shaders
-        bool finalize();
+        virtual bool finalize();
         
         /// enable this technique
-        void enable();
+        void enable() ;
         
         /// get uniform location of shader
         mg_uint get_uniform( const std::string& name );
@@ -51,9 +50,8 @@ namespace minerva { namespace graphic {
     protected:
         mg_uint_vector _shaders; ///< all loaded shaders
         mg_uint _program_id;     ///< shader program id
-        
-        
     };
+    
 } }
 
 #endif /* technique_h */

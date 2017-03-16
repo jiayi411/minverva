@@ -43,10 +43,23 @@
 // thread
 #define thread_safe
 
+// get class name
+#define class_name(T) T::name
+
 // check nullptr
-#define check_return( pointer, ret ) \
-    if (pointer == nullptr) \
-        { return ret; } \
+#define check_break( value, check ) \
+if (value == check) \
+{ return; } \
+
+#define check_pointer_break( value ) \
+    check_break( value, nullptr );
+
+#define check_return( pointer, check, ret ) \
+if (pointer == check) \
+{ return ret; } \
+
+#define check_pointer_return( pointer, ret ) \
+    check_return( pointer, nullptr, ret );
 
 
 // datas
@@ -71,6 +84,21 @@ template <typename Key>
 using HashType = typename std::conditional<std::is_enum<Key>::value, EnumClassHash, std::hash<Key>>::type;
 
 // properties
+#define protected_set_get_ref(type, name) \
+protected:\
+type _##name;\
+protected: \
+virtual const type& _get_##name() const { return _##name; }\
+virtual type& _get_##name() { return _##name; } \
+virtual void _set_##name( const type& t ) { _##name = t; } \
+
+#define protected_set_get(type, name) \
+protected:\
+type _##name;\
+protected: \
+virtual type _get_##name() { return _##name; } \
+virtual void _set_##name( type t ) { _##name = t; } \
+
 #define set_get_ref(type, name) \
 protected:\
 type _##name;\
@@ -84,7 +112,7 @@ protected:\
 type _##name;\
 public: \
 virtual type get_##name() { return _##name; } \
-virtual void set_##name( const type& t ) { _##name = t; } \
+virtual void set_##name( type t ) { _##name = t; } \
 
 #define get_ref(type, name) \
 protected:\

@@ -6,9 +6,9 @@
 //  Copyright © 2017 jiayi. All rights reserved.
 //
 
-#include "object/node_object.h"
+#include "model/node_object.h"
 
-using namespace minerva::foundation;
+using namespace minerva::graphic;
 
 node_object::~node_object()
 {
@@ -45,21 +45,21 @@ node_object& node_object::operator= ( node_object&& node )
 
 node_object* node_object::add_child( node_object* object )
 {
-    check_return( object, this );
+    check_pointer_return( object, this );
     add_child( object->get_tag(), object );
     return this;
 }
 
 node_object* node_object::add_child( int tag, node_object* object )
 {
-    check_return( object, this );
+    check_pointer_return( object, this );
     _children.emplace( tag, object );
     return this;
 }
 
 node_object* node_object::remove_child( node_object* object )
 {
-    check_return( object, this );
+    check_pointer_return( object, this );
     
     auto range = _children.equal_range( object->get_tag() );
     for (auto i = range.first; i != range.second; ++i) {

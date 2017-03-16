@@ -17,12 +17,10 @@
 		180C97091E4AD063002ED6A0 /* thread_background_loading.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 180C97071E4AD063002ED6A0 /* thread_background_loading.cpp */; };
 		180C970A1E4AD063002ED6A0 /* thread_background_loading.h in Headers */ = {isa = PBXBuildFile; fileRef = 180C97081E4AD063002ED6A0 /* thread_background_loading.h */; };
 		180C970F1E4BA501002ED6A0 /* reference_object.h in Headers */ = {isa = PBXBuildFile; fileRef = 180C970B1E4BA501002ED6A0 /* reference_object.h */; };
-		180C97101E4BA501002ED6A0 /* node_object.h in Headers */ = {isa = PBXBuildFile; fileRef = 180C970C1E4BA501002ED6A0 /* node_object.h */; };
 		180C97111E4BA501002ED6A0 /* smart_object.h in Headers */ = {isa = PBXBuildFile; fileRef = 180C970D1E4BA501002ED6A0 /* smart_object.h */; };
 		180C97121E4BA501002ED6A0 /* update_object.h in Headers */ = {isa = PBXBuildFile; fileRef = 180C970E1E4BA501002ED6A0 /* update_object.h */; };
 		180C97161E4BA55D002ED6A0 /* timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 180C97141E4BA55D002ED6A0 /* timer.cpp */; };
 		180C97171E4BA55D002ED6A0 /* timer.h in Headers */ = {isa = PBXBuildFile; fileRef = 180C97151E4BA55D002ED6A0 /* timer.h */; };
-		18222E301E78976A00E8FFF3 /* node_object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18222E2F1E78976A00E8FFF3 /* node_object.cpp */; };
 		186078D21E3199CF00161801 /* foundation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 186078C31E3199CF00161801 /* foundation.cpp */; };
 		186078D31E3199CF00161801 /* allocator.h in Headers */ = {isa = PBXBuildFile; fileRef = 186078C51E3199CF00161801 /* allocator.h */; };
 		186078D41E3199CF00161801 /* memory_tracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 186078C61E3199CF00161801 /* memory_tracker.cpp */; };
@@ -55,12 +53,10 @@
 		180C97071E4AD063002ED6A0 /* thread_background_loading.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = thread_background_loading.cpp; path = multithread/thread_background_loading.cpp; sourceTree = "<group>"; };
 		180C97081E4AD063002ED6A0 /* thread_background_loading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = thread_background_loading.h; path = multithread/thread_background_loading.h; sourceTree = "<group>"; };
 		180C970B1E4BA501002ED6A0 /* reference_object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = reference_object.h; path = object/reference_object.h; sourceTree = "<group>"; };
-		180C970C1E4BA501002ED6A0 /* node_object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = node_object.h; path = object/node_object.h; sourceTree = "<group>"; };
 		180C970D1E4BA501002ED6A0 /* smart_object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = smart_object.h; path = object/smart_object.h; sourceTree = "<group>"; };
 		180C970E1E4BA501002ED6A0 /* update_object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = update_object.h; path = object/update_object.h; sourceTree = "<group>"; };
 		180C97141E4BA55D002ED6A0 /* timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = timer.cpp; path = basic/timer.cpp; sourceTree = "<group>"; };
 		180C97151E4BA55D002ED6A0 /* timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = timer.h; path = basic/timer.h; sourceTree = "<group>"; };
-		18222E2F1E78976A00E8FFF3 /* node_object.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = node_object.cpp; path = object/node_object.cpp; sourceTree = "<group>"; };
 		186078C31E3199CF00161801 /* foundation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = foundation.cpp; sourceTree = "<group>"; };
 		186078C51E3199CF00161801 /* allocator.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = allocator.h; sourceTree = "<group>"; };
 		186078C61E3199CF00161801 /* memory_tracker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = memory_tracker.cpp; sourceTree = "<group>"; };
@@ -99,10 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				180C970B1E4BA501002ED6A0 /* reference_object.h */,
-				180C970C1E4BA501002ED6A0 /* node_object.h */,
 				180C970D1E4BA501002ED6A0 /* smart_object.h */,
 				180C970E1E4BA501002ED6A0 /* update_object.h */,
-				18222E2F1E78976A00E8FFF3 /* node_object.cpp */,
 				18D081211E71C97D0016957F /* input_protocol.h */,
 			);
 			name = object;
@@ -242,7 +236,6 @@
 				187863B51E4C24BB00DE334A /* defines.h in Headers */,
 				18A4029F1E42CFF500BB70CB /* texture_loader.h in Headers */,
 				187863B41E4C24BB00DE334A /* consts.h in Headers */,
-				180C97101E4BA501002ED6A0 /* node_object.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,7 +301,6 @@
 				186078D21E3199CF00161801 /* foundation.cpp in Sources */,
 				180C97091E4AD063002ED6A0 /* thread_background_loading.cpp in Sources */,
 				180C97161E4BA55D002ED6A0 /* timer.cpp in Sources */,
-				18222E301E78976A00E8FFF3 /* node_object.cpp in Sources */,
 				187863AF1E4BCDE300DE334A /* texture_manager.cpp in Sources */,
 				180C96F81E47CA73002ED6A0 /* thread_procedure.cpp in Sources */,
 				18A4029E1E42CFF500BB70CB /* texture_loader.cpp in Sources */,

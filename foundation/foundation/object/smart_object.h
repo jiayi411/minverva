@@ -75,7 +75,7 @@ namespace minerva { namespace foundation {
     ////////////////////////////////////////////////////////////////////////
     #define make_smart( T ) \
         class T;\
-        typedef smart_object<T> T##_ptr;
+        typedef minerva::foundation::smart_object<T> T##_ptr;
     ////////////////////////////////////////////////////////////////////////
     template<class T> smart_object<T>::~smart_object()
     {

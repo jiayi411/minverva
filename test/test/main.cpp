@@ -35,7 +35,10 @@
 #include "graphic/math/transform.h"
 #include "graphic/control/camera.h"
 #include "graphic/shaders/technique.h"
-#include "foundation/object/node_object.h"
+
+#include "graphic/component/com_default_material.h"
+#include "graphic/component/com_triangle.h"
+#include "graphic/model/model.h"
 using namespace glm;
 
 
@@ -307,78 +310,20 @@ int main(int argc, const char * argv[]) {
         return false;
     }
     
-    // uv
-    static const GLfloat g_uv_buffer_data[] = {
-        0.000059f, 1.0f-0.000004f,
-        0.000103f, 1.0f-0.336048f,
-        0.335973f, 1.0f-0.335903f,
-        1.000023f, 1.0f-0.000013f,
-        0.667979f, 1.0f-0.335851f,
-        0.999958f, 1.0f-0.336064f
-    };
+    model triangle_model;
+    com_default_material_ptr default_material_ = nullptr;
+    com_triangle_ptr triangle_ = nullptr;
+    default_material_ = mi_new com_default_material();
+    triangle_model.add_component<com_default_material>( default_material_ );
+    triangle_ = mi_new com_triangle();
+    triangle_model.add_component<com_triangle>( triangle_ );
     
-    GLuint uvbuffer;
-    glGenBuffers( 1, &uvbuffer );
-    glBindBuffer( GL_ARRAY_BUFFER, uvbuffer );
-    glBufferData( GL_ARRAY_BUFFER, sizeof(g_uv_buffer_data), g_uv_buffer_data, GL_STATIC_DRAW );
-    ////////////////////////////////////////////////////////////////////////
+    default_material_->add_shader( technique::vertex_shader, "resources/simple.vs" );
+    default_material_->add_shader( technique::fragment_shader, "resources/simple.fs" );
+    default_material_->finalize();
     
-    /// Tutorial 2 stuff
-    GLuint VertexArrayID;
-    glGenVertexArrays(1, &VertexArrayID);
-    glBindVertexArray(VertexArrayID);
-    
-    static const GLfloat g_vertex_buffer_data[] = {
-        -1.0f, -1.0f, 0.0f,
-        1.0f, -1.0f, 0.0f,
-//        0.0f,  1.0f, 0.0f,
-        1.f,1.f,0.f,
-        1.f,1.f,0.f,
-        -1.f,-1.f,0.f,
-        -1.f,1.f,0.f
-    };
-    
-    static const GLfloat g_color_buffer_data[] = {
-        0.583f,  0.771f,  0.014f,
-        0.609f,  0.115f,  0.436f,
-        0.327f,  0.483f,  0.844f,
-        0.822f,  0.569f,  0.201f,
-        0.435f,  0.602f,  0.223f,
-        0.310f,  0.747f,  0.185f
-    };
-    
-    // This will identify our vertex buffer
-    GLuint vertexbuffer;
-    // Generate 1 buffer, put the resulting identifier in vertexbuffer
-    glGenBuffers(1, &vertexbuffer);
-    // The following commands will talk about our 'vertexbuffer' buffer
-    glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
-    // Give our vertices to OpenGL.
-    glBufferData(GL_ARRAY_BUFFER, sizeof(g_vertex_buffer_data), g_vertex_buffer_data, GL_STATIC_DRAW);
-    
-    GLuint colorbuffer;
-    glGenBuffers(1, &colorbuffer );
-    glBindBuffer(GL_ARRAY_BUFFER, colorbuffer );
-    glBufferData(GL_ARRAY_BUFFER, sizeof( g_color_buffer_data), g_color_buffer_data, GL_STATIC_DRAW );
-    
-    
-    technique my_shader;
-    if (!my_shader.initialize()) {
-        mi_log("failed in shader");
-    }
-    
-    my_shader.add_shader( technique::vertex_shader, "resources/simple.vs" );
-    my_shader.add_shader( technique::fragment_shader, "resources/simple.fs" );
-    if (!my_shader.finalize()) {
-        mi_log("finalize shader failed");
-    }
-    
-    
-    
-    // tutorial 3
-//    glm::mat4 projection2 = glm::perspective( glm::radians( 45.f ), 1024/768.f, 0.1f, 100.f );
-//    glm::mat4 view2 = glm::lookAt( glm::vec3(0,0,3), glm::vec3(0,0,0), glm::vec3(0,1,0) );
-//    glm::mat4 model2 = glm::mat4(1);
+    com_texture_ptr texture_ = default_material_->get_base_texture();
+    texture_->set_texture_file( "resources/uvtemplate.dds" );
     
     camera cam;
     cam.initialize( camera::perspective_data( 1024, 768, 45.f, 0.1f, 100.f ) );
@@ -400,18 +345,13 @@ int main(int argc, const char * argv[]) {
     matrix4x4 mvp = projection * view * model;
     
     
-    
-    // get uniforms
-    GLuint matrixId = my_shader.get_uniform( "mvp" );
-    GLuint timeId = my_shader.get_uniform( "time" );
-    GLuint sampler2D = my_shader.get_uniform( "textureSampler" );
+    GLuint matrixId = default_material_->get_uniform( "mvp" );
+    GLuint timeId = default_material_->get_uniform( "time" );
     
     
     // output memory
     the_memory_tracker->output_informations();
-    // Create one OpenGL texture
-    GLuint textureID;
-    glGenTextures(1, &textureID);
+    
     
     // start thread
     the_thread_manager->start_all();
@@ -434,29 +374,6 @@ int main(int argc, const char * argv[]) {
         
         long time = the_core->get_frame_time();
 //        mi_log("fps:%d\n", the_core->get_fps(time) );
-        if( glfwGetKey( window, GLFW_KEY_T) == GLFW_PRESS ) {
-            
-            // bind sampler2D
-            glActiveTexture( GL_TEXTURE0 );
-            glBindTexture( GL_TEXTURE_2D, textureID );
-            glUniform1i( sampler2D, 0 );
-            
-            unsigned int blockSize = (tex_data->format == GL_COMPRESSED_RGBA_S3TC_DXT1_EXT) ? 8 : 16;
-            unsigned int offset = 0;
-            
-            
-            /* load the mipmaps */
-            for (unsigned int level = 0; level < tex_data->mipmap_count && (tex_data->width || tex_data->height); ++level)
-            {
-                unsigned int size = ((tex_data->width+3)/4)*((tex_data->height+3)/4)*blockSize;
-                glCompressedTexImage2D(GL_TEXTURE_2D, level, tex_data->format, tex_data->width, tex_data->height,
-                                       0, size, tex_data->buffer + offset);
-                
-                offset += size;
-                tex_data->width  /= 2;
-                tex_data->height /= 2;
-            }
-        }
         
         if( glfwGetKey( window, GLFW_KEY_Q) == GLFW_PRESS ) {
             the_texture_manager->load_texture_by_file_name( "resources/uvtemplate.dds", std::bind( test_thread, std::placeholders::_1 ) );
@@ -481,79 +398,29 @@ int main(int argc, const char * argv[]) {
        glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
         
         
-        my_shader.enable();
+//        my_shader.enable();
         
         // change rotation
         std::chrono::steady_clock::time_point now = std::chrono::steady_clock::now();
         float ftime =float(now.time_since_epoch().count())/ 1000000000.0;
         
         quaternion rotate = model_rotate.slerp( target_rotate, (std::sin(ftime)) );
-
-//        model[0][0] = mmodel[0][0];
-//        model[0][1] = mmodel[0][1];
-//        model[0][2] = mmodel[0][2];
-//        model[0][3] = mmodel[0][3];
-//        model[1][0] = mmodel[1][0];
-//        model[1][1] = mmodel[1][1];
-//        model[1][2] = mmodel[1][2];
-//        model[1][3] = mmodel[1][3];
-//        model[2][0] = mmodel[2][0];
-//        model[2][1] = mmodel[2][1];
-//        model[2][2] = mmodel[2][2];
-//        model[2][3] = mmodel[2][3];
-//        model[3][0] = mmodel[3][0];
-//        model[3][1] = mmodel[3][1];
-//        model[3][2] = mmodel[3][2];
-//        model[3][3] = mmodel[3][3];
-//        
         
         view = cam.get_view_matrix();
         model = graphic::matrix4_cast( rotate );
         mvp = projection * view * model;
         
+        
         glUniformMatrix4fv( matrixId, 1, GL_TRUE, &mvp[0][0] );
         glUniform1f( timeId, ftime );
         
-        // 1rst attribute buffer : vertices
-        glEnableVertexAttribArray(0);
-        glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
-        glVertexAttribPointer(
-                              0,                  // attribute 0. No particular reason for 0, but must match the layout in the shader.
-                              3,                  // size
-                              GL_FLOAT,           // type
-                              GL_FALSE,           // normalized?
-                              0,                  // stride
-                              (void*)0            // array buffer offset
-                              );
-        // 2nd color buffer
-        glEnableVertexAttribArray(1);
-        glBindBuffer(GL_ARRAY_BUFFER, colorbuffer );
-        glVertexAttribPointer(
-                              1,
-                              3,
-                              GL_FLOAT,
-                              GL_FALSE,
-                              0,
-                              (void*)0
-                              );
-        
-        // 3rd uv buffer
-        glEnableVertexAttribArray(2);
-        glBindBuffer(GL_ARRAY_BUFFER, uvbuffer );
-        glVertexAttribPointer(2,
-                              2,
-                              GL_FLOAT,
-                              GL_FALSE,
-                              0,
-                              (void*)0
-                              );
+        triangle_model.update(0);
+        triangle_model.on_render(0);
+        triangle_model.render(0);
         
         
-        
-        // Draw the triangle !
-        glDrawArrays(GL_TRIANGLES, 0, 3 * 2); // Starting from vertex 0; 3 vertices total -> 1 triangle
-//        glDisableVertexAttribArray(0);
-        
+////        glDisableVertexAttribArray(0);
+//        glBindVertexArray( NULL );
         
         // Swap buffers
         glfwSwapBuffers(window);
@@ -568,11 +435,11 @@ int main(int argc, const char * argv[]) {
     while( glfwGetKey(window, GLFW_KEY_ESCAPE ) != GLFW_PRESS &&
           glfwWindowShouldClose(window) == 0 );
     
-    glDeleteBuffers( 1, &vertexbuffer );
-    glDeleteBuffers( 1, &uvbuffer );
-    glDeleteBuffers( 1, &colorbuffer );
-    glDeleteVertexArrays( 1, &VertexArrayID );
-    glDeleteTextures( 1, &textureID );
+//    glDeleteBuffers( 1, &vertexbuffer );
+//    glDeleteBuffers( 1, &uvbuffer );
+//    glDeleteBuffers( 1, &colorbuffer );
+//    glDeleteVertexArrays( 1, &VertexArrayID );
+//    glDeleteTextures( 1, &textureID );
     
     
     glfwTerminate();

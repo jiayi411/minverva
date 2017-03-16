@@ -9,9 +9,11 @@
 #ifndef node_object_h
 #define node_object_h
 
-#include "object/update_object.h"
+#include "foundation/object/update_object.h"
+#include "foundation/object/smart_object.h"
+#include "math/transform.h"
 
-namespace minerva { namespace foundation {
+namespace minerva { namespace graphic {
     
     class node_object;
     make_smart( node_object );
@@ -22,7 +24,7 @@ namespace minerva { namespace foundation {
     /// this is the very basic class for children
     /// management. All children should be decendent from
     /// update_object.
-    class node_object : public update_object
+    class node_object : public foundation::update_object
     {
     public:
         node_object() : _tag(-1) {}
@@ -83,6 +85,7 @@ namespace minerva { namespace foundation {
         
     protected:
         set_get( int, tag );
+        set_get_ref( transform, transform );     ///< transform
         set_get_ref( node_container, children ); ///< children
         set_get_ref( node_object_ptr, parent );  ///< parent
     };

@@ -8,6 +8,7 @@
  */
 
 #include "technique.h"
+#include "foundation/basic/defines.h"
 #include <fstream>
 
 using namespace minerva::graphic;
@@ -30,7 +31,7 @@ technique::~technique()
 }
 
 /// initialize
-bool technique::initialize()
+bool technique::initialize_technique()
 {
     _program_id = glCreateProgram();
     if (_program_id == 0) {
@@ -135,6 +136,7 @@ mg_uint technique::get_uniform( const std::string& name )
     
     if (location == GL_INVALID_VALUE) {
         mi_log("Warning! Unable to get the location of uniform '%s'\n", name.c_str());
+        return -1;
     }
     
     return location;

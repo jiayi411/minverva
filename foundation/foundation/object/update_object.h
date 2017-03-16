@@ -27,6 +27,13 @@ namespace minerva { namespace foundation {
         virtual void update( float delta ){}
         
         ///
+        /// @brief before rendering
+        ///
+        /// execute just before render
+        ///
+        virtual void on_render( float delta ){}
+        
+        ///
         /// @brief render function
         /// @param delta the delta time from last frame
         ///

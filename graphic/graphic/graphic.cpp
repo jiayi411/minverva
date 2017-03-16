@@ -38,6 +38,36 @@ namespace minerva { namespace graphic {
         } else if (error == GL_INVALID_OPERATION) {
             mi_assert( 0 && "program is not a program object or has not been successfully linked" );
         }
+    }    
+    
+    mg_uint bind_opengl_buffer( mg_uint type, mg_sizeiptr size, mg_void* buffer, mg_uint draw_type )
+    {
+        mg_uint buffer_id;
+        glGenBuffers(1, &buffer_id);
+        glBindBuffer(GL_ARRAY_BUFFER, buffer_id);
+        glBufferData(GL_ARRAY_BUFFER, size, buffer, GL_STATIC_DRAW);
+        return buffer_id;
+    }
+    
+    mg_uint generate_single_vao()
+    {
+        GLuint vao_id;
+        glGenVertexArrays(1, &vao_id);
+        glBindVertexArray(vao_id);
+        return vao_id;
+    }
+    
+    void enable_bind_attrib_pointer( mg_uint index, mg_uint buffer_id, mg_int size, mg_void* offset_pointer )
+    {
+        glEnableVertexAttribArray( index );
+        glBindBuffer(GL_ARRAY_BUFFER, buffer_id );
+        glVertexAttribPointer(index,
+                              size,
+                              GL_FLOAT,
+                              GL_FALSE,
+                              0,
+                              (void*)offset_pointer
+                              );
     }
     
 }}

@@ -62,7 +62,7 @@ namespace minerva { namespace foundation {
         callback_container _callbacks; ///< the callback container
     };
     
-    #define the_texture_manager texture_manager::get()
+    #define the_texture_manager foundation::texture_manager::get()
     
 } }
 
