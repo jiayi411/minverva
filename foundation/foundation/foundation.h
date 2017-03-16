@@ -54,6 +54,15 @@ namespace minerva { namespace foundation {
             return fps;
         }
         
+        /// strip the last specified character
+        inline std::string strip_last_char( const char* s, char c ) {
+            std::string str( s );
+            auto pos = str.find_last_of( c );
+            if (pos == std::string::npos) { return str; }
+            
+            return str.substr( pos + 1 );
+        }
+        
         
     protected:
         timer::duration<timer::milliseconds> _timer;

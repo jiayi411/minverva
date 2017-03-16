@@ -19,7 +19,7 @@
 #ifdef MI_DEBUG
 #define mi_new new( __FILE__, __LINE__, __FUNCTION__ )
 #define mi_delete delete
-#define mi_malloc(size) minerva::foundation::allocator::std_malloc( size, __LINE__, __FUNCTION__ )
+#define mi_malloc(size) minerva::foundation::allocator::std_malloc( size, __LINE__, __FUNCTION__, __FILE__ )
 #define mi_free(o) minerva::foundation::allocator::std_free(o)
 #else
 #define mi_new new

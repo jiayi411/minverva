@@ -7,6 +7,7 @@
  */
 
 #include "memory_tracker.h"
+#include "foundation.h"
 
 using namespace minerva::foundation;
 
@@ -17,10 +18,11 @@ memory_tracker::~memory_tracker()
     _pointers.clear();
 }
 
-void memory_tracker::add(void *ptr, size_t size, const char *function, uint line)
+void memory_tracker::add(void *ptr, size_t size, const char *function, uint line, const char* file)
 {
     _mutex.lock();
     
+    std::string short_file = the_core->strip_last_char( file, '/' );
     auto index = _get_memory_group_index_by_name( function, line );
     
     // if not found a record
@@ -34,7 +36,7 @@ void memory_tracker::add(void *ptr, size_t size, const char *function, uint line
     }
     
     // increase size count of memory_group
-    size_t memory_index = _increase( index, size, line );
+    size_t memory_index = _increase( index, size, line, short_file.c_str() );
     
     _pointers.emplace( std::make_pair( *(ulong*)&ptr, index << 31 | memory_index ) );
     
@@ -64,8 +66,8 @@ void memory_tracker::output_informations()
         for( const auto s : group.size_count_array )
         {
             if( s.ui_count > 0 )
-            { mi_log( "function: %s, line: %d, allocated count: %d, total memory: %.3f kbytes\n",
-                     group.function_name.c_str(), s.n_line, s.ui_count, (s.t_size * s.ui_count) / 1024.0 ); }
+            { mi_log( "%s::%s: line: %d, count: %d, memory: %.3f kbytes\n",
+                     s.str_file.c_str(), group.function_name.c_str(), s.n_line, s.ui_count, (s.t_size * s.ui_count) / 1024.0 ); }
         }
     }
     _mutex.unlock();
@@ -96,7 +98,7 @@ size_t memory_tracker::_get_memory_group_index_by_name( const std::string& funct
 }
 
 
-size_t memory_tracker::_increase( size_t index, size_t size, uint line )
+size_t memory_tracker::_increase( size_t index, size_t size, uint line, const char* file )
 {
     if( index >= _groups.size() ){
         return -1;
@@ -115,7 +117,7 @@ size_t memory_tracker::_increase( size_t index, size_t size, uint line )
     }
     
     // add a new one
-    group.size_count_array.emplace_back( memory_size_count_info( line, size, 1 ) );
+    group.size_count_array.emplace_back( memory_size_count_info( line, size, 1, file ) );
     
     size_t ret = group.size_count_array.size() - 1;
     return  ret;

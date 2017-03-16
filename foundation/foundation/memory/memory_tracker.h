@@ -43,12 +43,13 @@ namespace minerva
             struct memory_size_count_info
             {
                 /// ctor for structure
-                memory_size_count_info( uint line, size_t size, uint count ) :
-                n_line(line), t_size(size), ui_count(count){}
+                memory_size_count_info( uint line, size_t size, uint count, const char* file ) :
+                n_line(line), t_size(size), ui_count(count), str_file(file){}
                 
                 uint n_line;                ///< line of file
                 size_t t_size;              ///< size of each allocation in the same line
                 uint ui_count;              ///< how many times does it do allocate
+                std::string str_file;       ///< file
             };
             
             ///
@@ -85,7 +86,7 @@ namespace minerva
             ~memory_tracker();
             
             /// add a record
-            void add( void* ptr, size_t size, const char* function, uint line );
+            void add( void* ptr, size_t size, const char* function, uint line, const char* file );
             
             /// remove a record
             void remove( void* ptr );
@@ -96,7 +97,7 @@ namespace minerva
         protected:
             
             /// increase count based on index and size
-            size_t _increase( size_t index, size_t size, uint line );
+            size_t _increase( size_t index, size_t size, uint line, const char* file );
             
             /// decrease count based on index and size
             void _decrease( ullong index );

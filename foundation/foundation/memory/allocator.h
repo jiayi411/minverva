@@ -39,12 +39,12 @@ namespace minerva
             /// @param[in] size object's size
             /// @param[in] line where the new located in the file
             /// @param[in] function the function where the new called
-            static char* std_malloc ( size_t size, int line, const char* function )
+            static char* std_malloc ( size_t size, int line, const char* function, const char* file )
             {
                 void* buf = malloc( size );
 #ifdef MI_DEBUG
                 if( consts::trace_memory ){
-                    the_memory_tracker->add( buf, size, function, line );
+                    the_memory_tracker->add( buf, size, function, line, file );
                 }
 #endif // MI_DEBUG
                 return (char*)buf;
@@ -82,7 +82,7 @@ namespace minerva
                 void* buf = malloc( size );
 #ifdef MI_DEBUG
                 if( consts::trace_memory ){
-                    the_memory_tracker->add( buf, size, function, line );
+                    the_memory_tracker->add( buf, size, function, line, file );
                 }
 #endif // MI_DEBUG
                 return buf;
@@ -102,7 +102,7 @@ namespace minerva
                 void* buf = malloc( size );
 #ifdef MI_DEBUG
                 if( consts::trace_memory ){
-                    the_memory_tracker->add( buf, size, function, line );
+                    the_memory_tracker->add( buf, size, function, line, file );
                 }
 #endif // MI_DEBUG
                 return buf;
