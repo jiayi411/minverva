@@ -17,13 +17,13 @@ com_triangle::~com_triangle()
     glDeleteBuffers( 1, &_vertex_buffer_id );
     glDeleteBuffers( 1, &_uv_buffer_id );
     glDeleteBuffers( 1, &_color_buffer_id );
-    glDeleteBuffers( 1, &_indices_buffer_id );
+   // glDeleteBuffers( 1, &_indices_buffer_id );
     glDeleteVertexArrays( 1, &_vao_id );
     
     safe_delete_array( _vertices );
     safe_delete_array( _uvs );
     safe_delete_array( _colors );
-    safe_delete_array( _indices );
+    //safe_delete_array( _indices );
 }
 
 /// initialize component
@@ -64,18 +64,19 @@ void com_triangle::render_component( float delta )
 
 void com_triangle::_setup_vertices()
 {
-    vector3* vertices = new vector3[sc_vertices_count];
-    vertices[0] = vector3(-1.0f, -1.0f, 0.0f);
-    vertices[1] = vector3(1.0f, -1.0f, 0.0f);
-    vertices[2] = vector3(1.f,1.f,0.f);
-    vertices[3] = vector3(1.f,1.f,0.f);
-    vertices[4] = vector3(-1.f,-1.f,0.f);
-    vertices[5] = vector3(-1.f,1.f,0.f);
+    _vertices = new vector3[sc_vertices_count];
+    _vertices[0] = vector3(-1.0f, -1.0f, 0.0f);
+    _vertices[1] = vector3(1.0f, -1.0f, 0.0f);
+    _vertices[2] = vector3(1.f,1.f,0.f);
+    _vertices[3] = vector3(1.f,1.f,0.f);
+    _vertices[4] = vector3(-1.f,-1.f,0.f);
+    _vertices[5] = vector3(-1.f,1.f,0.f);
     
 //    _model->set_vertices( vertices );
     
     // bind
-    _vertex_buffer_id = graphic::bind_opengl_buffer( GL_ARRAY_BUFFER, sc_vertices_count * sizeof( vector3 ), vertices, GL_STATIC_DRAW );
+    _vertex_buffer_id = graphic::bind_opengl_buffer( GL_ARRAY_BUFFER, sc_vertices_count * sizeof( vector3 ), _vertices, GL_STATIC_DRAW );
+    
 }
 
 void com_triangle::_setup_colors()
@@ -95,6 +96,7 @@ void com_triangle::_setup_colors()
         colors[i].g = g_color_buffer_data[3*i+1];
         colors[i].b = g_color_buffer_data[3*i+2];
     }
+    _colors = colors;
     
 //    _model->set_colors( colors );
     
@@ -118,6 +120,8 @@ void com_triangle::_setup_uvs()
         uvs[i].x = g_uv_buffer_data[i*2];
         uvs[i].y = g_uv_buffer_data[i*2+1];
     }
+    
+    _uvs = uvs;
     
 //    _model->set_uvs( uvs );
     

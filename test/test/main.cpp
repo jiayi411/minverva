@@ -310,7 +310,8 @@ int main(int argc, const char * argv[]) {
         return false;
     }
     
-    model triangle_model;
+    model_ptr triangle_model_p = mi_new model();
+    model& triangle_model = *triangle_model_p;
     com_default_material_ptr default_material_ = nullptr;
     com_triangle_ptr triangle_ = nullptr;
     default_material_ = mi_new com_default_material();
@@ -441,8 +442,9 @@ int main(int argc, const char * argv[]) {
 //    glDeleteVertexArrays( 1, &VertexArrayID );
 //    glDeleteTextures( 1, &textureID );
     
-    
+    triangle_model_p = nullptr;
     glfwTerminate();
+    
     
     return 0;
 }

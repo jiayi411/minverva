@@ -18,6 +18,10 @@ model::~model()
 //    safe_delete_array( _uvs );
 //    safe_delete_array( _colors );
 //    safe_delete_array( _indices );
+    for (auto& c : _components) {
+        c.second = nullptr;
+    }
+    _components.clear();
 }
 
 void model::update( float delta )
