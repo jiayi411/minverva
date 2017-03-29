@@ -9,6 +9,7 @@
 
 #include "technique.h"
 #include "foundation/basic/defines.h"
+#include "renderer/renderer.h"
 #include <fstream>
 
 using namespace minerva::graphic;
@@ -29,6 +30,31 @@ technique::~technique()
         _program_id = 0;
     }
 }
+
+technique::technique( const technique& t )
+{
+    this->operator=( t );
+}
+
+technique::technique( technique&& t )
+{
+    this->operator=( t );
+}
+
+technique& technique::operator= ( const technique& t )
+{
+    _program_id = t._program_id;
+    _shaders = t._shaders;
+    return *this;
+}
+
+technique& technique::operator= ( technique&& t )
+{
+    _program_id = t._program_id;
+    _shaders = std::move(t._shaders);
+    return *this;
+}
+
 
 /// initialize
 bool technique::initialize_technique()
@@ -120,7 +146,7 @@ bool technique::finalize()
     
     _shaders.clear();
     
-    mi_check_glerror();
+    the_renderer->mi_check_glerror();
     
     return true;
 }

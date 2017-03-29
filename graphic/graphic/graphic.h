@@ -57,8 +57,6 @@ namespace minerva { namespace graphic {
     
     typedef mi_vector<mg_uint> mg_uint_vector;
     
-    void mi_check_glerror();
-    
     /* -- vertex array type  --*/
     namespace vbo_type {
         enum {
@@ -70,14 +68,8 @@ namespace minerva { namespace graphic {
         };
     }
     
-    /// generate and bind to opengl buffer
-    mg_uint bind_opengl_buffer( mg_uint type, mg_sizeiptr size, mg_void* buffer, mg_uint draw_type );
-    
-    /// generate vao
-    mg_uint generate_single_vao();
-    
-    /// enable, bind, and set attrib pointer
-    void enable_bind_attrib_pointer( mg_uint index, mg_uint buffer_id, mg_int size, mg_void* offset_pointer);
+    void initialize_singletons();
+    void destroy_singletons();
     
 } }
 

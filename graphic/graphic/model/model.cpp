@@ -24,6 +24,30 @@ model::~model()
     _components.clear();
 }
 
+model::model( const model& m )
+{ this->operator=( m ); }
+
+model::model( model&& m )
+{ this->operator=( m ); }
+
+model& model::operator= ( const model& m )
+{
+    _name = m.get_name();
+    for (auto& c : m._components) {
+        _components.emplace( c.first, c.second->full_clone( this ) );
+    }
+    return *this;
+}
+
+model& model::operator= ( model&& m )
+{
+    _name = std::move( m._name );
+    for (auto& c : m._components) {
+        _components.emplace( c.first, c.second->copy_clone( this ) );
+    }
+    return *this;
+}
+
 void model::update( float delta )
 {
     for (auto& c : _components) {

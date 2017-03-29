@@ -21,6 +21,20 @@ namespace minerva { namespace graphic {
         com_triangle() : _model(nullptr){}
         virtual ~com_triangle();
         
+    public:
+        com_triangle( const com_triangle& c );
+        com_triangle( com_triangle&& c );
+        com_triangle& operator= ( const com_triangle& c );
+        com_triangle& operator= ( com_triangle&& c );
+        
+        /// light clone is gonna use same memory address
+        virtual component* full_clone( model* ) ;
+        
+        /// deep clone is to make a complete new object with the same datas
+        virtual component* copy_clone( model* ) ;
+        
+    public:
+        
         /// initialize component
         virtual bool initialize( model* m );
         

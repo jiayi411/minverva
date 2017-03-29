@@ -19,17 +19,22 @@ namespace minerva { namespace graphic {
     class component_protocol;
     
     ///
-    /// @brief basic model that contains vertex, indices, etc.
+    /// @brief model is an object that can take several components
     ///
-    /// the model object is designed as component, you can add
-    /// as many component as you want. For instance, adding a
-    /// technique or uv or textures. This class only contains
-    /// very basic items including vertices, indices and colors.
+    /// the model object is designed as an object that can equiped with
+    /// as many as components. The capability of this model is defined by
+    /// its components.
     class model : public node_object
     {
     public:
-        model() {}//: _vertices(nullptr), _indices(nullptr), _colors(nullptr), _uvs(nullptr){}
+        model() {}
         virtual ~model();
+        
+    public:
+        model( const model& m );
+        model( model&& m );
+        model& operator= ( const model& m );
+        model& operator= ( model&& m );
         
     public:
         /// add a component to model

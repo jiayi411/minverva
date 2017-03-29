@@ -22,10 +22,15 @@ namespace minerva { namespace foundation {
     class timer : public singleton<timer>
     {
     public:
-        typedef std::chrono::milliseconds milliseconds;
-        typedef std::chrono::seconds seconds;
+        typedef std::chrono::duration<double, std::micro> milliseconds;
+        typedef std::chrono::duration<double>  seconds;
         typedef std::chrono::minutes minutes;
         typedef std::chrono::hours hours;
+        
+        template<typename T>
+        typename T::rep get_current_time() const {
+            return ( std::chrono::high_resolution_clock::now().time_since_epoch() ).count();
+        }
         
         ///
         /// @brief to caculate the duration time
@@ -59,7 +64,7 @@ namespace minerva { namespace foundation {
             ///
             /// @return the duration of _end - _start
             ///
-            typename T::rep stop() {
+            return_type stop() {
                 _end = _last_end = std::chrono::high_resolution_clock::now();
                 return ( std::chrono::duration_cast<T>( _end - _start ) ).count();
             }
@@ -73,6 +78,11 @@ namespace minerva { namespace foundation {
                 return_type ret = ( std::chrono::duration_cast<T> ( _end - _last_end ) ).count();
                 _last_end = _end;
                 return ret;
+            }
+            
+            /// get duration from the beginning
+            return_type get_duration() {
+                return ( std::chrono::duration_cast<T> ( std::chrono::high_resolution_clock::now() - _start ) ).count();
             }
             
         protected:

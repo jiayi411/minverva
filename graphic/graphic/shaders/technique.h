@@ -29,6 +29,12 @@ namespace minerva { namespace graphic {
         virtual ~technique();
         
     public:
+        technique( const technique& t );
+        technique( technique&& t );
+        virtual technique& operator= ( const technique& t );
+        virtual technique& operator= ( technique&& t );
+        
+    public:
         /// initialize
         bool initialize_technique();
         

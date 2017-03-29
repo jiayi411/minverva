@@ -18,6 +18,57 @@ com_texture::~com_texture()
     glDeleteTextures( 1, &_texture_id );
 }
 
+com_texture::com_texture( const com_texture& c )
+{
+    this->operator=(c);
+}
+
+com_texture::com_texture( com_texture&& c )
+{
+    this->operator=(c);
+}
+
+com_texture& com_texture::operator= ( const com_texture& c )
+{
+    _texture_file = c._texture_file;
+    _texture_id = c._texture_id;
+    _sampler = c._sampler;
+    _texture_index = c._texture_index;
+    _model = c._model;
+    _texture_data = c._texture_data;
+    _dirty = c._dirty;
+    _ready = c._ready;
+    return *this;
+}
+
+com_texture& com_texture::operator= ( com_texture&& c )
+{
+    _texture_file = std::move(c._texture_file);
+    _texture_id = c._texture_id;
+    _sampler = c._sampler;
+    _texture_index = c._texture_index;
+    _model = std::move(c._model);
+    _texture_data = std::move(c._texture_data);
+    _dirty = c._dirty;
+    _ready = c._ready;
+    return *this;
+}
+
+component* com_texture::full_clone( model* )
+{
+    com_texture* temp = mi_new com_texture();
+    *temp = *this;
+    return temp;
+}
+
+component* com_texture::copy_clone( model* ) 
+{
+    com_texture* temp = mi_new com_texture();
+    *temp = std::move(*this);
+    return temp;
+}
+
+
 /// initialize component
 bool com_texture::initialize( model* m )
 {

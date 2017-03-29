@@ -26,6 +26,7 @@ namespace minerva { namespace foundation {
         static void destroy_singletons();
         
     public:
+        typedef timer::duration<timer::seconds> duration_type;
         ///
         /// @brief get frame time
         ///
@@ -33,10 +34,23 @@ namespace minerva { namespace foundation {
         ///
         /// @return the duration time from the last frame
         ///
-        inline long get_frame_time() {
+        inline duration_type::return_type get_frame_time() {
             if (_timer.is_started()) {
                 return _timer.get_last_duration();
             }            
+            _timer.start();
+            return 0;
+        }
+        
+        ///
+        /// @brief get game life time
+        ///
+        /// return the time that the game has elpased
+        /// @return the duration time from the beginning of the game
+        inline duration_type::return_type get_life_time() {
+            if (_timer.is_started()) {
+                return _timer.get_duration();
+            }
             _timer.start();
             return 0;
         }
@@ -65,7 +79,7 @@ namespace minerva { namespace foundation {
         
         
     protected:
-        timer::duration<timer::milliseconds> _timer;
+        duration_type _timer;
         
     };
     

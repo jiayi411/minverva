@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18173F701E88546E00C3B9F5 /* renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18173F6E1E88546E00C3B9F5 /* renderer.cpp */; };
+		18173F711E88546E00C3B9F5 /* renderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 18173F6F1E88546E00C3B9F5 /* renderer.h */; };
 		18181BE31E79F3D000B7E5BC /* com_triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18181BE11E79F3D000B7E5BC /* com_triangle.cpp */; };
 		18181BE41E79F3D000B7E5BC /* com_triangle.h in Headers */ = {isa = PBXBuildFile; fileRef = 18181BE21E79F3D000B7E5BC /* com_triangle.h */; };
 		18181BE81E7A4AFD00B7E5BC /* render_data_collector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18181BE61E7A4AFD00B7E5BC /* render_data_collector.cpp */; };
@@ -38,6 +40,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18173F6E1E88546E00C3B9F5 /* renderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = renderer.cpp; path = renderer/renderer.cpp; sourceTree = "<group>"; };
+		18173F6F1E88546E00C3B9F5 /* renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = renderer.h; path = renderer/renderer.h; sourceTree = "<group>"; };
 		18181BE11E79F3D000B7E5BC /* com_triangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = com_triangle.cpp; path = component/com_triangle.cpp; sourceTree = "<group>"; };
 		18181BE21E79F3D000B7E5BC /* com_triangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = com_triangle.h; path = component/com_triangle.h; sourceTree = "<group>"; };
 		18181BE61E7A4AFD00B7E5BC /* render_data_collector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = render_data_collector.cpp; path = renderer/render_data_collector.cpp; sourceTree = "<group>"; };
@@ -98,6 +102,8 @@
 				18181BE71E7A4AFD00B7E5BC /* render_data_collector.h */,
 				18181BEA1E7A4B6F00B7E5BC /* render_data.cpp */,
 				18181BEB1E7A4B6F00B7E5BC /* render_data.h */,
+				18173F6E1E88546E00C3B9F5 /* renderer.cpp */,
+				18173F6F1E88546E00C3B9F5 /* renderer.h */,
 			);
 			name = renderer;
 			sourceTree = "<group>";
@@ -226,6 +232,7 @@
 				18222E391E79B0C600E8FFF3 /* model.h in Headers */,
 				18181BED1E7A4B6F00B7E5BC /* render_data.h in Headers */,
 				18922DA11E57A365008066B1 /* vector3.h in Headers */,
+				18173F711E88546E00C3B9F5 /* renderer.h in Headers */,
 				184418211E5F73000076779C /* matrix3x3.h in Headers */,
 				18222E471E79D35B00E8FFF3 /* com_default_material.h in Headers */,
 				187863F81E4D24D900DE334A /* graphic.h in Headers */,
@@ -299,6 +306,7 @@
 				18222E2C1E771DB100E8FFF3 /* technique.cpp in Sources */,
 				1844181D1E5EB3350076779C /* transform.cpp in Sources */,
 				18181BE31E79F3D000B7E5BC /* com_triangle.cpp in Sources */,
+				18173F701E88546E00C3B9F5 /* renderer.cpp in Sources */,
 				18181BEC1E7A4B6F00B7E5BC /* render_data.cpp in Sources */,
 				188F9D6D1E6FC95D005A2EB2 /* camera.cpp in Sources */,
 				18181BE81E7A4AFD00B7E5BC /* render_data_collector.cpp in Sources */,

@@ -39,7 +39,7 @@ node_object& node_object::operator= ( const node_object& node )
 node_object& node_object::operator= ( node_object&& node )
 {
     const auto& children = node.get_children();
-    _children = children;
+    _children = std::move(children);
     return *this;
 }
 

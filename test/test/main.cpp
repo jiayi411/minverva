@@ -39,6 +39,7 @@
 #include "graphic/component/com_default_material.h"
 #include "graphic/component/com_triangle.h"
 #include "graphic/model/model.h"
+#include "renderer/renderer.h"
 using namespace glm;
 
 
@@ -76,31 +77,31 @@ class test_allocator : public allocator
 public:
     virtual ~test_allocator() { mi_log("~\n"); }
     test_allocator() { mi_log("ctor\n"); }
-//    test_allocator( test_allocator&& t ){
-//        i = t.i;
-//        t.i = 999;
-//        mi_log("1\n");
-//    }
-//    test_allocator& operator= ( test_allocator&& t ){
-//        i = t.i;
-//        t.i = 99;
-//        mi_log("2\n");
-//        return *this;
-//    }
-//    test_allocator( test_allocator& ) = delete;
-//    test_allocator& operator= ( const test_allocator&) = delete;
+    //    test_allocator( test_allocator&& t ){
+    //        i = t.i;
+    //        t.i = 999;
+    //        mi_log("1\n");
+    //    }
+    //    test_allocator& operator= ( test_allocator&& t ){
+    //        i = t.i;
+    //        t.i = 99;
+    //        mi_log("2\n");
+    //        return *this;
+    //    }
+    //    test_allocator( test_allocator& ) = delete;
+    //    test_allocator& operator= ( const test_allocator&) = delete;
     
-//    test_allocator( test_allocator& )
-//    {
-//        i = t.i;
-//        t.i = 999;
-//    }
-//    test_allocator& operator= ( const test_allocator&)
-//    {
-//        i = t.i;
-////        t.i = 99;
-//        return *this;
-//    }
+    //    test_allocator( test_allocator& )
+    //    {
+    //        i = t.i;
+    //        t.i = 999;
+    //    }
+    //    test_allocator& operator= ( const test_allocator&)
+    //    {
+    //        i = t.i;
+    ////        t.i = 99;
+    //        return *this;
+    //    }
     
     inline static void test_move(std::string& a1, std::string& a2) {
         
@@ -118,7 +119,7 @@ public:
 void test_thread( void* data ) {
     static int count = 0;
     texture_data_ptr t_data = ( texture_data* )(data);
-//    mi_log( "width: %d, texture load count: %dw\n", t_data->width, ++count );
+    //    mi_log( "width: %d, texture load count: %dw\n", t_data->width, ++count );
 }
 
 using namespace minerva;
@@ -130,11 +131,11 @@ int main(int argc, const char * argv[]) {
     //v1 = glm::cross( v1 * t1 );
     minerva::foundation::timer::duration<timer::milliseconds> v_duration(true);
     
-//    for (int i = 0; i < 1; ++i) {
-//        float f1 = glm::dot( v1, t1 );
-//    }
-//    printf("%f\n", f1 );
-//    mi_log_vector4(%f, v1);
+    //    for (int i = 0; i < 1; ++i) {
+    //        float f1 = glm::dot( v1, t1 );
+    //    }
+    //    printf("%f\n", f1 );
+    //    mi_log_vector4(%f, v1);
     
     float duration = v_duration.stop();
     printf("time of vector:%f\n", duration);
@@ -150,16 +151,16 @@ int main(int argc, const char * argv[]) {
     printf("time of vector:%f\n", duration);
     
     
-//    printf("%f\n", f2 );
-//    mi_log_vector4(%f, v2);
+    //    printf("%f\n", f2 );
+    //    mi_log_vector4(%f, v2);
     
     matrix4x4 matrix4(
-                            1, 2, 3,  4,
-                            5, 1, 6,  7,
-                            8, 9, 1, 10,
-                            11,12,13, 1
-                            );
-//    float d1 = matrix.determinant();
+                      1, 2, 3,  4,
+                      5, 1, 6,  7,
+                      8, 9, 1, 10,
+                      11,12,13, 1
+                      );
+    //    float d1 = matrix.determinant();
     
     glm::mat4x4 mat4(
                      1, 2, 3,  4,
@@ -167,37 +168,37 @@ int main(int argc, const char * argv[]) {
                      8, 9, 1, 10,
                      11,12,13, 1
                      );
-//    float d2 = glm::determinant( mat4 );
+    //    float d2 = glm::determinant( mat4 );
     
-//    mat4 = glm::transpose( mat4 );
-//    mat4 /= 2;
-//    mat4 = glm::inverse( mat4 );
-//    float d1 = glm::determinant( mat4 );
-//    printf("%.f\n", d1 );
-//    mat4 = glm::perspective( glm::radians( 45.f ), 1024/768.f, 0.1f, 100.f );
+    //    mat4 = glm::transpose( mat4 );
+    //    mat4 /= 2;
+    //    mat4 = glm::inverse( mat4 );
+    //    float d1 = glm::determinant( mat4 );
+    //    printf("%.f\n", d1 );
+    //    mat4 = glm::perspective( glm::radians( 45.f ), 1024/768.f, 0.1f, 100.f );
     mi_log_matrix4x4( %f, mat4 );
     
     
-//    matrix.inverse();
-//    matrix /= 2;
-//    float d2 = math::determinant( matrix );
-//    printf("%.f\n", d2 );
-//    matrix = math::perspective<float>(45.f, 1024.f, 768, 0.1, 100);
+    //    matrix.inverse();
+    //    matrix /= 2;
+    //    float d2 = math::determinant( matrix );
+    //    printf("%.f\n", d2 );
+    //    matrix = math::perspective<float>(45.f, 1024.f, 768, 0.1, 100);
     mi_log_matrix4x4( %f, matrix4 );
     
     matrix3x3 matrix3(
-                            1, 2, 3,
-                            5, 1, 6,
-                            8, 9, 1
-                            );
-//    matrix3x3 matrix3_1(
-//                             1, 2, 3,
-//                             5, 1, 6,
-//                             8, 9, 1
-//                             );
-////    float d1 = matrix3.determinant();
-//    matrix3 = matrix3 * matrix3_1;
-//
+                      1, 2, 3,
+                      5, 1, 6,
+                      8, 9, 1
+                      );
+    //    matrix3x3 matrix3_1(
+    //                             1, 2, 3,
+    //                             5, 1, 6,
+    //                             8, 9, 1
+    //                             );
+    ////    float d1 = matrix3.determinant();
+    //    matrix3 = matrix3 * matrix3_1;
+    //
     matrix3.inverse();
     glm::mat3x3 mat3(
                      1, 2, 3,
@@ -205,20 +206,21 @@ int main(int argc, const char * argv[]) {
                      8, 9, 1
                      );
     mat3 = glm::inverse(mat3);
-//    glm::mat3x3 mat3_1(
-//                     1, 2, 3,
-//                     5, 1, 6,
-//                     8, 9, 1
-//                     );
-//    mat3 = mat3 * mat3_1;
-//    float d2 = glm::determinant( mat3 );
-//    printf("%.f\n", d1 );
+    //    glm::mat3x3 mat3_1(
+    //                     1, 2, 3,
+    //                     5, 1, 6,
+    //                     8, 9, 1
+    //                     );
+    //    mat3 = mat3 * mat3_1;
+    //    float d2 = glm::determinant( mat3 );
+    //    printf("%.f\n", d1 );
     //    printf("%.f\n", d2 );
-//    matrix3 = matrix3.transpose();
-//    mi_log_matrix3x3(%f, matrix3);
-//    mi_log_matrix3x3(%f, mat3);
+    //    matrix3 = matrix3.transpose();
+    //    mi_log_matrix3x3(%f, matrix3);
+    //    mi_log_matrix3x3(%f, mat3);
     
     core::initialize_singletons();
+    graphic::initialize_singletons();
     
     
     // insert code here...
@@ -239,7 +241,7 @@ int main(int argc, const char * argv[]) {
                                                        std::bind( test_thread, std::placeholders::_1 ) );
     }
     
-//    v_smart.clear();
+    //    v_smart.clear();
     
     test_singleton* foo = test_singleton::get();
     foo->test();
@@ -249,7 +251,7 @@ int main(int argc, const char * argv[]) {
     // allocator
     mi_vector<test_allocator*> allocators;
     for ( int i = 0; i < 100; ++i ){
-//        allocators.emplace_back( mi_new test_allocator() );
+        //        allocators.emplace_back( mi_new test_allocator() );
     }
     
     // quaterion
@@ -261,11 +263,11 @@ int main(int argc, const char * argv[]) {
     glm::quat gq1(4, 1, 2,3 );
     gq1 = glm::angleAxis(1.f, vec3(0,0,1));
     mat4 = glm::transpose( glm::mat4_cast( gq1 ) );
-
+    
     mi_log_matrix4x4(%f, matrix4);
     mi_log_matrix4x4(%f, mat4);
-//    mi_log_quaternion("%f", q1);
-//    mi_log_quaternion("%f", gq1);
+    //    mi_log_quaternion("%f", q1);
+    //    mi_log_quaternion("%f", gq1);
     
     // for opengl
     // Initialise GLFW
@@ -310,8 +312,10 @@ int main(int argc, const char * argv[]) {
         return false;
     }
     
-    model_ptr triangle_model_p = mi_new model();
-    model& triangle_model = *triangle_model_p;
+    model_ptr triangle_model_p_1 = mi_new model();
+    model_ptr triangle_model_p_2 = mi_new model();
+    
+    model& triangle_model = *triangle_model_p_1;
     com_default_material_ptr default_material_ = nullptr;
     com_triangle_ptr triangle_ = nullptr;
     default_material_ = mi_new com_default_material();
@@ -326,36 +330,21 @@ int main(int argc, const char * argv[]) {
     com_texture_ptr texture_ = default_material_->get_base_texture();
     texture_->set_texture_file( "resources/uvtemplate.dds" );
     
-    camera cam;
+    camera_ptr cam_p = mi_new camera();
+    the_renderer->set_camera( cam_p );
+    camera& cam = *cam_p;
     cam.initialize( camera::perspective_data( 1024, 768, 45.f, 0.1f, 100.f ) );
     
     graphic::transform& cam_trans = cam.get_transform();
     cam_trans.set_position( vector3( 0, 0, 10 ) );
     
-    matrix4x4 projection = cam.get_perspective_matrix();
-    
-    matrix4x4 model  = matrix4x4(1);
-    
-    // rotation
-    quaternion model_rotate;
-    quaternion target_rotate;
-    model_rotate.from_axis_angle(0, vector3(0,1,0));
-    target_rotate.from_axis_angle(1, vector3(0,1,0));
-    
-    matrix4x4 view = cam.get_view_matrix();//graphic::view( eye, target, vector3(0,1,0) );
-    matrix4x4 mvp = projection * view * model;
-    
-    
-    GLuint matrixId = default_material_->get_uniform( "mvp" );
-    GLuint timeId = default_material_->get_uniform( "time" );
-    
-    
-    // output memory
-    the_memory_tracker->output_informations();
-    
+    *triangle_model_p_2 = *triangle_model_p_1;
     
     // start thread
     the_thread_manager->start_all();
+    
+    // timer
+    
     do{
         cam.update(0);
         vector3& camera_position = cam.get_transform().get_position();
@@ -370,11 +359,11 @@ int main(int argc, const char * argv[]) {
             glfwGetCursorPos( window, &xpos, &ypos);
             
             cam.update_screen_position( xpos, ypos );
-            view = cam.get_view_matrix();
+            
         }
         
         long time = the_core->get_frame_time();
-//        mi_log("fps:%d\n", the_core->get_fps(time) );
+        //        mi_log("fps:%d\n", the_core->get_fps(time) );
         
         if( glfwGetKey( window, GLFW_KEY_Q) == GLFW_PRESS ) {
             the_texture_manager->load_texture_by_file_name( "resources/uvtemplate.dds", std::bind( test_thread, std::placeholders::_1 ) );
@@ -396,32 +385,36 @@ int main(int argc, const char * argv[]) {
         }
         
         // Draw nothing, see you in tutorial 2 !
-       glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
+        glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
+        float ftime = the_core->get_life_time();
         
         
-//        my_shader.enable();
-        
-        // change rotation
-        std::chrono::steady_clock::time_point now = std::chrono::steady_clock::now();
-        float ftime =float(now.time_since_epoch().count())/ 1000000000.0;
-        
+        // rotation
+        quaternion model_rotate;
+        quaternion target_rotate;
+        model_rotate.from_axis_angle(0, vector3(0,1,0));
+        target_rotate.from_axis_angle(1, vector3(0,1,0));
         quaternion rotate = model_rotate.slerp( target_rotate, (std::sin(ftime)) );
         
-        view = cam.get_view_matrix();
-        model = graphic::matrix4_cast( rotate );
-        mvp = projection * view * model;
-        
-        
-        glUniformMatrix4fv( matrixId, 1, GL_TRUE, &mvp[0][0] );
-        glUniform1f( timeId, ftime );
-        
+        // model 1
+        triangle_model.get_transform().set_rotation( rotate );
         triangle_model.update(0);
         triangle_model.on_render(0);
         triangle_model.render(0);
         
         
-////        glDisableVertexAttribArray(0);
-//        glBindVertexArray( NULL );
+        // model 2
+        target_rotate.from_axis_angle(1, vector3(1,1,0));
+        rotate = model_rotate.slerp( target_rotate, (std::sin(ftime)) );
+        triangle_model_p_2->get_transform().set_rotation( rotate );
+        triangle_model_p_2->get_transform().set_position( vector3(2.f, 0, 0) );
+        triangle_model_p_2->update(0);
+        triangle_model_p_2->on_render(0);
+        triangle_model_p_2->render(0);
+        
+        
+        ////        glDisableVertexAttribArray(0);
+        //        glBindVertexArray( NULL );
         
         // Swap buffers
         glfwSwapBuffers(window);
@@ -436,15 +429,21 @@ int main(int argc, const char * argv[]) {
     while( glfwGetKey(window, GLFW_KEY_ESCAPE ) != GLFW_PRESS &&
           glfwWindowShouldClose(window) == 0 );
     
-//    glDeleteBuffers( 1, &vertexbuffer );
-//    glDeleteBuffers( 1, &uvbuffer );
-//    glDeleteBuffers( 1, &colorbuffer );
-//    glDeleteVertexArrays( 1, &VertexArrayID );
-//    glDeleteTextures( 1, &textureID );
+    //    glDeleteBuffers( 1, &vertexbuffer );
+    //    glDeleteBuffers( 1, &uvbuffer );
+    //    glDeleteBuffers( 1, &colorbuffer );
+    //    glDeleteVertexArrays( 1, &VertexArrayID );
+    //    glDeleteTextures( 1, &textureID );
     
-    triangle_model_p = nullptr;
+    triangle_model_p_1 = nullptr;
+    triangle_model_p_2 = nullptr;
     glfwTerminate();
     
+    the_core->destroy_singletons();
+    graphic::destroy_singletons();
+    
+    // output memory
+    the_memory_tracker->output_informations();
     
     return 0;
 }

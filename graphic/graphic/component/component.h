@@ -35,6 +35,12 @@ namespace minerva { namespace graphic {
         
         /// get component name
         virtual const char* get_name() const = 0;
+        
+        /// light clone is gonna use same memory address
+        virtual component* full_clone( model* ) = 0;
+        
+        /// deep clone is to make a complete new object with the same datas
+        virtual component* copy_clone( model* ) = 0;
     };
     
     make_smart( component );

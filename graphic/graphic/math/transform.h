@@ -27,7 +27,7 @@ namespace minerva { namespace graphic {
     class transform : public foundation::allocator
     {
     public:
-        transform() : _scale_x(1.f), _scale_y(1.f), _scale_z(1.f), _matrix_position(1){}
+        transform() : _scale_x(1.f), _scale_y(1.f), _scale_z(1.f), _matrix_position(1){ _update_all(); }
         
         /// copy constructor
         transform( const transform& t );
@@ -40,6 +40,9 @@ namespace minerva { namespace graphic {
         
         /// copy operator with rhs
         transform& operator= ( transform&& t );
+        
+        /// get total transform
+        matrix4x4 get_final_matrix() const;
         
     public:
         /// set scale

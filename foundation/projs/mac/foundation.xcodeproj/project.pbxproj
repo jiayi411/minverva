@@ -21,6 +21,7 @@
 		180C97121E4BA501002ED6A0 /* update_object.h in Headers */ = {isa = PBXBuildFile; fileRef = 180C970E1E4BA501002ED6A0 /* update_object.h */; };
 		180C97161E4BA55D002ED6A0 /* timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 180C97141E4BA55D002ED6A0 /* timer.cpp */; };
 		180C97171E4BA55D002ED6A0 /* timer.h in Headers */ = {isa = PBXBuildFile; fileRef = 180C97151E4BA55D002ED6A0 /* timer.h */; };
+		18173F751E88674D00C3B9F5 /* global_objects.h in Headers */ = {isa = PBXBuildFile; fileRef = 18173F731E88674D00C3B9F5 /* global_objects.h */; };
 		186078D21E3199CF00161801 /* foundation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 186078C31E3199CF00161801 /* foundation.cpp */; };
 		186078D31E3199CF00161801 /* allocator.h in Headers */ = {isa = PBXBuildFile; fileRef = 186078C51E3199CF00161801 /* allocator.h */; };
 		186078D41E3199CF00161801 /* memory_tracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 186078C61E3199CF00161801 /* memory_tracker.cpp */; };
@@ -57,6 +58,8 @@
 		180C970E1E4BA501002ED6A0 /* update_object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = update_object.h; path = object/update_object.h; sourceTree = "<group>"; };
 		180C97141E4BA55D002ED6A0 /* timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = timer.cpp; path = basic/timer.cpp; sourceTree = "<group>"; };
 		180C97151E4BA55D002ED6A0 /* timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = timer.h; path = basic/timer.h; sourceTree = "<group>"; };
+		18173F731E88674D00C3B9F5 /* global_objects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = global_objects.h; path = object/global_objects.h; sourceTree = "<group>"; };
+		18173F761E88685D00C3B9F5 /* global_objects.inl */ = {isa = PBXFileReference; lastKnownFileType = text; name = global_objects.inl; path = object/global_objects.inl; sourceTree = "<group>"; };
 		186078C31E3199CF00161801 /* foundation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = foundation.cpp; sourceTree = "<group>"; };
 		186078C51E3199CF00161801 /* allocator.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = allocator.h; sourceTree = "<group>"; };
 		186078C61E3199CF00161801 /* memory_tracker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = memory_tracker.cpp; sourceTree = "<group>"; };
@@ -98,6 +101,8 @@
 				180C970D1E4BA501002ED6A0 /* smart_object.h */,
 				180C970E1E4BA501002ED6A0 /* update_object.h */,
 				18D081211E71C97D0016957F /* input_protocol.h */,
+				18173F731E88674D00C3B9F5 /* global_objects.h */,
+				18173F761E88685D00C3B9F5 /* global_objects.inl */,
 			);
 			name = object;
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 				180C970F1E4BA501002ED6A0 /* reference_object.h in Headers */,
 				186078D81E3199CF00161801 /* map.h in Headers */,
 				180C97121E4BA501002ED6A0 /* update_object.h in Headers */,
+				18173F751E88674D00C3B9F5 /* global_objects.h in Headers */,
 				186078D51E3199CF00161801 /* memory_tracker.h in Headers */,
 				180C96FF1E484723002ED6A0 /* queue.h in Headers */,
 				187863B01E4BCDE300DE334A /* texture_manager.h in Headers */,

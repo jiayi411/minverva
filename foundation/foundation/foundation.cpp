@@ -10,6 +10,8 @@
 #include "texture/texture_loader.h"
 #include "multithread/thread_manager.h"
 #include "texture/texture_manager.h"
+#include "object/global_objects.h"
+#include "basic/timer.h"
 
 using namespace minerva::foundation;
 
@@ -17,6 +19,7 @@ template<> texture_loader* singleton<texture_loader>::_this = nullptr;
 template<> thread_manager* singleton<thread_manager>::_this = nullptr;
 template<> texture_manager* singleton<texture_manager>::_this = nullptr;
 template<> core* singleton<core>::_this = nullptr;
+template<> timer* singleton<timer>::_this = nullptr;
 
 #define singleton_initiliaze(T) \
     if (!T::initialize()) { \

@@ -26,6 +26,18 @@ namespace minerva { namespace graphic {
         virtual ~com_texture();
         
     public:
+        com_texture( const com_texture& c );
+        com_texture( com_texture&& c );
+        com_texture& operator= ( const com_texture& c );
+        com_texture& operator= ( com_texture&& c );
+        
+        /// light clone is gonna use same memory address
+        virtual component* full_clone( model* ) ;
+        
+        /// deep clone is to make a complete new object with the same datas
+        virtual component* copy_clone( model* );
+        
+    public:
         /// initialize component
         virtual bool initialize( model* m );
         

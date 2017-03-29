@@ -94,3 +94,8 @@ void transform::_update_position()
     _matrix_position[1][3] = _position.y;
     _matrix_position[2][3] = _position.z;
 }
+
+matrix4x4 transform::get_final_matrix() const
+{
+    return _matrix_position * _matrix_rotation * _matrix_scale;
+}

@@ -23,6 +23,18 @@ namespace minerva { namespace graphic {
         virtual ~com_default_material();
         
     public:
+        com_default_material( const com_default_material& c );
+        com_default_material( com_default_material&& c );
+        virtual com_default_material& operator= ( const com_default_material& c );
+        virtual com_default_material& operator= ( com_default_material&& c );
+        
+        /// light clone is gonna use same memory address
+        virtual component* full_clone( model* ) ;
+        
+        /// deep clone is to make a complete new object with the same datas
+        virtual component* copy_clone( model* ) ;
+        
+    public:
         /// initialize component
         virtual bool initialize( model* m );
         
@@ -43,6 +55,7 @@ namespace minerva { namespace graphic {
         
     protected:
         set_get( com_texture_ptr, base_texture );            ///< base texture
+        set_get( model_ptr, model );                         ///< base model
     };
     
     make_smart( com_default_material );

@@ -9,6 +9,7 @@
 
 #include "com_triangle.h"
 #include "math/vector2.h"
+#include "renderer/renderer.h"
 
 using namespace minerva::graphic;
 
@@ -26,6 +27,55 @@ com_triangle::~com_triangle()
     //safe_delete_array( _indices );
 }
 
+com_triangle::com_triangle( const com_triangle& c )
+{
+    this->operator=(c);
+}
+
+com_triangle::com_triangle( com_triangle&& c )
+{
+    this->operator=(c);
+}
+
+com_triangle& com_triangle::operator= ( const com_triangle& c )
+{
+    initialize( c._model );
+    return *this;
+}
+
+com_triangle& com_triangle::operator= ( com_triangle&& c )
+{
+    _model = std::move(c._model);
+    _vertex_buffer_id = c._vertex_buffer_id;
+    _indices_buffer_id = c._indices_buffer_id;
+    _color_buffer_id = c._color_buffer_id;
+    _uv_buffer_id = c._uv_buffer_id;
+    _vao_id = c._vao_id;
+    
+    _vertices = c._vertices;
+    _colors = c._colors;
+    _uvs = c._uvs;
+    
+    return *this;
+}
+
+component* com_triangle::full_clone( model* m ) 
+{
+    com_triangle* temp = mi_new com_triangle();
+    *temp = *this;
+    temp->set_model( m );
+    return temp;
+}
+
+component* com_triangle::copy_clone( model* m )
+{
+    com_triangle* temp = mi_new com_triangle();
+    *temp = std::move(*this);
+    temp->set_model( m );
+    return temp;
+}
+
+
 /// initialize component
 bool com_triangle::initialize( model* m )
 {
@@ -36,11 +86,11 @@ bool com_triangle::initialize( model* m )
     _setup_indices();
     _setup_vertices();
     
-    _vao_id = graphic::generate_single_vao();
+    _vao_id = the_renderer->generate_single_vao();
     
-    enable_bind_attrib_pointer( 0, _vertex_buffer_id, 3, (mg_void*)0 );
-    enable_bind_attrib_pointer( 1, _uv_buffer_id, 2, (mg_void*)0 );
-    enable_bind_attrib_pointer( 2, _color_buffer_id, 3, (mg_void*)0 );
+    the_renderer->enable_bind_attrib_pointer( 0, _vertex_buffer_id, 3, (mg_void*)0 );
+    the_renderer->enable_bind_attrib_pointer( 1, _uv_buffer_id, 2, (mg_void*)0 );
+    the_renderer->enable_bind_attrib_pointer( 2, _color_buffer_id, 3, (mg_void*)0 );
     
     return true;
 }
@@ -75,8 +125,7 @@ void com_triangle::_setup_vertices()
 //    _model->set_vertices( vertices );
     
     // bind
-    _vertex_buffer_id = graphic::bind_opengl_buffer( GL_ARRAY_BUFFER, sc_vertices_count * sizeof( vector3 ), _vertices, GL_STATIC_DRAW );
-    
+    _vertex_buffer_id = the_renderer->bind_opengl_buffer( GL_ARRAY_BUFFER, sc_vertices_count * sizeof( vector3 ), _vertices, GL_STATIC_DRAW );
 }
 
 void com_triangle::_setup_colors()
@@ -101,7 +150,7 @@ void com_triangle::_setup_colors()
 //    _model->set_colors( colors );
     
     // bind
-    _color_buffer_id = graphic::bind_opengl_buffer( GL_ARRAY_BUFFER, sc_vertices_count * sizeof( color3 ), colors, GL_STATIC_DRAW );
+    _color_buffer_id = the_renderer->bind_opengl_buffer( GL_ARRAY_BUFFER, sc_vertices_count * sizeof( color3 ), colors, GL_STATIC_DRAW );
 }
 
 void com_triangle::_setup_uvs()
@@ -126,7 +175,7 @@ void com_triangle::_setup_uvs()
 //    _model->set_uvs( uvs );
     
     // bind
-    _uv_buffer_id = graphic::bind_opengl_buffer( GL_ARRAY_BUFFER, sc_vertices_count * sizeof( vector2 ), uvs, GL_STATIC_DRAW );
+    _uv_buffer_id = the_renderer->bind_opengl_buffer( GL_ARRAY_BUFFER, sc_vertices_count * sizeof( vector2 ), uvs, GL_STATIC_DRAW );
 }
 
 void com_triangle::_setup_indices()

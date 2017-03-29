@@ -13,6 +13,7 @@
 #include "foundation/object/update_object.h"
 #include "math/vector2.h"
 #include "math/transform.h"
+#include "model/model.h"
 
 namespace minerva { namespace graphic {
     
@@ -20,7 +21,7 @@ namespace minerva { namespace graphic {
     /// @brief the camera of the 3d environment
     ///
     ///
-    class camera : public foundation::update_object
+    class camera : public model
     {
     public:
         struct perspective_data
@@ -80,7 +81,7 @@ namespace minerva { namespace graphic {
         ///
         /// @brief rotate by self pivot
         ///
-        /// recieve input from screen space
+        /// receive input from screen space
         /// @param dx delta movement of screen position X
         /// @param dy delta movement of screen position Y
         void _rotation( float dx, float dy );
@@ -113,6 +114,7 @@ namespace minerva { namespace graphic {
         /// old screen position
         vector2 _old_screen_position;
     };
+    make_smart(camera);
     
 }}
 
