@@ -100,3 +100,24 @@ node_object::node_container node_object::get_children_by_tag( int tag )
     
     return result;
 }
+
+void node_object::update( float delta )
+{
+    for (auto& i : _children) {
+        i.second->update(delta);
+    }
+}
+
+void node_object::on_render( float delta )
+{
+    for (auto& i : _children) {
+        i.second->on_render(delta);
+    }
+}
+
+void node_object::render( float delta )
+{
+    for (auto& i : _children) {
+        i.second->render(delta);
+    }
+}

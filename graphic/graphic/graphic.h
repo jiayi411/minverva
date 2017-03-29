@@ -14,6 +14,7 @@
 #pragma GCC visibility push(default)
 
 #include <GL/glew.h>
+#include <GLFW/glfw3.h>
 #include "foundation/standard_libraries/vector.h"
 
 namespace minerva { namespace graphic {

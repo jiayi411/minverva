@@ -7,7 +7,7 @@
  *
  */
 
-#include "technique.h"
+#include "renderer/technique.h"
 #include "foundation/basic/defines.h"
 #include "renderer/renderer.h"
 #include <fstream>

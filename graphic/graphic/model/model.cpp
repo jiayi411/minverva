@@ -50,6 +50,7 @@ model& model::operator= ( model&& m )
 
 void model::update( float delta )
 {
+    node_object::update( delta );
     for (auto& c : _components) {
         c.second->update_component( delta );
     }
@@ -57,6 +58,7 @@ void model::update( float delta )
 
 void model::on_render( float delta )
 {
+    node_object::on_render( delta );
     for (auto& c : _components) {
         c.second->on_render_component( delta );
     }
@@ -65,6 +67,8 @@ void model::on_render( float delta )
 /// render
 void model::render( float delta )
 {
+    on_render( delta );
+    node_object::render( delta );
     for (auto& c : _components) {
         c.second->render_component( delta );
     }

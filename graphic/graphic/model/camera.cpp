@@ -79,6 +79,7 @@ void camera::look_at(const vector3 &position)
 
 void camera::update(float f)
 {
+    model::update(f);
     if (!get_dirty()) { return; }
     
     vector2 delta = _screen_position - _old_screen_position;

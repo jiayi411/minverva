@@ -33,11 +33,12 @@
 #include "graphic/math/quaternion.h"
 #include "graphic/graphic.h"
 #include "graphic/math/transform.h"
-#include "graphic/control/camera.h"
-#include "graphic/shaders/technique.h"
+#include "graphic/model/camera.h"
+#include "graphic/renderer/technique.h"
 
 #include "graphic/component/com_default_material.h"
 #include "graphic/component/com_triangle.h"
+#include "graphic/component/com_camera_controller.h"
 #include "graphic/model/model.h"
 #include "renderer/renderer.h"
 using namespace glm;
@@ -301,9 +302,9 @@ int main(int argc, const char * argv[]) {
     
     // Ensure we can capture the escape key being pressed below
     glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
-    
     glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
     
+    the_renderer->set_window( window );
     
     /// Tutorial 3 texture
     texture_data_ptr tex_data = mi_new texture_data;
@@ -311,6 +312,8 @@ int main(int argc, const char * argv[]) {
         mi_log( "error when loading dds" );
         return false;
     }
+    
+    node_object_ptr root = mi_new node_object();
     
     model_ptr triangle_model_p_1 = mi_new model();
     model_ptr triangle_model_p_2 = mi_new model();
@@ -334,11 +337,16 @@ int main(int argc, const char * argv[]) {
     the_renderer->set_camera( cam_p );
     camera& cam = *cam_p;
     cam.initialize( camera::perspective_data( 1024, 768, 45.f, 0.1f, 100.f ) );
+    cam.add_component<com_camera_controller>( mi_new com_camera_controller );
     
     graphic::transform& cam_trans = cam.get_transform();
     cam_trans.set_position( vector3( 0, 0, 10 ) );
     
     *triangle_model_p_2 = *triangle_model_p_1;
+    
+    root->add_child( cam_p );
+    root->add_child( triangle_model_p_1 );
+    root->add_child( triangle_model_p_2 );
     
     // start thread
     the_thread_manager->start_all();
@@ -346,43 +354,7 @@ int main(int argc, const char * argv[]) {
     // timer
     
     do{
-        cam.update(0);
-        vector3& camera_position = cam.get_transform().get_position();
-        const vector3& camera_forward = cam.get_forward();
-        const vector3& camera_right = cam.get_right();
-        
-        // get mouse pos
-        bool is_mouse_pressed = glfwGetMouseButton( window, GLFW_MOUSE_BUTTON_LEFT ) == GLFW_PRESS;
-        
-        if (is_mouse_pressed) {
-            double xpos, ypos;
-            glfwGetCursorPos( window, &xpos, &ypos);
-            
-            cam.update_screen_position( xpos, ypos );
-            
-        }
-        
         long time = the_core->get_frame_time();
-        //        mi_log("fps:%d\n", the_core->get_fps(time) );
-        
-        if( glfwGetKey( window, GLFW_KEY_Q) == GLFW_PRESS ) {
-            the_texture_manager->load_texture_by_file_name( "resources/uvtemplate.dds", std::bind( test_thread, std::placeholders::_1 ) );
-        }
-        
-        if( glfwGetKey( window, GLFW_KEY_F) == GLFW_PRESS ) {
-            cam.look_at( vector3(0,0,0) );
-        }
-        
-        if (glfwGetKey( window, GLFW_KEY_W) == GLFW_PRESS) {
-            camera_position += camera_forward * 0.1f;
-            
-        } else if (glfwGetKey( window, GLFW_KEY_A) == GLFW_PRESS) {
-            camera_position -= camera_right * 0.1f;
-        } else if (glfwGetKey( window, GLFW_KEY_S) == GLFW_PRESS) {
-            camera_position -= camera_forward * 0.1f;
-        } else if (glfwGetKey( window, GLFW_KEY_D) == GLFW_PRESS) {
-            camera_position += camera_right * 0.1f;
-        }
         
         // Draw nothing, see you in tutorial 2 !
         glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
@@ -396,21 +368,17 @@ int main(int argc, const char * argv[]) {
         target_rotate.from_axis_angle(1, vector3(0,1,0));
         quaternion rotate = model_rotate.slerp( target_rotate, (std::sin(ftime)) );
         
-        // model 1
         triangle_model.get_transform().set_rotation( rotate );
-        triangle_model.update(0);
-        triangle_model.on_render(0);
-        triangle_model.render(0);
+        triangle_model.get_transform().set_scale_x( 1.5f );
         
-        
-        // model 2
         target_rotate.from_axis_angle(1, vector3(1,1,0));
         rotate = model_rotate.slerp( target_rotate, (std::sin(ftime)) );
         triangle_model_p_2->get_transform().set_rotation( rotate );
         triangle_model_p_2->get_transform().set_position( vector3(2.f, 0, 0) );
-        triangle_model_p_2->update(0);
-        triangle_model_p_2->on_render(0);
-        triangle_model_p_2->render(0);
+        
+        
+        root->update(0);
+        root->render(0);
         
         
         ////        glDisableVertexAttribArray(0);
@@ -429,14 +397,9 @@ int main(int argc, const char * argv[]) {
     while( glfwGetKey(window, GLFW_KEY_ESCAPE ) != GLFW_PRESS &&
           glfwWindowShouldClose(window) == 0 );
     
-    //    glDeleteBuffers( 1, &vertexbuffer );
-    //    glDeleteBuffers( 1, &uvbuffer );
-    //    glDeleteBuffers( 1, &colorbuffer );
-    //    glDeleteVertexArrays( 1, &VertexArrayID );
-    //    glDeleteTextures( 1, &textureID );
-    
     triangle_model_p_1 = nullptr;
     triangle_model_p_2 = nullptr;
+    cam_p = nullptr;
     glfwTerminate();
     
     the_core->destroy_singletons();
@@ -447,3 +410,13 @@ int main(int argc, const char * argv[]) {
     
     return 0;
 }
+
+
+
+//        if( glfwGetKey( window, GLFW_KEY_Q) == GLFW_PRESS ) {
+//            the_texture_manager->load_texture_by_file_name( "resources/uvtemplate.dds", std::bind( test_thread, std::placeholders::_1 ) );
+//        }
+//
+//        if( glfwGetKey( window, GLFW_KEY_F) == GLFW_PRESS ) {
+//            cam.look_at( vector3(0,0,0) );
+//        }

@@ -12,7 +12,7 @@
 
 #include "component/component.h"
 #include "component/com_texture.h"
-#include "shaders/technique.h"
+#include "renderer/technique.h"
 
 namespace minerva { namespace graphic {
     

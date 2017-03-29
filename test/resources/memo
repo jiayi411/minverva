@@ -1,0 +1,4 @@
+1. create custom template
+    ~/Library/Developer/Xcode/Templates/[your group name]
+    and then copy file from
+    /Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File

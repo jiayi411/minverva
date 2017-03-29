@@ -12,8 +12,9 @@
 
 #include "graphic.h"
 #include "basic/singleton.h"
-#include "control/camera.h"
+#include "model/camera.h"
 
+class GLFWwindow;
 namespace minerva { namespace graphic {
     
     class renderer : public foundation::singleton<renderer>
@@ -34,6 +35,7 @@ namespace minerva { namespace graphic {
         
     protected:
         set_get( camera_ptr, camera );
+        set_get( GLFWwindow*, window );
     };
 }}
 

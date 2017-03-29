@@ -83,6 +83,25 @@ namespace minerva { namespace graphic {
         /// @return return a container
         virtual node_container get_children_by_tag( int tag );
         
+        ///
+        /// @brief update function
+        /// @param delta the delta time from last frame
+        ///
+        virtual void update( float delta );
+        
+        ///
+        /// @brief before rendering
+        ///
+        /// execute just before render
+        ///
+        virtual void on_render( float delta );
+        
+        ///
+        /// @brief render function
+        /// @param delta the delta time from last frame
+        ///
+        virtual void render( float delta );
+        
     protected:
         set_get( int, tag );
         set_get_ref( transform, transform );     ///< transform
