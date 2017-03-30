@@ -12,13 +12,14 @@
 
 #include "component/component.h"
 #include "model/model.h"
+#include "shape/rectangle.h"
 
 namespace minerva { namespace graphic {
     
     class com_triangle : public component
     {
     public:
-        com_triangle() : _model(nullptr){}
+        com_triangle() : _model(nullptr), _rectangle_data(nullptr){}
         virtual ~com_triangle();
         
     public:
@@ -51,13 +52,6 @@ namespace minerva { namespace graphic {
         virtual const char* get_name() const  { return "com_triangle"; }
         
     protected:
-        /*-- setup various things --*/
-        void _setup_vertices();
-        void _setup_colors();
-        void _setup_uvs();
-        void _setup_indices();
-        
-    protected:
         set_get( model_ptr, model );
         set_get( mg_uint, vertex_buffer_id );
         set_get( mg_uint, color_buffer_id );
@@ -65,12 +59,9 @@ namespace minerva { namespace graphic {
         set_get( mg_uint, indices_buffer_id );
         set_get( mg_uint, vao_id );
         
-        set_get( vector3*, vertices );  ///< vertices of the model
-        set_get( float*, indices );     ///< indices of the model
-        set_get( color3*, colors );     ///< color of vertices
-        set_get( vector2*, uvs );       ///< uvs
+        set_get( rectangle_ptr, rectangle_data );
         
-        static const int sc_vertices_count = 6;
+        
     };
     
     make_smart( com_triangle );

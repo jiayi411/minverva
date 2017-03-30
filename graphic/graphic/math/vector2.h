@@ -22,6 +22,9 @@ namespace minerva { namespace graphic {
     class tvector2
     {
     public:
+        typedef T value_type;
+        
+    public:
         tvector2() : tvector2( 0, 0 ){}
         tvector2( T ix, T iy) : x(ix), y(iy) {}
         ~tvector2(){}

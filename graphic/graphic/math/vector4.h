@@ -27,7 +27,10 @@ namespace minerva { namespace graphic {
     class tvector4
     {
         typedef size_t size_type;
-
+        
+    public:
+        typedef T value_type;
+        
     public:
         tvector4() : tvector4( 0, 0, 0, 0 ){}
         tvector4( T t ) : tvector4( t,t,t,t) {}

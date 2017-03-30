@@ -21,6 +21,8 @@
 #define mi_delete delete
 #define mi_malloc(size) minerva::foundation::allocator::std_malloc( size, __LINE__, __FUNCTION__, __FILE__ )
 #define mi_free(o) minerva::foundation::allocator::std_free(o)
+
+void* operator new[](size_t sz, const char* file, int line, const char* func);
 #else
 #define mi_new new
 #define mi_delete delete
@@ -34,6 +36,11 @@
 #define safe_delete_array( arr )\
     if( arr ){ \
         mi_delete[] arr; } \
+
+#define safe_delete_vector( arr ) \
+    for (auto i : arr) { \
+     safe_delete(i); } \
+    arr.clear();\
 
 #define mi_assert assert
 

@@ -56,7 +56,11 @@ namespace minerva { namespace graphic {
     typedef ptrdiff_t mg_intptr;
     typedef ptrdiff_t mg_sizeiptr;
     
-    typedef mi_vector<mg_uint> mg_uint_vector;
+    typedef mi_vector<mg_uint> mg_uint_container;
+    typedef mi_vector<vector3> vector3_container;
+    typedef mi_vector<color3> color3_container;
+    typedef mi_vector<vector2> vector2_container;
+    typedef mi_vector<int> int_container;
     
     /* -- vertex array type  --*/
     namespace vbo_type {

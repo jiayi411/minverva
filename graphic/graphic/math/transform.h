@@ -13,6 +13,7 @@
 #include "foundation/object/update_object.h"
 #include "graphic.h"
 #include "math/vector3.h"
+#include "math/vector2.h"
 #include "math/quaternion.h"
 
 namespace minerva { namespace graphic {

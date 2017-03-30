@@ -30,14 +30,17 @@ void renderer::mi_check_glerror()
     }
 }
 
-mg_uint renderer::bind_opengl_buffer( mg_uint type, mg_sizeiptr size, mg_void* buffer, mg_uint draw_type )
+mg_uint renderer::gen_bind_buffer( mg_uint type, mg_sizeiptr size, mg_void* buffer, mg_uint draw_type )
 {
     mg_uint buffer_id;
     glGenBuffers(1, &buffer_id);
-    glBindBuffer(GL_ARRAY_BUFFER, buffer_id);
-    glBufferData(GL_ARRAY_BUFFER, size, buffer, GL_STATIC_DRAW);
+    glBindBuffer(type, buffer_id);
+    glBufferData(type, size, buffer, GL_STATIC_DRAW);
     return buffer_id;
 }
+
+void renderer::bind_buffer( mg_uint type, mg_uint buffer_id )
+{ glBindBuffer(type, buffer_id); }
 
 mg_uint renderer::generate_single_vao()
 {
@@ -47,13 +50,13 @@ mg_uint renderer::generate_single_vao()
     return vao_id;
 }
 
-void renderer::enable_bind_attrib_pointer( mg_uint index, mg_uint buffer_id, mg_int size, mg_void* offset_pointer )
+void renderer::enable_bind_attrib_pointer( mg_uint index, mg_uint buff_type, mg_uint data_type, mg_uint buffer_id, mg_int size, mg_void* offset_pointer )
 {
+    glBindBuffer(buff_type, buffer_id );
     glEnableVertexAttribArray( index );
-    glBindBuffer(GL_ARRAY_BUFFER, buffer_id );
     glVertexAttribPointer(index,
                           size,
-                          GL_FLOAT,
+                          data_type,
                           GL_FALSE,
                           0,
                           (void*)offset_pointer

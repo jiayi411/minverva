@@ -41,6 +41,10 @@
 		18BDD4101E8C59740093F8F2 /* technique.h in Headers */ = {isa = PBXBuildFile; fileRef = 18BDD40E1E8C59740093F8F2 /* technique.h */; };
 		18BDD4131E8C597F0093F8F2 /* camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18BDD4111E8C597F0093F8F2 /* camera.cpp */; };
 		18BDD4141E8C597F0093F8F2 /* camera.h in Headers */ = {isa = PBXBuildFile; fileRef = 18BDD4121E8C597F0093F8F2 /* camera.h */; };
+		18BDD4181E8C5C9D0093F8F2 /* shape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18BDD4161E8C5C9D0093F8F2 /* shape.cpp */; };
+		18BDD4191E8C5C9D0093F8F2 /* shape.h in Headers */ = {isa = PBXBuildFile; fileRef = 18BDD4171E8C5C9D0093F8F2 /* shape.h */; };
+		18BDD41C1E8C93BB0093F8F2 /* rectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18BDD41A1E8C93BB0093F8F2 /* rectangle.cpp */; };
+		18BDD41D1E8C93BB0093F8F2 /* rectangle.h in Headers */ = {isa = PBXBuildFile; fileRef = 18BDD41B1E8C93BB0093F8F2 /* rectangle.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +94,10 @@
 		18BDD40E1E8C59740093F8F2 /* technique.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = technique.h; path = renderer/technique.h; sourceTree = "<group>"; };
 		18BDD4111E8C597F0093F8F2 /* camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = camera.cpp; path = model/camera.cpp; sourceTree = "<group>"; };
 		18BDD4121E8C597F0093F8F2 /* camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = camera.h; path = model/camera.h; sourceTree = "<group>"; };
+		18BDD4161E8C5C9D0093F8F2 /* shape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = shape.cpp; path = shape/shape.cpp; sourceTree = "<group>"; };
+		18BDD4171E8C5C9D0093F8F2 /* shape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = shape.h; path = shape/shape.h; sourceTree = "<group>"; };
+		18BDD41A1E8C93BB0093F8F2 /* rectangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = rectangle.cpp; path = shape/rectangle.cpp; sourceTree = "<group>"; };
+		18BDD41B1E8C93BB0093F8F2 /* rectangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rectangle.h; path = shape/rectangle.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +209,7 @@
 		187863F31E4D24D900DE334A /* graphic */ = {
 			isa = PBXGroup;
 			children = (
+				18BDD4151E8C5C7D0093F8F2 /* shape */,
 				18181BE51E7A4AC100B7E5BC /* renderer */,
 				18222E3D1E79C2E400E8FFF3 /* component */,
 				18222E311E79AFDF00E8FFF3 /* model */,
@@ -212,6 +221,17 @@
 			path = ../../graphic;
 			sourceTree = "<group>";
 		};
+		18BDD4151E8C5C7D0093F8F2 /* shape */ = {
+			isa = PBXGroup;
+			children = (
+				18BDD4161E8C5C9D0093F8F2 /* shape.cpp */,
+				18BDD4171E8C5C9D0093F8F2 /* shape.h */,
+				18BDD41A1E8C93BB0093F8F2 /* rectangle.cpp */,
+				18BDD41B1E8C93BB0093F8F2 /* rectangle.h */,
+			);
+			name = shape;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -221,7 +241,9 @@
 			files = (
 				18922DA41E57A402008066B1 /* vector2.h in Headers */,
 				18222E3F1E79C2FA00E8FFF3 /* component.h in Headers */,
+				18BDD41D1E8C93BB0093F8F2 /* rectangle.h in Headers */,
 				18608CDF1E4E0F93009C8A68 /* vector4.h in Headers */,
+				18BDD4191E8C5C9D0093F8F2 /* shape.h in Headers */,
 				1844181E1E5EB3350076779C /* transform.h in Headers */,
 				184418251E5F7D600076779C /* quaternion.h in Headers */,
 				18222E391E79B0C600E8FFF3 /* model.h in Headers */,
@@ -303,6 +325,7 @@
 				18BDD4131E8C597F0093F8F2 /* camera.cpp in Sources */,
 				183942091E8B3B2300F91DCD /* com_camera_controller.cpp in Sources */,
 				18222E461E79D35B00E8FFF3 /* com_default_material.cpp in Sources */,
+				18BDD41C1E8C93BB0093F8F2 /* rectangle.cpp in Sources */,
 				1844181D1E5EB3350076779C /* transform.cpp in Sources */,
 				18181BE31E79F3D000B7E5BC /* com_triangle.cpp in Sources */,
 				18173F701E88546E00C3B9F5 /* renderer.cpp in Sources */,
@@ -310,6 +333,7 @@
 				18181BE81E7A4AFD00B7E5BC /* render_data_collector.cpp in Sources */,
 				18222E421E79C3C800E8FFF3 /* com_texture.cpp in Sources */,
 				18BDD40F1E8C59740093F8F2 /* technique.cpp in Sources */,
+				18BDD4181E8C5C9D0093F8F2 /* shape.cpp in Sources */,
 				187863F71E4D24D900DE334A /* graphic.cpp in Sources */,
 				18BDD40B1E8B71120093F8F2 /* com_controller.cpp in Sources */,
 				18222E341E79B00D00E8FFF3 /* node_object.cpp in Sources */,

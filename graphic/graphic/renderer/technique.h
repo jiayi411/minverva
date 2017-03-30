@@ -54,7 +54,7 @@ namespace minerva { namespace graphic {
         mg_int get_parameter( GLint param );
         
     protected:
-        mg_uint_vector _shaders; ///< all loaded shaders
+        mg_uint_container _shaders; ///< all loaded shaders
         mg_uint _program_id;     ///< shader program id
     };
     

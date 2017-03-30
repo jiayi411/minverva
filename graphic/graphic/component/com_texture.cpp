@@ -100,9 +100,9 @@ void com_texture::on_render_component( float delta )
 {
     if (!_get_ready()) { return; }
     
-    if (_texture_id == -1) { mi_log("texture_id is -1"); return; }
-    if (_sampler == -1) { mi_log("_sampler is -1"); return; }
-    if (_texture_index == -1) { mi_log("texture_index is -1"); return; }
+    if (_texture_id == -1) { mi_log("texture_id is -1\n"); return; }
+    if (_sampler == -1) { mi_log("_sampler is -1\n"); return; }
+    if (_texture_index == -1) { mi_log("texture_index is -1\n"); return; }
     
     glActiveTexture( _texture_index + GL_TEXTURE0 );
     glBindTexture( GL_TEXTURE_2D, _texture_id );

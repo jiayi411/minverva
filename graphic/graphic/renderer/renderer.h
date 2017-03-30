@@ -25,13 +25,16 @@ namespace minerva { namespace graphic {
         void mi_check_glerror();
         
         /// generate and bind to opengl buffer
-        mg_uint bind_opengl_buffer( mg_uint type, mg_sizeiptr size, mg_void* buffer, mg_uint draw_type );
+        mg_uint gen_bind_buffer( mg_uint type, mg_sizeiptr size, mg_void* buffer, mg_uint draw_type );
         
         /// generate vao
         mg_uint generate_single_vao();
         
+        /// bind buffer
+        void bind_buffer( mg_uint type, mg_uint buffer_id );
+        
         /// enable, bind, and set attrib pointer
-        void enable_bind_attrib_pointer( mg_uint index, mg_uint buffer_id, mg_int size, mg_void* offset_pointer);
+        void enable_bind_attrib_pointer( mg_uint index, mg_uint buff_type, mg_uint data_type, mg_uint buffer_id, mg_int size, mg_void* offset_pointer);
         
     protected:
         set_get( camera_ptr, camera );

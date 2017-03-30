@@ -23,6 +23,8 @@ namespace minerva { namespace graphic {
     class tvector3
     {
         typedef size_t size_type;
+    public:
+        typedef T value_type;
         
     public:
         tvector3() : tvector3( 0, 0, 0 ){}
