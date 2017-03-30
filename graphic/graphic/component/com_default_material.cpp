@@ -107,13 +107,13 @@ void com_default_material::on_render_component( float delta )
     glUniformMatrix4fv( matrixId, 1, GL_TRUE, &mvp[0][0] );
     glUniform1f( timeId, ftime );    
     
-    _base_texture->on_render_component( delta );
+//    _base_texture->on_render_component( delta );
 }
 
 /// render component
 void com_default_material::render_component( float delta )
 {
-    _base_texture->render_component( delta );
+//    _base_texture->render_component( delta );
 }
 
 bool com_default_material::finalize()

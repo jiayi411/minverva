@@ -14,7 +14,6 @@ using namespace minerva::graphic;
 shape::~shape()
 {
     _vertices.clear();
-    _indices.clear();
     _uvs.clear();
     _colors.clear();
     _faces.clear();
@@ -29,7 +28,6 @@ shape::shape( shape&& s )
 shape& shape::operator= ( const shape& s )
 {
     _vertices = s._vertices;
-    _indices = s._indices;
     _uvs = s._uvs;
     _colors = s._colors;
     _faces = s._faces;
@@ -39,26 +37,27 @@ shape& shape::operator= ( const shape& s )
 shape& shape::operator= ( shape&& s )
 {
     _vertices = std::move(s._vertices);
-    _indices = std::move(s._indices);
     _uvs = std::move(s._uvs);
     _colors = std::move(s._colors);
     _faces = std::move(s._faces);
     return *this;
 }
 
-void shape::add_vertex( vector3::value_type x, vector3::value_type y, vector3::value_type z )
+uint shape::add_vertex( vector3::value_type x, vector3::value_type y, vector3::value_type z )
 {
-    add_vertex( vector3(x,y,z) );
+    return add_vertex( vector3(x,y,z).normalize() );
 }
 
-void shape::add_vertex( const vector3& v )
+uint shape::add_vertex( const vector3& v )
 {
-    _vertices.emplace_back( v );
+    _vertices.emplace_back( graphic::normalize(v) );
+    return get_vertex_count() - 1;
 }
 
-void shape::add_vertex( vector3&& v )
+uint shape::add_vertex( vector3&& v )
 {
-    _vertices.emplace_back( v );
+    _vertices.emplace_back( v.normalize() );
+    return get_vertex_count() - 1;
 }
 
 void shape::add_face( int index1, int index2, int index3 )

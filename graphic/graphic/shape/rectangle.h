@@ -20,10 +20,30 @@ namespace minerva { namespace graphic {
         rectangle(){}
         virtual ~rectangle(){}
         
-        virtual void intialize_shape();
+        virtual void initialize_shape();
     };
     
     make_smart( rectangle );
+    
+    class sphere : public shape
+    {
+    public:
+        sphere() : _level(0){}
+        virtual ~sphere(){}
+        
+        virtual void initialize_shape();
+        
+        void set_level( int n );
+        
+    protected:
+        // key, index
+        typedef mi_unordered_map<uint, uint> cache_container;
+        
+    protected:
+        uint _get_mid_point( uint index1, uint index2 );
+        int _level; // refining
+        cache_container _cache;
+    };
 }}
 
 #endif /* rectangle_h */

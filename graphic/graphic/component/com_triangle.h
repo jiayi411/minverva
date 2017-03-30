@@ -59,7 +59,7 @@ namespace minerva { namespace graphic {
         set_get( mg_uint, indices_buffer_id );
         set_get( mg_uint, vao_id );
         
-        set_get( rectangle_ptr, rectangle_data );
+        set_get( shape_ptr, rectangle_data );
         
         
     };

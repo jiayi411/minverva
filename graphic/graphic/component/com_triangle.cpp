@@ -75,21 +75,36 @@ bool com_triangle::initialize( model* m )
 {
     set_model( m );
     
-    _rectangle_data = mi_new rectangle();
-    _rectangle_data->intialize_shape();
+    _rectangle_data = mi_new sphere();
+    _rectangle_data->initialize_shape();
     
     uint vertex_count = _rectangle_data->get_vertex_count();
+    uint color_count = _rectangle_data->get_color_count();
+    uint uv_count = _rectangle_data->get_uv_count();
+    uint face_count = _rectangle_data->get_face_count();
     
     _vertex_buffer_id = the_renderer->gen_bind_buffer( GL_ARRAY_BUFFER, vertex_count * sizeof( vector3 ), _rectangle_data->get_vertices_data(), GL_STATIC_DRAW );
-    _color_buffer_id = the_renderer->gen_bind_buffer( GL_ARRAY_BUFFER, vertex_count * sizeof( color3 ), _rectangle_data->get_colors_data(), GL_STATIC_DRAW );
-    _uv_buffer_id = the_renderer->gen_bind_buffer( GL_ARRAY_BUFFER, vertex_count * sizeof( vector2 ), _rectangle_data->get_uvs_data(), GL_STATIC_DRAW );
-    _indices_buffer_id = the_renderer->gen_bind_buffer( GL_ELEMENT_ARRAY_BUFFER, _rectangle_data->get_faces().size() * sizeof( shape::face ), _rectangle_data->get_faces_data(), GL_STATIC_DRAW );
+    
+    if (color_count > 0)
+    { _color_buffer_id = the_renderer->gen_bind_buffer( GL_ARRAY_BUFFER, color_count * sizeof( color3 ), _rectangle_data->get_colors_data(), GL_STATIC_DRAW ); }
+    
+    if (uv_count > 0)
+    { _uv_buffer_id = the_renderer->gen_bind_buffer( GL_ARRAY_BUFFER, uv_count * sizeof( vector2 ), _rectangle_data->get_uvs_data(), GL_STATIC_DRAW ); }
+    
+    if (face_count > 0)
+    { _indices_buffer_id = the_renderer->gen_bind_buffer( GL_ELEMENT_ARRAY_BUFFER, face_count * sizeof( shape::face ), _rectangle_data->get_faces_data(), GL_STATIC_DRAW ); }
     
     _vao_id = the_renderer->generate_single_vao();
     the_renderer->enable_bind_attrib_pointer( 0, GL_ARRAY_BUFFER, GL_FLOAT, _vertex_buffer_id, 3, (mg_void*)0 );
-    the_renderer->enable_bind_attrib_pointer( 1, GL_ARRAY_BUFFER, GL_FLOAT, _color_buffer_id, 3, (mg_void*)0 );
-    the_renderer->enable_bind_attrib_pointer( 2, GL_ARRAY_BUFFER, GL_FLOAT, _uv_buffer_id, 2, (mg_void*)0 );
-    the_renderer->bind_buffer( GL_ELEMENT_ARRAY_BUFFER, _indices_buffer_id );
+    
+    if (color_count > 0)
+    { the_renderer->enable_bind_attrib_pointer( 1, GL_ARRAY_BUFFER, GL_FLOAT, _color_buffer_id, 3, (mg_void*)0 ); }
+    
+    if (uv_count > 0)
+    { the_renderer->enable_bind_attrib_pointer( 2, GL_ARRAY_BUFFER, GL_FLOAT, _uv_buffer_id, 2, (mg_void*)0 ); }
+    
+    if (face_count > 0)
+    { the_renderer->bind_buffer( GL_ELEMENT_ARRAY_BUFFER, _indices_buffer_id ); }
     
     return true;
 }
@@ -103,6 +118,8 @@ void com_triangle::update_component( float delta )
 void com_triangle::on_render_component( float delta )
 {
     glBindVertexArray( _vao_id );
+    glEnable(GL_CULL_FACE);
+    glCullFace(GL_BACK);
 }
 
 /// render component

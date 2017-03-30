@@ -369,12 +369,12 @@ int main(int argc, const char * argv[]) {
         quaternion rotate = model_rotate.slerp( target_rotate, (std::sin(ftime)) );
         
         triangle_model.get_transform().set_rotation( rotate );
-        triangle_model.get_transform().set_scale_x( 1.5f );
+        triangle_model.get_transform().set_scale( 1.5f );
         
         target_rotate.from_axis_angle(1, vector3(1,1,0));
         rotate = model_rotate.slerp( target_rotate, (std::sin(ftime)) );
         triangle_model_p_2->get_transform().set_rotation( rotate );
-        triangle_model_p_2->get_transform().set_position( vector3(2.f, 0, 0) );
+        triangle_model_p_2->get_transform().set_position( vector3(5.f, 0, 0) );
         
         
         root->update(0);
