@@ -107,6 +107,11 @@ namespace minerva { namespace graphic {
     template< typename T >
     bool operator!= ( const tvector3<T>& v1, const tvector3<T>& v2 );
     
+    template<typename T> tvector3<T> tvector3<T>::s_vector_zero;
+    template<typename T> tvector3<T> tvector3<T>::s_vector_x;
+    template<typename T> tvector3<T> tvector3<T>::s_vector_y;
+    template<typename T> tvector3<T> tvector3<T>::s_vector_z;
+    
 } }
 
 #include "math/vector3.inl"

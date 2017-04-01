@@ -56,6 +56,8 @@ namespace minerva
         private:
             static T* _this; ///< The T object
         };
+        
+        template<class T> T* singleton<T>::_this;
     }
 }
 

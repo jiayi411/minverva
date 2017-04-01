@@ -128,15 +128,7 @@ using namespace std;
 //int testApp::run() {
 int main(int argc, const char * argv[]) {
     
-    glm::vec4 v1(1.2f, .4f, 2.f, 4.123f);
-    //v1 = glm::cross( v1 * t1 );
     minerva::foundation::timer::duration<timer::milliseconds> v_duration(true);
-    
-    //    for (int i = 0; i < 1; ++i) {
-    //        float f1 = glm::dot( v1, t1 );
-    //    }
-    //    printf("%f\n", f1 );
-    //    mi_log_vector4(%f, v1);
     
     float duration = v_duration.stop();
     printf("time of vector:%f\n", duration);
@@ -152,73 +144,20 @@ int main(int argc, const char * argv[]) {
     printf("time of vector:%f\n", duration);
     
     
-    //    printf("%f\n", f2 );
-    //    mi_log_vector4(%f, v2);
     
-    matrix4x4 matrix4(
-                      1, 2, 3,  4,
-                      5, 1, 6,  7,
-                      8, 9, 1, 10,
-                      11,12,13, 1
-                      );
-    //    float d1 = matrix.determinant();
+//    glm::quat q_1(0.2f, 2,3,4 );
+//    q_1 = glm::angleAxis(1.f, vec3(1,1,0));
+//    quaternion q_2(2,3,4,0.2f);
+//    q_2.from_axis_angle(1, vector3(1,1,0));
+//        mi_log_quaternion("%f", q_1);
+//        mi_log_quaternion("%f", q_2);
+//    
+//    mat4 = mat4x4(q_1);
+//    matrix4 = graphic::transpose( graphic::matrix4_cast(q_2) );
+//    
+//    mi_log_matrix4x4("%f", mat4);
+//    mi_log_matrix4x4("%f", matrix4);
     
-    glm::mat4x4 mat4(
-                     1, 2, 3,  4,
-                     5, 1, 6,  7,
-                     8, 9, 1, 10,
-                     11,12,13, 1
-                     );
-    //    float d2 = glm::determinant( mat4 );
-    
-    //    mat4 = glm::transpose( mat4 );
-    //    mat4 /= 2;
-    //    mat4 = glm::inverse( mat4 );
-    //    float d1 = glm::determinant( mat4 );
-    //    printf("%.f\n", d1 );
-    //    mat4 = glm::perspective( glm::radians( 45.f ), 1024/768.f, 0.1f, 100.f );
-    mi_log_matrix4x4( %f, mat4 );
-    
-    
-    //    matrix.inverse();
-    //    matrix /= 2;
-    //    float d2 = math::determinant( matrix );
-    //    printf("%.f\n", d2 );
-    //    matrix = math::perspective<float>(45.f, 1024.f, 768, 0.1, 100);
-    mi_log_matrix4x4( %f, matrix4 );
-    
-    matrix3x3 matrix3(
-                      1, 2, 3,
-                      5, 1, 6,
-                      8, 9, 1
-                      );
-    //    matrix3x3 matrix3_1(
-    //                             1, 2, 3,
-    //                             5, 1, 6,
-    //                             8, 9, 1
-    //                             );
-    ////    float d1 = matrix3.determinant();
-    //    matrix3 = matrix3 * matrix3_1;
-    //
-    matrix3.inverse();
-    glm::mat3x3 mat3(
-                     1, 2, 3,
-                     5, 1, 6,
-                     8, 9, 1
-                     );
-    mat3 = glm::inverse(mat3);
-    //    glm::mat3x3 mat3_1(
-    //                     1, 2, 3,
-    //                     5, 1, 6,
-    //                     8, 9, 1
-    //                     );
-    //    mat3 = mat3 * mat3_1;
-    //    float d2 = glm::determinant( mat3 );
-    //    printf("%.f\n", d1 );
-    //    printf("%.f\n", d2 );
-    //    matrix3 = matrix3.transpose();
-    //    mi_log_matrix3x3(%f, matrix3);
-    //    mi_log_matrix3x3(%f, mat3);
     
     core::initialize_singletons();
     graphic::initialize_singletons();
@@ -254,22 +193,7 @@ int main(int argc, const char * argv[]) {
     for ( int i = 0; i < 100; ++i ){
         //        allocators.emplace_back( mi_new test_allocator() );
     }
-    
-    // quaterion
-    quaternion q1(1,2,3,4);
-    q1.from_axis_angle(1, vector3(0,0,1));
-    matrix4 = graphic::matrix4_cast( q1 );
-    
-    
-    glm::quat gq1(4, 1, 2,3 );
-    gq1 = glm::angleAxis(1.f, vec3(0,0,1));
-    mat4 = glm::transpose( glm::mat4_cast( gq1 ) );
-    
-    mi_log_matrix4x4(%f, matrix4);
-    mi_log_matrix4x4(%f, mat4);
-    //    mi_log_quaternion("%f", q1);
-    //    mi_log_quaternion("%f", gq1);
-    
+        
     // for opengl
     // Initialise GLFW
     if( !glfwInit() )
@@ -345,8 +269,8 @@ int main(int argc, const char * argv[]) {
     *triangle_model_p_2 = *triangle_model_p_1;
     
     root->add_child( cam_p );
-    root->add_child( triangle_model_p_1 );
     root->add_child( triangle_model_p_2 );
+    root->add_child( triangle_model_p_1 );
     
     // start thread
     the_thread_manager->start_all();
@@ -369,7 +293,8 @@ int main(int argc, const char * argv[]) {
         quaternion rotate = model_rotate.slerp( target_rotate, (std::sin(ftime)) );
         
         triangle_model.get_transform().set_rotation( rotate );
-        triangle_model.get_transform().set_scale( 1.5f );
+//        triangle_model.get_transform().set_scale( 1.5f );
+        triangle_model.get_transform().set_position( vector3(-5.f, 0, 0) );
         
         target_rotate.from_axis_angle(1, vector3(1,1,0));
         rotate = model_rotate.slerp( target_rotate, (std::sin(ftime)) );

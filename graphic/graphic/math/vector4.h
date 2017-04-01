@@ -111,6 +111,9 @@ namespace minerva { namespace graphic {
     template< typename T, typename U >
     tvector4<T> operator/ ( U, const tvector4<T>& );
     
+    template<typename T>
+    tvector4<T> tvector4<T>::s_vector_zero;
+    
 } }
 
 #include "math/vector4.inl"
