@@ -145,18 +145,19 @@ int main(int argc, const char * argv[]) {
     
     
     
-//    glm::quat q_1(0.2f, 2,3,4 );
-//    q_1 = glm::angleAxis(1.f, vec3(1,1,0));
-//    quaternion q_2(2,3,4,0.2f);
-//    q_2.from_axis_angle(1, vector3(1,1,0));
-//        mi_log_quaternion("%f", q_1);
-//        mi_log_quaternion("%f", q_2);
-//    
-//    mat4 = mat4x4(q_1);
-//    matrix4 = graphic::transpose( graphic::matrix4_cast(q_2) );
-//    
-//    mi_log_matrix4x4("%f", mat4);
-//    mi_log_matrix4x4("%f", matrix4);
+    glm::quat q_1(0.2f, 2,3,4 );
+    q_1 = glm::angleAxis(1.f, vec3(1,2,1));
+    quaternion q_2(2,3,4,0.2f);
+    q_2.from_axis_angle(1, vector3(1,2,1));
+        mi_log_quaternion("%f", q_1);
+        mi_log_quaternion("%f", q_2);
+    
+    
+    glm::mat4 mat4 = glm::toMat4(q_1);
+    matrix4x4 matrix4 = graphic::transpose( graphic::matrix4_cast(q_2) );
+    
+    mi_log_matrix4x4("%f", mat4);
+    mi_log_matrix4x4("%f", matrix4);
     
     
     core::initialize_singletons();
@@ -294,9 +295,9 @@ int main(int argc, const char * argv[]) {
         
         triangle_model.get_transform().set_rotation( rotate );
 //        triangle_model.get_transform().set_scale( 1.5f );
-        triangle_model.get_transform().set_position( vector3(-5.f, 0, 0) );
+        triangle_model.get_transform().set_position( vector3(1.f, 0, 0) );
         
-        target_rotate.from_axis_angle(1, vector3(1,1,0));
+        target_rotate.from_axis_angle(1, vector3(1,1,0)).normalize();
         rotate = model_rotate.slerp( target_rotate, (std::sin(ftime)) );
         triangle_model_p_2->get_transform().set_rotation( rotate );
         triangle_model_p_2->get_transform().set_position( vector3(5.f, 0, 0) );
