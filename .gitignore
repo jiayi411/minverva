@@ -31,3 +31,5 @@
 *.xcbkptlist
 
 *.xcuserstate
+foundation/foundation/.DS_Store
+*.xcuserstate
